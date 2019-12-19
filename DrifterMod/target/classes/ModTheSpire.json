@@ -1,0 +1,12 @@
+{
+  "modid": "DrifterMod",
+  "name": "DrifterMod",
+  "author_list": ["Dayvigilante"],
+  "description": "A deposed queen, set to conquer the spire and seize it as her own hive.",
+  "version": "0.1",
+  "sts_version": "01-23-2019",
+  "mts_version": "3.8.0",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}
+
