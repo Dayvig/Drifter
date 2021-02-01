@@ -21,7 +21,7 @@
   },
   "DrifterMod:Brake": {
     "NAME": "Brake",
-    "DESCRIPTION": "Discard your hand. Deal !D! damage and gain 1 Draw-down next turn for each card discarded. NL (Deals !M! damage.)"
+    "DESCRIPTION": "Gain !B! Block. NL Discard 2 random cards. NL Lose 1 driftermod:Speedup."
   },
   "DrifterMod:HairPin": {
     "NAME": "Hairpin Turn",
@@ -38,10 +38,6 @@
   "DrifterMod:Fender": {
     "NAME": "Fender",
     "DESCRIPTION": "Deal !D! damage. NL Gain 2 Draw-down."
-  },
-  "DrifterMod:BigCrash": {
-    "NAME": "Hyper Crash",
-    "DESCRIPTION": "Deal !D! damage (Equal to Max HP/20 * Cards in hand) NL Lose your Drift and do not draw next turn."
   },
   "DrifterMod:EngineRev": {
     "NAME": "Engine Rev",
@@ -95,8 +91,8 @@
     "NAME": "Bob and Weave",
     "DESCRIPTION": "Gain !B! Block. NL Overdraw !M! card next turn.",
     "EXTENDED_DESCRIPTION": [
-      "Gain !B! Block. NL Overdraw !M! card next turn.",
-      "Gain !B! Block. NL Overdraw !M! cards next turn."
+      "Gain !B! Block. NL Draw !M! card next turn.",
+      "Gain !B! Block. NL Draw !M! cards next turn."
     ]
   },
   "DrifterMod:Swerve": {
@@ -149,5 +145,13 @@
   "DrifterMod:Dejavu": {
     "NAME": "Deja Vu",
     "DESCRIPTION": "When you play a 1-cost card, discard this and add a copy of that card to your hand."
+  },
+  "DrifterMod:Zoom": {
+    "NAME": "Zoom",
+    "DESCRIPTION": "Deal !D! damage. NL When you draw a card this turn, deal !M! damage to a random enemy."
+  },
+  "DrifterMod:BigCrash": {
+    "NAME": "Hyper Crash",
+    "DESCRIPTION": "Deal damage equal to 3 times your driftermod:Total-Hand to all enemies NL ( !D! damage. )"
   }
 }

@@ -1,6 +1,7 @@
 package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.actions.OverdrawCardAction;
 import DrifterMod.interfaces.hasOverdrawTrigger;
 import DrifterMod.util.TextureLoader;
 import basemod.BaseMod;
@@ -40,6 +41,7 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    public boolean drawExtra = true;
 
     public TempMaxHandSizeInc(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -61,39 +63,25 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
 
     @Override
     public void atStartOfTurnPostDraw() {
-        int k = AbstractDungeon.player.gameHandSize + AbstractDungeon.player.hand.size();
-        int j = this.amount;
-        System.out.println("Handsize: " + k);
-        System.out.println("Amount: " + j);
-        while (k < BaseMod.MAX_HAND_SIZE) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
-            if (j > 0) {
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, 1));
-            }
-            j--;
-            k++;
-            if (j <= 0) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-                break;
-            }
-        }
+        overDraw();
     }
 
     @Override
     public void onAfterUseCard(AbstractCard c, UseCardAction a){
+        overDraw();
+    }
+
+    private void overDraw(){
         int k = AbstractDungeon.player.hand.size();
         int j = this.amount;
-        while (k < BaseMod.MAX_HAND_SIZE){
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
-            if (j > 0) {
-                AbstractDungeon.actionManager.addToTop(new DrawCardAction(this.owner, 1));
-            }
-            j--;
-            k++;
-            if (j <= 0){
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-                break;
-            }
+        System.out.println("Handsize: " + k);
+        System.out.println("Amount: " + j);
+        if (k < BaseMod.MAX_HAND_SIZE) {
+            int l = BaseMod.MAX_HAND_SIZE - k;
+            if (l > j){ l = j; }
+            System.out.println("Draw Amount" + l);
+            AbstractDungeon.actionManager.addToTop(new OverdrawCardAction(this.owner, l));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, l));
         }
     }
 
@@ -109,6 +97,6 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
 
     @Override
     public AbstractPower makeCopy() {
-        return new TempRetainPower(owner, source, amount);
+        return new TempMaxHandSizeInc(owner, source, amount);
     }
 }

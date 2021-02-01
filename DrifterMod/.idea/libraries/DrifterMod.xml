@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="DrifterMod">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/target/DrifterMod.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

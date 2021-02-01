@@ -7,10 +7,7 @@ import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
 import DrifterMod.powers.TempMaxHandSizeInc;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -53,9 +50,8 @@ public class BigCrash extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftPower.POWER_ID));
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftingPower.POWER_ID));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawDownPower(p,p, p.hand.size()),p.hand.size()));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, p.hand.size(), true));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, TempMaxHandSizeInc.POWER_ID));
     }
 
     public void applyPowers(){
@@ -63,8 +59,7 @@ public class BigCrash extends AbstractDynamicCard {
         if (AbstractDungeon.player.hasPower(TempMaxHandSizeInc.POWER_ID)){
             k += AbstractDungeon.player.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
-        kinetic = (AbstractDungeon.player.maxHealth/20) * AbstractDungeon.player.hand.size();
-        baseDamage = kinetic;
+        baseDamage = k * 3;
         initializeDescription();
     }
 

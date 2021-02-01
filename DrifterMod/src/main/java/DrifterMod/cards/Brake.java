@@ -3,10 +3,9 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DrawDownPower;
+import DrifterMod.powers.Speedup;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,39 +35,29 @@ public class Brake extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 0;  // COST = ${COST}
-    private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DAMAGE = 1;
+    private static final int BLOCK = 5;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int MAGIC = 2;
     // /STAT DECLARATION/
 
 
     public Brake() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = DAMAGE;
-        baseMagicNumber = magicNumber = 0;
-    }
-
-    @Override
-    public void applyPowers(){
-        super.applyPowers();
-        this.baseMagicNumber = (AbstractDungeon.player.hand.size() - 1) * damage;
-        initializeDescription();
+        baseBlock = block = BLOCK;
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int i = 0;
-        for (AbstractCard c : p.hand.group){
-            AbstractDungeon.actionManager.addToBottom(new DiscardSpecificCardAction(c));
-            i++;
-        }
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage*(i-1), damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawDownPower(p, p, (i-1))));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 2, true));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(Speedup.POWER_ID), 1));
     }
 
 
@@ -77,8 +66,7 @@ public class Brake extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

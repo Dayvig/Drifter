@@ -373,6 +373,7 @@ public class DrifterMod implements
         BaseMod.addCard(new AeroChassis());
         BaseMod.addCard(new PerfectBalance());
         BaseMod.addCard(new Dejavu());
+        BaseMod.addCard(new Zoom());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -380,6 +381,7 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(Zoom.ID);
         UnlockTracker.unlockCard(Tmph.ID);
         UnlockTracker.unlockCard(Twenty.ID);
         UnlockTracker.unlockCard(FortyFive.ID);

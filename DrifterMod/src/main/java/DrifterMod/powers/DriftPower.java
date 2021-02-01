@@ -78,22 +78,20 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
         if (!this.owner.equals(AbstractDungeon.player)){ return; }
+
+        DriftDamage();
+
         if (this.owner.hasPower(DriftingPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DriftingPower.POWER_ID));
+            int d = this.owner.getPower(DriftPower.POWER_ID).amount / 2;
+            if (d > 0){
+                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, DriftPower.POWER_ID, d));
+            }
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DriftPower.POWER_ID));
+            return;
         }
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.amount));
-        ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
-        int[] tmp = new int[m.size()];
-        int i;
-        for(i = 0; i < tmp.length; ++i) {
-            tmp[i] = this.amount;
-        }
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, tmp,
-                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
     }
 
     @Override
@@ -134,6 +132,18 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
         } else if (amount > 1) {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
+    }
+
+    private void DriftDamage(){
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.amount));
+        ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
+        int[] tmp = new int[m.size()];
+        int i;
+        for(i = 0; i < tmp.length; ++i) {
+            tmp[i] = this.amount;
+        }
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, tmp,
+                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override

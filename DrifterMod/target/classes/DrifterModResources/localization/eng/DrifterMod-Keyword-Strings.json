@@ -120,5 +120,17 @@
     "industry"
   ],
   "DESCRIPTION": "At the start of your turn, gain 1 Nectar for each Industry, also draw one additional card at the start of your turn for every 5 Industry you have."
-}
+},
+  {
+    "NAMES": [
+      "total-hand"
+    ],
+    "DESCRIPTION": "Your total hand is your hand plus your Overdraw."
+  },
+  {
+    "NAMES": [
+      "speedup"
+    ],
+    "DESCRIPTION": "At the start of each turn, draw 1 extra card for each Speedup. NL If you have 3 or more Speedup, also gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only."
+  }
 ]

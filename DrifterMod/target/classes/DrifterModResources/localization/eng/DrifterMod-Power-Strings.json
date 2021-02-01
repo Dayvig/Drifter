@@ -110,5 +110,21 @@
                         "",
                         ""
                 ]
+        },
+        "DrifterMod:ZoomPower": {
+                "NAME": "Zoom Power",
+                "DESCRIPTIONS": [
+                        "When you draw a card this turn, deal #b",
+                        " damage to a random enemy.",
+                        " damage to a random enemy."
+                ]
+        },
+        "DrifterMod:Speedup": {
+                "NAME": "Speed-up",
+                "DESCRIPTIONS": [
+                        "Draw #b",
+                        " extra cards at the start of your turn. If you have 3 or more #ySpeed-up gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only.",
+                        " extra cards at the start of your turn. If you have 3 or more #ySpeed-up gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only."
+                ]
         }
 }

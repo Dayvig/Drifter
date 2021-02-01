@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -41,7 +42,7 @@ public class BobWeave extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
 
     private static final int BLOCK = 8;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
     private int numLeft;
@@ -60,7 +61,7 @@ public class BobWeave extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new OverdrawNextTurn(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
     }
 
     // Upgraded stats.
