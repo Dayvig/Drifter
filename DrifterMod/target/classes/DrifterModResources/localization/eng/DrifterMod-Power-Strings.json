@@ -90,8 +90,8 @@
         "DrifterMod:ThermalPower": {
                 "NAME": "Thermal Engines",
                 "DESCRIPTIONS": [
-                        "If you have Overdraw, gain #b [E]",
-                        "",
+                        "At the start of your turn if you have Overdraw, gain #b",
+                        " [E] ",
                         ""
                 ]
         },

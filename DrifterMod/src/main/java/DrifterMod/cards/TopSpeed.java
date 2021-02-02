@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.unique.ExpertiseAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.purple.Scrawl;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -39,7 +41,8 @@ public class TopSpeed extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 2;  // COST = ${COST}
+    private static final int UPGRADED_COST = 1;
     // /STAT DECLARATION/
 
 
@@ -52,6 +55,7 @@ public class TopSpeed extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ExpertiseAction(p, 10));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1) , 1));
     }
 
@@ -60,9 +64,7 @@ public class TopSpeed extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-            exhaust = false;
-            upgradeName();
-            this.rawDescription = EXTENDED_DESCRIPTION[0];
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

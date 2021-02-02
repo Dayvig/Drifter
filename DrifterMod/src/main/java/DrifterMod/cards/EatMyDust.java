@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
@@ -36,8 +37,9 @@ public class EatMyDust extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0;
     private static final int MAGIC = 4;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MAGIC2 = 3;
     // /STAT DECLARATION/
 
 
@@ -50,14 +52,15 @@ public class EatMyDust extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new OverdrawNextTurn(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, MAGIC2, true));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
-        return p.hand.size() >= 4;
+        this.cantUseMessage = "I don't have enough speed!";
+        return p.hand.size() >= 3;
     }
 
 
@@ -66,7 +69,7 @@ public class EatMyDust extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

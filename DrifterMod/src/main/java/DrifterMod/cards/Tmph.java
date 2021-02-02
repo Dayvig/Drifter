@@ -4,6 +4,7 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.Speedup;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -35,7 +36,7 @@ public class Tmph extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
@@ -51,7 +52,6 @@ public class Tmph extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
-        isEthereal = true;
     }
 
 
@@ -59,14 +59,26 @@ public class Tmph extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (AbstractDungeon.player.hand.size() >= magicNumber) {
-            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
+            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, true));
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage,
-                    DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                    DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
         }
-        baseMagicNumber += 2;
-        baseDamage *= 2;
-        damage = baseDamage;
-        magicNumber = baseMagicNumber;
+    }
+
+    @Override
+    public void applyPowers(){
+        if (AbstractDungeon.player.hasPower(Speedup.POWER_ID)){
+            baseMagicNumber = magicNumber = MAGIC * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount;
+            baseDamage = damage = (int) Math.pow(DAMAGE, AbstractDungeon.player.getPower(Speedup.POWER_ID).amount);
+            this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + " MPH";
+        }
+        else
+        {
+            baseMagicNumber = magicNumber = MAGIC;
+            baseDamage = damage = DAMAGE;
+            this.name = "20 MPH";
+        }
+
         initializeDescription();
     }
 

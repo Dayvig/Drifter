@@ -42,7 +42,7 @@ public class SpinOut extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 2;  // COST = ${COST}
-    private static final int MAGIC = 3;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 1;
     // /STAT DECLARATION/
 
@@ -61,7 +61,6 @@ public class SpinOut extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsDownPower(p, p, magicNumber * p.getPower(DriftPower.POWER_ID).amount), magicNumber * p.getPower(DriftPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftPower.POWER_ID));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftingPower.POWER_ID));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawDownPower(p, p, p.getPower(DriftPower.POWER_ID).amount), p.getPower(DriftPower.POWER_ID).amount));
         }
     }
 

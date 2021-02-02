@@ -7,6 +7,7 @@ import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -55,7 +56,9 @@ public class ThermalPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public void atStartOfTurnPostDraw(){
-        AbstractDungeon.actionManager.addToBottom(new OverdrawEnergyAction(this.amount));
+        if (AbstractDungeon.player.hasPower(TempMaxHandSizeInc.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.amount));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

@@ -66,7 +66,7 @@ public class Kachow extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage,
-                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new WeakPower(mo, magicNumber, false)));
         }

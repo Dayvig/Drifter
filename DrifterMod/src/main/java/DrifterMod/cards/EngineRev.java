@@ -3,6 +3,7 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.OverdrawNextTurn;
+import basemod.devcommands.draw.Draw;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -55,7 +56,7 @@ public class EngineRev extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new OverdrawNextTurn(p, p, magicNumber),magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p, magicNumber),magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber)));
     }
 

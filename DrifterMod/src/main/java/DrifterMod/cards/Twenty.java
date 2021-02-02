@@ -40,7 +40,7 @@ public class Twenty extends AbstractDynamicCard {
     private static final int BLOCK = 6;
     private static final int UPGRADE_BLOCK = 3;
     public static final int UPGRADE_MAGIC = 1;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
 
     public AbstractMonster hoverTarget = null;
     public AbstractMonster.Intent intentions;
@@ -58,9 +58,6 @@ public class Twenty extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
     }
 

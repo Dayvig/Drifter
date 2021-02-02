@@ -43,7 +43,6 @@ public class InertialDrift extends AbstractDynamicCard {
 
     public InertialDrift() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = 0;
         exhaust = true;
     }
 
@@ -52,15 +51,15 @@ public class InertialDrift extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(DriftPower.POWER_ID)){
+
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, p.getPower(DriftPower.POWER_ID).amount));
             ArrayList<AbstractMonster> mo = AbstractDungeon.getCurrRoom().monsters.monsters;
             int[] tmp = new int[mo.size()];
             int i;
             for(i = 0; i < tmp.length; ++i) {
                 tmp[i] = p.getPower(DriftPower.POWER_ID).amount;
             }
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, tmp,
-                    DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, damage));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, tmp, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, p.getPower(DriftPower.POWER_ID).amount), p.getPower(DriftPower.POWER_ID).amount));
         }
     }

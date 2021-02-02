@@ -366,7 +366,6 @@ public class DrifterMod implements
         BaseMod.addCard(new OneOFive());
         BaseMod.addCard(new DriftKing());
         BaseMod.addCard(new TopSpeed());
-        BaseMod.addCard(new UTurn());
         BaseMod.addCard(new EatMyDust());
         BaseMod.addCard(new ThermalEngine());
         BaseMod.addCard(new Kachow());
@@ -410,7 +409,6 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(OneOFive.ID);
         UnlockTracker.unlockCard(TopSpeed.ID);
         UnlockTracker.unlockCard(DriftKing.ID);
-        UnlockTracker.unlockCard(UTurn.ID);
         UnlockTracker.unlockCard(EatMyDust.ID);
         UnlockTracker.unlockCard(ThermalEngine.ID);
         UnlockTracker.unlockCard(Kachow.ID);

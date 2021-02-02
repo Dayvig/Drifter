@@ -43,7 +43,7 @@ public class OneOFive extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
     public static final int UPGRADE_MAGIC = 1;
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int COST = 2;
 
     // Hey want a second magic/damage/block/unique number??? Great!

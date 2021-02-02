@@ -41,8 +41,8 @@ public class Sixty extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
-    public static final int UPGRADE_MAGIC = 1;
-    private static final int MAGIC = 1;
+    public static final int UPGRADE_MAGIC = 2;
+    private static final int MAGIC = 2;
     private static final int COST = 2;
     private static final int BLOCK = 11;
     private static final int UPGRADE_BLOCK = 3;
@@ -66,11 +66,7 @@ public class Sixty extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p ,new DexterityNextTurnPower(p,p,3),3));
     }
 
     //Upgraded stats.

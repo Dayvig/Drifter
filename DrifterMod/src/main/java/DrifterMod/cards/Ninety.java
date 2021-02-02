@@ -64,7 +64,7 @@ public class Ninety extends AbstractDynamicCard {
         if (!p.hasPower(DriftingPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,3), 3));
     }
 
     // Upgraded stats.

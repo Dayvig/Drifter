@@ -36,7 +36,7 @@ public class Swerve extends AbstractDynamicCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
-    public static final int UPGRADE_MAGIC = 1;
+    public static final int UPGRADE_MAGIC = 2;
     private static final int MAGIC = 4;
     private static final int COST = 0;
 
@@ -57,12 +57,8 @@ public class Swerve extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, 1, true), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawDownPower(p, p, 3)));
     }
 
     //Upgraded stats.

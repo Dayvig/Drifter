@@ -29,11 +29,11 @@
   },
   "DrifterMod:SpinOut": {
     "NAME": "Spin Out",
-    "DESCRIPTION": "Gain !M! Thorns for each Drift for one turn. NL Lose your Drift. NL Gain 1 Draw-down next turn for each Drift."
+    "DESCRIPTION": "Gain !M! Thorns for each Drift for one turn. NL Lose your Drift."
   },
   "DrifterMod:Ninety": {
     "NAME": "90 Degree Turn",
-    "DESCRIPTION": "Deal !D! damage. NL Drift !M! NL Gain !M! Strength while Drifting."
+    "DESCRIPTION": "Deal !D! damage. NL Drift 3. NL Gain !M! Strength while Drifting."
   },
   "DrifterMod:Fender": {
     "NAME": "Fender",
@@ -53,7 +53,7 @@
   },
   "DrifterMod:Tmph": {
     "NAME": "Speed-up",
-    "DESCRIPTION": "Discard !M! cards to deal !D! damage to all enemies. NL Ethereal"
+    "DESCRIPTION": "Discard !M! cards to deal !D! damage to all enemies. NL (Discard 2 more cards and double this card's damage with each driftermod:Speedup.)"
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
@@ -97,7 +97,7 @@
   },
   "DrifterMod:Swerve": {
     "NAME": "Swerve",
-    "DESCRIPTION": "Drift !M! NL Gain 3 Draw-down NL Gain 1 Vulnerable."
+    "DESCRIPTION": "Drift !M! NL Gain 1 Vulnerable."
   },
   "DrifterMod:PolePosition": {
     "NAME": "Pole Position",
@@ -113,10 +113,7 @@
   },
   "DrifterMod:TopSpeed": {
     "NAME": "Top Speed",
-    "DESCRIPTION": "Retain your hand. NL Exhaust",
-    "EXTENDED_DESCRIPTION": [
-      "Retain your hand."
-    ]
+    "DESCRIPTION": "Draw cards until your hand is full. NL Retain your hand this turn."
   },
   "DrifterMod:UTurn": {
     "NAME": "U-Turn",
@@ -124,11 +121,11 @@
   },
   "DrifterMod:EatMyDust": {
     "NAME": "Eat My Dust",
-    "DESCRIPTION": "Discard 4 cards. NL Overdraw 4 cards next turn."
+    "DESCRIPTION": "Discard 3 cards to Draw !M! cards next turn."
   },
   "DrifterMod:ThermalEngine": {
     "NAME": "Thermal Engine",
-    "DESCRIPTION": "At the start of your turn, if you have Overdraw, gain [E]"
+    "DESCRIPTION": "At the start of your turn if you have Overdraw, gain [E]"
   },
   "DrifterMod:Kachow": {
     "NAME": "Headlight Flash",
