@@ -38,7 +38,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
-    public int onlyOnce;
+    public boolean hasTraction;
 
     public DriftPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -47,6 +47,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        hasTraction = false;
 
         type = PowerType.BUFF;
 
@@ -58,15 +59,17 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
         updateDescription();
     }
 
-    public DriftPower(final AbstractCreature owner, final AbstractCreature source, final int amount, int k) {
+    public DriftPower(final AbstractCreature owner, final AbstractCreature source, final int amount, boolean t) {
         name = NAME;
         ID = POWER_ID;
+
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        hasTraction = t;
 
         type = PowerType.BUFF;
-        onlyOnce = k;
+
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -96,7 +99,13 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public void onInitialApplication() {
-        switch (TheDrifter.r){
+        if (!this.owner.hasPower(DriftingPower.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftingPower(this.owner, this.owner, 1),1));
+        }
+        if (this.owner.hasPower(TractionPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftPower(this.owner, this.owner, this.owner.getPower(TractionPower.POWER_ID).amount, true), this.owner.getPower(TractionPower.POWER_ID).amount));
+        }
+                switch (TheDrifter.r){
             case 0:
                 AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Gas"));
                 return;
@@ -107,6 +116,19 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
                 AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Dejavu"));
                 return;
             default:
+        }
+    }
+
+    @Override
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        super.onApplyPower(power, target, source);
+        if (power.ID.equals(DriftPower.POWER_ID)){
+            if (this.owner.hasPower(TractionPower.POWER_ID)){
+                DriftPower tmp = (DriftPower)power;
+                if (!tmp.hasTraction) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftPower(this.owner, this.owner, this.owner.getPower(TractionPower.POWER_ID).amount, true),this.owner.getPower(TractionPower.POWER_ID).amount));
+                }
+            }
         }
     }
 

@@ -23,6 +23,7 @@ DrifterMod\cards\Coast.class
 DrifterMod\variables\DefaultCustomVariable.class
 DrifterMod\cards\BobWeave.class
 DrifterMod\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
+DrifterMod\Modifiers\EtherealModifier.class
 DrifterMod\cards\Brake.class
 DrifterMod\powers\BalancePower.class
 DrifterMod\events\IdentityCrisisEvent.class

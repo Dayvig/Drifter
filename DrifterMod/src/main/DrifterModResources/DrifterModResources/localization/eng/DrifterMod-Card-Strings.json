@@ -37,7 +37,7 @@
   },
   "DrifterMod:Fender": {
     "NAME": "Fender",
-    "DESCRIPTION": "Deal !D! damage. NL Gain 2 Draw-down."
+    "DESCRIPTION": "Deal !D! damage. NL driftermod:Brake 2."
   },
   "DrifterMod:EngineRev": {
     "NAME": "Engine Rev",
@@ -77,7 +77,7 @@
   },
   "DrifterMod:GasGasGas": {
     "NAME": "Gas Gas Gas",
-    "DESCRIPTION": "Drift !M! NL Overdraw !M! cards. NL Exhaust"
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
   },
   "DrifterMod:Strike": {
     "NAME": "Strike",
@@ -144,7 +144,8 @@
   },
   "DrifterMod:Dejavu": {
     "NAME": "Deja Vu",
-    "DESCRIPTION": "When you play a 1-cost card, discard this and add a copy of that card to your hand."
+    "DESCRIPTION": "Add an Ethereal copy of the last card you played this combat to your hand.",
+    "UPGRADE_DESCRIPTION": "Add an upgraded Ethereal copy of the last card you played this combat to your hand."
   },
   "DrifterMod:Zoom": {
     "NAME": "Zoom",

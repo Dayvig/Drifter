@@ -48,14 +48,6 @@ public class TractionPower extends AbstractPower implements CloneablePowerInterf
 
         updateDescription();
     }
-
-    @Override
-    public void atEndOfTurn(final boolean isPlayer){
-        if (AbstractDungeon.player.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftPower(AbstractDungeon.player, AbstractDungeon.player, this.amount), this.amount));
-        }
-    }
-
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {

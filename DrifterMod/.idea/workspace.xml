@@ -3,8 +3,47 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="04605f36-0fe5-430b-a10e-5f60e368429f" name="Default Changelist" comment="" />
+    <list default="true" id="04605f36-0fe5-430b-a10e-5f60e368429f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/Modifiers/EtherealModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/CornerHug.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/CornerHug.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Defend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Defend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Dejavu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Dejavu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/GasGasGas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/GasGasGas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/TractionPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/TractionPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DrifterMod.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/DrifterMod.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/CornerHug.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/CornerHug.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Defend.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Defend.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Dejavu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Dejavu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/powers/DriftPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/powers/DriftPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/powers/TractionPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/powers/TractionPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +56,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -25,13 +67,14 @@
     </option>
   </component>
   <component name="ProjectId" id="1nWl7um6UWoN5mJkM4gV8xTAXkl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../The-Queen" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -49,34 +92,45 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1612219898022">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1612219898022" />
-    <state width="1877" height="265" key="GridCell.Tab.0.bottom" timestamp="1612221499520">
+    <state width="1877" height="298" key="GridCell.Tab.0.bottom" timestamp="1612235955172">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1612221499520" />
-    <state width="1877" height="265" key="GridCell.Tab.0.center" timestamp="1612221499520">
+    <state width="1877" height="298" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1612235955172" />
+    <state width="1877" height="298" key="GridCell.Tab.0.center" timestamp="1612235955172">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="265" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1612221499520" />
-    <state width="1877" height="265" key="GridCell.Tab.0.left" timestamp="1612221499520">
+    <state width="1877" height="298" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1612235955172" />
+    <state width="1877" height="298" key="GridCell.Tab.0.left" timestamp="1612235955172">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="265" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1612221499520" />
-    <state width="1877" height="265" key="GridCell.Tab.0.right" timestamp="1612221499520">
+    <state width="1877" height="298" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1612235955172" />
+    <state width="1877" height="298" key="GridCell.Tab.0.right" timestamp="1612235955172">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="265" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1612221499520" />
-    <state x="609" y="259" width="672" height="677" key="run.anything.popup" timestamp="1612221499495">
+    <state width="1877" height="298" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1612235955172" />
+    <state x="609" y="259" width="672" height="677" key="run.anything.popup" timestamp="1612235070283">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="609" y="259" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1612221499495" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1611525035164">
+    <state x="609" y="259" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1612235070283" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1612234393861">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1611525035164" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1612234393861" />
   </component>
 </project>

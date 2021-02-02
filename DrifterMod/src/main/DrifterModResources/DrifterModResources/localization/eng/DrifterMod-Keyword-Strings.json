@@ -132,5 +132,11 @@
       "speedup"
     ],
     "DESCRIPTION": "At the start of each turn, draw 1 extra card for each Speedup. NL If you have 3 or more Speedup, also gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only."
+  },
+  {
+    "NAMES": [
+      "brake"
+    ],
+    "DESCRIPTION": "Draw 1 less card at the start of your turn for each Brake."
   }
 ]

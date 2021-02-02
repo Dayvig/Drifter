@@ -53,9 +53,6 @@ public class CornerHug extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hand.size() >= 3){
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 3, false));
-            if (!p.hasPower(DriftingPower.POWER_ID)){
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-            }
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         }
     }
