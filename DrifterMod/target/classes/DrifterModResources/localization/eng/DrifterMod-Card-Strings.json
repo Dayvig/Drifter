@@ -53,7 +53,7 @@
   },
   "DrifterMod:Tmph": {
     "NAME": "Speed-up",
-    "DESCRIPTION": "Discard !M! cards to deal !D! damage to all enemies. NL (Discard 2 more cards and double this card's damage with each driftermod:Speedup.)"
+    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL (Discard 2 more cards and double this card's damage with each driftermod:Speedup.)"
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",

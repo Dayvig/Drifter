@@ -41,7 +41,7 @@
   },
   "DrifterMod:EngineRev": {
     "NAME": "Engine Rev",
-    "DESCRIPTION": "Innate NL Overdraw !M! cards and gain !M! [E] next turn. NL Exhaust."
+    "DESCRIPTION": "Innate NL Draw !M! cards and gain !M! [E] next turn. NL Exhaust."
   },
   "DrifterMod:Coast": {
     "NAME": "Coast",
@@ -49,11 +49,11 @@
   },
   "DrifterMod:HardPass": {
     "NAME": "Hard Pass",
-    "DESCRIPTION": "Deal !D! damage. NL Overdraw !M! next turn."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards next turn."
   },
   "DrifterMod:Tmph": {
     "NAME": "Speed-up",
-    "DESCRIPTION": "Discard !M! cards to deal !D! damage to all enemies. NL (Discard 2 more cards and double this card's damage with each driftermod:Speedup.)"
+    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL (Discard 2 more cards and double this card's damage with each driftermod:Speedup.)"
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
@@ -89,7 +89,7 @@
   },
   "DrifterMod:BobWeave": {
     "NAME": "Bob and Weave",
-    "DESCRIPTION": "Gain !B! Block. NL Overdraw !M! card next turn.",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card next turn.",
     "EXTENDED_DESCRIPTION": [
       "Gain !B! Block. NL Draw !M! card next turn.",
       "Gain !B! Block. NL Draw !M! cards next turn."

@@ -5,11 +5,9 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
 import DrifterMod.powers.Speedup;
+import DrifterMod.powers.TempMaxHandSizeInc;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -58,18 +56,31 @@ public class Tmph extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.player.hand.size() >= magicNumber) {
+        if (p.hasPower(TempMaxHandSizeInc.POWER_ID) && magicNumber > 10) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(TempMaxHandSizeInc.POWER_ID), magicNumber - 10));
+        }
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, true));
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage,
                     DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m){
+        super.canUse(p, m);
+        this.cantUseMessage = "I don't have enough speed!";
+        if (p.hasPower(TempMaxHandSizeInc.POWER_ID)){
+            return magicNumber <= p.hand.size() + p.getPower(TempMaxHandSizeInc.POWER_ID).amount;
+        }
+        else {
+            return magicNumber <= p.hand.size();
         }
     }
 
     @Override
     public void applyPowers(){
         if (AbstractDungeon.player.hasPower(Speedup.POWER_ID)){
-            baseMagicNumber = magicNumber = MAGIC * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount;
-            baseDamage = damage = (int) Math.pow(DAMAGE, AbstractDungeon.player.getPower(Speedup.POWER_ID).amount);
+            baseMagicNumber = magicNumber = (MAGIC * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount) + MAGIC;
+            baseDamage = damage = DAMAGE * (2 * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount);
             this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + " MPH";
         }
         else
