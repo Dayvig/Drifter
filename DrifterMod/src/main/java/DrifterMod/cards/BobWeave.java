@@ -69,7 +69,6 @@ public class BobWeave extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeMagicNumber(UPGRADE_MAGIC);
             this.rawDescription = EXTENDED_DESCRIPTION[1];
             initializeDescription();

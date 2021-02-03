@@ -14,6 +14,7 @@ DrifterMod\cards\PerfectBalance.class
 DrifterMod\powers\DexDownPower.class
 DrifterMod\cards\Kachow.class
 DrifterMod\powers\DexterityNextTurnPower.class
+DrifterMod\cards\Nitrus.class
 DrifterMod\Patches\ConscriptPatch.class
 DrifterMod\cards\KeepItSteady.class
 DrifterMod\cards\InertialDrift.class
@@ -24,11 +25,15 @@ DrifterMod\variables\DefaultCustomVariable.class
 DrifterMod\cards\BobWeave.class
 DrifterMod\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 DrifterMod\Modifiers\EtherealModifier.class
+DrifterMod\cards\SafeDriving.class
+DrifterMod\actions\FastGainBlockAction.class
 DrifterMod\cards\Brake.class
 DrifterMod\powers\BalancePower.class
 DrifterMod\events\IdentityCrisisEvent.class
+DrifterMod\cards\RacingSpirit.class
 DrifterMod\cards\SpinOut.class
 DrifterMod\actions\SwapCardAction.class
+DrifterMod\powers\CoolPower.class
 DrifterMod\cards\Defend.class
 DrifterMod\variables\DefaultThirdMagicNumber.class
 DrifterMod\cards\PolePosition.class
@@ -45,7 +50,9 @@ DrifterMod\cards\BigCrash.class
 DrifterMod\cards\Accelerate.class
 DrifterMod\actions\OverdrawEnergyAction.class
 DrifterMod\DrifterMod.class
+DrifterMod\cards\StylePoints.class
 DrifterMod\cards\Tmph.class
+DrifterMod\cards\SpeedDemon.class
 DrifterMod\cards\ThermalEngine.class
 DrifterMod\cards\CornerHug.class
 DrifterMod\powers\DriftNextTurnPower.class
@@ -53,11 +60,15 @@ DrifterMod\Patches\ConscriptPatch$ShowCardAndObtainEffectPatch.class
 DrifterMod\orbs\DefaultOrb.class
 DrifterMod\interfaces\hasOverdrawTrigger.class
 DrifterMod\util\TextureLoader.class
+DrifterMod\cards\ImpossibleTurn.class
 DrifterMod\cards\OneOFive.class
 DrifterMod\cards\AbstractDynamicCard.class
 DrifterMod\Patches\OverdrawPatch$Speed.class
 DrifterMod\powers\TempMaxHandSizeInc.class
+DrifterMod\cards\InTheZone.class
 DrifterMod\relics\BottledPlaceholderField.class
+DrifterMod\cards\InControl.class
+DrifterMod\cards\NeedForSpeed.class
 DrifterMod\powers\ThornsDownPower.class
 DrifterMod\cards\Dejavu.class
 DrifterMod\cards\Ninety.class
@@ -72,6 +83,7 @@ DrifterMod\relics\DefaultClickableRelic.class
 DrifterMod\cards\NightsOnFire.class
 DrifterMod\cards\DefensiveDriving.class
 DrifterMod\powers\DriftStrengthDownPower.class
+DrifterMod\powers\InControlPower.class
 DrifterMod\characters\TheDrifter.class
 DrifterMod\powers\ZoomPower.class
 DrifterMod\cards\HardPass.class

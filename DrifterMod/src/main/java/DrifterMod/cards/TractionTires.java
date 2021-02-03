@@ -31,7 +31,7 @@ public class TractionTires extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.COMMON; //  Up to you, I like auto-complete on these
+    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;  //   since they don't change much.
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.POWER;       //
     public static final AbstractCard.CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;

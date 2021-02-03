@@ -352,7 +352,6 @@ public class DrifterMod implements
         BaseMod.addCard(new EngineRev());
         BaseMod.addCard(new Coast());
         BaseMod.addCard(new HardPass());
-        BaseMod.addCard(new Tmph());
         BaseMod.addCard(new InertialDrift());
         BaseMod.addCard(new DefensiveDriving());
         BaseMod.addCard(new CornerHug());
@@ -369,10 +368,20 @@ public class DrifterMod implements
         BaseMod.addCard(new EatMyDust());
         BaseMod.addCard(new ThermalEngine());
         BaseMod.addCard(new Kachow());
-        BaseMod.addCard(new AeroChassis());
+        //BaseMod.addCard(new AeroChassis());
         BaseMod.addCard(new PerfectBalance());
         BaseMod.addCard(new Dejavu());
         BaseMod.addCard(new Zoom());
+        BaseMod.addCard(new RacingSpirit());
+        BaseMod.addCard(new InTheZone());
+        BaseMod.addCard(new StylePoints());
+        BaseMod.addCard(new ImpossibleTurn());
+        BaseMod.addCard(new NeedForSpeed());
+        BaseMod.addCard(new SafeDriving());
+        BaseMod.addCard(new Nitrus());
+        BaseMod.addCard(new SpeedDemon());
+
+        //BaseMod.addCard(new InControl());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -380,6 +389,15 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(SpeedDemon.ID);
+        UnlockTracker.unlockCard(Nitrus.ID);
+        UnlockTracker.unlockCard(SafeDriving.ID);
+        UnlockTracker.unlockCard(NeedForSpeed.ID);
+        UnlockTracker.unlockCard(ImpossibleTurn.ID);
+        UnlockTracker.unlockCard(StylePoints.ID);
+        UnlockTracker.unlockCard(RacingSpirit.ID);
+        UnlockTracker.unlockCard(InTheZone.ID);
+        //UnlockTracker.unlockCard(InControl.ID);
         UnlockTracker.unlockCard(Zoom.ID);
         UnlockTracker.unlockCard(Tmph.ID);
         UnlockTracker.unlockCard(Twenty.ID);

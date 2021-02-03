@@ -138,5 +138,11 @@
       "brake"
     ],
     "DESCRIPTION": "Draw 1 less card at the start of your turn for each Brake."
+  },
+  {
+    "NAMES": [
+      "drift"
+    ],
+    "DESCRIPTION": "At the end of the turn, gain block and deal damage to all enemies equal to your Drift, then lose half your Drift. If you did not play a Drift card this turn, lose all of it instead. "
   }
 ]

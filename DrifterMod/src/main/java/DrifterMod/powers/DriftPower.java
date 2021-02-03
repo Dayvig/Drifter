@@ -123,6 +123,11 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         super.onApplyPower(power, target, source);
         if (power.ID.equals(DriftPower.POWER_ID)){
+            //Applies drifting if it doesn't already exist
+            if (!this.owner.hasPower(DriftingPower.POWER_ID)){
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftingPower(this.owner, this.owner, 1),1));
+            }
+            //Applies an extra stack of Drift that doesn't trigger this effect again if you have extra traction.
             if (this.owner.hasPower(TractionPower.POWER_ID)){
                 DriftPower tmp = (DriftPower)power;
                 if (!tmp.hasTraction) {
@@ -140,10 +145,6 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
         }
         CardCrawlGame.music.fadeOutTempBGM();
         CardCrawlGame.music.unsilenceBGM();
-    }
-
-    public void onCombatEnd(){
-
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

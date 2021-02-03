@@ -18,7 +18,7 @@
         "DrifterMod:DriftingPower": {
                 "NAME": "Drifting...",
                 "DESCRIPTIONS": [
-                        "Maintains your drift. If you don't have this, lose all your Drift at the end of the turn.",
+                        "Maintains your drift. If you don't have this, lose all your Drift at the end of the turn instead of half.",
                         "",
                         ""
                 ]
@@ -26,9 +26,9 @@
         "DrifterMod:DriftPower": {
                 "NAME": "Drift",
                 "DESCRIPTIONS": [
-                        "Gain #b block and deal #b damage to all enemies at the end of the turn.",
-                        "",
-                        ""
+                        "Gain #b block and deal #b",
+                        " damage to all enemies at the end of the turn, then lose half your Drift.",
+                        " damage to all enemies at the end of the turn, then lose half your Drift."
                 ]
         },
         "DrifterMod:TempRetainPower": {
@@ -125,6 +125,22 @@
                         "Draw #b",
                         " extra cards at the start of your turn. If you have 3 or more #ySpeed-up gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only.",
                         " extra cards at the start of your turn. If you have 3 or more #ySpeed-up gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only."
+                ]
+        },
+        "DrifterMod:InControlPower": {
+                "NAME": "In Control",
+                "DESCRIPTIONS": [
+                        "Gain #b",
+                        " [E] for each card discarded this turn only.",
+                        " [E] for each card discarded this turn only."
+                ]
+        },
+        "DrifterMod:CoolPower": {
+                "NAME": "In the Zone",
+                "DESCRIPTIONS": [
+                        "Gain #b",
+                        " Block when you draw a card.",
+                        " Block when you draw a card."
                 ]
         }
 }
