@@ -174,9 +174,6 @@ public class TheDrifter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(PerfectBalance.ID);
-        retVal.add(PerfectBalance.ID);
-        retVal.add(TractionTires.ID);
         retVal.add(DriftKing.ID);
 
 

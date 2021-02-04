@@ -380,6 +380,11 @@ public class DrifterMod implements
         BaseMod.addCard(new SafeDriving());
         BaseMod.addCard(new Nitrus());
         BaseMod.addCard(new SpeedDemon());
+        BaseMod.addCard(new HighSpeed());
+        BaseMod.addCard(new SpeedBurst());
+        BaseMod.addCard(new PedalTo());
+        BaseMod.addCard(new Recklessness());
+        BaseMod.addCard(new FireTrail());
 
         //BaseMod.addCard(new InControl());
 
@@ -389,6 +394,11 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(FireTrail.ID);
+        UnlockTracker.unlockCard(Recklessness.ID);
+        UnlockTracker.unlockCard(PedalTo.ID);
+        UnlockTracker.unlockCard(SpeedBurst.ID);
+        UnlockTracker.unlockCard(HighSpeed.ID);
         UnlockTracker.unlockCard(SpeedDemon.ID);
         UnlockTracker.unlockCard(Nitrus.ID);
         UnlockTracker.unlockCard(SafeDriving.ID);

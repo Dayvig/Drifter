@@ -56,9 +56,9 @@
                 ]
         },
         "DrifterMod:TempMaxHandSizeInc": {
-                "NAME": "Temp Max Hand Size",
+                "NAME": "Overdraw",
                 "DESCRIPTIONS": [
-                        "Increase your Max Hand size by #b until next turn.",
+                        "While your hand is not full, draw 1 card and lose 1 Overdraw until your hand is full. Overdraw: #b",
                         "",
                         ""
                 ]
@@ -141,6 +141,14 @@
                         "Gain #b",
                         " Block when you draw a card.",
                         " Block when you draw a card."
+                ]
+        },
+        "DrifterMod:FireTrailPower": {
+                "NAME": "Flame Trail Power",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, deal #b",
+                        " damage to all enemies for each Overdraw.",
+                        " damage to all enemies for each Overdraw."
                 ]
         }
 }

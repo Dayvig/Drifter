@@ -4,6 +4,7 @@ DrifterMod\powers\DriftingPower.class
 DrifterMod\cards\Strike.class
 DrifterMod\potions\PlaceholderPotion.class
 DrifterMod\cards\Fender.class
+DrifterMod\cards\PedalTo.class
 DrifterMod\cards\Swerve.class
 DrifterMod\actions\EurobeatAction.class
 DrifterMod\powers\AeroPower.class
@@ -31,6 +32,7 @@ DrifterMod\cards\Brake.class
 DrifterMod\powers\BalancePower.class
 DrifterMod\events\IdentityCrisisEvent.class
 DrifterMod\cards\RacingSpirit.class
+DrifterMod\cards\Recklessness.class
 DrifterMod\cards\SpinOut.class
 DrifterMod\actions\SwapCardAction.class
 DrifterMod\powers\CoolPower.class
@@ -57,9 +59,11 @@ DrifterMod\cards\ThermalEngine.class
 DrifterMod\cards\CornerHug.class
 DrifterMod\powers\DriftNextTurnPower.class
 DrifterMod\Patches\ConscriptPatch$ShowCardAndObtainEffectPatch.class
+DrifterMod\powers\FireTrailPower.class
 DrifterMod\orbs\DefaultOrb.class
 DrifterMod\interfaces\hasOverdrawTrigger.class
 DrifterMod\util\TextureLoader.class
+DrifterMod\cards\FireTrail.class
 DrifterMod\cards\ImpossibleTurn.class
 DrifterMod\cards\OneOFive.class
 DrifterMod\cards\AbstractDynamicCard.class
@@ -73,6 +77,7 @@ DrifterMod\powers\ThornsDownPower.class
 DrifterMod\cards\Dejavu.class
 DrifterMod\cards\Ninety.class
 DrifterMod\powers\Speedup.class
+DrifterMod\cards\SpeedBurst.class
 DrifterMod\cards\AbstractDefaultCard.class
 DrifterMod\relics\BottledPlaceholderRelic.class
 DrifterMod\util\IDCheckDontTouchPls.class
@@ -87,6 +92,7 @@ DrifterMod\powers\InControlPower.class
 DrifterMod\characters\TheDrifter.class
 DrifterMod\powers\ZoomPower.class
 DrifterMod\cards\HardPass.class
+DrifterMod\cards\HighSpeed.class
 DrifterMod\variables\DefaultSecondMagicNumber.class
 DrifterMod\powers\DamageNextTurnPower.class
 DrifterMod\powers\OverdrawNextTurn.class

@@ -17,7 +17,8 @@
   },
   "DrifterMod:Accelerate": {
     "NAME": "Accelerate",
-    "DESCRIPTION": "Draw and Retain !M! cards."
+    "DESCRIPTION": "driftermod:Speedup. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "driftermod:Speedup."
   },
   "DrifterMod:Brake": {
     "NAME": "Brake",
@@ -52,8 +53,8 @@
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
   },
   "DrifterMod:Tmph": {
-    "NAME": "Speed-up",
-    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL (Discard 2 more cards and double this card's damage with each driftermod:Speedup.)"
+    "NAME": "20 MPH",
+    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage with each driftermod:Speedup. )"
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
@@ -121,7 +122,7 @@
     "DESCRIPTION": "driftermod:Drift 2 NL Next turn, deal !D! damage to all enemies for each card in your hand plus your Overdraw."
   },
   "DrifterMod:EatMyDust": {
-    "NAME": "Eat My Dust",
+    "NAME": "Overtake",
     "DESCRIPTION": "Discard 3 cards to Draw !M! cards next turn."
   },
   "DrifterMod:ThermalEngine": {
@@ -190,5 +191,26 @@
   "DrifterMod:SpeedDemon": {
     "NAME": "Speed Demon",
     "DESCRIPTION": "driftermod:Speedup. NL Deal !M! damage for each driftermod:Speedup. NL ( !D! Damage. )"
+  },
+  "DrifterMod:HighSpeed": {
+    "NAME": "Speed Drifting",
+    "DESCRIPTION": "driftermod:Drift !M! for each driftermod:Speedup.",
+    "UPGRADE_DESCRIPTION": "driftermod:Drift !M! for each driftermod:Speedup. NL driftermod:Speedup."
+  },
+  "DrifterMod:SpeedBurst": {
+    "NAME": "Speed Burst",
+    "DESCRIPTION": "Draw !M! cards. NL Retain !M! cards this turn."
+  },
+  "DrifterMod:PedalTo": {
+    "NAME": "Floor It!",
+    "DESCRIPTION": "Draw !M! cards."
+  },
+  "DrifterMod:Recklessness": {
+    "NAME": "Recklessness",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vulnerable."
+  },
+  "DrifterMod:FireTrail": {
+    "NAME": "Flame Trail",
+    "DESCRIPTION": "At the start of your turn, deal !M! damage to all enemies for each Overdraw."
   }
 }

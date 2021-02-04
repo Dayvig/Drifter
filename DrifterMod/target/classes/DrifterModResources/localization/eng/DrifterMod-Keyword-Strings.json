@@ -137,7 +137,7 @@
     "NAMES": [
       "brake"
     ],
-    "DESCRIPTION": "Draw 1 less card at the start of your turn for each Brake."
+    "DESCRIPTION": "Draw 1 less card at the start of your next turn for each Brake."
   },
   {
     "NAMES": [
