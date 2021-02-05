@@ -67,7 +67,7 @@ public class Twenty extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADE_BLOCK);
+            upgradeBlock(UPGRADE_BLOCK);
             initializeDescription();
         }
     }

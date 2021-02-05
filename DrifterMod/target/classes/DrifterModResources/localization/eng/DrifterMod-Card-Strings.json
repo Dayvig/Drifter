@@ -30,7 +30,7 @@
   },
   "DrifterMod:SpinOut": {
     "NAME": "Spin Out",
-    "DESCRIPTION": "Gain !M! Thorns for each driftermod:Drift for one turn. NL Lose your driftermod:Drift."
+    "DESCRIPTION": "Gain !M! Block for each driftermod:Drift. NL Gain !M! Thorns for each driftermod:Drift for one turn. NL Lose your driftermod:Drift."
   },
   "DrifterMod:Ninety": {
     "NAME": "90 Degree Turn",
@@ -212,5 +212,17 @@
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
     "DESCRIPTION": "At the start of your turn, deal !M! damage to all enemies for each Overdraw."
+  },
+  "DrifterMod:Dangerous": {
+    "NAME": "Dangerous Game",
+    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each Vulnerable you have."
+  },
+  "DrifterMod:Underdog": {
+    "NAME": "Underdog",
+    "DESCRIPTION": "Unplayable. NL When this is discarded, add it to your hand. NL If this is the only card in your hand at any time, draw a card. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When this is discarded, add it to your hand. NL If this is the only card in your hand at any time, draw a card.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this."
+    ]
   }
 }

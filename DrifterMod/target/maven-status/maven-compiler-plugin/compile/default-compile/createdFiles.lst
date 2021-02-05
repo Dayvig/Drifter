@@ -52,6 +52,7 @@ DrifterMod\cards\BigCrash.class
 DrifterMod\cards\Accelerate.class
 DrifterMod\actions\OverdrawEnergyAction.class
 DrifterMod\DrifterMod.class
+DrifterMod\cards\Dangerous.class
 DrifterMod\cards\StylePoints.class
 DrifterMod\cards\Tmph.class
 DrifterMod\cards\SpeedDemon.class
@@ -96,6 +97,7 @@ DrifterMod\cards\HighSpeed.class
 DrifterMod\variables\DefaultSecondMagicNumber.class
 DrifterMod\powers\DamageNextTurnPower.class
 DrifterMod\powers\OverdrawNextTurn.class
+DrifterMod\cards\Underdog.class
 DrifterMod\Patches\OverdrawPatch.class
 DrifterMod\cards\FortyFive.class
 DrifterMod\cards\Zoom.class

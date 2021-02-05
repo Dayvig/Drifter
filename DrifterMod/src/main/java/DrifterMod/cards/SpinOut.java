@@ -9,6 +9,7 @@ import DrifterMod.powers.ThornsDownPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -57,6 +58,7 @@ public class SpinOut extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(DriftPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p.getPower(DriftPower.POWER_ID).amount * magicNumber));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber * p.getPower(DriftPower.POWER_ID).amount), magicNumber * p.getPower(DriftPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsDownPower(p, p, magicNumber * p.getPower(DriftPower.POWER_ID).amount), magicNumber * p.getPower(DriftPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftPower.POWER_ID));
