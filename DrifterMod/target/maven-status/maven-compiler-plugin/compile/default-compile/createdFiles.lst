@@ -102,5 +102,6 @@ DrifterMod\Patches\OverdrawPatch.class
 DrifterMod\cards\FortyFive.class
 DrifterMod\cards\Zoom.class
 DrifterMod\cards\UTurn.class
+DrifterMod\cards\BurnRubber.class
 DrifterMod\powers\ThermalPower.class
 DrifterMod\cards\EatMyDust.class

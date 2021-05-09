@@ -144,5 +144,10 @@
       "drift"
     ],
     "DESCRIPTION": "At the end of the turn, gain block and deal damage to all enemies equal to your Drift, then lose half your Drift. If you did not play a Drift card this turn, lose all of it instead. "
-  }
+  },{
+  "NAMES": [
+    "overdraw"
+  ],
+  "DESCRIPTION": "If you hand is not full, you lose 1 Overdraw and draw 1 card until it is."
+}
 ]

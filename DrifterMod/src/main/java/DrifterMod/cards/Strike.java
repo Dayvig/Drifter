@@ -21,7 +21,7 @@ public class Strike extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Strike.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("strike.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -46,7 +46,6 @@ public class Strike extends AbstractDynamicCard {
     public Strike() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
-        this.tags.add(BASIC_STRIKE);
         this.tags.add(CardTags.STRIKE);
     }
 

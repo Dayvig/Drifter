@@ -74,7 +74,7 @@
   },
   "DrifterMod:NightsOnFire": {
     "NAME": "Nights of Fire",
-    "DESCRIPTION": "Deal !D! damage plus !M! for each Overdraw. NL (Deals !DrifterMod:M2! damage)"
+    "DESCRIPTION": "Deal !D! damage plus !M! for each driftermod:Overdraw. NL (Deals !DrifterMod:M2! damage)"
   },
   "DrifterMod:GasGasGas": {
     "NAME": "Gas Gas Gas",
@@ -102,7 +102,7 @@
   },
   "DrifterMod:PolePosition": {
     "NAME": "Pole Position",
-    "DESCRIPTION": "If you have Overdraw, deal !D! damage and gain !B! Block."
+    "DESCRIPTION": "If you have driftermod:Overdraw, deal !D! damage and gain !B! Block."
   },
   "DrifterMod:OneOFive": {
     "NAME": "105 Degree Turn",
@@ -127,7 +127,7 @@
   },
   "DrifterMod:ThermalEngine": {
     "NAME": "Thermal Engine",
-    "DESCRIPTION": "At the start of your turn if you have Overdraw, gain [E]"
+    "DESCRIPTION": "At the start of your turn if you have driftermod:Overdraw, gain [E]"
   },
   "DrifterMod:Kachow": {
     "NAME": "Headlight Flash",
@@ -152,7 +152,7 @@
   },
   "DrifterMod:BigCrash": {
     "NAME": "Hyper Crash",
-    "DESCRIPTION": "Deal damage equal to 3 times your driftermod:Total-Hand to all enemies. Discard your hand and lose all Overdraw. NL ( !D! damage. )"
+    "DESCRIPTION": "Deal damage equal to 3 times your driftermod:Total-Hand to all enemies. Discard your hand and lose all driftermod:Overdraw. NL ( !D! damage. )"
   },
   "DrifterMod:InControl": {
     "NAME": "In Control",
@@ -211,7 +211,7 @@
   },
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
-    "DESCRIPTION": "At the start of your turn, deal !M! damage to all enemies for each Overdraw."
+    "DESCRIPTION": "At the start of your turn, deal !M! damage to all enemies for each driftermod:Overdraw."
   },
   "DrifterMod:Dangerous": {
     "NAME": "Dangerous Game",
@@ -224,5 +224,9 @@
     "EXTENDED_DESCRIPTION": [
       "I can't play this."
     ]
+  },
+  "DrifterMod:BurnRubber": {
+    "NAME": "Burn Rubber",
+    "DESCRIPTION": "Deal !D! damage."
   }
 }

@@ -387,6 +387,8 @@ public class DrifterMod implements
         BaseMod.addCard(new FireTrail());
         BaseMod.addCard(new Dangerous());
         BaseMod.addCard(new Underdog());
+        BaseMod.addCard(new BurnRubber());
+        BaseMod.addCard(new PolePosition());
 
         //BaseMod.addCard(new InControl());
 
@@ -447,6 +449,8 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(AeroChassis.ID);
         UnlockTracker.unlockCard(PerfectBalance.ID);
         UnlockTracker.unlockCard(Dejavu.ID);
+        UnlockTracker.unlockCard(BurnRubber.ID);
+        UnlockTracker.unlockCard(PolePosition.ID);
 
         logger.info("Done adding cards!");
     }
