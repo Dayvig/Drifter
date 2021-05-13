@@ -1,7 +1,6 @@
 package DrifterMod.characters;
 
 import DrifterMod.DrifterMod;
-import DrifterMod.actions.EuroBeatStartAction;
 import DrifterMod.actions.EurobeatAction;
 import DrifterMod.cards.*;
 import DrifterMod.powers.DriftingPower;
@@ -298,18 +297,6 @@ public class TheDrifter extends CustomPlayer {
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
         r = (int) (Math.random() * 3);
-        switch (TheDrifter.r){
-            case 0:
-                AbstractDungeon.actionManager.addToBottom(new EuroBeatStartAction((new TempMusic("Gas", false)));
-
-                return;
-            case 1:
-                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("NightFire"));
-                return;
-            case 2:
-                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Dejavu"));
-                return;
-            default:
     }
 
     @Override

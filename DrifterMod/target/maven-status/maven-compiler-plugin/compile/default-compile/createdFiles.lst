@@ -1,5 +1,4 @@
 DrifterMod\actions\OverdrawCardAction.class
-DrifterMod\actions\RemoveEuroBeatAction.class
 DrifterMod\Patches\EurobeatPatch.class
 DrifterMod\powers\DriftingPower.class
 DrifterMod\cards\Strike.class
