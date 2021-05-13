@@ -6,14 +6,14 @@ import DrifterMod.powers.DamageNextTurnPower;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+
+import java.util.ArrayList;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
@@ -34,35 +34,37 @@ public class UTurn extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
+    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardTarget TARGET = CardTarget.ALL;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 3;  // COST = ${COST}
-
-    private static final int DAMAGE = 2;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DAMAGE = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-    private static final int MAGIC = 0;
-
+    private static final int UPGRADED_COST = 2;
     // /STAT DECLARATION/
 
 
     public UTurn() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        baseDamage = damage = DAMAGE;
-        baseMagicNumber = magicNumber = MAGIC;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
+        if (p.hasPower(DriftPower.POWER_ID)){
+
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, p.getPower(DriftPower.POWER_ID).amount));
+            ArrayList<AbstractMonster> mo = AbstractDungeon.getCurrRoom().monsters.monsters;
+            int[] tmp = new int[mo.size()];
+            int i;
+            for(i = 0; i < tmp.length; ++i) {
+                tmp[i] = p.getPower(DriftPower.POWER_ID).amount;
+            }
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, tmp, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, p.getPower(DriftPower.POWER_ID).amount)));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftPower.POWER_ID));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,2), 2));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DamageNextTurnPower(p, p, damage, multiDamage)));
     }
 
 
@@ -71,7 +73,7 @@ public class UTurn extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

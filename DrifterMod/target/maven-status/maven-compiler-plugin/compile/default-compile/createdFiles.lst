@@ -1,4 +1,5 @@
 DrifterMod\actions\OverdrawCardAction.class
+DrifterMod\actions\RemoveEuroBeatAction.class
 DrifterMod\Patches\EurobeatPatch.class
 DrifterMod\powers\DriftingPower.class
 DrifterMod\cards\Strike.class
@@ -17,7 +18,9 @@ DrifterMod\cards\Kachow.class
 DrifterMod\powers\DexterityNextTurnPower.class
 DrifterMod\cards\Nitrus.class
 DrifterMod\Patches\ConscriptPatch.class
+DrifterMod\cards\Tailgate.class
 DrifterMod\cards\KeepItSteady.class
+DrifterMod\actions\HardPassAction.class
 DrifterMod\cards\InertialDrift.class
 DrifterMod\powers\TempRetainPower.class
 DrifterMod\cards\AbstractCollectorCard.class
@@ -28,6 +31,7 @@ DrifterMod\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 DrifterMod\Modifiers\EtherealModifier.class
 DrifterMod\cards\SafeDriving.class
 DrifterMod\actions\FastGainBlockAction.class
+DrifterMod\cards\EmergencyBrake.class
 DrifterMod\cards\Brake.class
 DrifterMod\powers\BalancePower.class
 DrifterMod\events\IdentityCrisisEvent.class
@@ -45,10 +49,12 @@ DrifterMod\cards\HairPin.class
 DrifterMod\powers\DriftPower.class
 DrifterMod\powers\DrawDownPower.class
 DrifterMod\cards\GasGasGas.class
+DrifterMod\cards\BrakeDrift.class
 DrifterMod\cards\TopSpeed.class
 DrifterMod\cards\AeroChassis.class
 DrifterMod\cards\Sixty.class
 DrifterMod\cards\BigCrash.class
+DrifterMod\cards\Intimidation.class
 DrifterMod\cards\Accelerate.class
 DrifterMod\actions\OverdrawEnergyAction.class
 DrifterMod\DrifterMod.class
@@ -85,12 +91,15 @@ DrifterMod\util\IDCheckDontTouchPls.class
 DrifterMod\relics\PlaceholderRelic2.class
 DrifterMod\cards\EngineRev.class
 DrifterMod\characters\TheDrifter$Enums.class
+DrifterMod\actions\BrakeDriftAction.class
+DrifterMod\cards\OneThirtyFive.class
 DrifterMod\relics\DefaultClickableRelic.class
 DrifterMod\cards\NightsOnFire.class
 DrifterMod\cards\DefensiveDriving.class
 DrifterMod\powers\DriftStrengthDownPower.class
 DrifterMod\powers\InControlPower.class
 DrifterMod\characters\TheDrifter.class
+DrifterMod\cards\Daredevil.class
 DrifterMod\powers\ZoomPower.class
 DrifterMod\cards\HardPass.class
 DrifterMod\cards\HighSpeed.class

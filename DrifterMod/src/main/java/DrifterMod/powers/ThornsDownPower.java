@@ -53,9 +53,10 @@ public class ThornsDownPower extends AbstractPower implements CloneablePowerInte
     @Override
     public void atEndOfRound() {
         if (AbstractDungeon.player.hasPower(ThornsPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, -this.amount), -this.amount));
-            if (this.owner.getPower(ThornsPower.POWER_ID).amount <= 0){
+            if (this.amount >= AbstractDungeon.player.getPower(ThornsPower.POWER_ID).amount) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ThornsPower.POWER_ID));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new ThornsPower(this.owner, -this.amount), -this.amount));
             }
         }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));

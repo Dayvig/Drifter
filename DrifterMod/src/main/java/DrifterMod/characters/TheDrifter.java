@@ -1,6 +1,8 @@
 package DrifterMod.characters;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.actions.EuroBeatStartAction;
+import DrifterMod.actions.EurobeatAction;
 import DrifterMod.cards.*;
 import DrifterMod.powers.DriftingPower;
 import DrifterMod.powers.TempMaxHandSizeInc;
@@ -15,6 +17,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.audio.TempMusic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -54,7 +57,7 @@ public class TheDrifter extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static PlayerClass THE_QUEEN;
+        public static PlayerClass THE_DRIFTER;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
         public static AbstractCard.CardColor COLOR_YELLOW;
         @SpireEnum(name = "DEFAULT_GRAY_COLOR")
@@ -71,7 +74,7 @@ public class TheDrifter extends CustomPlayer {
     public static final int STARTING_HP = 75;
     public static final int MAX_HP = 75;
     public static final int STARTING_GOLD = 99;
-    public static final int CARD_DRAW = 6;
+    public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
     public static int r = 0;
     // =============== /BASE STATS/ =================
@@ -295,7 +298,18 @@ public class TheDrifter extends CustomPlayer {
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
         r = (int) (Math.random() * 3);
-        //add action here
+        switch (TheDrifter.r){
+            case 0:
+                AbstractDungeon.actionManager.addToBottom(new EuroBeatStartAction((new TempMusic("Gas", false)));
+
+                return;
+            case 1:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("NightFire"));
+                return;
+            case 2:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Dejavu"));
+                return;
+            default:
     }
 
     @Override

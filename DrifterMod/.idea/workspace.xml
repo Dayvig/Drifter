@@ -22,26 +22,47 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04605f36-0fe5-430b-a10e-5f60e368429f" name="Default Changelist" comment="added a card or two&#10;fixed some things&#10;idk">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/BurnRubber.java" afterDir="false" />
+    <list default="true" id="04605f36-0fe5-430b-a10e-5f60e368429f" name="Default Changelist" comment="Adjusting eurobeat">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/EuroBeatStartAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/HardPassAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/RemoveEuroBeatAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/BrakeDrift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Daredevil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/EmergencyBrake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Intimidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/OneThirtyFive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Tailgate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/DrifterMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/DrifterMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Accelerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Accelerate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Brake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Brake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/EngineRev.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/EngineRev.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Fender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Fender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/RacingSpirit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/RacingSpirit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/SafeDriving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/SafeDriving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Strike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Strike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Swerve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Swerve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/EurobeatAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/EurobeatAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/BigCrash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/BigCrash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/BurnRubber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/BurnRubber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/HardPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/HardPass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Kachow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Kachow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Recklessness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Recklessness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/SpinOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/SpinOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/UTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/UTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/characters/TheDrifter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/characters/TheDrifter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/ThornsDownPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/ThornsDownPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/DrifterMod.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/DrifterMod.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/DrifterMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/DrifterMod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Brake.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Brake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/EatMyDust.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/EatMyDust.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Strike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Strike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Accelerate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Accelerate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/BigCrash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/BigCrash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/EngineRev.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/EngineRev.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Fender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Fender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/HardPass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/HardPass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Kachow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Kachow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/SpinOut.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/SpinOut.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Swerve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/Swerve.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/cards/UTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/cards/UTurn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/characters/TheDrifter$Enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/characters/TheDrifter$Enums.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/characters/TheDrifter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/characters/TheDrifter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/powers/DriftPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/powers/DriftPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/powers/ThornsDownPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/powers/ThornsDownPower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -135,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612500796374</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added images to &#10;fender, burn rubber, safe driving, racing spirit, accelerate, Strike&#10;&#10;added burn rubber:&#10;0-cost attack: deal 6(9) damage">
+      <created>1620584977032</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620584977032</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,7 +185,9 @@
     <MESSAGE value="Committing cards from the doc&#10;fixed drift things&#10;implemented many speedup cards" />
     <MESSAGE value="Added some card images&#10;added a few new cards" />
     <MESSAGE value="added a card or two&#10;fixed some things&#10;idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a card or two&#10;fixed some things&#10;idk" />
+    <MESSAGE value="Added images to &#10;fender, burn rubber, safe driving, racing spirit, accelerate, Strike&#10;&#10;added burn rubber:&#10;0-cost attack: deal 6(9) damage" />
+    <MESSAGE value="Adjusting eurobeat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusting eurobeat" />
   </component>
   <component name="WindowStateProjectService">
     <state x="743" y="434" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1612297073282">
@@ -168,41 +198,57 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1612373907215" />
+    <state width="475" height="442" key="Diff.GoToChangePopup" timestamp="1620930177240">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="475" height="442" key="Diff.GoToChangePopup/0.0.1920.1080@0.0.1920.1080" timestamp="1620930177240" />
+    <state x="92" y="92" width="1736" height="896" key="DiffContextDialog" timestamp="1620930453242">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="92" y="92" width="1736" height="896" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1620930453242" />
     <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1612982277877">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1612982277877" />
-    <state width="1860" height="251" key="GridCell.Tab.0.bottom" timestamp="1620577183314">
+    <state width="1877" height="251" key="GridCell.Tab.0.bottom" timestamp="1620933215174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1620577183314" />
-    <state width="1860" height="251" key="GridCell.Tab.0.center" timestamp="1620577183314">
+    <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1620933215174" />
+    <state width="1877" height="251" key="GridCell.Tab.0.center" timestamp="1620933215174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="251" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1620577183314" />
-    <state width="1860" height="251" key="GridCell.Tab.0.left" timestamp="1620577183314">
+    <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1620933215174" />
+    <state width="1877" height="251" key="GridCell.Tab.0.left" timestamp="1620933215174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="251" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1620577183314" />
-    <state width="1860" height="251" key="GridCell.Tab.0.right" timestamp="1620577183314">
+    <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1620933215174" />
+    <state width="1877" height="251" key="GridCell.Tab.0.right" timestamp="1620933215174">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1860" height="251" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1620577183314" />
+    <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1620933215174" />
     <state x="489" y="195" key="Maven.ArtifactSearchDialog" timestamp="1620574968648">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="489" y="195" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1620574968648" />
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1612388118113">
+    <state x="697" y="242" key="RollbackChangesDialog" timestamp="1620931404899">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1612388118113" />
-    <state x="609" y="259" width="672" height="677" key="run.anything.popup" timestamp="1620577183286">
+    <state x="697" y="242" key="RollbackChangesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1620931404899" />
+    <state x="483" y="413" key="VCS.ChangelistChooser" timestamp="1620930155908">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="609" y="259" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1620577183286" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1612543914008">
+    <state x="483" y="413" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1620930155908" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2" timestamp="1620930481795">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1612543914008" />
+    <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1620930481795" />
+    <state x="609" y="259" width="672" height="677" key="run.anything.popup" timestamp="1620929131742">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="609" y="259" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1620929131742" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1620930347570">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1620930347570" />
   </component>
 </project>

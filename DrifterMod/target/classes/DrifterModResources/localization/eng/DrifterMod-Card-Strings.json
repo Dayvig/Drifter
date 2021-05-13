@@ -50,7 +50,7 @@
   },
   "DrifterMod:HardPass": {
     "NAME": "Hard Pass",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
+    "DESCRIPTION": "Deal !D! damage. If this kills an enemy, driftermod:Speedup."
   },
   "DrifterMod:Tmph": {
     "NAME": "20 MPH",
@@ -119,7 +119,7 @@
   },
   "DrifterMod:UTurn": {
     "NAME": "U-Turn",
-    "DESCRIPTION": "driftermod:Drift 2 NL Next turn, deal !D! damage to all enemies for each card in your hand plus your Overdraw."
+    "DESCRIPTION": "Gain Block and deal damage to all enemies equal to your driftermod:Drift. NL Draw cards next turn equal to your driftermod:Drift. NL Lose your driftermod:Drift."
   },
   "DrifterMod:EatMyDust": {
     "NAME": "Overtake",
@@ -228,5 +228,30 @@
   "DrifterMod:BurnRubber": {
     "NAME": "Burn Rubber",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "DrifterMod:OneThirtyFive": {
+    "NAME": "135 Degree Turn",
+    "DESCRIPTION": "driftermod:Drift !M!. NL This card's Drift is affected by Strength and Dexterity."
+  },
+  "DrifterMod:Tailgate": {
+    "NAME": "Tailgate",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
+  },
+  "DrifterMod:Intimidation": {
+    "NAME": "Intimidation",
+    "DESCRIPTION": "Apply your Vulnerable to all enemies."
+  },
+  "DrifterMod:Daredevil": {
+    "NAME": "Daredevil",
+    "DESCRIPTION": "Deal !D! damage. NL If you aren't Vulnerable, exhaust this card."
+  },
+  "DrifterMod:EmergencyBrake": {
+    "NAME": "Emergency Brake",
+    "DESCRIPTION": "Retain. NL Gain !B! Block for each driftermod:Speedup. NL Lose your driftermod:Speedup."
+  },
+  "DrifterMod:BrakeDrift": {
+    "NAME": "Brake-Drift",
+    "DESCRIPTION": "Discard any number of cards. driftermod:Drift 2 for each card discarded. NL driftermod:Brake 2.",
+    "UPGRADE_DESCRIPTION": "Discard any number of cards. driftermod:Drift 2 for each card discarded."
   }
 }

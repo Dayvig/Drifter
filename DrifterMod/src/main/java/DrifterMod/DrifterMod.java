@@ -4,7 +4,6 @@ import DrifterMod.cards.*;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.events.IdentityCrisisEvent;
 import DrifterMod.potions.PlaceholderPotion;
-import DrifterMod.powers.BalancePower;
 import DrifterMod.relics.BottledPlaceholderRelic;
 import DrifterMod.relics.DefaultClickableRelic;
 import DrifterMod.relics.PlaceholderRelic2;
@@ -239,12 +238,12 @@ public class DrifterMod implements
 
     @Override
     public void receiveEditCharacters() {
-        logger.info("Beginning to edit characters. " + "Add " + TheDrifter.Enums.THE_QUEEN.toString());
-        BaseMod.addCharacter(new TheDrifter("The Queen", TheDrifter.Enums.THE_QUEEN),
-                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDrifter.Enums.THE_QUEEN);
+        logger.info("Beginning to edit characters. " + "Add " + TheDrifter.Enums.THE_DRIFTER.toString());
+        BaseMod.addCharacter(new TheDrifter("The Queen", TheDrifter.Enums.THE_DRIFTER),
+                THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDrifter.Enums.THE_DRIFTER);
 
         receiveEditPotions();
-        logger.info("Added " + TheDrifter.Enums.THE_QUEEN.toString());
+        logger.info("Added " + TheDrifter.Enums.THE_DRIFTER.toString());
     }
 
     // =============== /LOAD THE CHARACTER/ =================
@@ -291,7 +290,7 @@ public class DrifterMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "Enum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDrifter.Enums.THE_QUEEN);
+        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDrifter.Enums.THE_DRIFTER);
 
         logger.info("Done editing potions");
     }
@@ -389,6 +388,13 @@ public class DrifterMod implements
         BaseMod.addCard(new Underdog());
         BaseMod.addCard(new BurnRubber());
         BaseMod.addCard(new PolePosition());
+        BaseMod.addCard(new OneThirtyFive());
+        BaseMod.addCard(new UTurn());
+        BaseMod.addCard(new Tailgate());
+        BaseMod.addCard(new Intimidation());
+        BaseMod.addCard(new Daredevil());
+        BaseMod.addCard(new EmergencyBrake());
+        BaseMod.addCard(new BrakeDrift());
 
         //BaseMod.addCard(new InControl());
 
@@ -451,6 +457,13 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(Dejavu.ID);
         UnlockTracker.unlockCard(BurnRubber.ID);
         UnlockTracker.unlockCard(PolePosition.ID);
+        UnlockTracker.unlockCard(OneThirtyFive.ID);
+        UnlockTracker.unlockCard(UTurn.ID);
+        UnlockTracker.unlockCard(Tailgate.ID);
+        UnlockTracker.unlockCard(Intimidation.ID);
+        UnlockTracker.unlockCard(Daredevil.ID);
+        UnlockTracker.unlockCard(EmergencyBrake.ID);
+        UnlockTracker.unlockCard(BrakeDrift.ID);
 
         logger.info("Done adding cards!");
     }

@@ -49,7 +49,7 @@ public class BurnRubber extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DAMAGE = 3;
 
 

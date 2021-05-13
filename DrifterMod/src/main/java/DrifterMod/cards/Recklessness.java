@@ -44,7 +44,7 @@ public class Recklessness extends AbstractDynamicCard {
 
     private static final int COST = 0;  // COST = ${COST}
 
-    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 9;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final int MAGIC = 1;
 
