@@ -31,7 +31,7 @@ public class InertialDrift extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;  //   since they don't change much.
+    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
@@ -50,18 +50,7 @@ public class InertialDrift extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(DriftPower.POWER_ID)){
-
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, p.getPower(DriftPower.POWER_ID).amount));
-            ArrayList<AbstractMonster> mo = AbstractDungeon.getCurrRoom().monsters.monsters;
-            int[] tmp = new int[mo.size()];
-            int i;
-            for(i = 0; i < tmp.length; ++i) {
-                tmp[i] = p.getPower(DriftPower.POWER_ID).amount;
-            }
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, tmp, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, p.getPower(DriftPower.POWER_ID).amount), p.getPower(DriftPower.POWER_ID).amount));
-        }
     }
 
     @Override

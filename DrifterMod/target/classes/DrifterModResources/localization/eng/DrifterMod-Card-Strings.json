@@ -26,7 +26,7 @@
   },
   "DrifterMod:HairPin": {
     "NAME": "Hairpin Turn",
-    "DESCRIPTION": "If you have no Drift, deal !D! damage and driftermod:Drift !M!"
+    "DESCRIPTION": "Deal !D! damage. NL If you have no driftermod:Drift, drifermod:Drift !M!."
   },
   "DrifterMod:SpinOut": {
     "NAME": "Spin Out",
@@ -252,12 +252,19 @@
   },
   "DrifterMod:BrakeDrift": {
     "NAME": "Brake-Drift",
-    "DESCRIPTION": "Discard any number of cards. driftermod:Drift 2 for each card discarded. NL driftermod:Brake 2.",
-    "UPGRADE_DESCRIPTION": "Discard any number of cards. driftermod:Drift 2 for each card discarded."
+    "DESCRIPTION": "Discard any number of cards. driftermod:Drift !M! and driftermod:Brake 1 for each discarded."
   },
   "DrifterMod:Exhaustpipe": {
     "NAME": "Exhaust Pipe",
     "DESCRIPTION": "Exhaust up to !M! cards.",
     "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Gain !B! Block."
+  },
+  "DrifterMod:Pursuit": {
+    "NAME": "Pursuit",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Draw !DrifterMod:M2! cards."
+  },
+  "DrifterMod:Burnout": {
+    "NAME": "Pursuit",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Add a Burn to your discard pile. NL If you have no driftermod:Speedup, Exhaust, otherwise driftermod:Slow-down."
   }
 }

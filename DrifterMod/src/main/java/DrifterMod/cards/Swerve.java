@@ -37,8 +37,8 @@ public class Swerve extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
     public static final int UPGRADE_MAGIC = 2;
-    private static final int MAGIC = 4;
-    private static final int COST = 0;
+    private static final int MAGIC = 7;
+    private static final int COST = 1;
 
     // Hey want a second magic/damage/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable

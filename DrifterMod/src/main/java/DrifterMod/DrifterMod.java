@@ -397,6 +397,9 @@ public class DrifterMod implements
         BaseMod.addCard(new BrakeDrift());
         BaseMod.addCard(new Exhaustpipe());
         BaseMod.addCard(new InControl());
+        BaseMod.addCard(new Pursuit());
+        BaseMod.addCard(new Burnout());
+        BaseMod.addCard(new Bravery());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -404,6 +407,9 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(Bravery.ID);
+        UnlockTracker.unlockCard(Burnout.ID);
+        UnlockTracker.unlockCard(Pursuit.ID);
         UnlockTracker.unlockCard(Exhaustpipe.ID);
         UnlockTracker.unlockCard(Underdog.ID);
         UnlockTracker.unlockCard(Dangerous.ID);

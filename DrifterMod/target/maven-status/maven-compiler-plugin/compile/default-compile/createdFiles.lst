@@ -74,6 +74,7 @@ DrifterMod\cards\FireTrail.class
 DrifterMod\cards\ImpossibleTurn.class
 DrifterMod\cards\OneOFive.class
 DrifterMod\cards\AbstractDynamicCard.class
+DrifterMod\cards\Pursuit.class
 DrifterMod\Patches\OverdrawPatch$Speed.class
 DrifterMod\powers\TempMaxHandSizeInc.class
 DrifterMod\cards\InTheZone.class
@@ -92,6 +93,7 @@ DrifterMod\relics\PlaceholderRelic2.class
 DrifterMod\cards\EngineRev.class
 DrifterMod\characters\TheDrifter$Enums.class
 DrifterMod\actions\BrakeDriftAction.class
+DrifterMod\cards\Burnout.class
 DrifterMod\cards\OneThirtyFive.class
 DrifterMod\relics\DefaultClickableRelic.class
 DrifterMod\cards\NightsOnFire.class

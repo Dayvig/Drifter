@@ -26,11 +26,11 @@
   },
   "DrifterMod:HairPin": {
     "NAME": "Hairpin Turn",
-    "DESCRIPTION": "Deal !D! damage. NL If you have no driftermod:Drift, drifermod:Drift !M!."
+    "DESCRIPTION": "Deal !D! damage. NL If you have no driftermod:Drift, driftermod:Drift !M!."
   },
   "DrifterMod:SpinOut": {
     "NAME": "Spin Out",
-    "DESCRIPTION": "Gain !M! Block for each driftermod:Drift. NL Gain !M! Thorns for each driftermod:Drift for one turn. NL Lose your driftermod:Drift."
+    "DESCRIPTION": "Gain 1 Block for each driftermod:Drift. NL Gain !M! Thorns for each driftermod:Drift for one turn. NL Lose your driftermod:Drift."
   },
   "DrifterMod:Ninety": {
     "NAME": "90 Degree Turn",
@@ -58,7 +58,7 @@
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
-    "DESCRIPTION": "Gain block and deal damage to all enemies equal to your driftermod:Drift. NL Double your driftermod:Drift. NL Exhaust"
+    "DESCRIPTION": "Double your driftermod:Drift. NL Exhaust"
   },
   "DrifterMod:DefensiveDriving": {
     "NAME": "Defensive Driving",
@@ -70,7 +70,8 @@
   },
   "DrifterMod:TractionTires": {
     "NAME": "Traction Tires",
-    "DESCRIPTION": "When you driftermod:Drift, driftermod:Drift !M! extra."
+    "DESCRIPTION": "Gain !M! driftermod:Traction.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! driftermod:Traction."
   },
   "DrifterMod:NightsOnFire": {
     "NAME": "Nights of Fire",
@@ -258,5 +259,21 @@
     "NAME": "Exhaust Pipe",
     "DESCRIPTION": "Exhaust up to !M! cards.",
     "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Gain !B! Block."
+  },
+  "DrifterMod:Pursuit": {
+    "NAME": "Pursuit",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Draw !DrifterMod:M2! cards."
+  },
+  "DrifterMod:Burnout": {
+    "NAME": "Burnout",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Add a Burn to your discard pile. NL If you have no driftermod:Speedup, Exhaust. Otherwise lose 1 driftermod:Speedup."
+  },
+  "DrifterMod:Bravery": {
+    "NAME": "Bravery",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain 3 Vulnerable."
+  },
+  "DrifterMod:Manuever": {
+    "NAME": "Maneuver",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! driftermod:Traction this turn only."
   }
 }

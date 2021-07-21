@@ -27,7 +27,7 @@ public class TractionTires extends AbstractDynamicCard {
     // /TEXT DECLARATION/
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-    private static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // STAT DECLARATION
 
@@ -37,7 +37,6 @@ public class TractionTires extends AbstractDynamicCard {
     public static final AbstractCard.CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 1;  // COST = ${COST}
     // /STAT DECLARATION/
 
@@ -45,6 +44,7 @@ public class TractionTires extends AbstractDynamicCard {
     public TractionTires() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.isInnate = false;
     }
 
     // Actions the card should do.
@@ -58,7 +58,8 @@ public class TractionTires extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            this.isInnate = true;
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
