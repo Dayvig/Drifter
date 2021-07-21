@@ -37,7 +37,8 @@ public class BrakeDrift extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 2;  // COST = ${COST}
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
 
 
@@ -49,10 +50,7 @@ public class BrakeDrift extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawDownPower(p, p, 2)));
-        }
-        AbstractDungeon.actionManager.addToBottom(new BrakeDriftAction(p, true));
+        AbstractDungeon.actionManager.addToBottom(new BrakeDriftAction(p, true, magicNumber));
     }
 
 
@@ -62,7 +60,7 @@ public class BrakeDrift extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

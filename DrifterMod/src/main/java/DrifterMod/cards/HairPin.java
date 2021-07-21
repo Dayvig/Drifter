@@ -40,7 +40,7 @@ public class HairPin extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 7;
     private static final int UPGRADE_PLUS_DAMAGE = 5;
     private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = 2;
@@ -58,14 +58,9 @@ public class HairPin extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m){
-        super.canUse(p, m);
-        this.cantUseMessage = "Don't wanna spin out!";
-        return !p.hasPower(DriftPower.POWER_ID);
+        if (!p.hasPower(DriftPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, magicNumber), magicNumber));
+        }
     }
 
     //Upgraded stats.

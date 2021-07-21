@@ -40,6 +40,7 @@ public class Accelerate extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 1;  // COST = ${COST}
+    private static final int UPGRADED_COST = 0;  // COST = ${COST}
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
 
@@ -63,8 +64,7 @@ public class Accelerate extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.exhaust = false;
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

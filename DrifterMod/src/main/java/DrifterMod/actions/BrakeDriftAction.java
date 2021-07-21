@@ -5,6 +5,7 @@
 
 package DrifterMod.actions;
 
+import DrifterMod.powers.DrawDownPower;
 import DrifterMod.powers.DriftPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -25,17 +26,20 @@ public class BrakeDriftAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private boolean notchip;
+    int am;
 
     public BrakeDriftAction(AbstractCreature source) {
         this.setValues(AbstractDungeon.player, source, -1);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.notchip = false;
+        am = 1;
     }
 
-    public BrakeDriftAction(AbstractCreature source, boolean notChip) {
+    public BrakeDriftAction(AbstractCreature source, boolean notChip, int amount) {
         this.setValues(AbstractDungeon.player, source, -1);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.notchip = notChip;
+        am = amount;
     }
 
     public void update() {
@@ -51,7 +55,8 @@ public class BrakeDriftAction extends AbstractGameAction {
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
-                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftPower(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*2), AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*2));
+                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftPower(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*am), AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*am));
+                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawDownPower(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()), AbstractDungeon.handCardSelectScreen.selectedCards.group.size()));
                     Iterator var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
 
                     while(var1.hasNext()) {

@@ -24,7 +24,7 @@ public class BobWeave extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(BobWeave.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("bobweave.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
@@ -41,7 +41,7 @@ public class BobWeave extends AbstractDynamicCard {
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int BLOCK = 8;    // DAMAGE = ${DAMAGE}
+    private static final int BLOCK = 6;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_BLOCK = 2;
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
@@ -70,6 +70,7 @@ public class BobWeave extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             this.rawDescription = EXTENDED_DESCRIPTION[1];
             initializeDescription();
         }

@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 
 import java.util.ArrayList;
 
@@ -143,8 +145,23 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.owner.getPower(DriftStrengthDownPower.POWER_ID).amount), -this.owner.getPower(DriftStrengthDownPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DriftStrengthDownPower.POWER_ID));
         }
-        CardCrawlGame.music.fadeOutTempBGM();
-        CardCrawlGame.music.unsilenceBGM();
+        boolean isFightingLagavulin = false;
+        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom){
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
+                if (mo.name.equals("Lagavulin")){
+                    isFightingLagavulin = true;
+                }
+            }
+        }
+        if (isFightingLagavulin){
+            System.out.println("test");
+            CardCrawlGame.music.fadeOutTempBGM();
+            CardCrawlGame.music.playTempBgmInstantly("ELITE");
+        }
+        else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom) {
+            CardCrawlGame.music.fadeOutTempBGM();
+            CardCrawlGame.music.unsilenceBGM();
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

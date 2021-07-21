@@ -2,11 +2,10 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.InControlPower;
-import DrifterMod.powers.ZoomPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import DrifterMod.powers.Speedup;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,21 +14,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
-import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class InControl extends AbstractDynamicCard {
+public class Exhaustpipe extends AbstractDynamicCard {
 
-    // TEXT DECLARATION
-
-    public static final String ID = DrifterMod.makeID(InControl.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    // /TEXT DECLARATION/
+    public static final String ID = DrifterMod.makeID(Exhaustpipe.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
+    public static final String IMG = makeCardPath("enginerev.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
-
-    // /TEXT DECLARATION/
 
 
     // STAT DECLARATION
@@ -40,23 +34,28 @@ public class InControl extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
 
     private static final int COST = 0;  // COST = ${COST}
-    private static final int MAGIC = 2;
+
+    private static final int MAGIC = 2;    // DAMAGE = ${DAMAGE}
+    private static final int BLOCK = 0;
+    private static final int UPGRADE_PLUS_BLOCK = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
 
-    public InControl() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public Exhaustpipe() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseBlock = block = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
-        this.selfRetain = false;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DiscardAction(p, p, this.magicNumber, false));
-        this.addToBot(new GainEnergyAction(1));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(magicNumber, false, true, true));
+        if (upgraded){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+        }
     }
 
 
@@ -65,7 +64,7 @@ public class InControl extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.selfRetain = true;
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

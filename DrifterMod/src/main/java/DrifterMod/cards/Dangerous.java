@@ -70,8 +70,19 @@ public class Dangerous extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        if (p.hasPower(VulnerablePower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(p.getPower(VulnerablePower.POWER_ID).amount));
+    }
+
+    public void applyPowers(){
+        if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)){
+            if (!this.freeToPlayOnce){
+                int a = AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount;
+                if (COST - a < costForTurn){
+                    costForTurn = COST - a;
+                    if (costForTurn < 0){
+                        costForTurn = 0;
+                    }
+                }
+            }
         }
     }
 

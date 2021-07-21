@@ -26,7 +26,7 @@
   },
   "DrifterMod:HairPin": {
     "NAME": "Hairpin Turn",
-    "DESCRIPTION": "If you have no Drift, deal !D! damage and driftermod:Drift !M!"
+    "DESCRIPTION": "Deal !D! damage. NL If you have no driftermod:Drift, drifermod:Drift !M!."
   },
   "DrifterMod:SpinOut": {
     "NAME": "Spin Out",
@@ -152,11 +152,12 @@
   },
   "DrifterMod:BigCrash": {
     "NAME": "Hyper Crash",
-    "DESCRIPTION": "Deal damage equal to 3 times your driftermod:Total-Hand to all enemies. Discard your hand and lose all driftermod:Overdraw. NL ( !D! damage. )"
+    "DESCRIPTION": "Deal damage equal to 3 times your driftermod:Total-Hand. Discard your hand and lose all driftermod:Overdraw. NL ( !D! damage. )"
   },
   "DrifterMod:InControl": {
     "NAME": "In Control",
-    "DESCRIPTION": "When you discard a card this turn, gain [E] "
+    "DESCRIPTION": "Discard !M! cards. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard !M! cards. NL Gain [E]."
   },
   "DrifterMod:RacingSpirit": {
     "NAME": "Racing Spirit",
@@ -215,7 +216,7 @@
   },
   "DrifterMod:Dangerous": {
     "NAME": "Dangerous Game",
-    "DESCRIPTION": "Deal !D! damage. NL Gain [E] for each Vulnerable you have."
+    "DESCRIPTION": "Deal !D! damage. NL This costs 1 less for each Vulnerable you have."
   },
   "DrifterMod:Underdog": {
     "NAME": "Underdog",
@@ -251,7 +252,11 @@
   },
   "DrifterMod:BrakeDrift": {
     "NAME": "Brake-Drift",
-    "DESCRIPTION": "Discard any number of cards. driftermod:Drift 2 for each card discarded. NL driftermod:Brake 2.",
-    "UPGRADE_DESCRIPTION": "Discard any number of cards. driftermod:Drift 2 for each card discarded."
+    "DESCRIPTION": "Discard any number of cards. driftermod:Drift !M! and driftermod:Brake 1 for each discarded."
+  },
+  "DrifterMod:Exhaustpipe": {
+    "NAME": "Exhaust Pipe",
+    "DESCRIPTION": "Exhaust up to !M! cards.",
+    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Gain !B! Block."
   }
 }
