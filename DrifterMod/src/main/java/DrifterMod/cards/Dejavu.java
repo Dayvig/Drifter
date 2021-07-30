@@ -2,15 +2,10 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.Modifiers.EtherealModifier;
-import DrifterMod.actions.SwapCardAction;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.DriftPower;
-import DrifterMod.powers.TempRetainPower;
 import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,7 +33,7 @@ public class Dejavu extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
+    public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 0;  // COST = ${COST}
     private AbstractCard cardToUse;

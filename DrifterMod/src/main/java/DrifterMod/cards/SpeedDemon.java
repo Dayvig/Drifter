@@ -2,14 +2,10 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.DexterityNextTurnPower;
-import DrifterMod.powers.DriftPower;
-import DrifterMod.powers.DriftingPower;
 import DrifterMod.powers.Speedup;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -44,7 +40,7 @@ public class SpeedDemon extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
+    public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
     private static final int MAGIC = 4;
     private static final int COST = 1;
     private static final int UPGRADE_MAGIC = 2;

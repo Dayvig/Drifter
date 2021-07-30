@@ -177,13 +177,36 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     private void DriftDamage(){
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.amount));
         ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
-        int[] tmp = new int[m.size()];
-        int i;
-        for(i = 0; i < tmp.length; ++i) {
-            tmp[i] = this.amount;
+
+        if ( this.owner.hasPower(DriftSweepPower.POWER_ID) ) {
+            int[] tmp = new int[m.size()];
+            int i;
+            for(i = 0; i < tmp.length; ++i) {
+                tmp[i] = this.amount;
+            }
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, tmp,
+                    DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, tmp,
-                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+        else {
+        AbstractMonster lowest = m.get(0);
+        for (AbstractMonster i : m){
+            if (lowest.isDead || lowest.isDying || lowest.halfDead) {
+                lowest = i;
+            }
+            if (!i.halfDead && !i.isDying && !i.isDead) {
+                if (i.currentHealth < lowest.currentHealth) {
+                    lowest = i;
+                } else if (i.currentHealth == lowest.currentHealth) {
+                    if (Math.random() * 2 > 1) {
+                        lowest = i;
+                    }
+                }
+            }
+        }
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(lowest,
+                new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS),
+                AbstractGameAction.AttackEffect.FIRE));
+        }
     }
 
     @Override

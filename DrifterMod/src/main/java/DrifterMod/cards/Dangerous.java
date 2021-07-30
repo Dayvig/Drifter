@@ -2,26 +2,15 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.DriftPower;
-import DrifterMod.powers.OverdrawNextTurn;
-import DrifterMod.powers.Speedup;
-import DrifterMod.powers.TempMaxHandSizeInc;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-
-import java.util.ArrayList;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -49,7 +38,7 @@ public class Dangerous extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
+    public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 3;
     private static final int MAGIC = 1;
@@ -73,6 +62,7 @@ public class Dangerous extends AbstractDynamicCard {
     }
 
     public void applyPowers(){
+        this.costForTurn = COST;
         if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)){
             if (!this.freeToPlayOnce){
                 int a = AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount;

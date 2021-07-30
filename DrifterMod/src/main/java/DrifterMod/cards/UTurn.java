@@ -2,9 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.DamageNextTurnPower;
 import DrifterMod.powers.DriftPower;
-import DrifterMod.powers.DriftingPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,8 +14,6 @@ import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import java.util.ArrayList;
 
 import static DrifterMod.DrifterMod.makeCardPath;
-import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
-import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
 
 // public class ${NAME} extends AbstractDynamicCard
 public class UTurn extends AbstractDynamicCard {
@@ -37,7 +33,7 @@ public class UTurn extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ALL;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
+    public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 3;  // COST = ${COST}
     private static final int UPGRADED_COST = 2;

@@ -213,7 +213,7 @@
   },
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
-    "DESCRIPTION": "At the start of your turn, deal !M! damage to all enemies for each driftermod:Overdraw."
+    "DESCRIPTION": "At the end of the turn, deal !M! damage to all enemies for each driftermod:Overdraw."
   },
   "DrifterMod:Dangerous": {
     "NAME": "Dangerous Game",
@@ -245,7 +245,7 @@
   },
   "DrifterMod:Daredevil": {
     "NAME": "Daredevil",
-    "DESCRIPTION": "Deal !D! damage. NL If you aren't Vulnerable, exhaust this card."
+    "DESCRIPTION": "Deal !D! damage 3 times. NL If you aren't Vulnerable, exhaust this card."
   },
   "DrifterMod:EmergencyBrake": {
     "NAME": "Emergency Brake",
@@ -275,5 +275,34 @@
   "DrifterMod:Manuever": {
     "NAME": "Maneuver",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! driftermod:Traction this turn only."
+  },
+  "DrifterMod:Recovery": {
+    "NAME": "Recovery",
+    "DESCRIPTION": "Discard any number of cards, lose 1 Vulnerable for each.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard any number of cards, lose 1 Vulnerable for each."
+  },
+  "DrifterMod:SweepingTurn": {
+    "NAME": "Sweeping Turn",
+    "DESCRIPTION": "Drift !M! NL Your Drift hits all enemies this turn."
+  },
+  "DrifterMod:GearUp": {
+    "NAME": "Gear Up",
+    "DESCRIPTION": "Gain !M! Strength. NL Lose !M! Dexterity. NL Gain 1 Speedup."
+  },
+  "DrifterMod:GearDown": {
+    "NAME": "Gear Down",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !M! Strength. NL Gain !M! Dexterity. NL Lose 1 Speedup."
+  },
+  "DrifterMod:GearShift": {
+    "NAME": "Gear Shift",
+    "DESCRIPTION": "Gear-up. NL OR NL Gear-down."
+  },
+  "DrifterMod:OneEighty": {
+    "NAME": "180 Degree Turn",
+    "DESCRIPTION": "Drift !M!. NL Gain !DrifterMod:M2! driftermod:Traction next turn."
+  },
+  "DrifterMod:Determined": {
+    "NAME": "Determined",
+    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, this costs 1."
   }
 }

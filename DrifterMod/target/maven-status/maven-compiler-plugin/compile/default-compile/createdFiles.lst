@@ -1,4 +1,5 @@
 DrifterMod\actions\OverdrawCardAction.class
+DrifterMod\cards\GearShift.class
 DrifterMod\Patches\EurobeatPatch.class
 DrifterMod\powers\DriftingPower.class
 DrifterMod\cards\Strike.class
@@ -10,6 +11,7 @@ DrifterMod\actions\EurobeatAction.class
 DrifterMod\powers\AeroPower.class
 DrifterMod\cards\Twenty.class
 DrifterMod\cards\TractionTires.class
+DrifterMod\cards\Bravery.class
 DrifterMod\cards\DriftKing.class
 DrifterMod\cards\PerfectBalance.class
 DrifterMod\powers\DexDownPower.class
@@ -30,6 +32,7 @@ DrifterMod\relics\BottledPlaceholderField$MakeStatEquivalentCopy.class
 DrifterMod\Modifiers\EtherealModifier.class
 DrifterMod\cards\SafeDriving.class
 DrifterMod\actions\FastGainBlockAction.class
+DrifterMod\cards\SweepingTurn.class
 DrifterMod\cards\EmergencyBrake.class
 DrifterMod\cards\Brake.class
 DrifterMod\powers\BalancePower.class
@@ -41,12 +44,15 @@ DrifterMod\actions\SwapCardAction.class
 DrifterMod\powers\CoolPower.class
 DrifterMod\cards\Defend.class
 DrifterMod\variables\DefaultThirdMagicNumber.class
+DrifterMod\cards\GearDown.class
 DrifterMod\cards\PolePosition.class
+DrifterMod\cards\OneEighty.class
 DrifterMod\powers\TractionPower.class
 DrifterMod\interfaces\CardAddedToDeck.class
 DrifterMod\cards\HairPin.class
 DrifterMod\powers\DriftPower.class
 DrifterMod\powers\DrawDownPower.class
+DrifterMod\cards\Manuever.class
 DrifterMod\cards\GasGasGas.class
 DrifterMod\cards\BrakeDrift.class
 DrifterMod\cards\TopSpeed.class
@@ -58,10 +64,12 @@ DrifterMod\cards\Intimidation.class
 DrifterMod\cards\Accelerate.class
 DrifterMod\actions\OverdrawEnergyAction.class
 DrifterMod\DrifterMod.class
+DrifterMod\cards\GearUp.class
 DrifterMod\cards\Dangerous.class
 DrifterMod\cards\StylePoints.class
 DrifterMod\cards\Tmph.class
 DrifterMod\cards\SpeedDemon.class
+DrifterMod\cards\Determined.class
 DrifterMod\cards\ThermalEngine.class
 DrifterMod\cards\CornerHug.class
 DrifterMod\powers\DriftNextTurnPower.class
@@ -75,6 +83,7 @@ DrifterMod\cards\ImpossibleTurn.class
 DrifterMod\cards\OneOFive.class
 DrifterMod\cards\AbstractDynamicCard.class
 DrifterMod\cards\Pursuit.class
+DrifterMod\cards\Recovery.class
 DrifterMod\Patches\OverdrawPatch$Speed.class
 DrifterMod\powers\TempMaxHandSizeInc.class
 DrifterMod\cards\InTheZone.class
@@ -85,8 +94,10 @@ DrifterMod\powers\ThornsDownPower.class
 DrifterMod\cards\Dejavu.class
 DrifterMod\cards\Ninety.class
 DrifterMod\powers\Speedup.class
+DrifterMod\powers\DriftSweepPower.class
 DrifterMod\cards\SpeedBurst.class
 DrifterMod\cards\AbstractDefaultCard.class
+DrifterMod\powers\TractionDownPower.class
 DrifterMod\relics\BottledPlaceholderRelic.class
 DrifterMod\util\IDCheckDontTouchPls.class
 DrifterMod\relics\PlaceholderRelic2.class
@@ -101,8 +112,10 @@ DrifterMod\cards\DefensiveDriving.class
 DrifterMod\powers\DriftStrengthDownPower.class
 DrifterMod\powers\InControlPower.class
 DrifterMod\characters\TheDrifter.class
+DrifterMod\powers\TractionNextTurn.class
 DrifterMod\cards\Daredevil.class
 DrifterMod\powers\ZoomPower.class
+DrifterMod\actions\RecoveryAction.class
 DrifterMod\cards\HardPass.class
 DrifterMod\cards\HighSpeed.class
 DrifterMod\variables\DefaultSecondMagicNumber.class

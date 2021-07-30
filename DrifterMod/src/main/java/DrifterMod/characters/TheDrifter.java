@@ -1,12 +1,8 @@
 package DrifterMod.characters;
 
 import DrifterMod.DrifterMod;
-import DrifterMod.actions.EurobeatAction;
 import DrifterMod.cards.*;
-import DrifterMod.powers.DriftingPower;
-import DrifterMod.powers.TempMaxHandSizeInc;
 import DrifterMod.relics.DefaultClickableRelic;
-import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
@@ -15,30 +11,23 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.audio.TempMusic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import static DrifterMod.DrifterMod.*;
-import static DrifterMod.characters.TheDrifter.Enums.COLOR_YELLOW;
+import static DrifterMod.characters.TheDrifter.Enums.COLOR_DARKBLUE;
 
 //Wiki-page https://github.com/daviscook477/BaseMod/wiki/Custom-Characters
 //and https://github.com/daviscook477/BaseMod/wiki/Migrating-to-5.0
@@ -57,9 +46,9 @@ public class TheDrifter extends CustomPlayer {
     public static class Enums {
         @SpireEnum
         public static PlayerClass THE_DRIFTER;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR") // These two HAVE to have the same absolutely identical name.
-        public static AbstractCard.CardColor COLOR_YELLOW;
-        @SpireEnum(name = "DEFAULT_GRAY_COLOR")
+        @SpireEnum(name = "DRIFTER_BLUE") // These two HAVE to have the same absolutely identical name.
+        public static AbstractCard.CardColor COLOR_DARKBLUE;
+        @SpireEnum(name = "DRIFTER_BLUE")
         @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
@@ -104,7 +93,6 @@ public class TheDrifter extends CustomPlayer {
             "DrifterModResources/images/char/defaultCharacter/orb/layer4d.png",
             "DrifterModResources/images/char/defaultCharacter/orb/layer5d.png",};
 
-    //public static HornetCounter hornetctr;
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
@@ -185,7 +173,6 @@ public class TheDrifter extends CustomPlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(DefaultClickableRelic.ID);
         return retVal;
     }
 
@@ -213,13 +200,13 @@ public class TheDrifter extends CustomPlayer {
     // Should return the card color enum to be associated with your character.
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return COLOR_YELLOW;
+        return COLOR_DARKBLUE;
     }
 
     // Should return a color object to be used to color the trail of moving cards
     @Override
     public Color getCardTrailColor() {
-        return DrifterMod.QUEEN_YELLOW;
+        return DrifterMod.DRIFTER_BLUE;
     }
 
     // Should return a BitmapFont object that you can use to customize how your
@@ -256,14 +243,14 @@ public class TheDrifter extends CustomPlayer {
     // Should return a Color object to be used to color the miniature card images in run history.
     @Override
     public Color getCardRenderColor() {
-        return DrifterMod.QUEEN_YELLOW;
+        return DrifterMod.DRIFTER_BLUE;
     }
 
     // Should return a Color object to be used as screen tint effect when your
     // character attacks the heart.
     @Override
     public Color getSlashAttackColor() {
-        return DrifterMod.QUEEN_YELLOW;
+        return DrifterMod.DRIFTER_BLUE;
     }
 
     // Should return an AttackEffect array of any size greater than 0. These effects

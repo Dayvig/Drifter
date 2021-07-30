@@ -2,8 +2,6 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.OverdrawNextTurn;
-import basemod.devcommands.draw.Draw;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -36,9 +34,10 @@ public class EngineRev extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = TheDrifter.Enums.COLOR_YELLOW;
+    public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 2;  // COST = ${COST}
+    private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 1;
 
@@ -65,7 +64,7 @@ public class EngineRev extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

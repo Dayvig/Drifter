@@ -75,7 +75,7 @@ public class DrifterMod implements
 
     // Colors (RGB)
     // Character Color
-    public static final Color QUEEN_YELLOW = CardHelper.getColor(247.0f, 219.0f, 93.0f);
+    public static final Color DRIFTER_BLUE = CardHelper.getColor(24f, 24f, 111f);
 
     // Potion Colors in RGB
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
@@ -170,10 +170,10 @@ public class DrifterMod implements
         // Change their locations to reflect your actual ID rather than theDefault. They get loaded before getID is a thing.
         logger.info("Done subscribing");
 
-        logger.info("Creating the color " + TheDrifter.Enums.COLOR_YELLOW.toString());
+        logger.info("Creating the color " + TheDrifter.Enums.COLOR_DARKBLUE.toString());
 
-        BaseMod.addColor(TheDrifter.Enums.COLOR_YELLOW, QUEEN_YELLOW, QUEEN_YELLOW, QUEEN_YELLOW,
-                QUEEN_YELLOW, QUEEN_YELLOW, QUEEN_YELLOW, QUEEN_YELLOW,
+        BaseMod.addColor(TheDrifter.Enums.COLOR_DARKBLUE, DRIFTER_BLUE, DRIFTER_BLUE, DRIFTER_BLUE,
+                DRIFTER_BLUE, DRIFTER_BLUE, DRIFTER_BLUE, DRIFTER_BLUE,
                 ATTACK_DEFAULT_GRAY, SKILL_DEFAULT_GRAY, POWER_DEFAULT_GRAY, ENERGY_ORB_QUEEN,
                 ATTACK_DEFAULT_GRAY_PORTRAIT, SKILL_DEFAULT_GRAY_PORTRAIT, POWER_DEFAULT_GRAY_PORTRAIT,
                 ENERGY_ORB_DEFAULT_GRAY_PORTRAIT, ENERGY_ORB_QUEEN_SMALL);
@@ -305,8 +305,8 @@ public class DrifterMod implements
         logger.info("Adding relics");
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDrifter.Enums.COLOR_YELLOW);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDrifter.Enums.COLOR_YELLOW);
+        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDrifter.Enums.COLOR_DARKBLUE);
+        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDrifter.Enums.COLOR_DARKBLUE);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -400,6 +400,11 @@ public class DrifterMod implements
         BaseMod.addCard(new Pursuit());
         BaseMod.addCard(new Burnout());
         BaseMod.addCard(new Bravery());
+        BaseMod.addCard(new Recovery());
+        BaseMod.addCard(new SweepingTurn());
+        BaseMod.addCard(new GearShift());
+        BaseMod.addCard(new OneEighty());
+        BaseMod.addCard(new Determined());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -407,6 +412,11 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(Determined.ID);
+        UnlockTracker.unlockCard(OneEighty.ID);
+        UnlockTracker.unlockCard(GearShift.ID);
+        UnlockTracker.unlockCard(SweepingTurn.ID);
+        UnlockTracker.unlockCard(Recovery.ID);
         UnlockTracker.unlockCard(Bravery.ID);
         UnlockTracker.unlockCard(Burnout.ID);
         UnlockTracker.unlockCard(Pursuit.ID);

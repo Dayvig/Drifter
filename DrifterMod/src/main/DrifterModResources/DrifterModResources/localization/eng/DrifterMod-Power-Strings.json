@@ -26,9 +26,9 @@
         "DrifterMod:DriftPower": {
                 "NAME": "Drift",
                 "DESCRIPTIONS": [
-                        "Gain #b block and deal #b",
-                        " damage to all enemies at the end of the turn, then lose half your Drift.",
-                        " damage to all enemies at the end of the turn, then lose half your Drift."
+                        "Gain #b Block and deal #b",
+                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your Drift.",
+                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your Drift."
                 ]
         },
         "DrifterMod:TempRetainPower": {

@@ -5,7 +5,7 @@ import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,15 +13,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static DrifterMod.DrifterMod.makePowerPath;
 
-public class TractionDownPower extends AbstractPower implements CloneablePowerInterface  {
+//Gain 1 dex for the turn for each card played.
 
+public class DriftSweepPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = DrifterMod.makeID("TractionDownPower");
+    public static final String POWER_ID = DrifterMod.makeID("DriftSweepPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -31,7 +32,7 @@ public class TractionDownPower extends AbstractPower implements CloneablePowerIn
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
 
-    public TractionDownPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public DriftSweepPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -39,8 +40,7 @@ public class TractionDownPower extends AbstractPower implements CloneablePowerIn
         this.amount = amount;
         this.source = source;
 
-        type = AbstractPower.PowerType.DEBUFF;
-        isTurnBased = false;
+        type = PowerType.BUFF;
 
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -50,19 +50,11 @@ public class TractionDownPower extends AbstractPower implements CloneablePowerIn
         updateDescription();
     }
 
-    @Override
-    public void atEndOfRound() {
-        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)) {
-            if (this.amount >= AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, TractionPower.POWER_ID));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionPower(this.owner, this.owner, -this.amount), -this.amount));
-            }
-        }
+    public void atEndOfTurn(final boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
+        // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         if (amount == 1) {
@@ -74,6 +66,6 @@ public class TractionDownPower extends AbstractPower implements CloneablePowerIn
 
     @Override
     public AbstractPower makeCopy() {
-        return new TractionDownPower(owner, source, amount);
+        return new DriftSweepPower(owner, source, amount);
     }
 }

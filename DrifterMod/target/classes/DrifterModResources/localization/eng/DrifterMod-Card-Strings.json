@@ -26,11 +26,11 @@
   },
   "DrifterMod:HairPin": {
     "NAME": "Hairpin Turn",
-    "DESCRIPTION": "Deal !D! damage. NL If you have no driftermod:Drift, drifermod:Drift !M!."
+    "DESCRIPTION": "Deal !D! damage. NL If you have no driftermod:Drift, driftermod:Drift !M!."
   },
   "DrifterMod:SpinOut": {
     "NAME": "Spin Out",
-    "DESCRIPTION": "Gain !M! Block for each driftermod:Drift. NL Gain !M! Thorns for each driftermod:Drift for one turn. NL Lose your driftermod:Drift."
+    "DESCRIPTION": "Gain 1 Block for each driftermod:Drift. NL Gain !M! Thorns for each driftermod:Drift for one turn. NL Lose your driftermod:Drift."
   },
   "DrifterMod:Ninety": {
     "NAME": "90 Degree Turn",
@@ -58,7 +58,7 @@
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
-    "DESCRIPTION": "Gain block and deal damage to all enemies equal to your driftermod:Drift. NL Double your driftermod:Drift. NL Exhaust"
+    "DESCRIPTION": "Double your driftermod:Drift. NL Exhaust"
   },
   "DrifterMod:DefensiveDriving": {
     "NAME": "Defensive Driving",
@@ -70,7 +70,8 @@
   },
   "DrifterMod:TractionTires": {
     "NAME": "Traction Tires",
-    "DESCRIPTION": "When you driftermod:Drift, driftermod:Drift !M! extra."
+    "DESCRIPTION": "Gain !M! driftermod:Traction.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! driftermod:Traction."
   },
   "DrifterMod:NightsOnFire": {
     "NAME": "Nights of Fire",
@@ -212,7 +213,7 @@
   },
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
-    "DESCRIPTION": "At the start of your turn, deal !M! damage to all enemies for each driftermod:Overdraw."
+    "DESCRIPTION": "At the end of the turn, deal !M! damage to all enemies for each driftermod:Overdraw."
   },
   "DrifterMod:Dangerous": {
     "NAME": "Dangerous Game",
@@ -244,7 +245,7 @@
   },
   "DrifterMod:Daredevil": {
     "NAME": "Daredevil",
-    "DESCRIPTION": "Deal !D! damage. NL If you aren't Vulnerable, exhaust this card."
+    "DESCRIPTION": "Deal !D! damage 3 times. NL If you aren't Vulnerable, exhaust this card."
   },
   "DrifterMod:EmergencyBrake": {
     "NAME": "Emergency Brake",
@@ -264,7 +265,44 @@
     "DESCRIPTION": "Apply !M! Vulnerable. NL Draw !DrifterMod:M2! cards."
   },
   "DrifterMod:Burnout": {
-    "NAME": "Pursuit",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL Add a Burn to your discard pile. NL If you have no driftermod:Speedup, Exhaust, otherwise driftermod:Slow-down."
+    "NAME": "Burnout",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Add a Burn to your discard pile. NL If you have no driftermod:Speedup, Exhaust. Otherwise lose 1 driftermod:Speedup."
+  },
+  "DrifterMod:Bravery": {
+    "NAME": "Bravery",
+    "DESCRIPTION": "Gain !M! Strength. NL Gain 3 Vulnerable."
+  },
+  "DrifterMod:Manuever": {
+    "NAME": "Maneuver",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! driftermod:Traction this turn only."
+  },
+  "DrifterMod:Recovery": {
+    "NAME": "Recovery",
+    "DESCRIPTION": "Discard any number of cards, lose 1 Vulnerable for each.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard any number of cards, lose 1 Vulnerable for each."
+  },
+  "DrifterMod:SweepingTurn": {
+    "NAME": "Sweeping Turn",
+    "DESCRIPTION": "Drift !M! NL Your Drift hits all enemies this turn."
+  },
+  "DrifterMod:GearUp": {
+    "NAME": "Gear Up",
+    "DESCRIPTION": "Gain !M! Strength. NL Lose !M! Dexterity. NL Gain 1 Speedup."
+  },
+  "DrifterMod:GearDown": {
+    "NAME": "Gear Down",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !M! Strength. NL Gain !M! Dexterity. NL Lose 1 Speedup."
+  },
+  "DrifterMod:GearShift": {
+    "NAME": "Gear Shift",
+    "DESCRIPTION": "Gear-up. NL OR NL Gear-down."
+  },
+  "DrifterMod:OneEighty": {
+    "NAME": "180 Degree Turn",
+    "DESCRIPTION": "Drift !M!. NL Gain !DrifterMod:M2! driftermod:Traction next turn."
+  },
+  "DrifterMod:Determined": {
+    "NAME": "Determined",
+    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, this costs 1."
   }
 }

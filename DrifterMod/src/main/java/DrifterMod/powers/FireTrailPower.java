@@ -55,7 +55,7 @@ public class FireTrailPower extends AbstractPower implements CloneablePowerInter
     }
 
     @Override
-    public void atStartOfTurn(){
+    public void atEndOfTurn(final boolean isPlayer) {
         if (this.owner.hasPower(TempMaxHandSizeInc.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount * this.amount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
