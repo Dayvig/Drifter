@@ -1,9 +1,11 @@
 DrifterMod\actions\OverdrawCardAction.class
+DrifterMod\cards\RoadRage.class
 DrifterMod\cards\GearShift.class
 DrifterMod\Patches\EurobeatPatch.class
 DrifterMod\powers\DriftingPower.class
 DrifterMod\cards\Strike.class
 DrifterMod\potions\PlaceholderPotion.class
+DrifterMod\actions\RoadRageAction.class
 DrifterMod\cards\Fender.class
 DrifterMod\cards\PedalTo.class
 DrifterMod\cards\Swerve.class
@@ -16,6 +18,7 @@ DrifterMod\cards\DriftKing.class
 DrifterMod\cards\PerfectBalance.class
 DrifterMod\powers\DexDownPower.class
 DrifterMod\cards\Kachow.class
+DrifterMod\powers\TractionRestorePower.class
 DrifterMod\powers\DexterityNextTurnPower.class
 DrifterMod\cards\Nitrus.class
 DrifterMod\Patches\ConscriptPatch.class
@@ -34,6 +37,7 @@ DrifterMod\cards\SafeDriving.class
 DrifterMod\actions\FastGainBlockAction.class
 DrifterMod\cards\SweepingTurn.class
 DrifterMod\cards\EmergencyBrake.class
+DrifterMod\actions\SetHPAction.class
 DrifterMod\cards\Brake.class
 DrifterMod\powers\BalancePower.class
 DrifterMod\events\IdentityCrisisEvent.class
@@ -58,10 +62,12 @@ DrifterMod\cards\BrakeDrift.class
 DrifterMod\cards\TopSpeed.class
 DrifterMod\cards\AeroChassis.class
 DrifterMod\cards\Exhaustpipe.class
+DrifterMod\cards\Resolve.class
 DrifterMod\cards\Sixty.class
 DrifterMod\cards\BigCrash.class
 DrifterMod\cards\Intimidation.class
 DrifterMod\cards\Accelerate.class
+DrifterMod\powers\ResolvePower.class
 DrifterMod\actions\OverdrawEnergyAction.class
 DrifterMod\DrifterMod.class
 DrifterMod\cards\GearUp.class
@@ -90,7 +96,9 @@ DrifterMod\cards\InTheZone.class
 DrifterMod\relics\BottledPlaceholderField.class
 DrifterMod\cards\InControl.class
 DrifterMod\cards\NeedForSpeed.class
+DrifterMod\cards\FinalGambit.class
 DrifterMod\powers\ThornsDownPower.class
+DrifterMod\actions\DiscardSpecificCardActionFast.class
 DrifterMod\cards\Dejavu.class
 DrifterMod\cards\Ninety.class
 DrifterMod\powers\Speedup.class
@@ -109,6 +117,7 @@ DrifterMod\cards\OneThirtyFive.class
 DrifterMod\relics\DefaultClickableRelic.class
 DrifterMod\cards\NightsOnFire.class
 DrifterMod\cards\DefensiveDriving.class
+DrifterMod\cards\Rage.class
 DrifterMod\powers\DriftStrengthDownPower.class
 DrifterMod\powers\InControlPower.class
 DrifterMod\characters\TheDrifter.class
@@ -127,5 +136,6 @@ DrifterMod\cards\FortyFive.class
 DrifterMod\cards\Zoom.class
 DrifterMod\cards\UTurn.class
 DrifterMod\cards\BurnRubber.class
+DrifterMod\powers\GambitPower.class
 DrifterMod\powers\ThermalPower.class
 DrifterMod\cards\EatMyDust.class

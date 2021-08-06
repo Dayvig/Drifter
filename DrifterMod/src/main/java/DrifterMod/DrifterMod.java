@@ -405,6 +405,11 @@ public class DrifterMod implements
         BaseMod.addCard(new GearShift());
         BaseMod.addCard(new OneEighty());
         BaseMod.addCard(new Determined());
+        BaseMod.addCard(new Manuever());
+        BaseMod.addCard(new RoadRage());
+        BaseMod.addCard(new Rage());
+        BaseMod.addCard(new FinalGambit());
+        BaseMod.addCard(new Resolve());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -412,6 +417,11 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(Resolve.ID);
+        UnlockTracker.unlockCard(FinalGambit.ID);
+        UnlockTracker.unlockCard(RoadRage.ID);
+        UnlockTracker.unlockCard(Rage.ID);
+        UnlockTracker.unlockCard(Manuever.ID);
         UnlockTracker.unlockCard(Determined.ID);
         UnlockTracker.unlockCard(OneEighty.ID);
         UnlockTracker.unlockCard(GearShift.ID);

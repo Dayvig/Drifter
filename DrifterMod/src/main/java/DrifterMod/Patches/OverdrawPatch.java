@@ -1,5 +1,6 @@
 package DrifterMod.Patches;
 
+import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
 import DrifterMod.powers.TempMaxHandSizeInc;
 import basemod.BaseMod;

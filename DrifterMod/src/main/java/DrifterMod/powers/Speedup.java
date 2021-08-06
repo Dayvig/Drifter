@@ -86,15 +86,19 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, -2),-2));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityNextTurnPower(this.owner, this.owner, 2),2));
             }
+        if (this.amount > 6){
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionPower(this.owner, this.owner, -2),-2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionRestorePower(this.owner, this.owner, 2),2));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + " NL "+ DESCRIPTIONS[3] + " NL "+ DESCRIPTIONS[4] + " NL "+ DESCRIPTIONS[5];
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + " NL "+ DESCRIPTIONS[3] + " NL "+ DESCRIPTIONS[4] + " NL "+ DESCRIPTIONS[5];
         }
     }
 

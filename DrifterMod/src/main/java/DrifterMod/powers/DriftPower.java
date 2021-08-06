@@ -81,6 +81,25 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        if (this.amount == 0) {
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        }
+
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
+
+        if (this.amount <= -999) {
+            this.amount = -999;
+        }
+
+    }
+
+
+    @Override
     public void atEndOfTurn(final boolean isPlayer) {
         if (!this.owner.equals(AbstractDungeon.player)){ return; }
 

@@ -26,6 +26,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DriftSweepPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\characters\TheDrifter.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\orbs\DefaultOrb.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\TractionRestorePower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\DriftKing.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Tailgate.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Patches\ConscriptPatch.java
@@ -61,6 +62,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\TractionTires.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Defend.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DriftPower.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\SetHPAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Manuever.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Underdog.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DriftStrengthDownPower.java
@@ -89,6 +91,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Modifiers\EtherealModifier.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\InControlPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\relics\PlaceholderRelic2.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\ResolvePower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\OneThirtyFive.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Strike.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\BrakeDrift.java
@@ -99,8 +102,10 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DriftingPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\BrakeDriftAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\KeepItSteady.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\DiscardSpecificCardActionFast.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\variables\DefaultCustomVariable.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\interfaces\CardAddedToDeck.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\FinalGambit.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\EatMyDust.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Tmph.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\variables\DefaultThirdMagicNumber.java
@@ -108,10 +113,12 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\BobWeave.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\util\TextureLoader.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\EmergencyBrake.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Resolve.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\BurnRubber.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\AbstractCollectorCard.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\SpeedDemon.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\GearDown.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\RoadRage.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Patches\SpeedupPatch.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DriftNextTurnPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\NightsOnFire.java
@@ -123,8 +130,11 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Patches\OverdrawPatch.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\StylePoints.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Determined.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\RoadRageAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\BalancePower.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\GambitPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\PedalTo.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Kachow.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\ThermalPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\OneOFive.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Rage.java

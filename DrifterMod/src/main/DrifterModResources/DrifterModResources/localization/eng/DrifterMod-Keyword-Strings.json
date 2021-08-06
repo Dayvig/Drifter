@@ -131,7 +131,7 @@
     "NAMES": [
       "speedup"
     ],
-    "DESCRIPTION": "At the start of each turn, draw 1 extra card for each Speedup. NL If you have 3 or more Speedup, also gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only."
+    "DESCRIPTION": "At the start of each turn, draw 1 extra card for each Speedup and gain effects based on your Speed. NL 3+: Gain 1 Vulnerable. NL 5+: Lose 2 Dexterity this turn only. NL 7+: Lose 2 Traction this turn only."
   },
   {
     "NAMES": [

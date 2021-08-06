@@ -13,7 +13,7 @@
   },
   "DrifterMod:KeepItSteady": {
     "NAME": "Keep it Steady",
-    "DESCRIPTION": "If you're Drifting, driftermod:Drift !M!"
+    "DESCRIPTION": "If you're Drifting, NL driftermod:Drift !M!"
   },
   "DrifterMod:Accelerate": {
     "NAME": "Accelerate",
@@ -283,26 +283,45 @@
   },
   "DrifterMod:SweepingTurn": {
     "NAME": "Sweeping Turn",
-    "DESCRIPTION": "Drift !M! NL Your Drift hits all enemies this turn."
+    "DESCRIPTION": "driftermod:Drift !M! NL Your Drift hits all enemies this turn."
   },
   "DrifterMod:GearUp": {
     "NAME": "Gear Up",
-    "DESCRIPTION": "Gain !M! Strength. NL Lose !M! Dexterity. NL Gain 1 Speedup."
+    "DESCRIPTION": "Gain !M! Strength. NL Lose 2 Dexterity. NL Gain 1 driftermod:Speedup."
   },
   "DrifterMod:GearDown": {
     "NAME": "Gear Down",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !M! Strength. NL Gain !M! Dexterity. NL Lose 1 Speedup."
+    "DESCRIPTION": "Gain !B! Block. NL Lose 2 Strength. NL Gain !M! Dexterity. NL Lose 1 driftermod:Speedup."
   },
   "DrifterMod:GearShift": {
     "NAME": "Gear Shift",
-    "DESCRIPTION": "Gear-up. NL OR NL Gear-down."
+    "DESCRIPTION": "Gear-up. NL OR NL Gear-down.",
+    "UPGRADE_DESCRIPTION": "Gear-up+. NL OR NL Gear-down+."
+
   },
   "DrifterMod:OneEighty": {
     "NAME": "180 Degree Turn",
-    "DESCRIPTION": "Drift !M!. NL Gain !DrifterMod:M2! driftermod:Traction next turn."
+    "DESCRIPTION": "driftermod:Drift !M!. NL Gain !DrifterMod:M2! driftermod:Traction next turn."
   },
   "DrifterMod:Determined": {
     "NAME": "Determined",
     "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, this costs 1."
+  },
+  "DrifterMod:RoadRage": {
+    "NAME": "Road Rage",
+    "DESCRIPTION": "Deal !D! damage. NL Discard all Skills in your hand, replace them with RAGE."
+  },
+  "DrifterMod:Rage": {
+    "NAME": "Rage",
+    "DESCRIPTION": "Deal !D! damage. NL Ethereal."
+  },
+  "DrifterMod:FinalGambit": {
+    "NAME": "Final Gambit",
+    "DESCRIPTION": "The first time you would die while Vulnerable, heal to 5% HP.",
+    "UPGRADE_DESCRIPTION": "Retain. NL The first time you would die while Vulnerable, heal to 5% HP."
+  },
+  "DrifterMod:Resolve": {
+    "NAME": "Resolve",
+    "DESCRIPTION": "While you have 2 or fewer cards in hand, gain !M! Strength, Dexterity, and driftermod:Traction."
   }
 }

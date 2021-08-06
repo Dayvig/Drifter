@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import static DrifterMod.DrifterMod.makePowerPath;
 import static com.badlogic.gdx.math.Rectangle.tmp;
@@ -39,15 +41,42 @@ public class TractionPower extends AbstractPower implements CloneablePowerInterf
 
         this.owner = owner;
         this.amount = amount;
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
+
+        if (this.amount <= -999) {
+            this.amount = -999;
+        }
         this.source = source;
         type = PowerType.BUFF;
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
         this.loadRegion("flex");
+        this.canGoNegative = true;
 
         updateDescription();
     }
+
+    @Override
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        if (this.amount == 0) {
+            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        }
+
+        if (this.amount >= 999) {
+            this.amount = 999;
+        }
+
+        if (this.amount <= -999) {
+            this.amount = -999;
+        }
+
+    }
+
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {

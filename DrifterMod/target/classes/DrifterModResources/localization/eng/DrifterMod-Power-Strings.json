@@ -123,8 +123,11 @@
                 "NAME": "Speed-up",
                 "DESCRIPTIONS": [
                         "Draw #b",
-                        " extra cards at the start of your turn. If you have 3 or more #ySpeed-up gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only.",
-                        " extra cards at the start of your turn. If you have 3 or more #ySpeed-up gain 1 Vulnerable. If you have 5 or more, lose 2 Dexterity this turn only."
+                        " extra card at the start of your turn and gain these effects based on your Speedup:",
+                        " extra card at the start of your turn and gain these effects based on your Speedup:",
+                        "3+: Gain 1 Vulnerable.",
+                        "5+: Lose 2 Dexterity this turn only.",
+                        "7+: Lose 2 Traction this turn only."
                 ]
         },
         "DrifterMod:InControlPower": {
@@ -149,6 +152,36 @@
                         "At the start of your turn, deal #b",
                         " damage to all enemies for each Overdraw.",
                         " damage to all enemies for each Overdraw."
+                ]
+        },
+        "DrifterMod:DriftSweepPower": {
+                "NAME": "Drift Sweep",
+                "DESCRIPTIONS": [
+                        "Your Drift hits all enemies."
+                ]
+        },
+        "DrifterMod:GambitPower": {
+                "NAME": "Final Gambit Power",
+                "DESCRIPTIONS": [
+                        "The first #b",
+                        " time you die while Vulnerable, heal to 5% HP.",
+                        " times you die while Vulnerable, heal to 5% HP."
+                ]
+        },
+        "DrifterMod:ResolvePower": {
+                "NAME": "Resolve Power",
+                "DESCRIPTIONS": [
+                        "While you have 2 or fewer cards in hand, gain #b",
+                        " Strength, Dexterity and Traction.",
+                        " Strength, Dexterity and Traction."
+                ]
+        },
+        "DrifterMod:TractionRestorePower": {
+                "NAME": "Traction Next Turn",
+                "DESCRIPTIONS": [
+                        "Gain #b",
+                        " Traction next turn.",
+                        " Traction next turn."
                 ]
         }
 }
