@@ -23,6 +23,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\RacingSpirit.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\ThermalEngine.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Sixty.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\StopEurobeatAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\RiskyApproach.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\GearUp.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\AeroChassis.java
@@ -50,6 +51,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\DrifterMod.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\ActivatePostDrawAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\TempRetainPower.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\UI\Speedometer.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\OverdrawEnergyAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Recovery.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\HairPin.java
@@ -120,6 +122,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\variab
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\PerfectBalance.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\BobWeave.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\util\TextureLoader.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\FastReducePowerAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\EmergencyBrake.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Resolve.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\BurnRubber.java
@@ -136,7 +139,6 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DexDownPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Nitrus.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Patches\OverdrawPatch.java
-C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Music\EurobeatMusic.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\StylePoints.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Determined.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\RoadRageAction.java

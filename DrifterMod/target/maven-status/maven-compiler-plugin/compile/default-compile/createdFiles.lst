@@ -69,6 +69,7 @@ DrifterMod\cards\Resolve.class
 DrifterMod\cards\Sixty.class
 DrifterMod\cards\BigCrash.class
 DrifterMod\powers\SupersonicPower.class
+DrifterMod\actions\FastReducePowerAction.class
 DrifterMod\cards\Intimidation.class
 DrifterMod\cards\Accelerate.class
 DrifterMod\powers\ResolvePower.class
@@ -112,6 +113,7 @@ DrifterMod\powers\DriftSweepPower.class
 DrifterMod\cards\SpeedBurst.class
 DrifterMod\cards\AbstractDefaultCard.class
 DrifterMod\powers\TractionDownPower.class
+DrifterMod\actions\StopEurobeatAction.class
 DrifterMod\relics\BottledPlaceholderRelic.class
 DrifterMod\util\IDCheckDontTouchPls.class
 DrifterMod\relics\PlaceholderRelic2.class
@@ -121,6 +123,7 @@ DrifterMod\actions\BrakeDriftAction.class
 DrifterMod\cards\Burnout.class
 DrifterMod\cards\OneThirtyFive.class
 DrifterMod\relics\DefaultClickableRelic.class
+UI\Speedometer.class
 DrifterMod\cards\NightsOnFire.class
 DrifterMod\cards\DefensiveDriving.class
 DrifterMod\cards\Rage.class
@@ -138,7 +141,6 @@ DrifterMod\variables\DefaultSecondMagicNumber.class
 DrifterMod\powers\DamageNextTurnPower.class
 DrifterMod\powers\OverdrawNextTurn.class
 DrifterMod\cards\Underdog.class
-DrifterMod\Music\EurobeatMusic.class
 DrifterMod\Patches\OverdrawPatch.class
 DrifterMod\cards\FortyFive.class
 DrifterMod\cards\Zoom.class
