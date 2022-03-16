@@ -2,6 +2,7 @@ package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.actions.EurobeatAction;
+import DrifterMod.actions.StopEurobeatAction;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
@@ -147,6 +148,8 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
             //Applies drifting if it doesn't already exist
             if (!this.owner.hasPower(DriftingPower.POWER_ID)){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftingPower(this.owner, this.owner, 1),1));
+                //plays eurobeat if it doesn't already exist
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction(TheDrifter.returnDriftKey()));
             }
             //Applies an extra stack of Drift that doesn't trigger this effect again if you have extra traction.
             if (this.owner.hasPower(TractionPower.POWER_ID)){
@@ -164,23 +167,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.owner.getPower(DriftStrengthDownPower.POWER_ID).amount), -this.owner.getPower(DriftStrengthDownPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DriftStrengthDownPower.POWER_ID));
         }
-        boolean isFightingLagavulin = false;
-        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom){
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters){
-                if (mo.name.equals("Lagavulin")){
-                    isFightingLagavulin = true;
-                }
-            }
-        }
-        if (isFightingLagavulin){
-            System.out.println("test");
-            CardCrawlGame.music.fadeOutTempBGM();
-            CardCrawlGame.music.playTempBgmInstantly("ELITE");
-        }
-        else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom) {
-            CardCrawlGame.music.fadeOutTempBGM();
-            CardCrawlGame.music.unsilenceBGM();
-        }
+        AbstractDungeon.actionManager.addToBottom(new StopEurobeatAction());
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

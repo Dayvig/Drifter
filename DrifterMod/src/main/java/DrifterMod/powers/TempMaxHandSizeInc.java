@@ -1,6 +1,7 @@
 package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.actions.FastReducePowerAction;
 import DrifterMod.actions.OverdrawCardAction;
 import DrifterMod.interfaces.hasOverdrawTrigger;
 import DrifterMod.util.TextureLoader;
@@ -67,11 +68,30 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard c, UseCardAction a){
+    public void onUseCard(AbstractCard c, UseCardAction a){
         overDraw();
     }
 
+    @Override
+    public void onAfterUseCard(AbstractCard c, UseCardAction a){
+        overDraw2();
+    }
+
     private void overDraw(){
+        int k = AbstractDungeon.player.hand.size()-1;
+        int j = this.amount;
+        System.out.println("Handsize: " + k);
+        System.out.println("Amount: " + j);
+        if (k < BaseMod.MAX_HAND_SIZE) {
+            int l = BaseMod.MAX_HAND_SIZE - k;
+            if (l > j){ l = j; }
+            System.out.println("Draw Amount" + l);
+            AbstractDungeon.actionManager.addToBottom(new OverdrawCardAction(this.owner, l));
+            AbstractDungeon.actionManager.addToBottom(new FastReducePowerAction(this.owner, this.owner, this, l));
+        }
+    }
+
+    private void overDraw2(){
         int k = AbstractDungeon.player.hand.size();
         int j = this.amount;
         System.out.println("Handsize: " + k);
@@ -80,8 +100,8 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
             int l = BaseMod.MAX_HAND_SIZE - k;
             if (l > j){ l = j; }
             System.out.println("Draw Amount" + l);
-            AbstractDungeon.actionManager.addToTop(new OverdrawCardAction(this.owner, l));
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, l));
+            AbstractDungeon.actionManager.addToBottom(new OverdrawCardAction(this.owner, l));
+            AbstractDungeon.actionManager.addToBottom(new FastReducePowerAction(this.owner, this.owner, this, l));
         }
     }
 
