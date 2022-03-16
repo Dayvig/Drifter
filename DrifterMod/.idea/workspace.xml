@@ -22,31 +22,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04605f36-0fe5-430b-a10e-5f60e368429f" name="Default Changelist" comment="Added determined, gear shift, 180  &#10;Changed the color">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/DiscardSpecificCardActionFast.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/RoadRageAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/SetHPAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/FinalGambit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Rage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Resolve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/RoadRage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/GambitPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/ResolvePower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/TractionRestorePower.java" afterDir="false" />
+    <list default="true" id="04605f36-0fe5-430b-a10e-5f60e368429f" name="Default Changelist" comment="Added a few cards:&#10;Final gambit, rare power that saves you from death once if you have vulnerable&#10;Road rage, discard card and nob killer&#10;Resolve, power that gives you strength with low hand&#10;cleaned up the powers a bit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/actions/ActivatePostDrawAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/CruiseControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Fierce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Ram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/RiskyApproach.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/SupersonicFire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/CruiseControlPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/SupersonicPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DrifterModResources/DrifterModResources/localization/eng/DrifterMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/DrifterMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/DrifterMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/Patches/OverdrawPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/Patches/OverdrawPatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/DefensiveDriving.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/DefensiveDriving.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftSweepPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftSweepPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftingPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/DriftingPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/InTheZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/InTheZone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Pursuit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/cards/Pursuit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/CoolPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/CoolPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/Speedup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/Speedup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/TractionPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DrifterMod/powers/TractionPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DrifterMod/powers/DriftPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterMod/powers/DriftPower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DrifterModResources/localization/eng/DrifterMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -175,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627667194683</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added a few cards:&#10;Final gambit, rare power that saves you from death once if you have vulnerable&#10;Road rage, discard card and nob killer&#10;Resolve, power that gives you strength with low hand&#10;cleaned up the powers a bit">
+      <created>1628214041198</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1628214041198</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,13 +204,14 @@
     <MESSAGE value="added exhaust pipe&#10;modified hairpin, brakedrift, bob+weave, accelerate and others&#10;fixed eurobeat?" />
     <MESSAGE value="Added some new cards&#10;Balanced inertial drift, spinout, pursuit, tractiontires" />
     <MESSAGE value="Added determined, gear shift, 180&#10;Changed the color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added determined, gear shift, 180&#10;Changed the color" />
+    <MESSAGE value="Added a few cards:&#10;Final gambit, rare power that saves you from death once if you have vulnerable&#10;Road rage, discard card and nob killer&#10;Resolve, power that gives you strength with low hand&#10;cleaned up the powers a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a few cards:&#10;Final gambit, rare power that saves you from death once if you have vulnerable&#10;Road rage, discard card and nob killer&#10;Resolve, power that gives you strength with low hand&#10;cleaned up the powers a bit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1627073931496">
+    <state x="488" y="90" key="#com.intellij.ide.util.MemberChooser" timestamp="1628531523154">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="488" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1627073931496" />
+    <state x="488" y="90" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1628531523154" />
     <state width="475" height="442" key="Diff.GoToChangePopup" timestamp="1620930177240">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -218,25 +220,25 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="92" y="92" width="1736" height="896" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1620930453242" />
-    <state width="1323" height="136" key="GridCell.Tab.0.bottom" timestamp="1628213714992">
+    <state width="1323" height="136" key="GridCell.Tab.0.bottom" timestamp="1628534207632">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="136" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1628213714992" />
+    <state width="1323" height="136" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1628534207632" />
     <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1621211684046" />
-    <state width="1323" height="136" key="GridCell.Tab.0.center" timestamp="1628213714992">
+    <state width="1323" height="136" key="GridCell.Tab.0.center" timestamp="1628534207631">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="136" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1628213714992" />
+    <state width="1323" height="136" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1628534207631" />
     <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1621211684046" />
-    <state width="1323" height="136" key="GridCell.Tab.0.left" timestamp="1628213714992">
+    <state width="1323" height="136" key="GridCell.Tab.0.left" timestamp="1628534207631">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="136" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1628213714992" />
+    <state width="1323" height="136" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1628534207631" />
     <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1621211684046" />
-    <state width="1323" height="136" key="GridCell.Tab.0.right" timestamp="1628213714992">
+    <state width="1323" height="136" key="GridCell.Tab.0.right" timestamp="1628534207631">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="136" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1628213714992" />
+    <state width="1323" height="136" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1628534207631" />
     <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1621211684046" />
     <state x="489" y="195" key="Maven.ArtifactSearchDialog" timestamp="1620574968648">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -250,20 +252,20 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="483" y="413" key="VCS.ChangelistChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1620930155908" />
-    <state x="335" y="138" key="Vcs.Push.Dialog.v2" timestamp="1627667199442">
+    <state x="335" y="138" key="Vcs.Push.Dialog.v2" timestamp="1628214050767">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="335" y="138" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1627667199442" />
+    <state x="335" y="138" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1628214050767" />
     <state x="552" y="273" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1620930481795" />
-    <state x="433" y="184" width="672" height="482" key="run.anything.popup" timestamp="1628213714967">
+    <state x="433" y="184" width="672" height="482" key="run.anything.popup" timestamp="1628533771867">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="433" y="184" width="672" height="482" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1628213714967" />
+    <state x="433" y="184" width="672" height="482" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1628533771867" />
     <state x="609" y="259" width="672" height="677" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1621202991790" />
-    <state x="443" y="177" width="672" height="473" key="search.everywhere.popup" timestamp="1628212837310">
+    <state x="443" y="177" width="672" height="473" key="search.everywhere.popup" timestamp="1628529780108">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="443" y="177" width="672" height="473" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1628212837310" />
+    <state x="443" y="177" width="672" height="473" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1628529780108" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1621203646356" />
   </component>
 </project>

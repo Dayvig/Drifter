@@ -183,5 +183,21 @@
                         " Traction next turn.",
                         " Traction next turn."
                 ]
+        },
+        "DrifterMod:CruiseControlPower": {
+                "NAME": "Cruise Control",
+                "DESCRIPTIONS": [
+                        "Your Speedup is considered #b",
+                        " less for its negative effects.",
+                        " less for its negative effects."
+                ]
+        },
+        "DrifterMod:SupersonicPower": {
+                "NAME": "Supersonic",
+                "DESCRIPTIONS": [
+                        "When you draw a card this turn, gain #b",
+                        " Traction this turn only.",
+                        " Traction this turn only."
+                ]
         }
 }

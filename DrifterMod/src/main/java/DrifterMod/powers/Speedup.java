@@ -79,14 +79,18 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     @Override
     public void atStartOfTurnPostDraw(){
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.amount));
-            if (this.amount > 2){
+            int adjustedAmount = this.amount;
+            if (this.owner.hasPower(CruiseControlPower.POWER_ID)){
+                adjustedAmount -= this.owner.getPower(CruiseControlPower.POWER_ID).amount;
+            }
+            if (adjustedAmount > 2){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 1, true),1));
             }
-            if (this.amount > 4){
+            if (adjustedAmount > 4){
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, -2),-2));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityNextTurnPower(this.owner, this.owner, 2),2));
             }
-        if (this.amount > 6){
+        if (adjustedAmount > 6){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionPower(this.owner, this.owner, -2),-2));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionRestorePower(this.owner, this.owner, 2),2));
         }

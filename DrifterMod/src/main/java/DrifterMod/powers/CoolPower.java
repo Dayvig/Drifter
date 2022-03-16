@@ -1,6 +1,7 @@
 package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.actions.ActivatePostDrawAction;
 import DrifterMod.actions.FastGainBlockAction;
 import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
@@ -36,6 +37,8 @@ public class CoolPower extends AbstractPower implements CloneablePowerInterface 
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("genius84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("genius32.png"));
 
+    public boolean isActive = true;
+
     public CoolPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
@@ -56,7 +59,19 @@ public class CoolPower extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public void onCardDraw(AbstractCard d) {
-        AbstractDungeon.actionManager.addToBottom(new FastGainBlockAction(this.owner, this.amount));
+        if (isActive) {
+            AbstractDungeon.actionManager.addToBottom(new FastGainBlockAction(this.owner, this.amount));
+        }
+    }
+
+    @Override
+    public void atEndOfTurn(final boolean isPlayer) {
+        isActive = false;
+    }
+
+    @Override
+    public void atStartOfTurnPostDraw() {
+        AbstractDungeon.actionManager.addToBottom(new ActivatePostDrawAction());
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

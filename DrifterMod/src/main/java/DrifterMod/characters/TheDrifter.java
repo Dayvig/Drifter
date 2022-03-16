@@ -1,9 +1,12 @@
 package DrifterMod.characters;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.Music.EurobeatMusic;
+import DrifterMod.actions.EurobeatAction;
 import DrifterMod.cards.*;
 import DrifterMod.relics.DefaultClickableRelic;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -11,11 +14,13 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.audio.TempMusic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -65,6 +70,8 @@ public class TheDrifter extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
     public static int r = 0;
+    public static EurobeatMusic currentDriftTune;
+    public boolean startOfDrift = false;
     // =============== /BASE STATS/ =================
 
 
@@ -102,8 +109,8 @@ public class TheDrifter extends CustomPlayer {
     public TheDrifter(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures,
                 "DrifterModResources/images/char/defaultCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "DrifterModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml"));
+                new SpineAnimation("DrifterModResources/images/char/defaultCharacter/Testproj.atlas",
+                        "DrifterModResources/images/char/defaultCharacter/Testproj.json", 0.5f));
 
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
@@ -126,7 +133,7 @@ public class TheDrifter extends CustomPlayer {
                 THE_DEFAULT_SKELETON_ATLAS,
                 THE_DEFAULT_SKELETON_JSON,
                 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
         // =============== /ANIMATIONS/ =================
@@ -284,12 +291,25 @@ public class TheDrifter extends CustomPlayer {
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
         r = (int) (Math.random() * 3);
+        switch (TheDrifter.r){
+            case 0:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Gas"));
+                return;
+            case 1:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("NightFire"));
+                return;
+            case 2:
+                AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Dejavu"));
+                return;
+            default:
+        }
+        TheDrifter.currentDriftTune.stopImmediately();
     }
 
     @Override
     public void onVictory() {
         super.onVictory();
-        CardCrawlGame.music.fadeOutTempBGM();
+        TheDrifter.currentDriftTune.stopImmediately();
         CardCrawlGame.music.unsilenceBGM();
     }
 }

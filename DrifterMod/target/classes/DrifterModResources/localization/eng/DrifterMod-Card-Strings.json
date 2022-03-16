@@ -166,7 +166,7 @@
   },
   "DrifterMod:InTheZone": {
     "NAME": "In the Zone",
-    "DESCRIPTION": "When you draw a card, gain 1 Block."
+    "DESCRIPTION": "When you draw a card during your turn, gain !M! Block."
   },
   "DrifterMod:StylePoints": {
     "NAME": "Style Points",
@@ -323,5 +323,25 @@
   "DrifterMod:Resolve": {
     "NAME": "Resolve",
     "DESCRIPTION": "While you have 2 or fewer cards in hand, gain !M! Strength, Dexterity, and driftermod:Traction."
+  },
+  "DrifterMod:Fierce": {
+    "NAME": "Fierce",
+    "DESCRIPTION": "Deal !D! damage twice. NL Increased by 1 for each Vulnerable you have."
+  },
+  "DrifterMod:RiskyApproach": {
+    "NAME": "Risky Approach",
+    "DESCRIPTION": "Gain 1 Vulnerable. NL Draw !M! cards next turn."
+  },
+  "DrifterMod:SupersonicFire": {
+    "NAME": "Supersonic",
+    "DESCRIPTION": "When you draw a card during your turn, gain !M! driftermod:Traction this turn only."
+  },
+  "DrifterMod:Ram": {
+    "NAME": "Ram",
+    "DESCRIPTION": "Discard !M! cards to deal !D! damage."
+  },
+  "DrifterMod:CruiseControl": {
+    "NAME": "Cruise Control",
+    "DESCRIPTION": "Your driftermod:Speedup is considered to be !M! less for its negative effects."
   }
 }

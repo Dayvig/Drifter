@@ -112,8 +112,8 @@ public class DrifterMod implements
     public static final String BADGE_IMAGE = "DrifterModResources/images/Badge.png";
 
     // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "DrifterModResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "DrifterModResources/images/char/defaultCharacter/skeleton.json";
+    public static final String THE_DEFAULT_SKELETON_ATLAS = "DrifterModResources/images/char/defaultCharacter/Testproj.atlas";
+    public static final String THE_DEFAULT_SKELETON_JSON = "DrifterModResources/images/char/defaultCharacter/Testproj.json";
 
     // =============== MAKE IMAGE PATHS =================
 
@@ -239,7 +239,7 @@ public class DrifterMod implements
     @Override
     public void receiveEditCharacters() {
         logger.info("Beginning to edit characters. " + "Add " + TheDrifter.Enums.THE_DRIFTER.toString());
-        BaseMod.addCharacter(new TheDrifter("The Queen", TheDrifter.Enums.THE_DRIFTER),
+        BaseMod.addCharacter(new TheDrifter("The Drifter", TheDrifter.Enums.THE_DRIFTER),
                 THE_DEFAULT_BUTTON, THE_DEFAULT_PORTRAIT, TheDrifter.Enums.THE_DRIFTER);
 
         receiveEditPotions();
@@ -410,6 +410,11 @@ public class DrifterMod implements
         BaseMod.addCard(new Rage());
         BaseMod.addCard(new FinalGambit());
         BaseMod.addCard(new Resolve());
+        BaseMod.addCard(new Fierce());
+        BaseMod.addCard(new RiskyApproach());
+        BaseMod.addCard(new SupersonicFire());
+        BaseMod.addCard(new CruiseControl());
+        BaseMod.addCard(new Ram());
 
 
         logger.info("Making sure the cards are unlocked.");
@@ -417,6 +422,11 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(Ram.ID);
+        UnlockTracker.unlockCard(CruiseControl.ID);
+        UnlockTracker.unlockCard(SupersonicFire.ID);
+        UnlockTracker.unlockCard(RiskyApproach.ID);
+        UnlockTracker.unlockCard(Fierce.ID);
         UnlockTracker.unlockCard(Resolve.ID);
         UnlockTracker.unlockCard(FinalGambit.ID);
         UnlockTracker.unlockCard(RoadRage.ID);

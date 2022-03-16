@@ -11,16 +11,19 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\action
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Exhaustpipe.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Dejavu.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\ImpossibleTurn.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\SupersonicFire.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\AbstractDynamicCard.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\potions\PlaceholderPotion.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\HighSpeed.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DrawDownPower.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\SupersonicPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Dangerous.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Twenty.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\EngineRev.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\RacingSpirit.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\ThermalEngine.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Sixty.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\RiskyApproach.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\GearUp.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\AeroChassis.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DriftSweepPower.java
@@ -28,6 +31,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\charac
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\orbs\DefaultOrb.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\TractionRestorePower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\DriftKing.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Fierce.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Tailgate.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Patches\ConscriptPatch.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\TractionNextTurn.java
@@ -44,6 +48,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\GasGasGas.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\InControl.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\DrifterMod.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\ActivatePostDrawAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\TempRetainPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\OverdrawEnergyAction.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Recovery.java
@@ -79,7 +84,9 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Recklessness.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Accelerate.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\CoolPower.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\CruiseControl.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\SafeDriving.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\CruiseControlPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\FireTrail.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\relics\BottledPlaceholderField.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\DefensiveDriving.java
@@ -107,6 +114,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\variab
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\interfaces\CardAddedToDeck.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\FinalGambit.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\EatMyDust.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Ram.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Tmph.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\variables\DefaultThirdMagicNumber.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\PerfectBalance.java
@@ -128,6 +136,7 @@ C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\powers\DexDownPower.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Nitrus.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Patches\OverdrawPatch.java
+C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\Music\EurobeatMusic.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\StylePoints.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\cards\Determined.java
 C:\Users\Max\Documents\GitHub\Drifter\DrifterMod\src\main\java\DrifterMod\actions\RoadRageAction.java
