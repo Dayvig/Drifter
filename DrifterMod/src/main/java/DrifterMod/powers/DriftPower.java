@@ -126,7 +126,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
         }
         if (this.owner.hasPower(TractionPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftPower(this.owner, this.owner, this.owner.getPower(TractionPower.POWER_ID).amount, true), this.owner.getPower(TractionPower.POWER_ID).amount));
-        }
+        }/*
                 switch (TheDrifter.r){
             case 0:
                 AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Gas"));
@@ -138,7 +138,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
                 AbstractDungeon.actionManager.addToBottom(new EurobeatAction("Dejavu"));
                 return;
             default:
-        }
+        }*/
     }
 
     @Override

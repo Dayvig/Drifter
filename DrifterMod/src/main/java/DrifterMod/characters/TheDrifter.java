@@ -298,7 +298,7 @@ public class TheDrifter extends CustomPlayer {
             case 0:
                 return "Gas";
             case 1:
-                return "Nightfire";
+                return "NightFire";
             case 2:
                 return "Dejavu";
             default:
