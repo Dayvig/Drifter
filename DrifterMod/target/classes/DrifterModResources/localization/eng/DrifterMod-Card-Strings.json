@@ -5,7 +5,7 @@
   },
   "DrifterMod:Sixty": {
   "NAME": "60 Degree Turn",
-  "DESCRIPTION": "Gain !B! Block. NL driftermod:Drift !M! NL Next turn, gain 3 Dexterity for one turn."
+  "DESCRIPTION": "Draw 2 cards. NL driftermod:Drift !M!."
 },
   "DrifterMod:FortyFive": {
     "NAME": "45 Degree Turn",

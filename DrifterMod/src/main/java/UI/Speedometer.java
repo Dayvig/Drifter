@@ -2,6 +2,7 @@ package UI;
 
 import DrifterMod.powers.Speedup;
 import basemod.abstracts.CustomEnergyOrb;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
@@ -45,10 +46,12 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
 
     private float needleTimer = 0.0f;
     public static float needleRot = 100.0f;
-    private float jumpInterval = 1.0f;
-    private float jumpAmount = 1;
+    private float jumpInterval = 3.0f;
+    private float baseInterval = 0.5f;
+    private float baseJumpAmount = 7f;
+    private float jumpAmount = 7f;
     private float currentAngle = 100.0f;
-    private float jumpReturn = 1.2f;
+    private float targetAngle = 100.0f;
 
     public Speedometer() {
         super(orbTextures, VFXTexture, layerSpeeds);
@@ -65,8 +68,9 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
             if (speedupAmount > 7){
                 speedupAmount = 7;
             }
-            needleRot = 100.0f - speedupAmount * 30.0f;
-            jumpAmount = 1.0f + speedupAmount * 0.2f;
+            needleRot = 100.0f - (speedupAmount * 30.0f);
+            jumpInterval = baseInterval / (1.0f + (realSpeedup * 0.6f));
+            jumpAmount = baseJumpAmount + realSpeedup;
         }
     }
 
@@ -117,29 +121,25 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
 
     }
 
+    float lerp(float a, float b, float f)
+    {
+        return (float)(a * (1.0 - f)) + (b * f);
+    }
+
     private void drawNeedle(SpriteBatch sb, float current_x, float current_y, float offX, float offY){
         float offsetX = offX;
         float offsetY = offY;
 
-        needleTimer++;
-        if (needleTimer > jumpInterval){
-            currentAngle = currentAngle + ((float)(Math.random() * jumpAmount * 2) - jumpAmount);
-            if (AbstractDungeon.player.hasPower(Speedup.POWER_ID) && AbstractDungeon.player.getPower(Speedup.POWER_ID).amount > 7){
-                currentAngle -= (float)(Math.random() * jumpAmount * (AbstractDungeon.player.getPower(Speedup.POWER_ID).amount - 7));
-                jumpReturn = 1.2f * (AbstractDungeon.player.getPower(Speedup.POWER_ID).amount - 7);
-            }
-            needleTimer -= jumpInterval;
-        }
-        if (currentAngle > needleRot){
-            currentAngle -= jumpReturn;
-        }
-        else {
-            currentAngle += jumpReturn;
-        }
-        if (currentAngle - needleRot < 0.2f && currentAngle - needleRot > -0.2f){
-            currentAngle = needleRot;
-        }
+        System.out.println(needleRot + " Target:" + targetAngle + " Current:"+currentAngle);
 
+        needleTimer += Gdx.graphics.getDeltaTime();
+        if (needleTimer > jumpInterval) {
+            System.out.println("Jump "+jumpInterval);
+            targetAngle = needleRot;
+            currentAngle = currentAngle + ((float) (Math.random() * jumpAmount * 2) - jumpAmount);
+            needleTimer = 0f;
+        }
+        currentAngle = lerp(currentAngle, targetAngle, needleTimer / jumpInterval);
         sb.draw(Needle,
                 current_x - offsetX,
                 current_y - offsetY,

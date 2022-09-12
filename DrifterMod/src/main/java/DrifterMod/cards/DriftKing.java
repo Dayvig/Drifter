@@ -31,9 +31,9 @@ public class DriftKing extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 0;  // COST = ${COST}
-    private static final int MAGIC = 2;
-    private static final int UPGRADE_MAGIC = 1;
+    private static final int COST = 1;  // COST = ${COST}
+    private static final int MAGIC = 4;
+    private static final int UPGRADE_MAGIC = 2;
 
     // /STAT DECLARATION/
 

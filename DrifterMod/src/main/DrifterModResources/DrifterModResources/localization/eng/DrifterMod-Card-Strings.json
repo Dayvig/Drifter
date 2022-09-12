@@ -5,7 +5,7 @@
   },
   "DrifterMod:Sixty": {
   "NAME": "60 Degree Turn",
-  "DESCRIPTION": "Gain !B! Block. NL driftermod:Drift !M! NL Next turn, gain 3 Dexterity for one turn."
+  "DESCRIPTION": "Draw 2 cards. NL driftermod:Drift !M!."
 },
   "DrifterMod:FortyFive": {
     "NAME": "45 Degree Turn",
@@ -110,7 +110,7 @@
     "DESCRIPTION": "driftermod:Drift !M! NL Next turn, Drift !M!"
   },
   "DrifterMod:DriftKing": {
-    "NAME": "Drift King",
+    "NAME": "Experience",
     "DESCRIPTION": "driftermod:Drift !M!"
   },
   "DrifterMod:TopSpeed": {
@@ -343,5 +343,9 @@
   "DrifterMod:CruiseControl": {
     "NAME": "Cruise Control",
     "DESCRIPTION": "Your driftermod:Speedup is considered to be !M! less for its negative effects."
+  },
+  "DrifterMod:DriftMaster": {
+    "NAME": "Drifting Master",
+    "DESCRIPTION": "Drift !M!."
   }
 }
