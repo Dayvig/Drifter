@@ -27,8 +27,8 @@ public class DriftStrengthDownPower extends AbstractPower implements CloneablePo
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("driftstrength84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("driftstrength32.png"));
 
     public DriftStrengthDownPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -44,7 +44,6 @@ public class DriftStrengthDownPower extends AbstractPower implements CloneablePo
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.loadRegion("flex");
 
         updateDescription();
     }

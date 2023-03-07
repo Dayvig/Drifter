@@ -4,17 +4,22 @@ import DrifterMod.DrifterMod;
 import DrifterMod.actions.EurobeatAction;
 import DrifterMod.actions.StopEurobeatAction;
 import DrifterMod.cards.*;
+import DrifterMod.relics.SteeringWheel;
 import UI.Speedometer;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.AbstractAnimation;
 import basemod.animations.SpineAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
@@ -23,11 +28,13 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.sql.Ref;
 import java.util.ArrayList;
 
 import static DrifterMod.DrifterMod.*;
@@ -69,7 +76,8 @@ public class TheDrifter extends CustomPlayer {
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
     public static int r = 0;
-    public boolean startOfDrift = false;
+    public static boolean drifting = false;
+    public static boolean startOfDrift = false;
     // =============== /BASE STATS/ =================
 
 
@@ -103,14 +111,11 @@ public class TheDrifter extends CustomPlayer {
 
     private static EnergyOrbInterface e = new Speedometer();
 
-
     // =============== CHARACTER CLASS START =================
 
     public TheDrifter(String name, PlayerClass setClass) {
-        super(name, setClass, e,
-                new SpineAnimation("DrifterModResources/images/char/defaultCharacter/Testproj.atlas",
-                        "DrifterModResources/images/char/defaultCharacter/Testproj.json", 0.1f));
-
+        super(name, setClass, e, new SpineAnimation("DrifterModResources/images/char/defaultCharacter/Testproj.atlas",
+                "DrifterModResources/images/char/defaultCharacter/Testproj.json", 0.1f));
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
 
@@ -166,12 +171,14 @@ public class TheDrifter extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(DriftKing.ID);
-
+        retVal.add(Defend.ID);
+        retVal.add(Speedstar.ID);
+        retVal.add(InControl.ID);
 
         return retVal;
     }
@@ -179,6 +186,7 @@ public class TheDrifter extends CustomPlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
+        retVal.add(SteeringWheel.ID);
         return retVal;
     }
 
@@ -289,7 +297,7 @@ public class TheDrifter extends CustomPlayer {
     @Override
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
-        r = (int) (Math.random() * 3);
+        r = (int) (Math.random() * 9);
         Speedometer.needleRot = 100.f;
     }
 
@@ -301,15 +309,83 @@ public class TheDrifter extends CustomPlayer {
                 return "NightFire";
             case 2:
                 return "Dejavu";
+            case 3:
+                return "CrazyEmotion";
+            case 4:
+                return "HotLimit";
+            case 5:
+                return "IWannaBeTheNight";
+            case 6:
+                return "DontStopTheMusic";
+            case 7:
+                return "PerfectHero";
+            case 8:
+                return "RisingSun";
+            case 9:
+                return "ChemicalLove";
             default:
                 return "Gas";
         }
     }
 
+    public void update(){
+        super.update();
+        if (startOfDrift && !drifting){
+            System.out.println("Drift Start");
+            playEurobeat(returnDriftKey());
+            ReflectionHacks.setPrivate(AbstractDungeon.player,
+                    AbstractCreature.class,
+                    "animation",
+                    DriftingToyota);
+            ReflectionHacks.setPrivate(AbstractDungeon.player,
+                    AbstractCreature.class,
+                    "animationtimer",
+                    0f);            SpineAnimation spine = (SpineAnimation)DriftingToyota;
+            loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
+            AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
+            e.setTime(e.getEndTime() * MathUtils.random());
+            startOfDrift = false;
+            drifting = true;
+        }
+    }
+
+    public void resetAnimation(){
+        ReflectionHacks.setPrivate(AbstractDungeon.player,
+                AbstractCreature.class,
+                "animation",
+                Toyota);
+        ReflectionHacks.setPrivate(AbstractDungeon.player,
+                AbstractCreature.class,
+                "animationtimer",
+                0f);
+        SpineAnimation spine = (SpineAnimation)Toyota;
+        System.out.println(spine.skeletonUrl);
+        loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+    }
+
+    private float ramAnimationTimer = 0.0f;
+    private float ramAnimationDuration = 1.0f;
+
+    public static void playEurobeat(String key){
+        AbstractDungeon.actionManager.addToTop(new EurobeatAction(key));
+    }
+
     @Override
     public void onVictory() {
         super.onVictory();
-        AbstractDungeon.actionManager.addToBottom(new StopEurobeatAction());
+        AbstractDungeon.actionManager.addToTop(new StopEurobeatAction());
         CardCrawlGame.music.fadeOutTempBGM();
+
+        resetAnimation();
+        drifting = false;
+        startOfDrift = false;
     }
+
+    public AbstractAnimation Toyota = new SpineAnimation("DrifterModResources/images/char/defaultCharacter/Testproj.atlas",
+            "DrifterModResources/images/char/defaultCharacter/Testproj.json", 0.1f);
+    public AbstractAnimation DriftingToyota = new SpineAnimation("DrifterModResources/images/char/defaultCharacter/Drifting.atlas",
+                                                "DrifterModResources/images/char/defaultCharacter/Drifting.json", 0.1f);
+
 }

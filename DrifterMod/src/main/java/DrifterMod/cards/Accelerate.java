@@ -3,12 +3,15 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import javax.smartcardio.Card;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -34,7 +37,7 @@ public class Accelerate extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0;  // COST = ${COST}
+    private static final int UPGRADED_COST = 0;
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
 
@@ -50,6 +53,8 @@ public class Accelerate extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Speedup(p, p, magicNumber), magicNumber));
+        addToBot(new AnimateFastAttackAction(p));
+        CardCrawlGame.sound.playA("Revv2", (float)(Math.random()*0.2f) - 0.2f);
     }
 
 

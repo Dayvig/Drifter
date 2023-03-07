@@ -83,6 +83,7 @@ public class BalancePower extends AbstractPower implements CloneablePowerInterfa
             this.region48 = new TextureAtlas.AtlasRegion(tex32s, 0, 0, 32, 32);
         }
         balanced = AbstractDungeon.player.cardsPlayedThisTurn%2;
+        this.flashWithoutSound();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
@@ -97,6 +98,6 @@ public class BalancePower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public AbstractPower makeCopy() {
-        return new ThermalPower(owner, source, amount);
+        return new BalancePower(owner, source, amount);
     }
 }

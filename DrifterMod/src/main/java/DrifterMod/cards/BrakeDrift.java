@@ -3,6 +3,8 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.actions.BrakeDriftAction;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.powers.ResolvePower;
+import DrifterMod.powers.TractionPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,12 +14,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class BrakeDrift extends AbstractDynamicCard {
+public class BrakeDrift extends AbstractDriftCard {
 
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(BrakeDrift.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Brakedrift.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -33,7 +35,7 @@ public class BrakeDrift extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 2;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;
     // /STAT DECLARATION/
@@ -47,10 +49,9 @@ public class BrakeDrift extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Screech", (float)Math.random()*0.5f - 0.25f);
         AbstractDungeon.actionManager.addToBottom(new BrakeDriftAction(p, true, magicNumber));
     }
-
-
 
     // Upgraded stats.
     @Override

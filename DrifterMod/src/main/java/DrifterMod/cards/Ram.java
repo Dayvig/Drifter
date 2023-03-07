@@ -1,11 +1,13 @@
 package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.animations.RamAnimation;
 import DrifterMod.characters.TheDrifter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,8 +40,8 @@ public class Ram extends AbstractDynamicCard {
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final int MAGIC = 3;
 
     // /STAT DECLARATION/
@@ -55,17 +57,10 @@ public class Ram extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.player.hand.size() >= magicNumber) {
-            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
+            addToBot(new RamAnimation(p, m));
+            addToBot(new WaitAction(0.08f));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        }
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m){
-
-        this.cantUseMessage = "I need at least 3 cards to discard.";
-        return AbstractDungeon.player.hand.size() >= magicNumber+1;
+            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
     }
 
     // Upgraded stats.

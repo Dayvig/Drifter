@@ -3,6 +3,10 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
+import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateJumpAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
+import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -51,8 +55,12 @@ public class Nitrus extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Revv1", 0.4f + (float)Math.random()*0.6f);
+
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Speedup(p, p, 1),1));
+        addToBot(new FastShakeAction(p, 0.04f, 0.04f));
+        addToBot(new AnimateHopAction(p));
     }
 
     // Upgraded stats.

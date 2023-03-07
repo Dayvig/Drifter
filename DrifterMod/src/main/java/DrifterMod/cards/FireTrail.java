@@ -16,7 +16,7 @@ public class FireTrail extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(FireTrail.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("bumblebee.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("FlameTrail.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -31,6 +31,7 @@ public class FireTrail extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 2;  // COST = ${COST}
+    private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
 
@@ -55,7 +56,7 @@ public class FireTrail extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

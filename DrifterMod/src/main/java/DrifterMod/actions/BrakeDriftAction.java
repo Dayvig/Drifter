@@ -55,8 +55,9 @@ public class BrakeDriftAction extends AbstractGameAction {
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
-                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftPower(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*am), AbstractDungeon.handCardSelectScreen.selectedCards.group.size()*am));
-                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawDownPower(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()), AbstractDungeon.handCardSelectScreen.selectedCards.group.size()));
+                    int numTimes = AbstractDungeon.handCardSelectScreen.selectedCards.group.size();
+                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftPower(AbstractDungeon.player, AbstractDungeon.player, am * numTimes), am * numTimes));
+                    this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawDownPower(AbstractDungeon.player, AbstractDungeon.player, numTimes), numTimes));
                     Iterator var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
 
                     while(var1.hasNext()) {

@@ -36,8 +36,7 @@ public class EngineRev extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 1;
 
@@ -55,6 +54,7 @@ public class EngineRev extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Revv3", (float)Math.random()*0.2f - 0.1f);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p, new DrawCardNextTurnPower(p, magicNumber),magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, magicNumber)));
     }
@@ -64,7 +64,7 @@ public class EngineRev extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

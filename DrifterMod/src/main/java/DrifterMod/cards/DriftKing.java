@@ -4,6 +4,8 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,12 +14,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class DriftKing extends AbstractDynamicCard {
+public class DriftKing extends AbstractDriftCard {
 
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(DriftKing.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("bumblebee.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Skill.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -47,10 +49,8 @@ public class DriftKing extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
+        addToBot(new AnimateShakeAction(p, 0.1f, 0.1f));
     }
 
 

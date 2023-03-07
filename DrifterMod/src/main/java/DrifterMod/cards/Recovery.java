@@ -17,7 +17,7 @@ public class Recovery extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Recovery.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("spinout.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Recovery.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -32,7 +32,7 @@ public class Recovery extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 0;  // COST = ${COST}
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
 

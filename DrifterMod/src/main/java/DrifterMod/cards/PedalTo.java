@@ -53,6 +53,7 @@ public class PedalTo extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Revv1", (float)Math.random()*0.6f);
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(magicNumber));
     }
 

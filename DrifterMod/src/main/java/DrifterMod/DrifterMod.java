@@ -7,12 +7,14 @@ import DrifterMod.potions.PlaceholderPotion;
 import DrifterMod.relics.BottledPlaceholderRelic;
 import DrifterMod.relics.DefaultClickableRelic;
 import DrifterMod.relics.PlaceholderRelic2;
+import DrifterMod.relics.SteeringWheel;
 import DrifterMod.util.IDCheckDontTouchPls;
 import DrifterMod.util.TextureLoader;
 import DrifterMod.variables.DefaultCustomVariable;
 import DrifterMod.variables.DefaultSecondMagicNumber;
 import basemod.BaseMod;
 import basemod.ModLabel;
+import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -21,15 +23,19 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -60,7 +66,8 @@ public class DrifterMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        AddAudioSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
     // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(DrifterMod.class.getName());
@@ -150,6 +157,13 @@ public class DrifterMod implements
 
     public DrifterMod() {
         logger.info("Subscribe to BaseMod hooks");
+        try {
+            config = new SpireConfig("driftermod", "config");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (!config.has(EUROBEAT_ON)) config.setBool(EUROBEAT_ON, true);
+        // initialize
 
         BaseMod.subscribe(this);
 
@@ -227,7 +241,8 @@ public class DrifterMod implements
     @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("========================= Initializing Default Mod. Hi. =========================");
-        DrifterMod defaultmod = new DrifterMod();
+        DrifterMod drifterMod = new DrifterMod();
+
         logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
     }
 
@@ -250,7 +265,8 @@ public class DrifterMod implements
 
 
     // =============== POST-INITIALIZE =================
-
+    public static SpireConfig config;
+    public static final String EUROBEAT_ON = "eurobeaton";
 
     @Override
     public void receivePostInitialize() {
@@ -260,8 +276,10 @@ public class DrifterMod implements
 
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addUIElement(new ModLabel("DrifterMod doesn't have any settings! An example of those may come later.", 400.0f, 700.0f,
-                settingsPanel, (me) -> {
+        settingsPanel.addUIElement(new ModLabeledToggleButton("Enable Eurobeat", 360, 700, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(EUROBEAT_ON), settingsPanel, l -> {
+        }, button -> {
+            config.setBool(EUROBEAT_ON, button.enabled);
+            saveConfig();
         }));
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -271,11 +289,18 @@ public class DrifterMod implements
         // part of the game, simply don't include the dungeon ID
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
-        BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
 
+    }
+
+    void saveConfig() {
+        try {
+            config.save();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // =============== / POST-INITIALIZE/ =================
@@ -307,6 +332,7 @@ public class DrifterMod implements
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), TheDrifter.Enums.COLOR_DARKBLUE);
         BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), TheDrifter.Enums.COLOR_DARKBLUE);
+        BaseMod.addRelicToCustomPool(new SteeringWheel(), TheDrifter.Enums.COLOR_DARKBLUE);
 
         // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
@@ -346,7 +372,7 @@ public class DrifterMod implements
         BaseMod.addCard(new HairPin());
         BaseMod.addCard(new SpinOut());
         BaseMod.addCard(new Ninety());
-        BaseMod.addCard(new Fender());
+        //BaseMod.addCard(new Fender());
         BaseMod.addCard(new BigCrash());
         BaseMod.addCard(new EngineRev());
         BaseMod.addCard(new Coast());
@@ -417,13 +443,15 @@ public class DrifterMod implements
         BaseMod.addCard(new Ram());
         BaseMod.addCard(new Sixty());
         BaseMod.addCard(new DriftMaster());
-
+        BaseMod.addCard(new Speedstar());
+        BaseMod.addCard(new VariableDrift());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(VariableDrift.ID);
         UnlockTracker.unlockCard(DriftMaster.ID);
         UnlockTracker.unlockCard(Ram.ID);
         UnlockTracker.unlockCard(CruiseControl.ID);
@@ -587,4 +615,20 @@ public class DrifterMod implements
         return getModID() + ":" + idText;
     }
 
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio("BigCrash", getModID()+"Resources/audio/sfx/BigCrash.ogg");
+        BaseMod.addAudio("Crash", getModID()+"Resources/audio/sfx/Crash.ogg");
+        BaseMod.addAudio("PassMed1", getModID()+"Resources/audio/sfx/PassMed.ogg");
+        BaseMod.addAudio("PassMed2", getModID()+"Resources/audio/sfx/PassMed2.ogg");
+        BaseMod.addAudio("PassMed3", getModID()+"Resources/audio/sfx/PassMed3.ogg");
+        BaseMod.addAudio("PassSlow", getModID()+"Resources/audio/sfx/PassSlow.ogg");
+        BaseMod.addAudio("Racing", getModID()+"Resources/audio/sfx/Racing.ogg");
+        BaseMod.addAudio("Revv1", getModID()+"Resources/audio/sfx/Revv.ogg");
+        BaseMod.addAudio("Revv2", getModID()+"Resources/audio/sfx/Revv2.ogg");
+        BaseMod.addAudio("Revv3", getModID()+"Resources/audio/sfx/Revv3.ogg");
+        BaseMod.addAudio("Screech", getModID()+"Resources/audio/sfx/Screech.ogg");
+        BaseMod.addAudio("PassFast", getModID()+"Resources/audio/sfx/PassFast.ogg");
+
+    }
 }

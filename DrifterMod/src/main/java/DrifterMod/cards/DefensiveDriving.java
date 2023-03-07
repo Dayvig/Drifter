@@ -2,6 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,7 +19,7 @@ public class DefensiveDriving extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(DefensiveDriving.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("conscripts.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("DefensiveDriving.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -28,7 +29,7 @@ public class DefensiveDriving extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
@@ -50,17 +51,9 @@ public class DefensiveDriving extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.player.hand.size() >= 4) {
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 4, false));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        }
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m){
-
-        this.cantUseMessage = "I need at least 4 cards to discard.";
-        return AbstractDungeon.player.hand.size() >= 5;
+            addToBot(new AnimateShakeAction(p, 0.4f, 0.4f));
     }
 
     // Upgraded stats.

@@ -1,0 +1,62 @@
+
+Drifting.png
+size: 868,518
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Drifting
+  rotate: false
+  xy: 1, 1
+  size: 515, 515
+  orig: 515, 515
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 568, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 668, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 618, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 518, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+1
+  rotate: false
+  xy: 818, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 768, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 718, 1
+  size: 48, 44
+  orig: 48, 44
+  offset: 0, 0
+  index: -1

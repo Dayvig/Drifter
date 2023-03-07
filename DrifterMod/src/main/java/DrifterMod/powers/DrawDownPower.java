@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.DrawReductionPower;
 
 import static DrifterMod.DrifterMod.makePowerPath;
 
@@ -31,6 +32,7 @@ public class DrawDownPower extends AbstractPower implements CloneablePowerInterf
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
     int i;
+    int actualDrawReduction;
 
 
     public DrawDownPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
@@ -41,6 +43,7 @@ public class DrawDownPower extends AbstractPower implements CloneablePowerInterf
         this.amount = amount;
         this.source = source;
         i = this.amount;
+        actualDrawReduction = this.amount;
 
         type = AbstractPower.PowerType.DEBUFF;
         isTurnBased = false;
@@ -48,7 +51,7 @@ public class DrawDownPower extends AbstractPower implements CloneablePowerInterf
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.loadRegion("flex");
+        this.loadRegion("lessdraw");
 
         updateDescription();
     }
@@ -61,8 +64,22 @@ public class DrawDownPower extends AbstractPower implements CloneablePowerInterf
         else {
             i = AbstractDungeon.player.gameHandSize;
             AbstractDungeon.player.gameHandSize -= i;
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DrawDownPower(this.owner, this.owner, i), i));
+        }
+    }
+
+    @Override
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(DrawDownPower.POWER_ID) || power.ID.equals(DrawReductionPower.POWER_ID)){
+            actualDrawReduction += power.amount;
+            AbstractDungeon.player.gameHandSize += i;
+            i += power.amount;
+            if (i<= AbstractDungeon.player.gameHandSize ) {
+                AbstractDungeon.player.gameHandSize -= i;
+            }
+            else {
+                i = AbstractDungeon.player.gameHandSize;
+                AbstractDungeon.player.gameHandSize -= i;
+            }
         }
     }
 

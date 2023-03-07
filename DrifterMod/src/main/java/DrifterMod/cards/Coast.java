@@ -55,6 +55,7 @@ public class Coast extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.play("PassMed1");
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TempRetainPower(p, p, magicNumber), magicNumber));
     }

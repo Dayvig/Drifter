@@ -2,6 +2,8 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -51,6 +53,7 @@ public class Pursuit extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(defaultSecondMagicNumber));
+        addToBot(new AnimateFastAttackAction(p));
     }
 
 

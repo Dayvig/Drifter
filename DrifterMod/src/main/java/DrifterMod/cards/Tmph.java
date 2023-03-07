@@ -4,7 +4,9 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
 import DrifterMod.powers.TempMaxHandSizeInc;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -21,7 +24,7 @@ public class Tmph extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Tmph.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("MPH.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
 
@@ -54,10 +57,12 @@ public class Tmph extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("PassFast", (float)Math.random()*0.5f);
         if (p.hasPower(TempMaxHandSizeInc.POWER_ID) && magicNumber > 10) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(TempMaxHandSizeInc.POWER_ID), magicNumber - 10));
         }
-            AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, true));
+        addToBot(new VFXAction(new WhirlwindEffect(Color.WHITE, true)));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage,
                     DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
     }

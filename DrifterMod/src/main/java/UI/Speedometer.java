@@ -48,8 +48,8 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
     public static float needleRot = 100.0f;
     private float jumpInterval = 3.0f;
     private float baseInterval = 0.5f;
-    private float baseJumpAmount = 7f;
-    private float jumpAmount = 7f;
+    private float baseJumpAmount = 3f;
+    private float jumpAmount = 3f;
     private float currentAngle = 100.0f;
     private float targetAngle = 100.0f;
 
@@ -130,11 +130,8 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
         float offsetX = offX;
         float offsetY = offY;
 
-        System.out.println(needleRot + " Target:" + targetAngle + " Current:"+currentAngle);
-
         needleTimer += Gdx.graphics.getDeltaTime();
         if (needleTimer > jumpInterval) {
-            System.out.println("Jump "+jumpInterval);
             targetAngle = needleRot;
             currentAngle = currentAngle + ((float) (Math.random() * jumpAmount * 2) - jumpAmount);
             needleTimer = 0f;

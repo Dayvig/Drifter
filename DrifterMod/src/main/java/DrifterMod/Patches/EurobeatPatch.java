@@ -3,7 +3,7 @@ package DrifterMod.Patches;
 import DrifterMod.DrifterMod;
 import com.badlogic.gdx.audio.Music;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.audio.MainMusic;
 import com.megacrit.cardcrawl.audio.TempMusic;
@@ -13,22 +13,32 @@ import com.megacrit.cardcrawl.audio.TempMusic;
         method = "getSong")
 public class EurobeatPatch {
 
-    @SpirePostfixPatch
+    @SpirePrefixPatch
     public static SpireReturn<Music> Prefix(TempMusic __instance, String key) {
         DrifterMod.logger.info("Music patch Temp hit");
         switch (key) {
-            case "Gas": {
+            case "Gas":
                 return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/Gas.ogg"));
-            }
-            case "NightFire": {
+            case "NightFire":
                 return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/NightFire.ogg"));
-            }
-            case "Dejavu": {
+            case "Dejavu":
                 return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/Dejavu.ogg"));
-            }
-            default: {
+            case "CrazyEmotion":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/CrazyEmotion.ogg"));
+            case "HotLimit":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/HotLimit.ogg"));
+            case "IWannaBeTheNight":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/IWannaBeTheNight.ogg"));
+            case "DontStopTheMusic":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/DontStopTheMusic.ogg"));
+            case "PerfectHero":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/PerfectHero.ogg"));
+            case "RisingSun":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/RisingSun.ogg"));
+            case "ChemicalLove":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/ChemicalLove.ogg"));
+            default:
                 return SpireReturn.Continue();
-            }
         }
     }
 }

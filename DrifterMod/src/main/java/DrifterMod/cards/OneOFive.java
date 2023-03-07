@@ -5,6 +5,8 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftNextTurnPower;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -66,6 +68,15 @@ public class OneOFive extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftNextTurnPower(p,p,magicNumber), magicNumber));
+        addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
+    }
+
+    @Override
+    public void applyPowers(){
+        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
+            isMagicNumberModified = true;
+            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
+        }
     }
 
     //Upgraded stats.

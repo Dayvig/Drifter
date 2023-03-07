@@ -4,6 +4,9 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftSweepPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,7 +28,7 @@ public class SweepingTurn extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(SweepingTurn.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("SweepingTurn.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -62,6 +65,16 @@ public class SweepingTurn extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftSweepPower(p,p,1), 0));
+        addToBot(new AnimateShakeAction(p, 0.4f, 0.4f));
+
+    }
+
+    @Override
+    public void applyPowers(){
+        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
+            isMagicNumberModified = true;
+            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
+        }
     }
 
     //Upgraded stats.

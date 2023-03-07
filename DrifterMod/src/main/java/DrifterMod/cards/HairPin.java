@@ -3,11 +3,15 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
+import DrifterMod.powers.TractionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
+import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -25,7 +29,7 @@ public class HairPin extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(HairPin.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Hairpin.png");
 
     // /TEXT DECLARATION/
 
@@ -39,7 +43,7 @@ public class HairPin extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 2;
     private static final int MAGIC = 4;
     private static final int UPGRADE_MAGIC = 2;
 
@@ -55,9 +59,19 @@ public class HairPin extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Screech", (float)Math.random()*0.2f - 0.5f);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         if (!p.hasPower(DriftPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, magicNumber), magicNumber));
+        }
+        addToBot(new FastShakeAction(p, 0.1f, 0.1f));
+    }
+
+    @Override
+    public void applyPowers(){
+        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
+            isMagicNumberModified = true;
+            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
         }
     }
 

@@ -5,6 +5,7 @@ import DrifterMod.characters.TheDrifter;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
@@ -47,7 +48,8 @@ public class EatMyDust extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, MAGIC2, true));
+        CardCrawlGame.sound.playAV("PassMed3", 0.5f + (float)Math.random()*0.2f, 1.5f);
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, MAGIC2, false));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
     }
 

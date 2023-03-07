@@ -21,7 +21,7 @@ import static DrifterMod.DrifterMod.makeCardPath;
 public class Fierce extends AbstractDynamicCard {
 
     public static final String ID = DrifterMod.makeID(Fierce.class.getSimpleName());
-    public static final String IMG = makeCardPath("fender.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Fierce.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final AbstractCard.CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 

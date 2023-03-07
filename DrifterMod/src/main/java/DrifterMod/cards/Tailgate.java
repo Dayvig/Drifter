@@ -26,7 +26,7 @@ public class Tailgate extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Tailgate.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Tailgate.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -41,7 +41,7 @@ public class Tailgate extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 8;
     private static final int UPGRADE_PLUS_DAMAGE = 2;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_MAGIC = 1;

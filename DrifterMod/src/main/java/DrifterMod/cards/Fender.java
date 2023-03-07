@@ -1,13 +1,16 @@
 package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.animations.RamAnimation;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DrawDownPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -51,6 +54,9 @@ public class Fender extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new RamAnimation(p, m));
+        CardCrawlGame.sound.playAV("Crash", (float)Math.random()*0.3f - 0.3f, 1.5f);
+        addToBot(new WaitAction(0.08f));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawDownPower(p, p, 2), 2));
     }

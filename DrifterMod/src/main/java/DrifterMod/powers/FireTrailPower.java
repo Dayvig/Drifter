@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCardDrawPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,9 +16,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.combat.FireballEffect;
+import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static DrifterMod.DrifterMod.makePowerPath;
 
@@ -33,8 +37,8 @@ public class FireTrailPower extends AbstractPower implements CloneablePowerInter
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("genius84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("genius32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("firetrail84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("firetrail32.png"));
 
     public FireTrailPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -50,24 +54,41 @@ public class FireTrailPower extends AbstractPower implements CloneablePowerInter
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.loadRegion("combust");
+
         updateDescription();
     }
 
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
+        int flameDamage = AbstractDungeon.player.hand.size();
         if (this.owner.hasPower(TempMaxHandSizeInc.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount * this.amount, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            flameDamage += this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
+        System.out.println("Hand size:"+AbstractDungeon.player.hand.size() + " Flame Damage:"+flameDamage);
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
+            if (!m.isDeadOrEscaped() && !m.halfDead){
+                AbstractDungeon.effectList.add(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, AbstractDungeon.player, flameDamage * this.amount));
+            }
+        }
+    }
+
+    @Override
+    public void onDrawOrDiscard(){
+        /*for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
+            if (!m.isDeadOrEscaped() && !m.halfDead){
+                //Todo: change hp bar
+            }
+        }*/
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0];
         } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            description = DESCRIPTIONS[1] + amount;
         }
     }
 

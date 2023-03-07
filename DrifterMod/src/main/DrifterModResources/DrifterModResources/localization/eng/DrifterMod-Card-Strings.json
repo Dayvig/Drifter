@@ -17,8 +17,8 @@
   },
   "DrifterMod:Accelerate": {
     "NAME": "Accelerate",
-    "DESCRIPTION": "driftermod:Speedup. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "driftermod:Speedup."
+    "DESCRIPTION": "Gain 1 driftermod:Speed. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 driftermod:Speed."
   },
   "DrifterMod:Brake": {
     "NAME": "Brake",
@@ -50,11 +50,11 @@
   },
   "DrifterMod:HardPass": {
     "NAME": "Hard Pass",
-    "DESCRIPTION": "Deal !D! damage. If this kills an enemy, driftermod:Speedup."
+    "DESCRIPTION": "Deal !D! damage. If this kills an enemy, gain 1 driftermod:Speed."
   },
   "DrifterMod:Tmph": {
     "NAME": "20 MPH",
-    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage with each driftermod:Speedup. )"
+    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage for each driftermod:Speed. )"
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
@@ -103,7 +103,7 @@
   },
   "DrifterMod:PolePosition": {
     "NAME": "Pole Position",
-    "DESCRIPTION": "If you have driftermod:Overdraw, deal !D! damage and gain !B! Block."
+    "DESCRIPTION": "Deal !D! damage and gain !B! Block. NL If your hand is full, this costs 0."
   },
   "DrifterMod:OneOFive": {
     "NAME": "105 Degree Turn",
@@ -114,9 +114,8 @@
     "DESCRIPTION": "driftermod:Drift !M!"
   },
   "DrifterMod:TopSpeed": {
-    "NAME": "Top Speed",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL Retain your hand this turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. NL Retain your hand this turn."
+    "NAME": "Full Throttle",
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Retain your hand this turn."
   },
   "DrifterMod:UTurn": {
     "NAME": "U-Turn",
@@ -128,7 +127,7 @@
   },
   "DrifterMod:ThermalEngine": {
     "NAME": "Thermal Engine",
-    "DESCRIPTION": "At the start of your turn if you have driftermod:Overdraw, gain [E]"
+    "DESCRIPTION": "The first time you would draw while your hand is full each turn, gain [E]."
   },
   "DrifterMod:Kachow": {
     "NAME": "Headlight Flash",
@@ -153,12 +152,12 @@
   },
   "DrifterMod:BigCrash": {
     "NAME": "Hyper Crash",
-    "DESCRIPTION": "Deal damage equal to 3 times your driftermod:Total-Hand. Discard your hand and lose all driftermod:Overdraw. NL ( !D! damage. )"
+    "DESCRIPTION": "Deal damage equal to !M! times your driftermod:Total-Hand. Discard your hand and lose all driftermod:Overdraw. NL ( !D! damage. )"
   },
   "DrifterMod:InControl": {
-    "NAME": "In Control",
-    "DESCRIPTION": "Discard !M! cards. NL Gain [E].",
-    "UPGRADE_DESCRIPTION": "Retain. NL Discard !M! cards. NL Gain [E]."
+    "NAME": "Tenacity",
+    "DESCRIPTION": "Retain. NL Discard a card. NL Gain [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard a card. NL Gain [E] [E]. NL Exhaust."
   },
   "DrifterMod:RacingSpirit": {
     "NAME": "Racing Spirit",
@@ -174,30 +173,29 @@
   },
   "DrifterMod:ImpossibleTurn": {
     "NAME": "Impossible Turn",
-    "DESCRIPTION": "driftermod:Drift !M!."
+    "DESCRIPTION": "driftermod:Drift !M! twice."
   },
   "DrifterMod:NeedForSpeed": {
     "NAME": "Need for Speed",
-    "DESCRIPTION": "driftermod:Speedup. NL driftermod:Speedup.",
-    "UPGRADE_DESCRIPTION": "Innate. NL driftermod:Speedup. NL driftermod:Speedup."
+    "DESCRIPTION": "Gain 2 driftermod:Speed.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain 2 driftermod:Speed."
   },
   "DrifterMod:SafeDriving": {
     "NAME": "Safe Driving",
-    "DESCRIPTION": "Gain !B! Block. NL Lose 1 driftermod:Speedup."
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1 driftermod:Speed, and if you did, gain !M! Block."
   },
   "DrifterMod:Nitrus": {
     "NAME": "Nitrus",
-    "DESCRIPTION": "Gain [E] [E]. NL driftermod:Speedup. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL driftermod:Speedup. NL Exhaust."
+    "DESCRIPTION": "Gain [E] [E]. NL Gain 1 driftermod:Speed. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Gain 1 driftermod:Speed. NL Exhaust."
   },
   "DrifterMod:SpeedDemon": {
     "NAME": "Speed Demon",
-    "DESCRIPTION": "driftermod:Speedup. NL Deal !M! damage for each driftermod:Speedup. NL ( !D! Damage. )"
+    "DESCRIPTION": "Gain 1 driftermod:Speed. NL Deal !M! damage for each driftermod:Speed. NL ( !D! Damage. )"
   },
   "DrifterMod:HighSpeed": {
     "NAME": "Speed Drifting",
-    "DESCRIPTION": "driftermod:Drift !M! for each driftermod:Speedup.",
-    "UPGRADE_DESCRIPTION": "driftermod:Drift !M! for each driftermod:Speedup. NL driftermod:Speedup."
+    "DESCRIPTION": "Drift !M!. NL Gain !DrifterMod:M2! driftermod:Speed."
   },
   "DrifterMod:SpeedBurst": {
     "NAME": "Speed Burst",
@@ -213,14 +211,14 @@
   },
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
-    "DESCRIPTION": "At the end of the turn, deal !M! damage to all enemies for each driftermod:Overdraw."
+    "DESCRIPTION": "At the end of the turn, all enemies lose HP equal to your driftermod:Total-hand."
   },
   "DrifterMod:Dangerous": {
     "NAME": "Dangerous Game",
     "DESCRIPTION": "Deal !D! damage. NL This costs 1 less for each Vulnerable you have."
   },
   "DrifterMod:Underdog": {
-    "NAME": "Underdog",
+    "NAME": "Natural Talent",
     "DESCRIPTION": "Unplayable. NL When this is discarded, add it to your hand. NL If this is the only card in your hand at any time, draw a card. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Unplayable. NL When this is discarded, add it to your hand. NL If this is the only card in your hand at any time, draw a card.",
     "EXTENDED_DESCRIPTION": [
@@ -249,7 +247,7 @@
   },
   "DrifterMod:EmergencyBrake": {
     "NAME": "Emergency Brake",
-    "DESCRIPTION": "Retain. NL Gain !B! Block for each driftermod:Speedup. NL Lose your driftermod:Speedup."
+    "DESCRIPTION": "Retain. NL Gain !B! Block for each driftermod:Speed. NL Lose all driftermod:Speed."
   },
   "DrifterMod:BrakeDrift": {
     "NAME": "Brake-Drift",
@@ -266,7 +264,7 @@
   },
   "DrifterMod:Burnout": {
     "NAME": "Burnout",
-    "DESCRIPTION": "Deal !D! damage to all enemies. NL Add a Burn to your discard pile. NL If you have no driftermod:Speedup, Exhaust. Otherwise lose 1 driftermod:Speedup."
+    "DESCRIPTION": "Deal !D! damage to all enemies. NL Add a *Burn to your draw pile. NL Lose 1 driftermod:Speed."
   },
   "DrifterMod:Bravery": {
     "NAME": "Bravery",
@@ -287,17 +285,16 @@
   },
   "DrifterMod:GearUp": {
     "NAME": "Gear Up",
-    "DESCRIPTION": "Gain !M! Strength. NL Lose 2 Dexterity. NL Gain 1 driftermod:Speedup."
+    "DESCRIPTION": "Gain !M! Strength. NL Lose 2 Dexterity. NL Gain 1 driftermod:Speed."
   },
   "DrifterMod:GearDown": {
     "NAME": "Gear Down",
-    "DESCRIPTION": "Gain !B! Block. NL Lose 2 Strength. NL Gain !M! Dexterity. NL Lose 1 driftermod:Speedup."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Lose 2 Strength. NL Lose 1 driftermod:Speed, and if you did gain !B! Block."
   },
   "DrifterMod:GearShift": {
-    "NAME": "Gear Shift",
-    "DESCRIPTION": "Gear-up. NL OR NL Gear-down.",
-    "UPGRADE_DESCRIPTION": "Gear-up+. NL OR NL Gear-down+."
-
+    "NAME": "Clutch",
+    "DESCRIPTION": "Gear-up or Gear-Down.",
+    "UPGRADE_DESCRIPTION": "Gear-up+ or Gear-Down+."
   },
   "DrifterMod:OneEighty": {
     "NAME": "180 Degree Turn",
@@ -305,7 +302,7 @@
   },
   "DrifterMod:Determined": {
     "NAME": "Determined",
-    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, this costs 1."
+    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, gain [E] and draw a card."
   },
   "DrifterMod:RoadRage": {
     "NAME": "Road Rage",
@@ -334,7 +331,8 @@
   },
   "DrifterMod:SupersonicFire": {
     "NAME": "Supersonic",
-    "DESCRIPTION": "When you draw a card during your turn, gain !M! driftermod:Traction this turn only."
+    "DESCRIPTION": "Gain X driftermod:Speed.",
+    "UPGRADE_DESCRIPTION": "Gain X+1 driftermod:Speed."
   },
   "DrifterMod:Ram": {
     "NAME": "Ram",
@@ -342,10 +340,19 @@
   },
   "DrifterMod:CruiseControl": {
     "NAME": "Cruise Control",
-    "DESCRIPTION": "Your driftermod:Speedup is considered to be !M! less for its negative effects."
+    "DESCRIPTION": "Gain 2 Dexterity. NL Your driftermod:Speed is considered to be !M! less for its negative effects."
   },
   "DrifterMod:DriftMaster": {
-    "NAME": "Drifting Master",
-    "DESCRIPTION": "Drift !M!."
+    "NAME": "Ghost of Akina",
+    "DESCRIPTION": "driftermod:Drift !M!."
+  },
+  "DrifterMod:Speedstar": {
+    "NAME": "Speedstar",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards."
+  },
+  "DrifterMod:VariableDrift": {
+    "NAME": "Variable Turn",
+    "DESCRIPTION": "driftermod:Drift !M! X times. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "driftermod:Drift !M! X+1 times. NL Exhaust."
   }
 }

@@ -3,8 +3,11 @@ package DrifterMod.powers;
 import DrifterMod.DrifterMod;
 import DrifterMod.actions.EurobeatAction;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.effects.SpeedParticleEffect;
 import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,6 +23,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.rooms.RestRoom;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.WindyParticleEffect;
 
 import java.util.ArrayList;
 
@@ -37,9 +44,19 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("speed84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("speed32.png"));
     public int onlyOnce;
+    private float particleTimer;
+    private float particleInterval;
+    private float racingTimer = 12f;
+    public Color windColor = Color.WHITE.cpy();
+    private int count = 0;
+    public static long racingID;
+    private static final int SPEEDPENALTY1 = 3;
+    private static final int SPEEDPENALTY2 = 5;
+    private static final int SPEEDPENALTY3 = 7;
+
 
     public Speedup(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -54,7 +71,6 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.loadRegion("flex");
 
         updateDescription();
     }
@@ -77,8 +93,30 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     }
 
     @Override
+    public void onInitialApplication(){
+        racingID = CardCrawlGame.sound.playAndLoop("Racing");
+    }
+
+    @Override
+    public void onRemove(){
+        CardCrawlGame.sound.fadeOut("Racing", racingID);
+    }
+
+    @Override
+    public void onVictory(){
+        CardCrawlGame.sound.fadeOut("Racing", racingID);
+    }
+
+
+    @Override
     public void atStartOfTurnPostDraw(){
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.amount));
+        int drawAmount = this.amount;
+        if (AbstractDungeon.player.hasPower(DrawDownPower.POWER_ID)){
+            DrawDownPower tmp = (DrawDownPower) AbstractDungeon.player.getPower(DrawDownPower.POWER_ID);
+            if (tmp.actualDrawReduction > TheDrifter.CARD_DRAW)
+            drawAmount -= tmp.actualDrawReduction - TheDrifter.CARD_DRAW;
+        }
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(drawAmount));
             int adjustedAmount = this.amount;
             if (this.owner.hasPower(CruiseControlPower.POWER_ID)){
                 adjustedAmount -= this.owner.getPower(CruiseControlPower.POWER_ID).amount;
@@ -93,6 +131,42 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         if (adjustedAmount > 6){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionPower(this.owner, this.owner, -2),-2));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionRestorePower(this.owner, this.owner, 2),2));
+        }
+    }
+
+    @Override
+    public void updateParticles(){
+        particleTimer += Gdx.graphics.getDeltaTime();
+        racingTimer += Gdx.graphics.getDeltaTime();
+        if (this.amount >= 2){
+            particleInterval = (0.2f / (float)(this.amount / 2));
+        }
+        else {
+            particleInterval = 0.2f;
+        }
+        if (particleTimer >= particleInterval){
+            AbstractDungeon.effectsQueue.add(new SpeedParticleEffect(windColor, true, 1f + 1f/(float)this.amount/4));
+            particleTimer = 0f;
+            count++;
+            if (count >= 10){
+                AbstractDungeon.effectsQueue.add(new BorderFlashEffect(flashColor(this.amount)));
+                count = 0;
+            }
+        }
+    }
+
+    private Color flashColor(int amount){
+        if (amount < SPEEDPENALTY1){
+            return windColor.cpy();
+        }
+        else if (amount < SPEEDPENALTY2){
+            return Color.RED.cpy();
+        }
+        else if (amount < SPEEDPENALTY3){
+            return Color.GREEN.cpy();
+        }
+        else {
+            return Color.CYAN.cpy();
         }
     }
 

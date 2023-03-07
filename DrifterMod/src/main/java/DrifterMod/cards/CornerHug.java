@@ -3,16 +3,19 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class CornerHug extends AbstractDynamicCard {
+public class CornerHug extends AbstractDriftCard {
 
     // TEXT DECLARATION
 
@@ -48,10 +51,10 @@ public class CornerHug extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hand.size() >= 3){
+            CardCrawlGame.sound.playA("Screech", -(float)Math.random()*0.3f);
             AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 3, false));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
-        }
+            addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
     }
 
 

@@ -3,17 +3,22 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
+import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.sun.tools.javac.util.AbstractDiagnosticFormatter;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class KeepItSteady extends AbstractDynamicCard {
+public class KeepItSteady extends AbstractDriftCard {
 
     // TEXT DECLARATION
 
@@ -50,6 +55,8 @@ public class KeepItSteady extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(DriftPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, magicNumber)));
+            CardCrawlGame.sound.playA("PassSlow", (float)Math.random()*0.2f - 0.1f);
+
         }
     }
 

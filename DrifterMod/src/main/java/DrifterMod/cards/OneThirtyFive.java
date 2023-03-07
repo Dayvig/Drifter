@@ -4,6 +4,8 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -27,7 +29,7 @@ public class OneThirtyFive extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(OneThirtyFive.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("135deg.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -66,17 +68,12 @@ public class OneThirtyFive extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
+        addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
     }
 
     @Override
     public void applyPowers() {
-        int total;
-        if (upgraded) {
-            total = MAGIC + UPGRADE_MAGIC;
-        }
-        else {
-            total = MAGIC;
-        }
+        int total = baseMagicNumber;
 
         if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)){
             total += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
@@ -84,7 +81,13 @@ public class OneThirtyFive extends AbstractDynamicCard {
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)){
             total += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }
-        baseMagicNumber = magicNumber = total;
+        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
+            total += AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
+        }
+        magicNumber = total;
+        if (total != baseMagicNumber) {
+            isMagicNumberModified = true;
+        }
     }
 
     //Upgraded stats.

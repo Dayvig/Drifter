@@ -18,7 +18,7 @@ public class Underdog extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Underdog.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Underdog.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -70,9 +70,9 @@ public class Underdog extends AbstractDynamicCard {
     }
 
     @Override
-    public void applyPowers(){
+    public void triggerOnGlowCheck(){
         if (AbstractDungeon.player.hand.size() <= 1 && AbstractDungeon.actionManager.actions.isEmpty() && !AbstractDungeon.actionManager.turnHasEnded && !AbstractDungeon.player.hasPower("No Draw") && !AbstractDungeon.isScreenUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
-            this.addToTop(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
+            AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
         }
     }
 

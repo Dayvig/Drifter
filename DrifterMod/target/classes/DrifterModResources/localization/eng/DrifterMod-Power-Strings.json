@@ -16,9 +16,9 @@
                 ]
         },
         "DrifterMod:DriftingPower": {
-                "NAME": "Drifting...",
+                "NAME": "Drift Momentum",
                 "DESCRIPTIONS": [
-                        "Maintains your drift. If you don't have this, lose all your Drift at the end of the turn instead of half.",
+                        "Gain this whenever you gain #yDrift (Max 2.) At the end of the turn if you don't have this power, lose all of your #yDrift.",
                         "",
                         ""
                 ]
@@ -27,8 +27,8 @@
                 "NAME": "Drift",
                 "DESCRIPTIONS": [
                         "Gain #b Block and deal #b",
-                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your Drift.",
-                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your Drift."
+                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your #yDrift. If you have no #yDrift #yMomentum, lose it all instead.",
+                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your #yDrift. If you have no #yDrift #yMomentum, lose it all instead."
                 ]
         },
         "DrifterMod:TempRetainPower": {
@@ -90,9 +90,9 @@
         "DrifterMod:ThermalPower": {
                 "NAME": "Thermal Engines",
                 "DESCRIPTIONS": [
-                        "At the start of your turn if you have Overdraw, gain #b",
-                        " [E] ",
-                        ""
+                        "The first time you would draw while your hand is full each turn, gain [E] ",
+                        "The first #b",
+                        " times you would draw while your hand is full each turn, gain [E] "
                 ]
         },
         "DrifterMod:AeroPower": {
@@ -120,11 +120,11 @@
                 ]
         },
         "DrifterMod:Speedup": {
-                "NAME": "Speed-up",
+                "NAME": "Speed",
                 "DESCRIPTIONS": [
                         "Draw #b",
-                        " extra card at the start of your turn and gain these effects based on your Speedup:",
-                        " extra card at the start of your turn and gain these effects based on your Speedup:",
+                        " extra card at the start of your turn and gain these effects based on your Speed:",
+                        " extra card at the start of your turn and gain these effects based on your Speed:",
                         "3+: Gain 1 Vulnerable.",
                         "5+: Lose 2 Dexterity this turn only.",
                         "7+: Lose 2 Traction this turn only."
@@ -147,17 +147,16 @@
                 ]
         },
         "DrifterMod:FireTrailPower": {
-                "NAME": "Flame Trail Power",
+                "NAME": "Flame Trail",
                 "DESCRIPTIONS": [
-                        "At the start of your turn, deal #b",
-                        " damage to all enemies for each Overdraw.",
-                        " damage to all enemies for each Overdraw."
+                        "At the start of your turn, deal damage to all enemies equal to your driftermod:Total-Hand.",
+                        "At the start of your turn, deal damage to all enemies equal to your driftermod:Total-Hand times #b"
                 ]
         },
         "DrifterMod:DriftSweepPower": {
                 "NAME": "Drift Sweep",
                 "DESCRIPTIONS": [
-                        "Your Drift hits all enemies."
+                        "Your Drift hits all enemies this turn."
                 ]
         },
         "DrifterMod:GambitPower": {
@@ -187,7 +186,7 @@
         "DrifterMod:CruiseControlPower": {
                 "NAME": "Cruise Control",
                 "DESCRIPTIONS": [
-                        "Your Speedup is considered #b",
+                        "Your Speed is considered #b",
                         " less for its negative effects.",
                         " less for its negative effects."
                 ]

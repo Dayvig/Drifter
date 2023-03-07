@@ -3,6 +3,8 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
+import DrifterMod.powers.TractionPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -58,6 +60,16 @@ public class Twenty extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
+        addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
+
+    }
+
+    @Override
+    public void applyPowers(){
+        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
+            isMagicNumberModified = true;
+            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
+        }
     }
 
 

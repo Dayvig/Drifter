@@ -2,10 +2,8 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.powers.DriftNextTurnPower;
-import DrifterMod.powers.DriftPower;
-import DrifterMod.powers.DriftingPower;
-import DrifterMod.powers.TractionNextTurn;
+import DrifterMod.powers.*;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class OneEighty extends AbstractDynamicCard {
+public class OneEighty extends AbstractDriftCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -70,7 +68,9 @@ public class OneEighty extends AbstractDynamicCard {
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TractionNextTurn(p,p,defaultSecondMagicNumber), defaultSecondMagicNumber));
+        addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
     }
+
 
     //Upgraded stats.
     @Override

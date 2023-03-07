@@ -33,8 +33,9 @@ public class SafeDriving extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
     public static final int BLOCK = 8;
-    public static final int UPGRADE_BLOCK = 4;
-    public static final int MAGIC = 1;
+    public static final int UPGRADE_BLOCK = 2;
+    public static final int MAGIC = 4;
+    public static final int UPGRADE_PLUS_MAGIC = 2;
     public static final int COST = 1;
 
     // Hey want a second magic/damage/block/unique number??? Great!
@@ -55,8 +56,12 @@ public class SafeDriving extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("PassSlow", (float)Math.random()*0.2f);
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(Speedup.POWER_ID), magicNumber));
+        if (p.hasPower(Speedup.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(Speedup.POWER_ID), 1));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
+        }
     }
 
     //Upgraded stats.
@@ -65,6 +70,7 @@ public class SafeDriving extends AbstractDynamicCard {
         if (!upgraded) {
             upgradeName();
             upgradeBlock(UPGRADE_BLOCK);
+            upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
             initializeDescription();
         }
     }

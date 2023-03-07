@@ -30,5 +30,12 @@
       ".",
       "Select a card to bottle for "
     ]
+  },
+  "DrifterMod:SteeringWheel": {
+    "NAME": "Steering Wheel",
+    "FLAVOR": "This lucky steering wheel is a memento of cars past.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 #ydriftermod:Speed"
+    ]
   }
 }

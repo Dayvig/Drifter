@@ -35,8 +35,8 @@ public class ResolvePower extends AbstractPower implements CloneablePowerInterfa
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("genius84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("genius32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("resolve84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("resolve32.png"));
 
     private boolean isActive = false;
 
@@ -54,82 +54,29 @@ public class ResolvePower extends AbstractPower implements CloneablePowerInterfa
         // We load those txtures here.
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
-        this.loadRegion("combust");
         updateDescription();
     }
 
     @Override
-    public void onInitialApplication(){
-        isActive = AbstractDungeon.player.hand.size() <= 2;
-        if (isActive){
-            applyBonus();
+    public float modifyBlock(float blockAmount)
+    {
+        if (AbstractDungeon.player.hand.size() <= 2) {
+            if (blockAmount < 1)
+                return blockAmount;
+            return Math.max(blockAmount + amount, 0);
         }
-    }
-
-    private void applyBonus(){
-        System.out.println("Resolve tested");
-        if (isActive) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount), this.amount));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionPower(this.owner, this.owner, this.amount), this.amount));
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.amount), -this.amount));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, -this.amount), -this.amount));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new TractionPower(this.owner, this.owner, -this.amount), -this.amount));
-        }
+        return blockAmount;
     }
 
     @Override
-    public void onDrawOrDiscard() {
-        System.out.println("test");
-        if (!isActive){
-            if (AbstractDungeon.player.hand.size() <= 2){
-                isActive = true;
-                applyBonus();
-            }
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        if (AbstractDungeon.player.hand.size() <= 2) {
+            if (type == DamageInfo.DamageType.NORMAL)
+                return damage + this.amount;
+            return damage;
         }
-        else {
-            if (AbstractDungeon.player.hand.size() > 2){
-                isActive = false;
-                applyBonus();
-            }
-        }
+        return damage;
     }
-
-    @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        System.out.println("test");
-        if (!isActive){
-            if (AbstractDungeon.player.hand.size() <= 2){
-                isActive = true;
-                applyBonus();
-            }
-        }
-        else {
-            if (AbstractDungeon.player.hand.size() > 2){
-                isActive = false;
-                applyBonus();
-            }
-        }
-    }
-
-    public void stackPower(int stackAmount) {
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
-        if (this.amount == 0) {
-            this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Strength"));
-        }
-
-        if (this.amount >= 999) {
-            this.amount = 999;
-        }
-
-        if (this.amount <= -999) {
-            this.amount = -999;
-        }
-    }
-
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override

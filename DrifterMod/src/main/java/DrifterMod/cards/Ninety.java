@@ -5,7 +5,9 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftStrengthDownPower;
 import DrifterMod.powers.DriftingPower;
+import DrifterMod.powers.TractionPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -19,7 +21,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class Ninety extends AbstractDynamicCard {
+public class Ninety extends AbstractDriftCard {
 
     // TEXT DECLARATION
 
@@ -65,6 +67,7 @@ public class Ninety extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,3), 3));
+        addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
     }
 
     // Upgraded stats.

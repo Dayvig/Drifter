@@ -3,6 +3,7 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.*;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +26,7 @@ public class Manuever extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Manuever.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Manuever.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -60,6 +61,7 @@ public class Manuever extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TractionPower(p, p, 2), 2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TractionDownPower(p, p, 2), 2));
+        addToBot(new AnimateShakeAction(p, 0.15f, 0.15f));
     }
 
     //Upgraded stats.

@@ -3,6 +3,7 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.actions.HardPassAction;
 import DrifterMod.characters.TheDrifter;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -32,7 +33,7 @@ public class HardPass extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
@@ -53,7 +54,9 @@ public class HardPass extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Screech", (float)Math.random()*0.5f - 0.2f);
         this.addToBot(new HardPassAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        addToBot(new AnimateFastAttackAction(p));
     }
 
     //Upgraded stats.

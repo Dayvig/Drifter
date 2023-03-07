@@ -2,6 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,7 +38,7 @@ public class BobWeave extends AbstractDynamicCard {
     private static final int COST = 1;  // COST = ${COST}
 
     private static final int BLOCK = 6;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
     private int numLeft;
@@ -57,6 +58,7 @@ public class BobWeave extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, magicNumber), magicNumber));
+        addToBot(new AnimateShakeAction(p, 0.4f, 0.4f));
     }
 
     // Upgraded stats.

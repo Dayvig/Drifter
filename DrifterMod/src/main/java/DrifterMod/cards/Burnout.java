@@ -4,6 +4,7 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Burn;
@@ -27,7 +28,7 @@ public class Burnout extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(Burnout.class.getSimpleName());
-    public static final String IMG = makeCardPath("burnrubber.png");
+    public static final String IMG = makeCardPath("Burnout.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -42,9 +43,9 @@ public class Burnout extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 14;
     private static final int UPGRADE_PLUS_DAMAGE = 4;
-
+    private static final int MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -52,19 +53,19 @@ public class Burnout extends AbstractDynamicCard {
     public Burnout() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = MAGIC;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.playA("Screech", (float)Math.random()*0.3f);
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage,
                 DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), 1));
+        addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), 1, true, false));
         if (p.hasPower(Speedup.POWER_ID)){
         AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(Speedup.POWER_ID), magicNumber));
-        }
-        else {
-            this.exhaust = true;
         }
     }
 

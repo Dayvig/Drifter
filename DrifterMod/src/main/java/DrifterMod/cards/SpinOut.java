@@ -5,6 +5,8 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
 import DrifterMod.powers.DriftingPower;
 import DrifterMod.powers.ThornsDownPower;
+import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -23,7 +25,7 @@ public class SpinOut extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(SpinOut.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("spinout.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Spinout.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -59,6 +61,11 @@ public class SpinOut extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsDownPower(p, p, magicNumber * p.getPower(DriftPower.POWER_ID).amount), magicNumber * p.getPower(DriftPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftPower.POWER_ID));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftingPower.POWER_ID));
+            addToBot(new FastShakeAction(p, 0.1f, 0.1f));
+            addToBot(new FastShakeAction(p, 0.1f, 0.1f));
+            addToBot(new FastShakeAction(p, 0.1f, 0.1f));
+            addToBot(new FastShakeAction(p, 0.1f, 0.1f));
+
         }
     }
 

@@ -23,7 +23,7 @@ public class GearDown extends AbstractDynamicCard {
     // TEXT DECLARATION
 
     public static final String ID = DrifterMod.makeID(GearDown.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
-    public static final String IMG = makeCardPath("floorit.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("Geardown.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -37,9 +37,9 @@ public class GearDown extends AbstractDynamicCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
     private static final CardType TYPE = CardType.POWER;       //
-    public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
+    public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 1;
     private static final int BLOCK = 10;
@@ -57,11 +57,12 @@ public class GearDown extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, -2), -2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, new Speedup(p, p, 1), 1));
-
+        if (p.hasPower(Speedup.POWER_ID)){
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, new Speedup(p, p, 1), 1));
+        }
     }
 
 
