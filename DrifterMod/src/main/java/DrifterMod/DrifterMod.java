@@ -399,7 +399,7 @@ public class DrifterMod implements
         BaseMod.addCard(new Zoom());
         BaseMod.addCard(new RacingSpirit());
         BaseMod.addCard(new InTheZone());
-        BaseMod.addCard(new StylePoints());
+        //BaseMod.addCard(new StylePoints());
         BaseMod.addCard(new ImpossibleTurn());
         BaseMod.addCard(new NeedForSpeed());
         BaseMod.addCard(new SafeDriving());
@@ -438,24 +438,40 @@ public class DrifterMod implements
         BaseMod.addCard(new Resolve());
         BaseMod.addCard(new Fierce());
         BaseMod.addCard(new RiskyApproach());
-        BaseMod.addCard(new SupersonicFire());
+        //BaseMod.addCard(new SupersonicFire());
         BaseMod.addCard(new CruiseControl());
         BaseMod.addCard(new Ram());
         BaseMod.addCard(new Sixty());
         BaseMod.addCard(new DriftMaster());
         BaseMod.addCard(new Speedstar());
         BaseMod.addCard(new VariableDrift());
+        BaseMod.addCard(new NaturalTalent());
+        BaseMod.addCard(new FuelReserve());
+        BaseMod.addCard(new AllTheStops());
+        BaseMod.addCard(new LastResort());
+        BaseMod.addCard(new Adaptability());
+        BaseMod.addCard(new PoundPavement());
+        BaseMod.addCard(new AccelerationForm());
+        BaseMod.addCard(new DriftAhead());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(DriftAhead.ID);
+        UnlockTracker.unlockCard(AccelerationForm.ID);
+        UnlockTracker.unlockCard(PoundPavement.ID);
+        UnlockTracker.unlockCard(Adaptability.ID);
+        UnlockTracker.unlockCard(LastResort.ID);
+        UnlockTracker.unlockCard(AllTheStops.ID);
+        UnlockTracker.unlockCard(FuelReserve.ID);
+        UnlockTracker.unlockCard(NaturalTalent.ID);
         UnlockTracker.unlockCard(VariableDrift.ID);
         UnlockTracker.unlockCard(DriftMaster.ID);
         UnlockTracker.unlockCard(Ram.ID);
         UnlockTracker.unlockCard(CruiseControl.ID);
-        UnlockTracker.unlockCard(SupersonicFire.ID);
+        //UnlockTracker.unlockCard(SupersonicFire.ID);
         UnlockTracker.unlockCard(RiskyApproach.ID);
         UnlockTracker.unlockCard(Fierce.ID);
         UnlockTracker.unlockCard(Resolve.ID);
@@ -484,7 +500,7 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(SafeDriving.ID);
         UnlockTracker.unlockCard(NeedForSpeed.ID);
         UnlockTracker.unlockCard(ImpossibleTurn.ID);
-        UnlockTracker.unlockCard(StylePoints.ID);
+        //UnlockTracker.unlockCard(StylePoints.ID);
         UnlockTracker.unlockCard(RacingSpirit.ID);
         UnlockTracker.unlockCard(InTheZone.ID);
         UnlockTracker.unlockCard(InControl.ID);

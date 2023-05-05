@@ -5,11 +5,14 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.*;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.Iterator;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -34,7 +37,7 @@ public class SafeDriving extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
     public static final int BLOCK = 8;
     public static final int UPGRADE_BLOCK = 2;
-    public static final int MAGIC = 4;
+    public static final int MAGIC = 8;
     public static final int UPGRADE_PLUS_MAGIC = 2;
     public static final int COST = 1;
 
@@ -63,6 +66,15 @@ public class SafeDriving extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, magicNumber));
         }
     }
+
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.player.hasPower(Speedup.POWER_ID)){
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
 
     //Upgraded stats.
     @Override

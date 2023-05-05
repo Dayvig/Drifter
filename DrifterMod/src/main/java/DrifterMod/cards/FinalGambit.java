@@ -1,6 +1,7 @@
 package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.actions.EqualizeAction;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.CoolPower;
 import DrifterMod.powers.GambitPower;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.GrandFinalEffect;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -31,11 +33,12 @@ public class FinalGambit extends AbstractDynamicCard {
     // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.SELF;  //   since they don't change much.
-    private static final CardType TYPE = CardType.POWER;       //
+    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
+    private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 2;  // COST = ${COST}
+    private static final int UPGRADED_COST = 1;
     private static final int MAGIC = 1;
 
     // /STAT DECLARATION/
@@ -50,8 +53,9 @@ public class FinalGambit extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.selfRetain = false;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GambitPower(p, p, magicNumber), magicNumber));
+        CardCrawlGame.sound.playAV("Screech", (float)Math.random()*0.3f - 0.3f, 1.5f);
+        AbstractDungeon.effectsQueue.add(new GrandFinalEffect());
+        AbstractDungeon.actionManager.addToBottom(new EqualizeAction(magicNumber, p));
     }
 
 
@@ -60,8 +64,7 @@ public class FinalGambit extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.selfRetain = true;
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

@@ -157,7 +157,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
         }
     }
 
-    private void DriftDamage(){
+    public void DriftDamage(){
         AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.owner, this.amount));
         ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
 

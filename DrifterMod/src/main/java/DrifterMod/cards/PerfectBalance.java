@@ -27,13 +27,13 @@ public class PerfectBalance extends AbstractDynamicCard {
 
     // STAT DECLARATION
 
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.RARE; //  Up to you, I like auto-complete on these
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.SELF;  //   since they don't change much.
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.POWER;       //
     public static final AbstractCard.CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 1;
-    private static final int UPGRADED_COST = 0;
+    private static final int COST = 0;
+    private static final int UPG_MAGIC = 1;
     private static final int MAGIC = 1;
     // /STAT DECLARATION/
 
@@ -54,7 +54,7 @@ public class PerfectBalance extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPG_MAGIC);
             initializeDescription();
         }
     }

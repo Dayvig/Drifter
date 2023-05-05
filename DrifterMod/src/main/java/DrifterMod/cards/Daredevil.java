@@ -4,6 +4,7 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -70,6 +71,15 @@ public class Daredevil extends AbstractDynamicCard {
         }
         else {
             this.exhaust = true;
+        }
+    }
+
+
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)){
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 

@@ -34,6 +34,7 @@ public class InControl extends AbstractDynamicCard {
 
     private static final int COST = 0;  // COST = ${COST}
     private static final int MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 1;
 
     // /STAT DECLARATION/
 
@@ -58,6 +59,8 @@ public class InControl extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            this.upgradeName();
+            upgradeMagicNumber(UPGRADE_MAGIC);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -89,10 +89,12 @@ public class BalancePower extends AbstractPower implements CloneablePowerInterfa
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
+        this.name =
+                balanced == 0 ? DESCRIPTIONS[3] : DESCRIPTIONS[4];
         if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
             description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        } else if (amount > 1) {
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         }
     }
 

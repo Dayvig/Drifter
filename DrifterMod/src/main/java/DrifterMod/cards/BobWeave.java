@@ -39,7 +39,7 @@ public class BobWeave extends AbstractDynamicCard {
 
     private static final int BLOCK = 6;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_BLOCK = 3;
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
     private static final int UPGRADE_MAGIC = 1;
     private int numLeft;
 

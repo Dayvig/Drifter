@@ -43,5 +43,11 @@
     "shift-down"
   ],
   "DESCRIPTION": "Gain 10 Block. Gain 2 Dexterity. Lose 2 Strength. Lose 1 Speed."
+},{
+  "NAMES": [
+    "activate",
+    "Activate"
+  ],
+  "DESCRIPTION": "Gain Block and deal damage to the lowest HP enemy equal to your Drift."
 }
 ]

@@ -106,9 +106,11 @@
         "DrifterMod:BalancePower": {
                 "NAME": "Balanced",
                 "DESCRIPTIONS": [
-                        "If you play an even number of cards this turn, draw #b cards next turn.",
-                        "",
-                        ""
+                        "If you play an even number of cards this turn, draw #b",
+                        " card next turn.",
+                        " cards next turn.",
+                        "Balanced",
+                        "Unbalanced"
                 ]
         },
         "DrifterMod:ZoomPower": {
@@ -197,6 +199,21 @@
                         "When you draw a card this turn, gain #b",
                         " Traction this turn only.",
                         " Traction this turn only."
+                ]
+        },
+        "DrifterMod:FuelReservePower": {
+                "NAME": "Fuel Reserves",
+                "DESCRIPTIONS": [
+                        "If your hand is empty, draw #b",
+                        " cards and remove this."
+                ]
+        },
+        "DrifterMod:AdaptabilityPower": {
+                "NAME": "Adaptability",
+                "DESCRIPTIONS": [
+                        "If your hand is empty, draw #b",
+                        " card.",
+                        " cards."
                 ]
         }
 }

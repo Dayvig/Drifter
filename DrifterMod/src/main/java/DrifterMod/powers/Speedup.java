@@ -1,6 +1,8 @@
 package DrifterMod.powers;
 
 import DrifterMod.DrifterMod;
+import DrifterMod.Patches.BeyondScenePatch;
+import DrifterMod.actions.ChangeParalaxSpeedAction;
 import DrifterMod.actions.EurobeatAction;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.effects.SpeedParticleEffect;
@@ -95,11 +97,21 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     @Override
     public void onInitialApplication(){
         racingID = CardCrawlGame.sound.playAndLoop("Racing");
+        float totalSpeed = (this.amount * 0.25f) + 0.75f;
+        addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller,totalSpeed));
+    }
+
+    @Override
+    public void stackPower(int stackAmount){
+        super.stackPower(stackAmount);
+        float totalSpeed = (this.amount * 0.25f) + 0.75f;
+        addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller,totalSpeed));
     }
 
     @Override
     public void onRemove(){
         CardCrawlGame.sound.fadeOut("Racing", racingID);
+        addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller,0.75f));
     }
 
     @Override
