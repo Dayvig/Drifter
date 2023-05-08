@@ -5,7 +5,7 @@
   },
   "DrifterMod:Sixty": {
   "NAME": "Last-Second Turn",
-  "DESCRIPTION": "driftermod:Drift !M!. If you have 2 or fewer cards in your hand, Drift !DrifterMod:M2!."
+  "DESCRIPTION": "driftermod:Drift !M!. NL If you have 2 or fewer cards in your hand, driftermod:Drift !DrifterMod:M2!."
 },
   "DrifterMod:FortyFive": {
     "NAME": "45 Degree Turn",

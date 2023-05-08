@@ -2,17 +2,17 @@
         "DrifterMod:DexDownPower": {
                 "NAME": "Dex Down",
                 "DESCRIPTIONS": [
-                        "Lose #b Dexterity at the end of the turn.",
-                        "",
-                        ""
+                        "Lose #b",
+                        " Dexterity at the end of the turn.",
+                        " Dexterity at the end of the turn."
                 ]
         },
         "DrifterMod:DexterityNextTurnPower": {
                 "NAME": "Dex Next Turn",
                 "DESCRIPTIONS": [
-                        "Gain #b Dexterity next turn.",
-                        "",
-                        ""
+                        "Gain #b",
+                        " Dexterity next turn.",
+                        " Dexterity next turn."
                 ]
         },
         "DrifterMod:DriftingPower": {
@@ -34,25 +34,25 @@
         "DrifterMod:TempRetainPower": {
                 "NAME": "Retain",
                 "DESCRIPTIONS": [
-                        "Keep #b cards in your hand this turn only.",
-                        "",
-                        ""
+                        "Keep #b",
+                        " cards in your hand this turn only.",
+                        " cards in your hand this turn only."
                 ]
         },
         "DrifterMod:ThornsDownPower": {
                 "NAME": "Thorns Down",
                 "DESCRIPTIONS": [
-                        "Lose #b Thorns at the start of your turn.",
-                        "",
-                        ""
+                        "Lose #b",
+                        " Thorns at the start of your turn.",
+                        " Thorns at the start of your turn."
                 ]
         },
         "DrifterMod:DriftStrengthDownPower": {
                 "NAME": "Drifting Strength",
                 "DESCRIPTIONS": [
-                        "Lose #b Strength if you lose your Drift.",
-                        "",
-                        ""
+                        "Lose #b",
+                        " Strength if you lose your Drift.",
+                        " Strength if you lose your Drift."
                 ]
         },
         "DrifterMod:TempMaxHandSizeInc": {
@@ -74,9 +74,9 @@
         "DrifterMod:TractionPower": {
                 "NAME": "Extra Traction",
                 "DESCRIPTIONS": [
-                        "When you Drift, Drift #b extra.",
-                        "",
-                        ""
+                        "When you Drift, Drift #b",
+                        " more.",
+                        " more."
                 ]
         },
         "DrifterMod:DriftNextTurnPower": {
@@ -214,6 +214,13 @@
                         "If your hand is empty, draw #b",
                         " card.",
                         " cards."
+                ]
+        },
+        "DrifterMod:AccelerationPower": {
+                "NAME": "Acceleration",
+                "DESCRIPTIONS": [
+                        "At the start of your turn, gain #b",
+                        " driftermod:Speed."
                 ]
         }
 }

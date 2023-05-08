@@ -69,6 +69,7 @@ DrifterMod\cards\InTheZone.class
 DrifterMod\cards\InControl.class
 DrifterMod\cards\NeedForSpeed.class
 DrifterMod\cards\FinalGambit.class
+DrifterMod\Patches\BeyondScenePatch$BottomSceneParalaxBGTorchPatch.class
 DrifterMod\cards\Dejavu.class
 DrifterMod\cards\Ninety.class
 DrifterMod\powers\DriftSweepPower.class
@@ -94,6 +95,7 @@ DrifterMod\powers\DamageNextTurnPower.class
 DrifterMod\powers\OverdrawNextTurn.class
 DrifterMod\cards\Underdog.class
 DrifterMod\cards\VariableDrift.class
+DrifterMod\Patches\BeyondScenePatch$EndingSceneParalaxBGPatch.class
 DrifterMod\cards\Zoom.class
 DrifterMod\cards\BurnRubber.class
 DrifterMod\powers\ThermalPower.class
@@ -151,6 +153,7 @@ DrifterMod\cards\PoundPavement.class
 DrifterMod\actions\PoundPavementAction.class
 DrifterMod\interfaces\OnRefreshHandPower.class
 DrifterMod\cards\Determined.class
+DrifterMod\Patches\BeyondScenePatch$CitySceneParalaxBGPatch.class
 DrifterMod\cards\CruiseControl.class
 DrifterMod\cards\ThermalEngine.class
 DrifterMod\Patches\FixFuckingTimeEaterPowerPatch$Fix.class

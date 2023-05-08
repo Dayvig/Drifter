@@ -24,8 +24,7 @@ public class SteeringWheel extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        flash();
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new Speedup(AbstractDungeon.player, AbstractDungeon.player, 1)));
+        beginLongPulse();
     }
 
 

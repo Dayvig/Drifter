@@ -15,26 +15,28 @@ public class ParalaxObject {
     public float baseSpeed;
     public Texture img;
     public boolean flipped;
+    public boolean reversed;
 
     public ParalaxObject(String texturePath) {
-        this(0, 400.0f, 100.0f, texturePath, false);
+        this(0, 400.0f, 100.0f, texturePath, false, false);
     }
     public ParalaxObject(String texturePath, boolean flipped) {
-        this(0, 400.0f, 100.0f, texturePath, flipped);
+        this(0, 400.0f, 100.0f, texturePath, flipped, false);
     }
     public ParalaxObject(float x, float y, String texturePath) {
-        this(x, y, 100.0f, texturePath, false);
+        this(x, y, 100.0f, texturePath, false, false);
     }
-    public ParalaxObject(float x, float y, float speed, String texturePath, boolean flipped) {
+    public ParalaxObject(float x, float y, float speed, String texturePath, boolean flipped, boolean reversed) {
         this.x = x;
         this.y = y;
         this.flipped = flipped;
+        this.reversed = flipped || reversed;
         this.speed = speed;
         this.img = ImageMaster.loadImage(texturePath);
     }
 
     public void Render(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
-        sb.draw(this.img, this.x - this.img.getWidth(), this.y + AbstractDungeon.sceneOffsetY, this.img.getWidth() * Settings.scale, this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.flipped, this.flipped);
+        sb.draw(this.img, this.x - this.img.getWidth(), this.y + AbstractDungeon.sceneOffsetY, this.img.getWidth() * Settings.scale, this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.reversed, this.flipped);
     }
 }

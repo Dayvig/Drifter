@@ -33,6 +33,7 @@ public class TractionTires extends AbstractDynamicCard {
     public static final AbstractCard.CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 2;
+    private static final int UPG_COST = 1;
     private static final int MAGIC = 1;  // COST = ${COST}
     // /STAT DECLARATION/
 
@@ -40,7 +41,6 @@ public class TractionTires extends AbstractDynamicCard {
     public TractionTires() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.isInnate = false;
     }
 
     // Actions the card should do.
@@ -54,8 +54,7 @@ public class TractionTires extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isInnate = true;
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeBaseCost(UPG_COST);
             initializeDescription();
         }
     }

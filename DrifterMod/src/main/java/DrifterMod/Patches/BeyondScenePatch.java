@@ -3,13 +3,24 @@
 
 package DrifterMod.Patches;
 
+import DrifterMod.characters.TheDrifter;
 import UI.ParalaxController;
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.scenes.TheBeyondScene;
 import com.megacrit.cardcrawl.scenes.TheBottomScene;
+import com.megacrit.cardcrawl.scenes.TheCityScene;
+import com.megacrit.cardcrawl.scenes.TheEndingScene;
+import com.megacrit.cardcrawl.vfx.scene.InteractableTorchEffect;
+
+import java.util.ArrayList;
+
+import static DrifterMod.characters.TheDrifter.Enums.THE_DRIFTER;
 
 public class BeyondScenePatch {
 
@@ -18,15 +29,41 @@ public class BeyondScenePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheBottomScene", method = "renderCombatRoomBg")
     public static class BottomSceneParalaxBGPatch {
         public static void Postfix(TheBottomScene __instance, final SpriteBatch sb) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
                 bg_controller.Render(sb);
+            }
+        }
+    }
+    @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheBottomScene", method = "updateTorches")
+    public static class BottomSceneParalaxBGTorchPatch {
+        public static void Prefix(TheBottomScene __instance) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+                ArrayList<InteractableTorchEffect> hackedTorches = ReflectionHacks.getPrivate(__instance, TheBottomScene.class, "torches");
+                hackedTorches.clear();
+                SpireReturn.Return();
             }
         }
     }
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheBeyondScene", method = "renderCombatRoomBg")
     public static class BeyondSceneParalaxBGPatch {
         public static void Postfix(TheBeyondScene __instance, final SpriteBatch sb) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+                bg_controller.Render(sb);
+            }
+        }
+    }
+    @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheEndingScene", method = "renderCombatRoomBg")
+    public static class EndingSceneParalaxBGPatch {
+        public static void Postfix(TheEndingScene __instance, final SpriteBatch sb) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+                bg_controller.Render(sb);
+            }
+        }
+    }
+    @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheCityScene", method = "renderCombatRoomBg")
+    public static class CitySceneParalaxBGPatch {
+        public static void Postfix(TheCityScene __instance, final SpriteBatch sb) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
                 bg_controller.Render(sb);
             }
         }
