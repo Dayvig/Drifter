@@ -63,9 +63,6 @@ public class OneEighty extends AbstractDriftCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new TractionNextTurn(p,p,defaultSecondMagicNumber), defaultSecondMagicNumber));
         addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));

@@ -4,10 +4,12 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
 import DrifterMod.powers.TempMaxHandSizeInc;
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -41,8 +43,8 @@ public class Tmph extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DAMAGE = 2;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DAMAGE = 1;
     private static final int MAGIC = 2;
     // /STAT DECLARATION/
 
@@ -58,8 +60,8 @@ public class Tmph extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         CardCrawlGame.sound.playA("PassFast", (float)Math.random()*0.5f);
-        if (p.hasPower(TempMaxHandSizeInc.POWER_ID) && magicNumber > 10) {
-            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(TempMaxHandSizeInc.POWER_ID), magicNumber - 10));
+        if (p.hasPower(TempMaxHandSizeInc.POWER_ID) && magicNumber > BaseMod.MAX_HAND_SIZE) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(TempMaxHandSizeInc.POWER_ID), magicNumber - BaseMod.MAX_HAND_SIZE));
         }
         addToBot(new VFXAction(new WhirlwindEffect(Color.WHITE, true)));
         AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, magicNumber, false));
@@ -70,7 +72,7 @@ public class Tmph extends AbstractDynamicCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
-        this.cantUseMessage = "I don't have enough speed!";
+        this.cantUseMessage = "I need to discard "+magicNumber+" cards!";
         if (p.hasPower(TempMaxHandSizeInc.POWER_ID)){
             return magicNumber <= p.hand.size() + p.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
@@ -80,16 +82,16 @@ public class Tmph extends AbstractDynamicCard {
     }
 
     @Override
-    public void applyPowers(){
+    public void applyPowers() {
+        super.applyPowers();
         if (AbstractDungeon.player.hasPower(Speedup.POWER_ID)){
             baseMagicNumber = magicNumber = (MAGIC * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount) + MAGIC;
-            baseDamage = damage = DAMAGE * (2 * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount);
+            damage *= (int)((Math.pow(2, AbstractDungeon.player.getPower(Speedup.POWER_ID).amount)));
             this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + " MPH";
         }
         else
         {
             baseMagicNumber = magicNumber = MAGIC;
-            baseDamage = damage = DAMAGE;
             this.name = "20 MPH";
         }
 

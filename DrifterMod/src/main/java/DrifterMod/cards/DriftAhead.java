@@ -40,6 +40,7 @@ public class DriftAhead extends AbstractDynamicCard {
 
     private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 4;
+    private static final int UPG_MAGIC = -1;
     // /STAT DECLARATION/
 
     public DriftAhead() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
@@ -70,7 +71,7 @@ public class DriftAhead extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(UPG_MAGIC);
             initializeDescription();
         }
     }

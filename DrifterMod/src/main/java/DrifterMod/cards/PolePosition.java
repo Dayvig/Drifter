@@ -2,6 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.interfaces.OnRefreshHandCard;
 import DrifterMod.powers.TempMaxHandSizeInc;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class PolePosition extends AbstractDynamicCard {
+public class PolePosition extends AbstractDynamicCard implements OnRefreshHandCard {
 
     // TEXT DECLARATION
 
@@ -66,8 +67,19 @@ public class PolePosition extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 
+    // Upgraded stats.
     @Override
-    public void applyPowers(){
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            initializeDescription();
+        }
+    }
+
+    @Override
+    public void OnRefreshHand() {
         if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE){
             if (!changed){
                 prevFree = freeToPlayOnce;
@@ -82,16 +94,5 @@ public class PolePosition extends AbstractDynamicCard {
             }
         }
         initializeDescription();
-    }
-
-    // Upgraded stats.
-    @Override
-    public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeDamage(UPGRADE_PLUS_DAMAGE);
-            initializeDescription();
-        }
     }
 }

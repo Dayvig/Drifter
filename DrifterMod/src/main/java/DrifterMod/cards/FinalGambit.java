@@ -47,13 +47,14 @@ public class FinalGambit extends AbstractDynamicCard {
     public FinalGambit() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.exhaust = true;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        CardCrawlGame.sound.playAV("Screech", (float)Math.random()*0.3f - 0.3f, 1.5f);
+        //CardCrawlGame.sound.playAV("Screech", (float)Math.random()*0.3f - 0.3f, 1.5f);
         AbstractDungeon.effectsQueue.add(new GrandFinalEffect());
         AbstractDungeon.actionManager.addToBottom(new EqualizeAction(magicNumber, p));
     }

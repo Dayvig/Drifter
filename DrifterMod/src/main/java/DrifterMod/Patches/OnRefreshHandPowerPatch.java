@@ -1,7 +1,9 @@
 package DrifterMod.Patches;
 
+import DrifterMod.interfaces.OnRefreshHandCard;
 import DrifterMod.interfaces.OnRefreshHandPower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,6 +24,11 @@ public class OnRefreshHandPowerPatch {
         for (AbstractPower p : AbstractDungeon.player.powers) {
             if (p instanceof OnRefreshHandPower) {
                 ((OnRefreshHandPower) p).onRefreshHand();
+            }
+        }
+        for (AbstractCard c : AbstractDungeon.player.hand.group){
+            if (c instanceof  OnRefreshHandCard){
+                ((OnRefreshHandCard) c).OnRefreshHand();
             }
         }
     }

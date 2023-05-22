@@ -16,9 +16,9 @@
                 ]
         },
         "DrifterMod:DriftingPower": {
-                "NAME": "Drift Momentum",
+                "NAME": "Momentum",
                 "DESCRIPTIONS": [
-                        "Gain this whenever you gain #yDrift (Max 2.) At the end of the turn if you don't have this power, lose all of your #yDrift.",
+                        "Gain this whenever you gain #yDrift (Max #b2.) At the end of the turn if you don't have this power, lose all of your #yDrift.",
                         "",
                         ""
                 ]
@@ -27,8 +27,8 @@
                 "NAME": "Drift",
                 "DESCRIPTIONS": [
                         "Gain #b Block and deal #b",
-                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your #yDrift. If you have no #yDrift #yMomentum, lose it all instead.",
-                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your #yDrift. If you have no #yDrift #yMomentum, lose it all instead."
+                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your #yDrift. If you have no #yMomentum, lose it all instead.",
+                        " damage to the enemy with the lowest HP at the end of the turn, then lose half your #yDrift. If you have no #yMomentum, lose it all instead."
                 ]
         },
         "DrifterMod:TempRetainPower": {
@@ -51,14 +51,14 @@
                 "NAME": "Drifting Strength",
                 "DESCRIPTIONS": [
                         "Lose #b",
-                        " Strength if you lose your Drift.",
-                        " Strength if you lose your Drift."
+                        " Strength if you lose your #yDrift.",
+                        " Strength if you lose your #yDrift."
                 ]
         },
         "DrifterMod:TempMaxHandSizeInc": {
                 "NAME": "Overdraw",
                 "DESCRIPTIONS": [
-                        "While your hand is not full, draw 1 card and lose 1 Overdraw until your hand is full. Overdraw: #b",
+                        "While your hand is not full, draw #b1 card and lose #b1 #yOverdraw until your hand is full",
                         "",
                         ""
                 ]
@@ -74,7 +74,7 @@
         "DrifterMod:TractionPower": {
                 "NAME": "Extra Traction",
                 "DESCRIPTIONS": [
-                        "When you Drift, Drift #b",
+                        "When you #yDrift, #yDrift #b",
                         " more.",
                         " more."
                 ]
@@ -220,7 +220,15 @@
                 "NAME": "Acceleration",
                 "DESCRIPTIONS": [
                         "At the start of your turn, gain #b",
-                        " driftermod:Speed."
+                        " Speed."
+                ]
+        },
+        "DrifterMod:DrawDownPower": {
+                "NAME": "Brake",
+                "DESCRIPTIONS": [
+                        "Draw #b",
+                        " less card next turn.",
+                        " less cards next turn."
                 ]
         }
 }

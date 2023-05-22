@@ -50,6 +50,13 @@ public class ParalaxController {
             }
         }
     }
+    public void DistributeObjectsUniform(int level) {
+            float spacing = this.width / objects.get(level).size();
+            for (int i=0; i < objects.get(level).size(); i++) {
+                objects.get(level).get(i).x = spacing * i;
+            }
+    }
+
     public void Render(SpriteBatch sb) {
         for (ArrayList<ParalaxObject> level : this.objects) {
             for (ParalaxObject obj : level) {

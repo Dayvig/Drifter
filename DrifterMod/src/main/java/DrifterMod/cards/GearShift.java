@@ -3,6 +3,7 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.ModalChoice;
 import basemod.helpers.ModalChoiceBuilder;
@@ -74,7 +75,6 @@ public class GearShift extends AbstractDynamicCard implements ModalChoice.Callba
         }
     }
 
-
     public GearShift() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.cardToPreview.add(new GearUp());
@@ -88,13 +88,16 @@ public class GearShift extends AbstractDynamicCard implements ModalChoice.Callba
                     .addOption(new GearDown())
                     .create();
         }
+
     }
     
     // Uses the titles and descriptions of the option cards as tooltips for this card
     @Override
     public List<TooltipInfo> getCustomTooltips()
     {
-        return modal.generateTooltips();
+        List<TooltipInfo> tmp = modal.generateTooltips();
+        //tmp.add(new TooltipInfo(BaseMod.getKeywordProper("driftermod:speed"), BaseMod.getKeywordDescription("driftermod:speed")));
+        return tmp;
     }
 
     @Override

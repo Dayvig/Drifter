@@ -3,6 +3,8 @@ package DrifterMod.powers;
 import DrifterMod.DrifterMod;
 import DrifterMod.actions.FastReducePowerAction;
 import DrifterMod.actions.OverdrawCardAction;
+import DrifterMod.interfaces.OnRefreshHandCard;
+import DrifterMod.interfaces.OnRefreshHandPower;
 import DrifterMod.interfaces.hasOverdrawTrigger;
 import DrifterMod.util.TextureLoader;
 import basemod.BaseMod;
@@ -25,12 +27,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static DrifterMod.DrifterMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
-public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerInterface {
+public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerInterface, OnRefreshHandPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = DrifterMod.makeID("TempMaxHandSizeInc");
@@ -60,7 +63,7 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
 
         updateDescription();
     }
-
+    /*
     @Override
     public void atStartOfTurnPostDraw() {
         overDraw();
@@ -74,7 +77,7 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
     @Override
     public void onAfterUseCard(AbstractCard c, UseCardAction a){
         overDraw2();
-    }
+    }*/
 
     private void overDraw(){
         int k = AbstractDungeon.player.hand.size()-1;
@@ -107,15 +110,22 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        if (amount == 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        } else if (amount > 1) {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-        }
+            description = DESCRIPTIONS[0];
     }
 
     @Override
     public AbstractPower makeCopy() {
         return new TempMaxHandSizeInc(owner, source, amount);
+    }
+
+    @Override
+    public void onRefreshHand() {
+        if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE && canTrigger()) {
+            overDraw2();
+        }
+    }
+
+    private boolean canTrigger(){
+        return AbstractDungeon.actionManager.actions.isEmpty() && !AbstractDungeon.actionManager.turnHasEnded && !AbstractDungeon.isScreenUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT;
     }
 }

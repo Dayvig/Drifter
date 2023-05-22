@@ -42,10 +42,6 @@ public class VariableDriftAction  extends AbstractGameAction {
             this.p.getRelic("Chemical X").flash();
         }
 
-        if (this.upgraded) {
-            ++effect;
-        }
-
         if (effect > 0) {
             for(int i = 0; i < effect; ++i) {
                 this.addToBot(new SFXAction("PassMed2"));

@@ -40,7 +40,7 @@ public class OneOFive extends AbstractDynamicCard {
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
     public static final int UPGRADE_MAGIC = 1;
     private static final int MAGIC = 3;
@@ -63,9 +63,6 @@ public class OneOFive extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftingPower(p,p,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftNextTurnPower(p,p,magicNumber), magicNumber));
         addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));

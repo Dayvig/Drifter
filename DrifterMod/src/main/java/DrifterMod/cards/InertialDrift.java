@@ -49,13 +49,14 @@ public class InertialDrift extends AbstractDriftCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, magicNumber), magicNumber));
+        applyPowers();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p, p, magicNumber), magicNumber));
     }
 
     @Override
     public void applyPowers(){
         if (AbstractDungeon.player.hasPower(DriftPower.POWER_ID)) {
-            this.magicNumber = AbstractDungeon.player.getPower(DriftPower.POWER_ID).amount;
+            this.baseMagicNumber = magicNumber = AbstractDungeon.player.getPower(DriftPower.POWER_ID).amount;
         }
         super.applyPowers();
     }

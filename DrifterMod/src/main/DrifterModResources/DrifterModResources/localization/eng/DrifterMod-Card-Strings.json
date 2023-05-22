@@ -1,7 +1,7 @@
 {
   "DrifterMod:Twenty": {
     "NAME": "20 Degree Turn",
-    "DESCRIPTION": "Gain !B! Block. NL driftermod:Drift !M!"
+    "DESCRIPTION": "Gain !B! Block. NL driftermod:Drift !M!."
   },
   "DrifterMod:Sixty": {
   "NAME": "Last-Second Turn",
@@ -9,11 +9,11 @@
 },
   "DrifterMod:FortyFive": {
     "NAME": "45 Degree Turn",
-    "DESCRIPTION": "Deal !D! damage. NL driftermod:Drift !M!"
+    "DESCRIPTION": "Deal !D! damage. NL driftermod:Drift !M!."
   },
   "DrifterMod:KeepItSteady": {
     "NAME": "Keep it Steady",
-    "DESCRIPTION": "If you're Drifting, NL driftermod:Drift !M!"
+    "DESCRIPTION": "If you're Drifting, NL driftermod:Drift !M!."
   },
   "DrifterMod:Accelerate": {
     "NAME": "Accelerate",
@@ -54,7 +54,7 @@
   },
   "DrifterMod:Tmph": {
     "NAME": "20 MPH",
-    "DESCRIPTION": "Discard !M! random cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage for each driftermod:Speed. )"
+    "DESCRIPTION": "Discard !M! cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage for each driftermod:Speed. )"
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
@@ -107,7 +107,7 @@
   },
   "DrifterMod:OneOFive": {
     "NAME": "105 Degree Turn",
-    "DESCRIPTION": "driftermod:Drift !M! NL Next turn, Drift !M!"
+    "DESCRIPTION": "driftermod:Drift !M! NL Next turn, Drift !M!."
   },
   "DrifterMod:DriftKing": {
     "NAME": "Experience",
@@ -140,8 +140,8 @@
   },
   "DrifterMod:Dejavu": {
     "NAME": "Deja Vu",
-    "DESCRIPTION": "Add an Ethereal copy of the last card you played this combat to your hand.",
-    "UPGRADE_DESCRIPTION": "Add an upgraded Ethereal copy of the last card you played this combat to your hand."
+    "DESCRIPTION": "Play the last card you played this combat.",
+    "UPGRADE_DESCRIPTION": "Upgrade and play the last card you played this combat."
   },
   "DrifterMod:Zoom": {
     "NAME": "Zoom",
@@ -204,7 +204,7 @@
   },
   "DrifterMod:Recklessness": {
     "NAME": "Recklessness",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL Discard a card. NL Gain !M! Vulnerable."
   },
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
@@ -228,7 +228,7 @@
   },
   "DrifterMod:OneThirtyFive": {
     "NAME": "135 Degree Turn",
-    "DESCRIPTION": "driftermod:Drift !M!. NL This card's Drift is affected by Strength and Dexterity."
+    "DESCRIPTION": "driftermod:Drift !M!. NL This card's #yDrift is affected by Strength and Dexterity."
   },
   "DrifterMod:Tailgate": {
     "NAME": "Tailgate",
@@ -282,11 +282,11 @@
   },
   "DrifterMod:GearUp": {
     "NAME": "Gear Up",
-    "DESCRIPTION": "Gain !M! Strength. NL Lose 2 Dexterity. NL Gain 1 driftermod:Speed."
+    "DESCRIPTION": "Gain !M! Strength. NL Lose 2 Dexterity. NL Gain 1 Speed."
   },
   "DrifterMod:GearDown": {
     "NAME": "Gear Down",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Lose 2 Strength. NL Lose 1 driftermod:Speed, and if you did gain !B! Block."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Lose 2 Strength. NL Lose 1 Speed, and if you did gain !B! Block."
   },
   "DrifterMod:GearShift": {
     "NAME": "Clutch",
@@ -311,7 +311,7 @@
   },
   "DrifterMod:FinalGambit": {
     "NAME": "Final Gambit",
-    "DESCRIPTION": "Draw cards until your hand is full. NL Gain [E] for each card drawn. NL Die next turn."
+    "DESCRIPTION": "Draw cards until your hand is full. NL Gain [E] for each card drawn. NL Die next turn. NL Exhaust."
   },
   "DrifterMod:Resolve": {
     "NAME": "Resolve",
@@ -348,8 +348,7 @@
   },
   "DrifterMod:VariableDrift": {
     "NAME": "Variable Turn",
-    "DESCRIPTION": "driftermod:Drift !M! X times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "driftermod:Drift !M! X+1 times. NL Exhaust."
+    "DESCRIPTION": "driftermod:Drift !M! X times."
   },
   "DrifterMod:Equalize": {
     "NAME": "Recovery",

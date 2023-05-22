@@ -5,7 +5,10 @@ import DrifterMod.Modifiers.EtherealModifier;
 import DrifterMod.characters.TheDrifter;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.colorless.Madness;
+import com.megacrit.cardcrawl.cards.green.AfterImage;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -35,7 +38,7 @@ public class Dejavu extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
     private AbstractCard cardToUse;
     private int numLeft;
 
@@ -50,7 +53,11 @@ public class Dejavu extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(cardToUse));
+        if (cardToUse == null){
+            cardToUse = new Madness().makeStatEquivalentCopy();
+        }
+        cardToUse.applyPowers();
+        AbstractDungeon.actionManager.addToBottom(new NewQueueCardAction(cardToUse, true));
     }
 
     @Override
@@ -62,9 +69,11 @@ public class Dejavu extends AbstractDynamicCard {
     public void applyPowers() {
         if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() != 0) {
             AbstractCard tmp = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1);
+            if (tmp.name.equals(Dejavu.ID)){
+                tmp = new AfterImage();
+            }
             cardToUse = tmp.makeStatEquivalentCopy();
             if (upgraded){ cardToUse.upgrade(); }
-            CardModifierManager.addModifier(cardToUse, new EtherealModifier());
             this.cardsToPreview = cardToUse;
         }
     }

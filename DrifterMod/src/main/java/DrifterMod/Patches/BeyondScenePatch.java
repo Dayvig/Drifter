@@ -3,6 +3,7 @@
 
 package DrifterMod.Patches;
 
+import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import UI.ParalaxController;
 import basemod.ReflectionHacks;
@@ -20,6 +21,8 @@ import com.megacrit.cardcrawl.vfx.scene.InteractableTorchEffect;
 
 import java.util.ArrayList;
 
+import static DrifterMod.DrifterMod.EUROBEAT_ON;
+import static DrifterMod.DrifterMod.SCROLLING_ON;
 import static DrifterMod.characters.TheDrifter.Enums.THE_DRIFTER;
 
 public class BeyondScenePatch {
@@ -29,7 +32,8 @@ public class BeyondScenePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheBottomScene", method = "renderCombatRoomBg")
     public static class BottomSceneParalaxBGPatch {
         public static void Postfix(TheBottomScene __instance, final SpriteBatch sb) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)
+            && DrifterMod.config.getBool(SCROLLING_ON)) {
                 bg_controller.Render(sb);
             }
         }
@@ -37,7 +41,8 @@ public class BeyondScenePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheBottomScene", method = "updateTorches")
     public static class BottomSceneParalaxBGTorchPatch {
         public static void Prefix(TheBottomScene __instance) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null
+                    && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER) && DrifterMod.config.getBool(SCROLLING_ON)) {
                 ArrayList<InteractableTorchEffect> hackedTorches = ReflectionHacks.getPrivate(__instance, TheBottomScene.class, "torches");
                 hackedTorches.clear();
                 SpireReturn.Return();
@@ -47,7 +52,8 @@ public class BeyondScenePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheBeyondScene", method = "renderCombatRoomBg")
     public static class BeyondSceneParalaxBGPatch {
         public static void Postfix(TheBeyondScene __instance, final SpriteBatch sb) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null
+                    && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER) && DrifterMod.config.getBool(SCROLLING_ON)) {
                 bg_controller.Render(sb);
             }
         }
@@ -55,7 +61,8 @@ public class BeyondScenePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheEndingScene", method = "renderCombatRoomBg")
     public static class EndingSceneParalaxBGPatch {
         public static void Postfix(TheEndingScene __instance, final SpriteBatch sb) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null
+                    && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER) && DrifterMod.config.getBool(SCROLLING_ON)) {
                 bg_controller.Render(sb);
             }
         }
@@ -63,7 +70,8 @@ public class BeyondScenePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.scenes.TheCityScene", method = "renderCombatRoomBg")
     public static class CitySceneParalaxBGPatch {
         public static void Postfix(TheCityScene __instance, final SpriteBatch sb) {
-            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER)) {
+            if (AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom() instanceof MonsterRoom && bg_controller != null
+                    && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER) && DrifterMod.config.getBool(SCROLLING_ON)) {
                 bg_controller.Render(sb);
             }
         }

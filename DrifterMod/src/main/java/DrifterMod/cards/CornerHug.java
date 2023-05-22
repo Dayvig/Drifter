@@ -36,7 +36,7 @@ public class CornerHug extends AbstractDriftCard {
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int MAGIC = 4;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 6;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_MAGIC = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/

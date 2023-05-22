@@ -336,35 +336,40 @@ public class TheDrifter extends CustomPlayer {
         levelSpeeds.add(1400.0f);//4 - thin pillars
         levelSpeeds.add(1850.0f);//5 - a few shapes
 
-        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, 4500.0f, true);
+        System.out.println("Width " + Settings.WIDTH + " | "+ Settings.scale);
+        System.out.println("Height " + Settings.HEIGHT + " | "+ Settings.scale);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/bg_2.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/bg_1.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/bg_3.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/wl_2.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/wl_4.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/wl_1.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/pl_1.png"), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/pl_3.png"), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/pl_2.png"), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/pl_1.png", true), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_2.png", true), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_3.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_1.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/wl_3.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_3.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_1.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_4.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_5.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_2.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/fg_1.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_4.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_5.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/sh_1.png", true), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/fl_1.png"), 0);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/fl_1.png"), 0);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/fl_1.png"), 0);
+        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, Settings.WIDTH*3, true);
+
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(1),"DrifterModResources/images/ui/bg_2.png", false, false, true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(1),"DrifterModResources/images/ui/bg_1.png", false, false, true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(1),"DrifterModResources/images/ui/bg_3.png", false, false, true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(2),"DrifterModResources/images/ui/wl_2.png", false, false), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(2),"DrifterModResources/images/ui/wl_4.png", false, false), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(2),"DrifterModResources/images/ui/wl_1.png", false, false), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(4),"DrifterModResources/images/ui/pl_1.png", false, false), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(4),"DrifterModResources/images/ui/pl_3.png", false, false), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(4),"DrifterModResources/images/ui/pl_2.png", false, false), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(4),"DrifterModResources/images/ui/pl_1.png", false, false), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(4),"DrifterModResources/images/ui/sh_2.png", false, false), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(3),"DrifterModResources/images/ui/sh_3.png", false, false), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(3),"DrifterModResources/images/ui/sh_1.png", false, false), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(3),"DrifterModResources/images/ui/wl_3.png", false, false), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(3),"DrifterModResources/images/ui/sh_3.png", false, false), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(3),"DrifterModResources/images/ui/sh_1.png", false, false), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5),"DrifterModResources/images/ui/sh_4.png", false, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5),"DrifterModResources/images/ui/sh_5.png", false, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5),"DrifterModResources/images/ui/sh_2.png", false, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5),"DrifterModResources/images/ui/fg_1.png", false, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5),"DrifterModResources/images/ui/sh_4.png", false, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5), "DrifterModResources/images/ui/sh_5.png", false, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(5), "DrifterModResources/images/ui/sh_1.png", true, false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(0), "DrifterModResources/images/ui/fl_1.png", false), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(0), "DrifterModResources/images/ui/fl_1.png", false), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(0), "DrifterModResources/images/ui/fl_1.png", false), 0);
         BeyondScenePatch.bg_controller.DistributeObjects();
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(0);
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(1);
 
         AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
         AbstractDungeon.actionManager.addToBottom(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
@@ -380,26 +385,29 @@ public class TheDrifter extends CustomPlayer {
         levelSpeeds.add(200.0f);//4 - thin pillars
         levelSpeeds.add(1900.0f);//4 - thin pillars
 
-        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, 4500.0f, true);
+        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, Settings.WIDTH*3, true);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/bottom/fl_1.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/bottom/fl_1.png"), 5);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/bottom/fl_1.png"), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(5), "DrifterModResources/images/ui/bottom/fl_1.png", false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(5), "DrifterModResources/images/ui/bottom/fl_1.png", false), 5);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(5), "DrifterModResources/images/ui/bottom/fl_1.png", false), 5);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/bottom/bg_1.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/bottom/bg_1.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/bottom/bg_1.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/bottom/bg_2.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/bottom/bg_2.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f, "DrifterModResources/images/ui/bottom/bg_2.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(400f, 680f,"DrifterModResources/images/ui/bottom/bg_4.png"), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(400f, 680f,"DrifterModResources/images/ui/bottom/bg_4.png"), 4);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(400f, 680f,"DrifterModResources/images/ui/bottom/bg_4.png"), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, Settings.HEIGHT * 0.3f, levelSpeeds.get(1), "DrifterModResources/images/ui/bottom/bg_1.png", true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, Settings.HEIGHT * 0.3f, levelSpeeds.get(1),"DrifterModResources/images/ui/bottom/bg_1.png", true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, Settings.HEIGHT * 0.3f, levelSpeeds.get(1),"DrifterModResources/images/ui/bottom/bg_1.png", true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, Settings.HEIGHT * 0.3f, levelSpeeds.get(3),"DrifterModResources/images/ui/bottom/bg_2.png", true), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, Settings.HEIGHT * 0.3f, levelSpeeds.get(3),"DrifterModResources/images/ui/bottom/bg_2.png", true), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, Settings.HEIGHT * 0.3f, levelSpeeds.get(3), "DrifterModResources/images/ui/bottom/bg_2.png", true), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.75f, "DrifterModResources/images/ui/bottom/bg_4.png"), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.75f, "DrifterModResources/images/ui/bottom/bg_4.png"), 4);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(Settings.WIDTH * 0.75f, Settings.HEIGHT * 0.75f, "DrifterModResources/images/ui/bottom/bg_4.png"), 4);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(400f, 400f,"DrifterModResources/images/ui/bottom/bg_3.png"), 2);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(400f, 400f,"DrifterModResources/images/ui/bottom/bg_3.png"), 2);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(400f, 400f,"DrifterModResources/images/ui/bottom/bg_3.png"), 2);
 
         BeyondScenePatch.bg_controller.DistributeObjects();
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(1);
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(3);
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(4);
 
         AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
         AbstractDungeon.actionManager.addToBottom(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
@@ -416,31 +424,33 @@ public class TheDrifter extends CustomPlayer {
         levelSpeeds.add(375.0f);//4 - pillar4
         levelSpeeds.add(275.0f);//rok
 
-        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, 4500.0f, true);
+        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, Settings.WIDTH*3, true);
 
         BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(1),"DrifterModResources/images/ui/city/fl_1.png", false, false), 1);
         BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(1),"DrifterModResources/images/ui/city/fl_1.png", false, true), 1);
         BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(1),"DrifterModResources/images/ui/city/fl_1.png", false, false), 1);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300, levelSpeeds.get(0), "DrifterModResources/images/ui/city/bg_1.png", false, false), 0);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300, levelSpeeds.get(0), "DrifterModResources/images/ui/city/bg_1.png", false, true), 0);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300, levelSpeeds.get(0), "DrifterModResources/images/ui/city/bg_1.png", false, false), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/4), levelSpeeds.get(0), "DrifterModResources/images/ui/city/bg_1.png", false, false, true), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/4), levelSpeeds.get(0), "DrifterModResources/images/ui/city/bg_1.png", false, true, true), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/4), levelSpeeds.get(0), "DrifterModResources/images/ui/city/bg_1.png", false, false, true), 0);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0,850,"DrifterModResources/images/ui/city/bg_2.png"), 0);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0,850,"DrifterModResources/images/ui/city/bg_2.png"), 0);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 850,"DrifterModResources/images/ui/city/bg_2.png"), 0);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_1.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_1.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_2.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_2.png"), 2);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_3.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_3.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_4.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_4.png"), 3);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject("DrifterModResources/images/ui/city/pl_4.png"), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f), "DrifterModResources/images/ui/city/pl_1.png"), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT * 0.4f),"DrifterModResources/images/ui/city/pl_1.png"), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_2.png"), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_2.png"), 2);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_3.png"), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_3.png"), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_4.png"), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_4.png"), 3);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT* 0.4f),"DrifterModResources/images/ui/city/pl_4.png"), 3);
         //BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300,"DrifterModResources/images/ui/city/rk_1.png"), 2);
 
         BeyondScenePatch.bg_controller.DistributeObjects();
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(0);
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(1);
 
         AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
         AbstractDungeon.actionManager.addToBottom(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
@@ -449,20 +459,22 @@ public class TheDrifter extends CustomPlayer {
     void setupEndingParalax(){
         //Taken from replay the spire
         ArrayList<Float> levelSpeeds = new ArrayList<Float>();
-        levelSpeeds.add(200.0f);//0 - floor
-        levelSpeeds.add(1900.0f);//4 - thin pillars
+        levelSpeeds.add(1900.0f);//0 - floor
+        levelSpeeds.add(200.0f);//4 - thin pillars
 
-        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, 4500.0f, true);
+        BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, Settings.WIDTH*3, true);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/end/fl_1.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/end/fl_1.png"), 1);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, "DrifterModResources/images/ui/end/fl_1.png"), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(0), "DrifterModResources/images/ui/end/fl_1.png", true), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(0), "DrifterModResources/images/ui/end/fl_1.png", true), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(0), "DrifterModResources/images/ui/end/fl_1.png", true), 0);
 
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/end/bg_1.png"), 0);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/end/bg_1.png"), 0);
-        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 300f,"DrifterModResources/images/ui/end/bg_1.png"), 0);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(1),"DrifterModResources/images/ui/end/bg_1.png", true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(1),"DrifterModResources/images/ui/end/bg_1.png", true), 1);
+        BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, (int)(Settings.HEIGHT/3), levelSpeeds.get(1),"DrifterModResources/images/ui/end/bg_1.png", true), 1);
 
         BeyondScenePatch.bg_controller.DistributeObjects();
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(0);
+        BeyondScenePatch.bg_controller.DistributeObjectsUniform(1);
 
         AbstractDungeon.actionManager.addToBottom(new StartParalaxAction(BeyondScenePatch.bg_controller));
         AbstractDungeon.actionManager.addToBottom(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));

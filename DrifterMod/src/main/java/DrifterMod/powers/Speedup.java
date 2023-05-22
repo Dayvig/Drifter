@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.audio.MusicMaster;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -98,20 +99,26 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     public void onInitialApplication(){
         racingID = CardCrawlGame.sound.playAndLoop("Racing");
         float totalSpeed = (this.amount * 0.25f) + 0.75f;
-        addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller,totalSpeed));
+        if (BeyondScenePatch.bg_controller != null) {
+            addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, totalSpeed));
+        }
     }
 
     @Override
     public void stackPower(int stackAmount){
         super.stackPower(stackAmount);
         float totalSpeed = (this.amount * 0.25f) + 0.75f;
-        addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller,totalSpeed));
+        if (BeyondScenePatch.bg_controller != null) {
+            addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, totalSpeed));
+        }
     }
 
     @Override
     public void onRemove(){
         CardCrawlGame.sound.fadeOut("Racing", racingID);
-        addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller,0.75f));
+        if (BeyondScenePatch.bg_controller != null) {
+            addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
+        }
     }
 
     @Override
@@ -150,19 +157,20 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     public void updateParticles(){
         particleTimer += Gdx.graphics.getDeltaTime();
         racingTimer += Gdx.graphics.getDeltaTime();
-        if (this.amount >= 2){
-            particleInterval = (0.2f / (float)(this.amount / 2));
-        }
-        else {
-            particleInterval = 0.2f;
-        }
-        if (particleTimer >= particleInterval){
-            AbstractDungeon.effectsQueue.add(new SpeedParticleEffect(windColor, true, 1f + 1f/(float)this.amount/4));
-            particleTimer = 0f;
-            count++;
-            if (count >= 10){
-                AbstractDungeon.effectsQueue.add(new BorderFlashEffect(flashColor(this.amount)));
-                count = 0;
+        if (!Settings.DISABLE_EFFECTS) {
+            if (this.amount >= 2) {
+                particleInterval = (0.2f / (float) (this.amount / 2));
+            } else {
+                particleInterval = 0.2f;
+            }
+            if (particleTimer >= particleInterval) {
+                AbstractDungeon.effectsQueue.add(new SpeedParticleEffect(windColor, true, 1f + 1f / (float) this.amount / 4));
+                particleTimer = 0f;
+                count++;
+                if (count >= 10) {
+                    AbstractDungeon.effectsQueue.add(new BorderFlashEffect(flashColor(this.amount)));
+                    count = 0;
+                }
             }
         }
     }

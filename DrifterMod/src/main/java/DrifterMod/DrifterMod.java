@@ -163,6 +163,7 @@ public class DrifterMod implements
             e.printStackTrace();
         }
         if (!config.has(EUROBEAT_ON)) config.setBool(EUROBEAT_ON, true);
+        if (!config.has(SCROLLING_ON)) config.setBool(SCROLLING_ON, true);
         // initialize
 
         BaseMod.subscribe(this);
@@ -267,6 +268,7 @@ public class DrifterMod implements
     // =============== POST-INITIALIZE =================
     public static SpireConfig config;
     public static final String EUROBEAT_ON = "eurobeaton";
+    public static final String SCROLLING_ON = "scrollingon";
 
     @Override
     public void receivePostInitialize() {
@@ -281,6 +283,12 @@ public class DrifterMod implements
             config.setBool(EUROBEAT_ON, button.enabled);
             saveConfig();
         }));
+        settingsPanel.addUIElement(new ModLabeledToggleButton("Enable Scrolling Backgrounds", 360, 500, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(SCROLLING_ON), settingsPanel, l -> {
+        }, button -> {
+            config.setBool(SCROLLING_ON, button.enabled);
+            saveConfig();
+        }));
+
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
         // =============== EVENTS =================
@@ -410,7 +418,7 @@ public class DrifterMod implements
         BaseMod.addCard(new UTurn());
         BaseMod.addCard(new Tailgate());
         BaseMod.addCard(new Intimidation());
-        BaseMod.addCard(new Daredevil());
+        //BaseMod.addCard(new Daredevil());
         BaseMod.addCard(new EmergencyBrake());
         BaseMod.addCard(new BrakeDrift());
         BaseMod.addCard(new Exhaustpipe());
@@ -537,7 +545,7 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(UTurn.ID);
         UnlockTracker.unlockCard(Tailgate.ID);
         UnlockTracker.unlockCard(Intimidation.ID);
-        UnlockTracker.unlockCard(Daredevil.ID);
+        //UnlockTracker.unlockCard(Daredevil.ID);
         UnlockTracker.unlockCard(EmergencyBrake.ID);
         UnlockTracker.unlockCard(BrakeDrift.ID);
         UnlockTracker.unlockCard(Sixty.ID);

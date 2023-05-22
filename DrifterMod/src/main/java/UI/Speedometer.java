@@ -36,7 +36,6 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
 
     //private Hitbox tipHornet = new Hitbox(0.0F, 0.0F, 60.0F * Settings.scale, 60.0F * Settings.scale);
 
-    private final String droneLabel = "The number of Drones in your draw pile.";
     private static final float DRIFTER_ORB_SCALE;
 
     private static final String VFXTexture = ("DrifterModResources/images/char/defaultCharacter/orb/vfx.png");

@@ -3,7 +3,7 @@
     "NAMES": [
       "total-hand"
     ],
-    "DESCRIPTION": "Your total hand is your hand plus your Overdraw."
+    "DESCRIPTION": "Your total hand is your hand plus your #yOverdraw."
   },
   {
     "NAMES": [
@@ -15,24 +15,24 @@
     "NAMES": [
       "brake"
     ],
-    "DESCRIPTION": "Draw 1 less card at the start of your next turn for each Brake."
+    "DESCRIPTION": "Draw 1 less card at the start of your next turn for each #yBrake."
   },
   {
     "NAMES": [
       "drift"
     ],
-    "DESCRIPTION": "At the end of the turn, gain Block and deal damage to the enemy with the lowest HP equal to your Drift. When you gain Drift, gain 1 Momentum (Max 2.) At the end of the turn, lose half your Drift if you have Momentum, and all of it if you don't. "
+    "DESCRIPTION": "At the end of your turn, gain Block and deal damage to the enemy with the lowest HP equal to your #yDrift. When you #yDrift, gain #yMomentum (Max 2.) which maintains your #yDrift."
   },
   {
   "NAMES": [
     "overdraw"
   ],
-  "DESCRIPTION": "If you hand is not full, you lose 1 Overdraw and draw 1 card until it is."
+  "DESCRIPTION": "If you hand is not full, you lose 1 #yOverdraw and draw 1 card until it is."
 },{
   "NAMES": [
     "traction"
   ],
-  "DESCRIPTION": "When you gain Drift, gain 1 extra for each Traction."
+  "DESCRIPTION": "#yTraction improves #yDrift gained by cards."
 },{
   "NAMES": [
     "shift-up"
@@ -48,6 +48,6 @@
     "activate",
     "Activate"
   ],
-  "DESCRIPTION": "Gain Block and deal damage to the lowest HP enemy equal to your Drift."
+  "DESCRIPTION": "Gain Block and deal damage to the lowest HP enemy equal to your #yDrift."
 }
 ]

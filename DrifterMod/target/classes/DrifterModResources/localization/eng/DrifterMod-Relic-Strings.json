@@ -35,7 +35,7 @@
     "NAME": "Steering Wheel",
     "FLAVOR": "This lucky steering wheel is a memento of cars past.",
     "DESCRIPTIONS": [
-      "When you would draw cards while your hand is full, gain 1 #ydriftermod:Overdraw for each."
+      "When you would draw cards while your hand is full, gain 1 #ydriftermod:Overdraw for each. NL At the start of each combat, Retain your hand."
     ]
   }
 }

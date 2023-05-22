@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -39,7 +40,7 @@ public class Recklessness extends AbstractDynamicCard {
 
     private static final int COST = 0;  // COST = ${COST}
 
-    private static final int DAMAGE = 9;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DAMAGE = 3;
     private static final int MAGIC = 1;
 
@@ -58,6 +59,7 @@ public class Recklessness extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, magicNumber, true), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         addToBot(new AnimateFastAttackAction(p));
     }
 

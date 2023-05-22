@@ -2,6 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.interfaces.OnRefreshHandCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class Underdog extends AbstractDynamicCard {
+public class Underdog extends AbstractDynamicCard implements OnRefreshHandCard {
 
     // TEXT DECLARATION
 
@@ -69,13 +70,6 @@ public class Underdog extends AbstractDynamicCard {
         this.addToBot(new DiscardToHandAction(this));
     }
 
-    @Override
-    public void triggerOnGlowCheck(){
-        if (AbstractDungeon.player.hand.size() <= 1 && AbstractDungeon.actionManager.actions.isEmpty() && !AbstractDungeon.actionManager.turnHasEnded && !AbstractDungeon.player.hasPower("No Draw") && !AbstractDungeon.isScreenUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
-            AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
-        }
-    }
-
     //Upgraded stats.
     @Override
     public void upgrade() {
@@ -84,6 +78,13 @@ public class Underdog extends AbstractDynamicCard {
             this.isEthereal = false;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
+        }
+    }
+
+    @Override
+    public void OnRefreshHand() {
+        if (AbstractDungeon.player.hand.size() <= 1 && AbstractDungeon.actionManager.actions.isEmpty() && !AbstractDungeon.actionManager.turnHasEnded && !AbstractDungeon.player.hasPower("No Draw") && !AbstractDungeon.isScreenUp && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT){
+            AbstractDungeon.actionManager.addToTop(new DrawCardAction(AbstractDungeon.player, this.magicNumber));
         }
     }
 }

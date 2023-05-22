@@ -7,6 +7,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 import static DrifterMod.DrifterMod.makeRelicOutlinePath;
 import static DrifterMod.DrifterMod.makeRelicPath;
@@ -25,6 +26,7 @@ public class SteeringWheel extends CustomRelic {
     @Override
     public void atBattleStart() {
         beginLongPulse();
+        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EquilibriumPower(AbstractDungeon.player, 1), 1));
     }
 
 

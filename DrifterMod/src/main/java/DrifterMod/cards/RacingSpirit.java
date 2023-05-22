@@ -67,11 +67,11 @@ public class RacingSpirit extends AbstractDynamicCard {
     }
 
     public void triggerOnGlowCheck() {
-        super.triggerOnGlowCheck();
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (AbstractDungeon.player.hand.size() <= 2){
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+        super.triggerOnGlowCheck();
     }
 
     // Upgraded stats.

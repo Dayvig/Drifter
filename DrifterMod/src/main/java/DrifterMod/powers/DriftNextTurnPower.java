@@ -50,9 +50,6 @@ public class DriftNextTurnPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public void atStartOfTurn() {
-        if (!AbstractDungeon.player.hasPower(DriftingPower.POWER_ID)){
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftingPower(AbstractDungeon.player,AbstractDungeon.player,1), 1));
-        }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DriftPower(AbstractDungeon.player,AbstractDungeon.player,this.amount), this.amount));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }

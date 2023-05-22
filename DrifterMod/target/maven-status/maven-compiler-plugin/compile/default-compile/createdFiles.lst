@@ -2,6 +2,7 @@ DrifterMod\cards\GearShift.class
 DrifterMod\Patches\EurobeatPatch.class
 DrifterMod\powers\DriftingPower.class
 DrifterMod\potions\PlaceholderPotion.class
+DrifterMod\interfaces\OnRefreshHandCard.class
 DrifterMod\cards\Fender.class
 DrifterMod\cards\PedalTo.class
 DrifterMod\Patches\DeathScreenPatch.class

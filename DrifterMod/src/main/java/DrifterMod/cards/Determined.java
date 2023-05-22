@@ -61,6 +61,7 @@ public class Determined extends AbstractDynamicCard {
         if (AbstractDungeon.player.hand.group.size() <= 2) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
+        super.triggerOnGlowCheck();
     }
 
     // Upgraded stats.
