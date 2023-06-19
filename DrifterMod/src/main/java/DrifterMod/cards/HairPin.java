@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class HairPin extends AbstractDynamicCard {
+public class HairPin extends AbstractDriftCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -69,14 +69,6 @@ public class HairPin extends AbstractDynamicCard {
     }
 
     @Override
-    public void applyPowers(){
-        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
-            isMagicNumberModified = true;
-            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
-        }
-    }
-
-
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

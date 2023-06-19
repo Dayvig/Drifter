@@ -16,8 +16,8 @@ public class SteeringWheel extends CustomRelic {
 
     public static final String ID = DrifterMod.makeID("SteeringWheel");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic2.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic2.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("steeringwheel.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("steeringwheel.png"));
 
     public SteeringWheel() {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.FLAT);
@@ -25,7 +25,6 @@ public class SteeringWheel extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        beginLongPulse();
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EquilibriumPower(AbstractDungeon.player, 1), 1));
     }
 

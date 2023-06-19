@@ -64,12 +64,14 @@ public class BigCrash extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, TempMaxHandSizeInc.POWER_ID));
     }
 
+    @Override
     public void applyPowers(){
         int k = AbstractDungeon.player.hand.size();
         if (AbstractDungeon.player.hasPower(TempMaxHandSizeInc.POWER_ID)){
             k += AbstractDungeon.player.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
         baseDamage = k * magicNumber;
+        super.applyPowers();
         initializeDescription();
     }
 

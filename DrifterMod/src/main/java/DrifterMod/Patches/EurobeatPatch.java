@@ -37,6 +37,16 @@ public class EurobeatPatch {
                 return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/RisingSun.ogg"));
             case "ChemicalLove":
                 return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/ChemicalLove.ogg"));
+            case "SaveMe":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/SaveMe.ogg"));
+            case "Spark":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/Spark.ogg"));
+            case "90s":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/90s.ogg"));
+            case "TheTop":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/TheTop.ogg"));
+            case "Heartbeat":
+                return SpireReturn.Return(MainMusic.newMusic("DrifterModResources/audio/music/Heartbeat.ogg"));
             default:
                 return SpireReturn.Continue();
         }

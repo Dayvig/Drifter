@@ -6,6 +6,7 @@ import DrifterMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnCardDrawPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -27,7 +28,7 @@ import static DrifterMod.DrifterMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
 
-public class FireTrailPower extends AbstractPower implements CloneablePowerInterface {
+public class FireTrailPower extends TwoAmountPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = DrifterMod.makeID("FireTrailPower");
@@ -65,30 +66,30 @@ public class FireTrailPower extends AbstractPower implements CloneablePowerInter
             flameDamage += this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
         System.out.println("Hand size:"+AbstractDungeon.player.hand.size() + " Flame Damage:"+flameDamage);
-        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
-            if (!m.isDeadOrEscaped() && !m.halfDead){
-                AbstractDungeon.effectList.add(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.FIRE));
-                AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, AbstractDungeon.player, flameDamage * this.amount));
-            }
+        if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.flash();
+            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(flameDamage * this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 
     @Override
     public void onDrawOrDiscard(){
-        /*for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
-            if (!m.isDeadOrEscaped() && !m.halfDead){
-                //Todo: change hp bar
-            }
-        }*/
+        int flameDamage = AbstractDungeon.player.hand.size();
+        if (this.owner.hasPower(TempMaxHandSizeInc.POWER_ID)){
+            flameDamage += this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount;
+        }
+        System.out.println("Hand size:"+AbstractDungeon.player.hand.size() + " Flame Damage:"+flameDamage);
+        this.amount2 = flameDamage;
+        this.updateDescription();
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            description = DESCRIPTIONS[0];
+            description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + amount2 + DESCRIPTIONS[2];
         } else if (amount > 1) {
-            description = DESCRIPTIONS[1] + amount;
+            description = DESCRIPTIONS[3] + amount + DESCRIPTIONS[1] + amount2 * amount + DESCRIPTIONS[2];
         }
     }
 

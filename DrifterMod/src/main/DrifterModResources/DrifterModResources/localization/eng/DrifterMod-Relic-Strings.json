@@ -35,7 +35,14 @@
     "NAME": "Steering Wheel",
     "FLAVOR": "This lucky steering wheel is a memento of cars past.",
     "DESCRIPTIONS": [
-      "When you would draw cards while your hand is full, gain 1 #ydriftermod:Overdraw for each. NL At the start of each combat, Retain your hand."
+      "On the first turn of each combat, Retain your hand."
+    ]
+  },
+  "DrifterMod:ModdedCar": {
+    "NAME": "Modified '86",
+    "FLAVOR": "A car that isn't that impressive, but in the right hands is legendary.",
+    "DESCRIPTIONS": [
+      "When you would draw cards while your hand is full, gain 1 #ydriftermod:Overdraw for each."
     ]
   }
 }

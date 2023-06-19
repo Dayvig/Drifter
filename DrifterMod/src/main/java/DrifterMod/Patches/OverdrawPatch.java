@@ -4,6 +4,7 @@ import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.Speedup;
 import DrifterMod.powers.TempMaxHandSizeInc;
 import DrifterMod.powers.ThermalPower;
+import DrifterMod.relics.ModdedCar;
 import DrifterMod.relics.SteeringWheel;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -22,7 +23,7 @@ public class OverdrawPatch {
 
     public static class Speed {
         public static void Prefix(DrawCardAction _instance) {
-            if (AbstractDungeon.player.hasRelic(SteeringWheel.ID)) {
+            if (AbstractDungeon.player.hasRelic(ModdedCar.ID)) {
                 if (_instance.amount + AbstractDungeon.player.hand.size() > BaseMod.MAX_HAND_SIZE) {
                     if (AbstractDungeon.player.hasPower(ThermalPower.POWER_ID)) {
                         ThermalPower pow = (ThermalPower) AbstractDungeon.player.getPower(ThermalPower.POWER_ID);
@@ -31,7 +32,7 @@ public class OverdrawPatch {
                             pow.numUsedThisTurn++;
                         }
                     }
-                    if (AbstractDungeon.player.hasRelic(SteeringWheel.ID)) {
+                    if (AbstractDungeon.player.hasRelic(ModdedCar.ID)) {
                         int s = (_instance.amount + AbstractDungeon.player.hand.size()) - BaseMod.MAX_HAND_SIZE;
                         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TempMaxHandSizeInc(AbstractDungeon.player, AbstractDungeon.player, s), s));
                         _instance.amount -= s;

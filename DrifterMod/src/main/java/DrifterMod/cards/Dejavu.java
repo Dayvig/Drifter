@@ -57,6 +57,8 @@ public class Dejavu extends AbstractDynamicCard {
             cardToUse = new Madness().makeStatEquivalentCopy();
         }
         cardToUse.applyPowers();
+        cardToUse.freeToPlayOnce = true;
+        cardToUse.purgeOnUse = true;
         AbstractDungeon.actionManager.addToBottom(new NewQueueCardAction(cardToUse, true));
     }
 

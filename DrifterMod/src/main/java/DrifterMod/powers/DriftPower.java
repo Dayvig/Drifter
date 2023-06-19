@@ -126,6 +126,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
             TheDrifter.startOfDrift = true;
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DriftingPower(this.owner, this.owner, 1),1));
+        TheDrifter.driftAnimationPlaying = true;
     }
 
     @Override
@@ -145,6 +146,7 @@ public class DriftPower extends AbstractPower implements CloneablePowerInterface
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, DriftStrengthDownPower.POWER_ID));
         }
         AbstractDungeon.actionManager.addToBottom(new StopEurobeatAction());
+        TheDrifter.driftAnimationPlaying = false;
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

@@ -30,6 +30,7 @@ public class RecoveryAction extends AbstractGameAction {
     public static final String[] TEXT;
     private boolean notchip;
     int am;
+    private int block;
 
     public RecoveryAction(AbstractCreature source) {
         this.setValues(AbstractDungeon.player, source, -1);
@@ -38,10 +39,11 @@ public class RecoveryAction extends AbstractGameAction {
         am = 1;
     }
 
-    public RecoveryAction(AbstractCreature source, boolean notChip, int amount) {
+    public RecoveryAction(AbstractCreature source, boolean notChip, int amount, int blockamnt) {
         this.setValues(AbstractDungeon.player, source, -1);
         this.actionType = ActionType.CARD_MANIPULATION;
         this.notchip = notChip;
+        block = blockamnt;
         am = amount;
     }
 
@@ -59,21 +61,23 @@ public class RecoveryAction extends AbstractGameAction {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
                     if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)) {
-                    this.addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.getPower(VulnerablePower.POWER_ID), AbstractDungeon.handCardSelectScreen.selectedCards.group.size() * am));
-                }
+                        this.addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.player.getPower(VulnerablePower.POWER_ID), AbstractDungeon.handCardSelectScreen.selectedCards.group.size() * am));
+                    }
+                    for (int i = 0; i < am; i++) {
+                        this.addToBot(new FastGainBlockAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size() * am * block));
+                    }
                     Iterator var1 = AbstractDungeon.handCardSelectScreen.selectedCards.group.iterator();
 
-                    while(var1.hasNext()) {
-                        AbstractCard c = (AbstractCard)var1.next();
+                    while (var1.hasNext()) {
+                        AbstractCard c = (AbstractCard) var1.next();
                         AbstractDungeon.player.hand.moveToDiscardPile(c);
                         GameActionManager.incrementDiscard(false);
                         c.triggerOnManualDiscard();
                     }
+                    AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
                 }
 
-                AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             }
-
             this.tickDuration();
         }
     }

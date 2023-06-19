@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class Swerve extends AbstractDynamicCard {
+public class Swerve extends AbstractDriftCard {
 
     // TEXT DECLARATION
 

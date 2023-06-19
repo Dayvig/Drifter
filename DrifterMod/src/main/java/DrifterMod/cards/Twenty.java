@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class Twenty extends AbstractDynamicCard {
+public class Twenty extends AbstractDriftCard {
 
     // TEXT DECLARATION
 
@@ -63,15 +63,6 @@ public class Twenty extends AbstractDynamicCard {
         addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
 
     }
-
-    @Override
-    public void applyPowers(){
-        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
-            isMagicNumberModified = true;
-            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
-        }
-    }
-
 
     // Upgraded stats.
     @Override

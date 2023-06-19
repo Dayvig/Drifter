@@ -14,11 +14,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDynamicCard
-public class PolePosition extends AbstractDynamicCard implements OnRefreshHandCard {
+public class PolePosition extends AbstractDynamicCard {
 
     // TEXT DECLARATION
 
@@ -79,20 +81,22 @@ public class PolePosition extends AbstractDynamicCard implements OnRefreshHandCa
     }
 
     @Override
-    public void OnRefreshHand() {
-        if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE){
-            if (!changed){
-                prevFree = freeToPlayOnce;
-                changed = true;
-                freeToPlayOnce = true;
+    public void update() {
+        super.update();
+        if (CardCrawlGame.isInARun() && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            if (AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE) {
+                if (!changed) {
+                    prevFree = freeToPlayOnce;
+                    changed = true;
+                    freeToPlayOnce = true;
+                }
+            } else {
+                if (changed) {
+                    freeToPlayOnce = prevFree;
+                    changed = false;
+                }
             }
+            initializeDescription();
         }
-        else {
-            if (changed) {
-                freeToPlayOnce = prevFree;
-                changed = false;
-            }
-        }
-        initializeDescription();
     }
 }

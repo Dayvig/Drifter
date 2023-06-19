@@ -56,8 +56,8 @@ public class EatMyDust extends AbstractDynamicCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
-        this.cantUseMessage = "I don't have enough speed!";
-        return p.hand.size() >= 3;
+        this.cantUseMessage = "I don't have enough cards to discard!";
+        return p.hand.size()-1 >= 3;
     }
 
 

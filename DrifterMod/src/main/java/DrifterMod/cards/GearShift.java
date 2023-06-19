@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.VelvetChoker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,7 @@ public class GearShift extends AbstractDynamicCard implements ModalChoice.Callba
     private final ArrayList<AbstractCard> cardToPreview = new ArrayList<>();
     private float rotationTimer;
     private int previewIndex = 0;
+    private boolean choker = false;
 
     protected float getRotationTimeNeeded() {
         return 3.0F;
@@ -103,7 +105,12 @@ public class GearShift extends AbstractDynamicCard implements ModalChoice.Callba
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-            modal.open();
+        modal.open();
+        AbstractCard tmp = this.makeStatEquivalentCopy();
+        AbstractDungeon.actionManager.cardsPlayedThisCombat.add(tmp);
+        if (p.hasRelic(VelvetChoker.ID) && p.getRelic(VelvetChoker.ID).counter > 5){
+            p.getRelic(VelvetChoker.ID).counter = 5;
+        }
     }
 
     // This is called when one of the option cards us chosen
@@ -121,7 +128,7 @@ public class GearShift extends AbstractDynamicCard implements ModalChoice.Callba
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
                 if (p.hasPower(Speedup.POWER_ID)){
                     AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
-                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, new Speedup(p, p, 1), 1));
+                    AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(p, p, p.getPower(Speedup.POWER_ID), 1));
                 }
                 break;
             default:

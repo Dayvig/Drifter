@@ -4,6 +4,7 @@ import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -57,6 +58,7 @@ public class Intimidation extends AbstractDynamicCard {
                 }
             }
         }
+        addToBot(new DrawCardAction(1));
     }
 
 

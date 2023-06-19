@@ -34,7 +34,7 @@
   },
   "DrifterMod:Ninety": {
     "NAME": "90 Degree Turn",
-    "DESCRIPTION": "Deal !D! damage. NL driftermod:Drift 3. NL Gain !M! Strength while Drifting."
+    "DESCRIPTION": "Deal !D! damage. NL driftermod:Drift !M!. NL Gain !DrifterMod:M2! Strength while Drifting."
   },
   "DrifterMod:Fender": {
     "NAME": "Fender",
@@ -62,11 +62,11 @@
   },
   "DrifterMod:DefensiveDriving": {
     "NAME": "Defensive Driving",
-    "DESCRIPTION": "Discard 4 cards to gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Discard 4 cards."
   },
   "DrifterMod:CornerHug": {
     "NAME": "Hard Corner",
-    "DESCRIPTION": "Discard 3 cards to driftermod:Drift !M!"
+    "DESCRIPTION": "driftermod:Drift !M!. NL Discard 3 cards."
   },
   "DrifterMod:TractionTires": {
     "NAME": "Traction Tires",
@@ -75,7 +75,7 @@
   },
   "DrifterMod:NightsOnFire": {
     "NAME": "Nights of Fire",
-    "DESCRIPTION": "Deal !D! damage plus !M! for each driftermod:Overdraw. NL (Deals !DrifterMod:M2! damage)"
+    "DESCRIPTION": "Deal !DrifterMod:M2! damage plus !M! for each driftermod:Overdraw. NL (Deals !D! damage.)"
   },
   "DrifterMod:GasGasGas": {
     "NAME": "Gas Gas Gas",
@@ -99,7 +99,7 @@
   },
   "DrifterMod:Swerve": {
     "NAME": "Swerve",
-    "DESCRIPTION": "driftermod:Drift !M! NL Gain 1 Vulnerable."
+    "DESCRIPTION": "driftermod:Drift !M!. NL Gain 1 Vulnerable."
   },
   "DrifterMod:PolePosition": {
     "NAME": "Pole Position",
@@ -123,7 +123,7 @@
   },
   "DrifterMod:EatMyDust": {
     "NAME": "Overtake",
-    "DESCRIPTION": "Discard 3 cards to Draw !M! cards next turn."
+    "DESCRIPTION": "Discard 3 cards to draw !M! cards next turn."
   },
   "DrifterMod:ThermalEngine": {
     "NAME": "Thermal Engine",
@@ -136,7 +136,7 @@
   "DrifterMod:PerfectBalance": {
     "NAME": "Perfect Balance",
     "DESCRIPTION": "At the start of your turn, if you played an even number of cards last turn, Draw a card.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, if you played an even number of cards last turn, Draw !M! cards."
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, if you played an even number of cards last turn, Draw !M! card."
   },
   "DrifterMod:Dejavu": {
     "NAME": "Deja Vu",
@@ -192,7 +192,7 @@
   },
   "DrifterMod:HighSpeed": {
     "NAME": "Speed Drifting",
-    "DESCRIPTION": "Drift !M!. NL Gain !DrifterMod:M2! driftermod:Speed."
+    "DESCRIPTION": "driftermod:Drift !M!. NL Gain !DrifterMod:M2! driftermod:Speed."
   },
   "DrifterMod:SpeedBurst": {
     "NAME": "Speed Burst",
@@ -204,7 +204,7 @@
   },
   "DrifterMod:Recklessness": {
     "NAME": "Recklessness",
-    "DESCRIPTION": "Deal !D! damage. NL Discard a card. NL Gain !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vulnerable."
   },
   "DrifterMod:FireTrail": {
     "NAME": "Flame Trail",
@@ -228,7 +228,7 @@
   },
   "DrifterMod:OneThirtyFive": {
     "NAME": "135 Degree Turn",
-    "DESCRIPTION": "driftermod:Drift !M!. NL This card's #yDrift is affected by Strength and Dexterity."
+    "DESCRIPTION": "driftermod:Drift !M!. NL This card's driftermod:Drift is affected by Strength and Dexterity."
   },
   "DrifterMod:Tailgate": {
     "NAME": "Tailgate",
@@ -236,7 +236,7 @@
   },
   "DrifterMod:Intimidation": {
     "NAME": "Intimidation",
-    "DESCRIPTION": "Apply your Vulnerable to all enemies."
+    "DESCRIPTION": "Apply your Vulnerable to all enemies. NL Draw a card."
   },
   "DrifterMod:Daredevil": {
     "NAME": "Daredevil",
@@ -265,20 +265,20 @@
   },
   "DrifterMod:Bravery": {
     "NAME": "Bravery",
-    "DESCRIPTION": "Gain !M! Strength. NL Gain 3 Vulnerable."
+    "DESCRIPTION": "Gain !M! Strength. NL Gain 2 Vulnerable."
   },
   "DrifterMod:Manuever": {
     "NAME": "Maneuver",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! driftermod:Traction this turn only."
   },
   "DrifterMod:Recovery": {
-    "NAME": "In Control",
-    "DESCRIPTION": "Discard any number of cards, lose 1 Vulnerable for each.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Discard any number of cards, lose 1 Vulnerable for each."
+    "NAME": "Recovery",
+    "DESCRIPTION": "Discard any number of cards, lose 1 Vulnerable and gain !B! Block for each.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard any number of cards, lose 1 Vulnerable and gain !B! Block for each."
   },
   "DrifterMod:SweepingTurn": {
     "NAME": "Sweeping Turn",
-    "DESCRIPTION": "driftermod:Drift !M! NL Your Drift hits all enemies this turn."
+    "DESCRIPTION": "driftermod:Drift !M! NL Your driftermod:Drift hits all enemies this turn."
   },
   "DrifterMod:GearUp": {
     "NAME": "Gear Up",
@@ -295,15 +295,16 @@
   },
   "DrifterMod:OneEighty": {
     "NAME": "180 Degree Turn",
-    "DESCRIPTION": "driftermod:Drift !M!. NL Gain !DrifterMod:M2! driftermod:Traction next turn."
+    "DESCRIPTION": "driftermod:Drift !M!. NL Gain !DrifterMod:M2! driftermod:Traction next turn only."
   },
   "DrifterMod:Determined": {
-    "NAME": "Determined",
-    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, gain [E] and draw a card."
+    "NAME": "Second Wind",
+    "DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, gain [E] [E] .",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL If you have 2 or fewer cards in your hand, gain [E] [E] [E] ."
   },
   "DrifterMod:RoadRage": {
     "NAME": "Road Rage",
-    "DESCRIPTION": "Deal !D! damage. NL Discard all Skills in your hand, replace them with RAGE."
+    "DESCRIPTION": "Deal !D! damage. NL Discard all Skills in your hand, replace them with *RAGE."
   },
   "DrifterMod:Rage": {
     "NAME": "Rage",
@@ -315,11 +316,11 @@
   },
   "DrifterMod:Resolve": {
     "NAME": "Resolve",
-    "DESCRIPTION": "While you have 2 or fewer cards in hand, gain !M! Strength, Dexterity, and driftermod:Traction."
+    "DESCRIPTION": "While you have 2 or fewer cards in hand, gain !M! more damage, Block and driftermod:Drift from your cards."
   },
   "DrifterMod:Fierce": {
     "NAME": "Fierce",
-    "DESCRIPTION": "Deal !D! damage twice. NL Increased by 1 for each Vulnerable you have."
+    "DESCRIPTION": "Deal !D! damage twice. NL Increased by 2 for each Vulnerable you have."
   },
   "DrifterMod:RiskyApproach": {
     "NAME": "Risky Approach",
@@ -332,7 +333,7 @@
   },
   "DrifterMod:Ram": {
     "NAME": "Ram",
-    "DESCRIPTION": "Discard !M! cards to deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Discard !M! cards."
   },
   "DrifterMod:CruiseControl": {
     "NAME": "Cruise Control",
@@ -391,5 +392,12 @@
     "NAME": "Acceleration Form",
     "DESCRIPTION": "Ethereal. NL At the start of your turn, gain !M! driftermod:Speed.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, gain !M! driftermod:Speed."
+  },
+  "DrifterMod:DaringStunt": {
+    "NAME": "Daring Stunt",
+    "DESCRIPTION": "Discard !DrifterMod:M2! cards to deal !D! damage. NL ( Number of cards to discard reduced by !M! for each Vulnerable you have. )",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage. NL ( Number of cards to discard reduced by !M! for each Vulnerable you have. )"
+    ]
   }
 }

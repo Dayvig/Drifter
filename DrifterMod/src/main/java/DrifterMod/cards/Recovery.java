@@ -32,13 +32,15 @@ public class Recovery extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 1;
+    private static final int BLOCK = 2;
     // /STAT DECLARATION/
 
 
     public Recovery() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        baseBlock = block = BLOCK;
         this.selfRetain = false;
     }
 
@@ -46,7 +48,7 @@ public class Recovery extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new RecoveryAction(p, true, 1));
+        AbstractDungeon.actionManager.addToBottom(new RecoveryAction(p, true, 1, block));
     }
 
     // Upgraded stats.

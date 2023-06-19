@@ -7,6 +7,8 @@ import DrifterMod.actions.EurobeatAction;
 import DrifterMod.actions.StartParalaxAction;
 import DrifterMod.actions.StopEurobeatAction;
 import DrifterMod.cards.*;
+import DrifterMod.powers.DriftingPower;
+import DrifterMod.relics.ModdedCar;
 import DrifterMod.relics.SteeringWheel;
 import UI.ParalaxController;
 import UI.ParalaxObject;
@@ -28,11 +30,16 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
@@ -41,6 +48,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.Ref;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static DrifterMod.DrifterMod.*;
 import static DrifterMod.characters.TheDrifter.Enums.COLOR_DARKBLUE;
@@ -83,6 +92,8 @@ public class TheDrifter extends CustomPlayer {
     public static int r = 0;
     public static boolean drifting = false;
     public static boolean startOfDrift = false;
+    public static boolean driftAnimationPlaying = false;
+    public boolean wasDriftAnimationLastFrame = false;
     // =============== /BASE STATS/ =================
 
 
@@ -192,13 +203,15 @@ public class TheDrifter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(SteeringWheel.ID);
+        retVal.add(ModdedCar.ID);
+
         return retVal;
     }
 
     // character Select screen effect
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f); // Sound Effect
+        CardCrawlGame.sound.playA("Revv1", 1.25f); // Sound Effect
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false); // Screen Effect
     }
@@ -206,7 +219,7 @@ public class TheDrifter extends CustomPlayer {
     // character Select on-button-press sound effect
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_DAGGER_1";
+        return "Revv1";
     }
 
     // Should return how much HP your maximum HP reduces by when starting a run at
@@ -272,6 +285,16 @@ public class TheDrifter extends CustomPlayer {
         return DrifterMod.DRIFTER_BLUE;
     }
 
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList();
+        panels.add(new CutscenePanel("DrifterModResources/images/char/defaultCharacter/ending1.png", "Screech"));
+        panels.add(new CutscenePanel("DrifterModResources/images/char/defaultCharacter/ending2.png"));
+        panels.add(new CutscenePanel("DrifterModResources/images/char/defaultCharacter/ending3.png"));
+        return panels;
+    }
+
+
     // Should return an AttackEffect array of any size greater than 0. These effects
     // will be played in sequence as your character's finishing combo on the heart.
     // Attack effects are the same as used in DamageAction and the like.
@@ -302,7 +325,7 @@ public class TheDrifter extends CustomPlayer {
     @Override
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
-        r = (int) (Math.random() * 9);
+        r = (int) (Math.random() * 13);
         Speedometer.needleRot = 100.f;
 
         System.out.println(AbstractDungeon.actNum);
@@ -481,6 +504,22 @@ public class TheDrifter extends CustomPlayer {
     }
 
     public static String returnDriftKey(){
+        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss){
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
+                if (m.id.equals(CorruptHeart.ID)){
+                    int rand = (int) (Math.random() * 3);
+                    switch (rand){
+                        case 0:
+                            return "TheTop";
+                        case 1:
+                            return "Heartbeat";
+                        default:
+                            return "TheTop";
+                    }
+                }
+            }
+        }
+
         switch (TheDrifter.r){
             case 0:
                 return "Gas";
@@ -502,6 +541,12 @@ public class TheDrifter extends CustomPlayer {
                 return "RisingSun";
             case 9:
                 return "ChemicalLove";
+            case 10:
+                return "SaveMe";
+            case 11:
+                return "Spark";
+            case 12:
+                return "90s";
             default:
                 return "Gas";
         }
@@ -512,21 +557,35 @@ public class TheDrifter extends CustomPlayer {
         if (startOfDrift && !drifting){
             System.out.println("Drift Start");
             playEurobeat(returnDriftKey());
-            ReflectionHacks.setPrivate(AbstractDungeon.player,
-                    AbstractCreature.class,
-                    "animation",
-                    DriftingToyota);
-            ReflectionHacks.setPrivate(AbstractDungeon.player,
-                    AbstractCreature.class,
-                    "animationtimer",
-                    0f);
-            SpineAnimation spine = (SpineAnimation)DriftingToyota;
-            loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
-            AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
-            e.setTime(e.getEndTime() * MathUtils.random());
+            if (AbstractDungeon.player.hasPower(DriftingPower.POWER_ID)) {
+                setAnimationToDrift();
+            }
             startOfDrift = false;
             drifting = true;
         }
+        if (!wasDriftAnimationLastFrame && driftAnimationPlaying){
+            setAnimationToDrift();
+        }
+        else if (wasDriftAnimationLastFrame && !driftAnimationPlaying){
+            resetAnimation();
+        }
+        wasDriftAnimationLastFrame = driftAnimationPlaying;
+    }
+
+    public void setAnimationToDrift(){
+        ReflectionHacks.setPrivate(AbstractDungeon.player,
+                AbstractCreature.class,
+                "animation",
+                DriftingToyota);
+        ReflectionHacks.setPrivate(AbstractDungeon.player,
+                AbstractCreature.class,
+                "animationtimer",
+                0f);
+        SpineAnimation spine = (SpineAnimation) DriftingToyota;
+        loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
+        AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+        driftAnimationPlaying = true;
     }
 
     public void resetAnimation(){
@@ -543,6 +602,7 @@ public class TheDrifter extends CustomPlayer {
         loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
         e.setTime(e.getEndTime() * MathUtils.random());
+        driftAnimationPlaying = false;
     }
 
     private float ramAnimationTimer = 0.0f;

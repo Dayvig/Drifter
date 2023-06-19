@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class OneThirtyFive extends AbstractDynamicCard {
+public class OneThirtyFive extends AbstractDriftCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -70,19 +70,17 @@ public class OneThirtyFive extends AbstractDynamicCard {
 
     @Override
     public void applyPowers() {
-        int total = baseMagicNumber;
-
+        super.applyPowers();
+        int total = 0;
+        isMagicNumberModified = false;
         if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)){
             total += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
         }
         if (AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)){
             total += AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
         }
-        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
-            total += AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
-        }
-        magicNumber = total;
-        if (total != baseMagicNumber) {
+        magicNumber += total;
+        if (magicNumber != baseMagicNumber) {
             isMagicNumberModified = true;
         }
     }

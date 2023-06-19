@@ -3,6 +3,7 @@ package DrifterMod.cards;
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DriftPower;
+import DrifterMod.powers.ResolvePower;
 import DrifterMod.powers.Speedup;
 import DrifterMod.powers.TractionPower;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -19,7 +20,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class Sixty extends AbstractDynamicCard {
+public class Sixty extends AbstractDriftCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -77,10 +78,16 @@ public class Sixty extends AbstractDynamicCard {
 
     @Override
     public void applyPowers(){
+        super.applyPowers();
+        this.defaultSecondMagicNumber = defaultBaseSecondMagicNumber;
         if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
-            isMagicNumberModified = true;
-            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
+            this.defaultSecondMagicNumber += AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
         }
+        if (AbstractDungeon.player.hasPower(ResolvePower.POWER_ID) && AbstractDungeon.player.hand.size() <= 2){
+            this.defaultSecondMagicNumber += AbstractDungeon.player.getPower(ResolvePower.POWER_ID).amount;
+        }
+        this.isDefaultSecondMagicNumberModified = AbstractDungeon.player.hasPower(TractionPower.POWER_ID) ||
+                (AbstractDungeon.player.hasPower(ResolvePower.POWER_ID) && AbstractDungeon.player.hand.size() <= 2);
     }
 
     public void triggerOnGlowCheck() {

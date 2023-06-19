@@ -44,8 +44,9 @@ public class Ninety extends AbstractDriftCard {
     private static final int COST = 2;  // COST = ${COST}
     private static final int DAMAGE = 10;
     private static final int UPGRADE_DAMAGE = 5;
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int UPGRADE_MAGIC = 1;
+    private static final int MAGIC2 = 2;
 
     // /STAT DECLARATION/
 
@@ -54,6 +55,7 @@ public class Ninety extends AbstractDriftCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = MAGIC2;
     }
 
 
@@ -61,9 +63,9 @@ public class Ninety extends AbstractDriftCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftStrengthDownPower(p, p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,3), 3));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, defaultSecondMagicNumber), defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftStrengthDownPower(p, p, defaultSecondMagicNumber), defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
     }
 
@@ -73,7 +75,7 @@ public class Ninety extends AbstractDriftCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_DAMAGE);
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            upgradeDefaultSecondMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }

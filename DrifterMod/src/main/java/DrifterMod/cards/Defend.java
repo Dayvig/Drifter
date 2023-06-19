@@ -42,6 +42,8 @@ public class Defend extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = BLOCK;
         this.tags.add(BASIC_DEFEND);
+        this.tags.add(CardTags.STARTER_DEFEND);
+
     }
 
 

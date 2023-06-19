@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.VelvetChoker;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -56,9 +57,15 @@ public class GearUp extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -2), -2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Speedup(p, p, 1), 1));
-
+        if (p.hasRelic(VelvetChoker.ID) && p.getRelic(VelvetChoker.ID).counter == 5){
+            p.getRelic(VelvetChoker.ID).counter = 6;
+        }
     }
 
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m){
+        return true;
+    }
 
     // Upgraded stats.
     @Override

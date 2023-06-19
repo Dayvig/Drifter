@@ -41,6 +41,7 @@ DrifterMod\cards\Defend.class
 DrifterMod\variables\DefaultThirdMagicNumber.class
 DrifterMod\cards\OneEighty.class
 DrifterMod\interfaces\CardAddedToDeck.class
+DrifterMod\cards\SecondWind.class
 DrifterMod\cards\GasGasGas.class
 DrifterMod\cards\AeroChassis.class
 DrifterMod\cards\Exhaustpipe.class
@@ -65,6 +66,7 @@ DrifterMod\util\TextureLoader.class
 DrifterMod\cards\OneOFive.class
 DrifterMod\cards\AbstractDynamicCard.class
 DrifterMod\powers\AdaptabilityPower.class
+DrifterMod\potions\TractionPotion.class
 DrifterMod\Patches\FixFuckingTimeEaterPowerPatch.class
 DrifterMod\cards\InTheZone.class
 DrifterMod\cards\InControl.class
@@ -90,6 +92,7 @@ DrifterMod\characters\TheDrifter.class
 DrifterMod\Patches\BeyondScenePatch$BottomSceneParalaxBGPatch.class
 DrifterMod\powers\TractionNextTurn.class
 DrifterMod\cards\HardPass.class
+DrifterMod\cards\DaringStunt.class
 DrifterMod\cards\HighSpeed.class
 DrifterMod\variables\DefaultSecondMagicNumber.class
 DrifterMod\powers\DamageNextTurnPower.class
@@ -114,8 +117,10 @@ DrifterMod\cards\DriftMaster.class
 DrifterMod\cards\AccelerationForm.class
 UI\ParalaxController.class
 DrifterMod\cards\AbstractCollectorCard.class
+DrifterMod\relics\ModdedCar.class
 DrifterMod\variables\DefaultCustomVariable.class
 DrifterMod\cards\BobWeave.class
+DrifterMod\potions\NitrusPotion.class
 DrifterMod\actions\ActivatePostDrawAction.class
 DrifterMod\cards\EmergencyBrake.class
 DrifterMod\cards\Fierce.class
@@ -185,6 +190,7 @@ DrifterMod\cards\Daredevil.class
 DrifterMod\powers\ZoomPower.class
 DrifterMod\actions\RecoveryAction.class
 DrifterMod\Patches\BeyondScenePatch$BeyondSceneParalaxBGPatch.class
+DrifterMod\potions\FuelInjectionPotion.class
 DrifterMod\Patches\OverdrawPatch.class
 DrifterMod\cards\FuelReserve.class
 DrifterMod\cards\FortyFive.class

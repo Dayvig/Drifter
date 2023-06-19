@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class SweepingTurn extends AbstractDynamicCard {
+public class SweepingTurn extends AbstractDriftCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -67,14 +67,6 @@ public class SweepingTurn extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftSweepPower(p,p,1), 0));
         addToBot(new AnimateShakeAction(p, 0.4f, 0.4f));
 
-    }
-
-    @Override
-    public void applyPowers(){
-        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
-            isMagicNumberModified = true;
-            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
-        }
     }
 
     //Upgraded stats.

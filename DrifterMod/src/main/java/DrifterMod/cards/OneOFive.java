@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
-public class OneOFive extends AbstractDynamicCard {
+public class OneOFive extends AbstractDriftCard {
 
     /*
      * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
@@ -66,14 +66,6 @@ public class OneOFive extends AbstractDynamicCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftPower(p,p,magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DriftNextTurnPower(p,p,magicNumber), magicNumber));
         addToBot(new AnimateShakeAction(p, 0.2f, 0.2f));
-    }
-
-    @Override
-    public void applyPowers(){
-        if (AbstractDungeon.player.hasPower(TractionPower.POWER_ID)){
-            isMagicNumberModified = true;
-            this.magicNumber = baseMagicNumber + AbstractDungeon.player.getPower(TractionPower.POWER_ID).amount;
-        }
     }
 
     //Upgraded stats.

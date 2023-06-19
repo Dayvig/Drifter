@@ -2,6 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.powers.TempMaxHandSizeInc;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,6 +33,7 @@ public class Fierce extends AbstractDynamicCard {
     private static final int DAMAGE = 8;
     private static final int MAGIC = 2;
     private static final int UPGRADE_PLUS_DAMAGE = 2;
+    private static final int fierceMultiplier = 2;
 
     private int nonAdjustedDamage = DAMAGE;
 
@@ -54,13 +56,30 @@ public class Fierce extends AbstractDynamicCard {
     @Override
     public void applyPowers(){
         if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)){
-            baseDamage = nonAdjustedDamage;
-            baseDamage += AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount;
+            baseDamage = damage = nonAdjustedDamage + (AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount * fierceMultiplier);
         }
+        else {
+            baseDamage = damage = nonAdjustedDamage;
+        }
+        super.applyPowers();
+        initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)){
+            baseDamage = damage = nonAdjustedDamage + (AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount * fierceMultiplier);
+        }
+        else {
+            baseDamage = damage = nonAdjustedDamage;
+        }
+        super.calculateCardDamage(mo);
+        initializeDescription();
     }
 
     public void upgrade() {
         if (!upgraded) {
+            upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }

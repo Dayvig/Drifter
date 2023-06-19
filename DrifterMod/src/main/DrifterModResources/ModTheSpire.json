@@ -1,8 +1,8 @@
 {
   "modid": "DrifterMod",
-  "name": "DrifterMod",
+  "name": "The Drifter",
   "author_list": ["Dayvigilante"],
-  "description": "A deposed queen, set to conquer the spire and seize it as her own hive.",
+  "description": "A mysterious street racer from a far off land. NL Seeks to test his skills on the ultimate downhill, but first, he must reach the top.",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",

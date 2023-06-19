@@ -59,7 +59,6 @@ public class Recklessness extends AbstractDynamicCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, magicNumber, true), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new DiscardAction(p, p, 1, false));
         addToBot(new AnimateFastAttackAction(p));
     }
 

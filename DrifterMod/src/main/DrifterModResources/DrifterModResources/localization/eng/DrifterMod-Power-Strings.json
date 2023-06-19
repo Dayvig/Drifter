@@ -151,8 +151,10 @@
         "DrifterMod:FireTrailPower": {
                 "NAME": "Flame Trail",
                 "DESCRIPTIONS": [
-                        "At the start of your turn, deal damage to all enemies equal to your driftermod:Total-Hand.",
-                        "At the start of your turn, deal damage to all enemies equal to your driftermod:Total-Hand times #b"
+                        "At the start of your turn, deal damage to all enemies equal to your #bTotal-Hand.",
+                        " NL ( #b",
+                        " damage.)",
+                        "At the start of your turn, deal damage to all enemies equal to your #bTotal-Hand times #b"
                 ]
         },
         "DrifterMod:DriftSweepPower": {
@@ -173,8 +175,7 @@
                 "NAME": "Resolve Power",
                 "DESCRIPTIONS": [
                         "While you have 2 or fewer cards in hand, gain #b",
-                        " Strength, Dexterity and Traction.",
-                        " Strength, Dexterity and Traction."
+                        " more #yDamage, #yBlock and #yDrift from your cards."
                 ]
         },
         "DrifterMod:TractionRestorePower": {
@@ -229,6 +230,20 @@
                         "Draw #b",
                         " less card next turn.",
                         " less cards next turn."
+                ]
+        },
+        "DrifterMod:TractionNextTurn": {
+                "NAME": "Next Turn Traction",
+                "DESCRIPTIONS": [
+                        "Gain #b",
+                        " #bTraction next turn."
+                ]
+        },
+        "DrifterMod:TractionDownPower": {
+                "NAME": "Lose Traction",
+                "DESCRIPTIONS": [
+                        "Lose #b",
+                        " #bTraction at the end of the turn."
                 ]
         }
 }

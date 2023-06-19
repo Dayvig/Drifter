@@ -4,6 +4,7 @@ import DrifterMod.DrifterMod;
 import DrifterMod.Patches.BeyondScenePatch;
 import DrifterMod.actions.ChangeParalaxSpeedAction;
 import DrifterMod.actions.EurobeatAction;
+import DrifterMod.actions.StopEurobeatAction;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.effects.SpeedParticleEffect;
 import DrifterMod.util.TextureLoader;
@@ -102,6 +103,9 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         if (BeyondScenePatch.bg_controller != null) {
             addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, totalSpeed));
         }
+        if (this.amount >= 3 && !TheDrifter.drifting){
+            TheDrifter.startOfDrift = true;
+        }
     }
 
     @Override
@@ -111,6 +115,17 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         if (BeyondScenePatch.bg_controller != null) {
             addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, totalSpeed));
         }
+        if (this.amount >= 3 && !TheDrifter.drifting){
+            TheDrifter.startOfDrift = true;
+        }
+    }
+
+    @Override
+    public void reducePower(int stackAmount){
+        super.reducePower(stackAmount);
+        if (this.amount < 3){
+            addToBot(new StopEurobeatAction());
+        }
     }
 
     @Override
@@ -119,6 +134,7 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         if (BeyondScenePatch.bg_controller != null) {
             addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
         }
+        addToBot(new StopEurobeatAction());
     }
 
     @Override

@@ -44,7 +44,7 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
     private static final float[] layerSpeeds = new float[]{10.0F, 30.0F, 15.0F, -20.0F, 0.0F};
 
     private float needleTimer = 0.0f;
-    public static float needleRot = 100.0f;
+    public static float needleRot = 125.0f;
     private float jumpInterval = 3.0f;
     private float baseInterval = 0.5f;
     private float baseJumpAmount = 3f;
@@ -67,9 +67,15 @@ public class Speedometer extends CustomEnergyOrb implements EnergyOrbInterface {
             if (speedupAmount > 7){
                 speedupAmount = 7;
             }
-            needleRot = 100.0f - (speedupAmount * 30.0f);
+            needleRot = 125.0f - (speedupAmount * 35.0f);
             jumpInterval = baseInterval / (1.0f + (realSpeedup * 0.6f));
             jumpAmount = baseJumpAmount + realSpeedup;
+        }
+        else {
+            needleRot = 125.0f;
+            jumpInterval = baseInterval;
+            jumpAmount = baseJumpAmount;
+
         }
     }
 

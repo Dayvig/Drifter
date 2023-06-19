@@ -54,6 +54,7 @@ public class Burnout extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
+        this.isMultiDamage = true;
     }
 
     // Actions the card should do.

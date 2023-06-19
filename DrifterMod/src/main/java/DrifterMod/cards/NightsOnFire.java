@@ -57,33 +57,44 @@ public class NightsOnFire extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = damage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
-        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = SECOND_MAGIC;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = baseDamage;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, defaultSecondMagicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         addToBot(new AnimateFastAttackAction(p));
     }
 
     @Override
     public void applyPowers(){
         if (AbstractDungeon.player.hasPower(TempMaxHandSizeInc.POWER_ID)) {
-            defaultBaseSecondMagicNumber = baseDamage + (magicNumber * AbstractDungeon.player.getPower(TempMaxHandSizeInc.POWER_ID).amount);
+            baseDamage = damage = defaultBaseSecondMagicNumber + (magicNumber * AbstractDungeon.player.getPower(TempMaxHandSizeInc.POWER_ID).amount);
         }
         else {
-            defaultBaseSecondMagicNumber = baseDamage;
+            baseDamage = damage = defaultBaseSecondMagicNumber;
         }
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber;
         initializeDescription();
+        super.applyPowers();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        if (AbstractDungeon.player.hasPower(TempMaxHandSizeInc.POWER_ID)) {
+            baseDamage = damage = defaultBaseSecondMagicNumber + (magicNumber * AbstractDungeon.player.getPower(TempMaxHandSizeInc.POWER_ID).amount);
+        } else {
+            baseDamage = damage = defaultBaseSecondMagicNumber;
+        }
+        initializeDescription();
+        super.calculateCardDamage(mo);
     }
 
     //Upgraded stats.
     @Override
     public void upgrade() {
         upgradeName();
-        upgradeDamage(UPGRADE_PLUS_DAMAGE);
+        upgradeDefaultSecondMagicNumber(UPGRADE_PLUS_DAMAGE);
         upgradeMagicNumber(UPGRADE_MAGIC);
         initializeDescription();
     }

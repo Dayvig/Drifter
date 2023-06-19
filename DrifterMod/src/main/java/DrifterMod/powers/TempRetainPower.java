@@ -8,12 +8,14 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.EquilibriumPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static DrifterMod.DrifterMod.makePowerPath;
@@ -53,7 +55,18 @@ public class TempRetainPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public void atEndOfTurn(final boolean isPlayer){
-        AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(this.owner, this.amount));
+        if (!AbstractDungeon.player.hasPower(EquilibriumPower.POWER_ID)) {
+            if (AbstractDungeon.player.hand.size() > this.amount) {
+                AbstractDungeon.actionManager.addToBottom(new RetainCardsAction(this.owner, this.amount));
+            }
+            else {
+                for (AbstractCard c : AbstractDungeon.player.hand.group){
+                    if (!c.isEthereal) {
+                        c.retain = true;
+                    }
+                }
+            }
+        }
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
 

@@ -3,11 +3,11 @@ package DrifterMod;
 import DrifterMod.cards.*;
 import DrifterMod.characters.TheDrifter;
 import DrifterMod.events.IdentityCrisisEvent;
+import DrifterMod.potions.FuelInjectionPotion;
+import DrifterMod.potions.NitrusPotion;
 import DrifterMod.potions.PlaceholderPotion;
-import DrifterMod.relics.BottledPlaceholderRelic;
-import DrifterMod.relics.DefaultClickableRelic;
-import DrifterMod.relics.PlaceholderRelic2;
-import DrifterMod.relics.SteeringWheel;
+import DrifterMod.potions.TractionPotion;
+import DrifterMod.relics.*;
 import DrifterMod.util.IDCheckDontTouchPls;
 import DrifterMod.util.TextureLoader;
 import DrifterMod.variables.DefaultCustomVariable;
@@ -74,9 +74,9 @@ public class DrifterMod implements
     private static String modID;
 
     //This is for the in-game mod settings panel.
-    private static final String MODNAME = "DrifterMod";
+    private static final String MODNAME = "The Drifter";
     private static final String AUTHOR = "Dayvigilante"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A deposed queen bee, seeking to conquer the spire and claim it as her new hive. Modify your deck with powerful Hive cards, and recruit and manage a deadly swarm.";
+    private static final String DESCRIPTION = "A street racer from a faraway land here to claim the spire. Gain Speed, draw cards and Drift to victory!";
 
     // =============== INPUT TEXTURE LOCATION =================
 
@@ -323,7 +323,9 @@ public class DrifterMod implements
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "Enum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, TheDrifter.Enums.THE_DRIFTER);
+        BaseMod.addPotion(FuelInjectionPotion.class, Color.LIGHT_GRAY.cpy(), Color.CYAN.cpy(), Color.LIGHT_GRAY.cpy(), FuelInjectionPotion.POTION_ID, TheDrifter.Enums.THE_DRIFTER);
+        BaseMod.addPotion(NitrusPotion.class, Color.ORANGE.cpy(), Color.ORANGE.cpy(), Color.RED.cpy(), NitrusPotion.POTION_ID, TheDrifter.Enums.THE_DRIFTER);
+        BaseMod.addPotion(TractionPotion.class, Color.BLACK.cpy(), Color.BLACK.cpy(), Color.CLEAR.cpy(), TractionPotion.POTION_ID, TheDrifter.Enums.THE_DRIFTER);
 
         logger.info("Done editing potions");
     }
@@ -339,6 +341,8 @@ public class DrifterMod implements
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new SteeringWheel(), TheDrifter.Enums.COLOR_DARKBLUE);
+        BaseMod.addRelicToCustomPool(new ModdedCar(), TheDrifter.Enums.COLOR_DARKBLUE);
+
         logger.info("Done adding relics!");
     }
 
@@ -362,6 +366,7 @@ public class DrifterMod implements
         // Add the cards
         // Don't comment out/delete these cards (yet). You need 1 of e0ach type and rarity (technically) for your game not to crash
         // when generating card rewards/shop screen items.
+        BaseMod.addCard(new DaringStunt());
         BaseMod.addCard(new Tmph());
         BaseMod.addCard(new Twenty());
         BaseMod.addCard(new FortyFive());
@@ -459,6 +464,7 @@ public class DrifterMod implements
         // This is so that they are all "seen" in the library, for people who like to look at the card list
         // before playing your mod.
 
+        UnlockTracker.unlockCard(DaringStunt.ID);
         UnlockTracker.unlockCard(DriftAhead.ID);
         UnlockTracker.unlockCard(AccelerationForm.ID);
         UnlockTracker.unlockCard(PoundPavement.ID);
