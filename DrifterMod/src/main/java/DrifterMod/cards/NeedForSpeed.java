@@ -33,8 +33,8 @@ public class NeedForSpeed extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.POWER;       //
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
-    private static final int COST = 1;  // COST = ${COST}
-    private static final int MAGIC = 2;
+    private static final int COST = 2;  // COST = ${COST}
+    private static final int MAGIC = 3;
 
     // /STAT DECLARATION/
 

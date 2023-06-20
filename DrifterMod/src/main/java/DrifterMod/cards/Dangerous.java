@@ -44,6 +44,7 @@ public class Dangerous extends AbstractDynamicCard {
     private static final int MAGIC = 1;
     private static final int DAMAGE = 14;
     private static final int UPGRADE_PLUS_DAMAGE = 4;
+    private boolean hadVulnerable;
 
 
     // /STAT DECLARATION/
@@ -53,6 +54,7 @@ public class Dangerous extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         baseDamage = damage = DAMAGE;
+        hadVulnerable = false;
     }
 
     // Actions the card should do.
@@ -62,18 +64,21 @@ public class Dangerous extends AbstractDynamicCard {
     }
 
     public void applyPowers(){
-        this.costForTurn = COST;
-        if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)){
-            if (!this.freeToPlayOnce){
-                int a = AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount;
-                if (COST - a < costForTurn){
-                    costForTurn = COST - a;
-                    if (costForTurn < 0){
-                        costForTurn = 0;
+        if (!this.freeToPlayOnce) {
+            if (this.costForTurn != 0 || hadVulnerable && !AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)) {
+                this.costForTurn = COST;
+                if (AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID)) {
+                    int a = AbstractDungeon.player.getPower(VulnerablePower.POWER_ID).amount;
+                    if (COST - a < costForTurn) {
+                        costForTurn = COST - a;
+                        if (costForTurn < 0) {
+                            costForTurn = 0;
+                        }
                     }
                 }
             }
         }
+        hadVulnerable = AbstractDungeon.player.hasPower(VulnerablePower.POWER_ID);
     }
 
     //Upgraded stats.

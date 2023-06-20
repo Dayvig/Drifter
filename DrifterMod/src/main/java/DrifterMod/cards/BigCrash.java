@@ -40,7 +40,7 @@ public class BigCrash extends AbstractDynamicCard {
 
     private static final int COST = 3;  // COST = ${COST}
     private static final int UPGRADED_COST = 2;
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 8;
     // /STAT DECLARATION/
 
 

@@ -32,9 +32,9 @@ public class Exhaustpipe extends AbstractDynamicCard {
 
     private static final int COST = 0;  // COST = ${COST}
 
-    private static final int MAGIC = 2;    // DAMAGE = ${DAMAGE}
+    private static final int MAGIC = 1;    // DAMAGE = ${DAMAGE}
     private static final int BLOCK = 0;
-    private static final int UPGRADE_PLUS_BLOCK = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int UPGRADE_PLUS_BLOCK = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -49,9 +49,11 @@ public class Exhaustpipe extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ExhaustAction(magicNumber, false, true, true));
-        if (upgraded){
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+        if (p.hand.size()-1 > 1) {
+            AbstractDungeon.actionManager.addToBottom(new ExhaustAction(magicNumber, false, true, false));
+            if (upgraded) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
+            }
         }
     }
 

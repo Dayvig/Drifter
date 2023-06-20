@@ -325,7 +325,7 @@ public class TheDrifter extends CustomPlayer {
     @Override
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
-        r = (int) (Math.random() * 13);
+        r = (int) (Math.random() * 16);
         Speedometer.needleRot = 100.f;
 
         System.out.println(AbstractDungeon.actNum);
@@ -530,7 +530,8 @@ public class TheDrifter extends CustomPlayer {
             case 3:
                 return "CrazyEmotion";
             case 4:
-                return "HotLimit";
+                int horse = (int) (Math.random() * 10);
+                return horse == 5 ? "HorseLimit" : "HotLimit";
             case 5:
                 return "IWannaBeTheNight";
             case 6:
@@ -547,6 +548,13 @@ public class TheDrifter extends CustomPlayer {
                 return "Spark";
             case 12:
                 return "90s";
+            case 13:
+                return "INeedYourLove";
+            case 14:
+                return "Futureland";
+            case 15:
+                return "OnlyStar";
+
             default:
                 return "Gas";
         }

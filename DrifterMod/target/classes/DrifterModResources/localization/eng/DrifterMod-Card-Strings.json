@@ -174,8 +174,8 @@
   },
   "DrifterMod:NeedForSpeed": {
     "NAME": "Need for Speed",
-    "DESCRIPTION": "Gain 2 driftermod:Speed.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain 2 driftermod:Speed."
+    "DESCRIPTION": "Gain !M! driftermod:Speed.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! driftermod:Speed."
   },
   "DrifterMod:SafeDriving": {
     "NAME": "Safe Driving",
@@ -252,8 +252,8 @@
   },
   "DrifterMod:Exhaustpipe": {
     "NAME": "Exhaust Pipe",
-    "DESCRIPTION": "Exhaust up to !M! cards.",
-    "UPGRADE_DESCRIPTION": "Exhaust up to !M! cards. NL Gain !B! Block."
+    "DESCRIPTION": "Exhaust a card.",
+    "UPGRADE_DESCRIPTION": "Exhaust a card to gain !B! Block."
   },
   "DrifterMod:Pursuit": {
     "NAME": "Pursuit",
@@ -273,8 +273,8 @@
   },
   "DrifterMod:Recovery": {
     "NAME": "Recovery",
-    "DESCRIPTION": "Discard any number of cards, lose 1 Vulnerable and gain !B! Block for each.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Discard any number of cards, lose 1 Vulnerable and gain !B! Block for each."
+    "DESCRIPTION": "Discard any number of cards, lose 1 Vulnerable and gain !B! Block for each. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard any number of cards, lose 1 Vulnerable and gain !B! Block for each. NL Exhaust."
   },
   "DrifterMod:SweepingTurn": {
     "NAME": "Sweeping Turn",

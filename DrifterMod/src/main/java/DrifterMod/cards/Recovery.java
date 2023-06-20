@@ -34,7 +34,7 @@ public class Recovery extends AbstractDynamicCard {
 
     private static final int COST = 1;  // COST = ${COST}
     private static final int MAGIC = 1;
-    private static final int BLOCK = 2;
+    private static final int BLOCK = 3;
     // /STAT DECLARATION/
 
 
@@ -42,6 +42,7 @@ public class Recovery extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseBlock = block = BLOCK;
         this.selfRetain = false;
+        this.exhaust = true;
     }
 
 
