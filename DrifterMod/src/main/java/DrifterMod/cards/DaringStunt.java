@@ -92,9 +92,8 @@ public class DaringStunt extends AbstractDynamicCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
-        this.cantUseMessage = "I don't have enough cards to discard!";
+        this.cantUseMessage = EXTENDED_DESCRIPTION[1];
         applyPowers();
-        System.out.println(totalHand + " | "+ defaultSecondMagicNumber);
         return totalHand > defaultSecondMagicNumber;
     }
 

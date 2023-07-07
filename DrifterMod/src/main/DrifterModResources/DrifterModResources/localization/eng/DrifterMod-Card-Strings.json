@@ -13,7 +13,10 @@
   },
   "DrifterMod:KeepItSteady": {
     "NAME": "Keep it Steady",
-    "DESCRIPTION": "If you're Drifting, NL driftermod:Drift !M!."
+    "DESCRIPTION": "If you're Drifting, NL driftermod:Drift !M!.",
+    "EXTENDED_DESCRIPTION": [
+      "I need to drift!"
+    ]
   },
   "DrifterMod:Accelerate": {
     "NAME": "Accelerate",
@@ -54,11 +57,20 @@
   },
   "DrifterMod:Tmph": {
     "NAME": "20 MPH",
-    "DESCRIPTION": "Discard !M! cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage for each driftermod:Speed. )"
+    "DESCRIPTION": "Discard !M! cards from your driftermod:Total-hand to deal !D! damage to all enemies. NL ( Discard 2 more cards and double this card's damage for each driftermod:Speed. )",
+    "EXTENDED_DESCRIPTION": [
+      "I need to discard ",
+      " cards!",
+      " MPH",
+      "20 MPH"
+    ]
   },
   "DrifterMod:InertialDrift": {
     "NAME": "Inertial Drift",
-    "DESCRIPTION": "Double your driftermod:Drift. NL Exhaust"
+    "DESCRIPTION": "Double your driftermod:Drift. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "I need to drift!"
+    ]
   },
   "DrifterMod:DefensiveDriving": {
     "NAME": "Defensive Driving",
@@ -123,7 +135,10 @@
   },
   "DrifterMod:EatMyDust": {
     "NAME": "Overtake",
-    "DESCRIPTION": "Discard 3 cards to draw !M! cards next turn."
+    "DESCRIPTION": "Discard 3 cards to draw !M! cards next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "I don't have enough cards to discard!"
+    ]
   },
   "DrifterMod:ThermalEngine": {
     "NAME": "Thermal Engine",
@@ -141,7 +156,10 @@
   "DrifterMod:Dejavu": {
     "NAME": "Deja Vu",
     "DESCRIPTION": "Play the last card you played this combat.",
-    "UPGRADE_DESCRIPTION": "Upgrade and play the last card you played this combat."
+    "UPGRADE_DESCRIPTION": "Upgrade and play the last card you played this combat.",
+    "EXTENDED_DESCRIPTION": [
+      "I haven't been in this place before."
+    ]
   },
   "DrifterMod:Zoom": {
     "NAME": "Zoom",
@@ -158,7 +176,10 @@
   },
   "DrifterMod:RacingSpirit": {
     "NAME": "Racing Spirit",
-    "DESCRIPTION": "If you have 2 or fewer cards in hand, deal !D! damage and draw !M! cards."
+    "DESCRIPTION": "If you have 2 or fewer cards in hand, deal !D! damage and draw !M! cards.",
+    "EXTENDED_DESCRIPTION":[
+      "I need to have 2 or fewer cards."
+    ]
   },
   "DrifterMod:InTheZone": {
     "NAME": "In the Zone",
@@ -397,7 +418,8 @@
     "NAME": "Daring Stunt",
     "DESCRIPTION": "Discard !DrifterMod:M2! cards to deal !D! damage. NL ( Number of cards to discard reduced by !M! for each Vulnerable you have. )",
     "EXTENDED_DESCRIPTION": [
-      "Deal !D! damage. NL ( Number of cards to discard reduced by !M! for each Vulnerable you have. )"
+      "Deal !D! damage. NL ( Number of cards to discard reduced by !M! for each Vulnerable you have. )",
+      "I don't have enough cards to discard!"
     ]
   }
 }

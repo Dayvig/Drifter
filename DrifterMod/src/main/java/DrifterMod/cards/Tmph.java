@@ -73,7 +73,7 @@ public class Tmph extends AbstractDynamicCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
-        this.cantUseMessage = "I need to discard "+magicNumber+" cards!";
+        this.cantUseMessage = EXTENDED_DESCRIPTION[0] + magicNumber + EXTENDED_DESCRIPTION[1];
         if (p.hasPower(TempMaxHandSizeInc.POWER_ID)){
             return magicNumber < p.hand.size() + p.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
@@ -87,13 +87,13 @@ public class Tmph extends AbstractDynamicCard {
         if (AbstractDungeon.player.hasPower(Speedup.POWER_ID)){
             baseMagicNumber = magicNumber = (MAGIC * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount) + MAGIC;
             baseDamage = damage = DAMAGE * (int)((Math.pow(2, AbstractDungeon.player.getPower(Speedup.POWER_ID).amount)));
-            this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + " MPH";
+            this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + EXTENDED_DESCRIPTION[2];
         }
         else
         {
             baseDamage = damage = DAMAGE;
             baseMagicNumber = magicNumber = MAGIC;
-            this.name = "20 MPH";
+            this.name = EXTENDED_DESCRIPTION[3];
         }
         super.applyPowers();
         initializeDescription();
@@ -104,13 +104,13 @@ public class Tmph extends AbstractDynamicCard {
         if (AbstractDungeon.player.hasPower(Speedup.POWER_ID)){
             baseMagicNumber = magicNumber = (MAGIC * AbstractDungeon.player.getPower(Speedup.POWER_ID).amount) + MAGIC;
             baseDamage = damage = DAMAGE * (int)((Math.pow(2, AbstractDungeon.player.getPower(Speedup.POWER_ID).amount)));
-            this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + " MPH";
+            this.name = ((AbstractDungeon.player.getPower(Speedup.POWER_ID).amount * 20) + 20) + EXTENDED_DESCRIPTION[2];
         }
         else
         {
             baseDamage = damage = DAMAGE;
             baseMagicNumber = magicNumber = MAGIC;
-            this.name = "20 MPH";
+            this.name = EXTENDED_DESCRIPTION[3];
         }
         super.calculateCardDamage(mo);
         initializeDescription();

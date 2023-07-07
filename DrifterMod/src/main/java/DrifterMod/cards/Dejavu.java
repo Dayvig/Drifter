@@ -27,6 +27,8 @@ public class Dejavu extends AbstractDynamicCard {
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+
 
     // /TEXT DECLARATION/
 
@@ -64,6 +66,7 @@ public class Dejavu extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
+        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
         return AbstractDungeon.actionManager.cardsPlayedThisCombat.size() != 0;
     }
 

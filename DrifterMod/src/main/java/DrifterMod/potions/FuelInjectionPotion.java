@@ -39,7 +39,7 @@ public class FuelInjectionPotion extends AbstractPotion {
 
         // Initialize the on-hover name + description
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip("Speed", DESCRIPTIONS[2]));
+        tips.add(new PowerTip(DESCRIPTIONS[3], DESCRIPTIONS[2]));
     }
 
     @Override

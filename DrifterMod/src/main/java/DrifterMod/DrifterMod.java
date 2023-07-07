@@ -567,38 +567,49 @@ public class DrifterMod implements
 
 
     // ================ LOAD THE TEXT ===================
-
+    public String DetermineLanguage(){
+        switch (Settings.language){
+            case ENG:
+                return "eng";
+            case ZHS:
+                return "zhs";
+            default:
+                return "eng";
+        }
+    }
     @Override
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings");
 
+        String languageID = DetermineLanguage();
+
         // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Card-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Card-Strings.json");
 
         // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Power-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Power-Strings.json");
 
         // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Relic-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Relic-Strings.json");
 
         // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Event-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Event-Strings.json");
 
         // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Potion-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Potion-Strings.json");
 
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Character-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Character-Strings.json");
 
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DrifterMod-Orb-Strings.json");
+                getModID() + "Resources/localization/"+languageID+"/DrifterMod-Orb-Strings.json");
 
         logger.info("Done edittting strings");
     }
@@ -618,7 +629,9 @@ public class DrifterMod implements
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
 
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DrifterMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String languageID = DetermineLanguage();
+
+        String json = Gdx.files.internal(getModID() + "Resources/localization/"+languageID+"/DrifterMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
 
         if (keywords != null) {

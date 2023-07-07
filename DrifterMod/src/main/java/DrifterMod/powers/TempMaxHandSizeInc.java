@@ -82,12 +82,9 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
     private void overDraw(){
         int k = AbstractDungeon.player.hand.size()-1;
         int j = this.amount;
-        System.out.println("Handsize: " + k);
-        System.out.println("Amount: " + j);
         if (k < BaseMod.MAX_HAND_SIZE) {
             int l = BaseMod.MAX_HAND_SIZE - k;
             if (l > j){ l = j; }
-            System.out.println("Draw Amount" + l);
             AbstractDungeon.actionManager.addToBottom(new OverdrawCardAction(this.owner, l));
             AbstractDungeon.actionManager.addToBottom(new FastReducePowerAction(this.owner, this.owner, this, l));
         }
@@ -96,12 +93,9 @@ public class TempMaxHandSizeInc extends AbstractPower implements CloneablePowerI
     private void overDraw2(){
         int k = AbstractDungeon.player.hand.size();
         int j = this.amount;
-        System.out.println("Handsize: " + k);
-        System.out.println("Amount: " + j);
         if (k < BaseMod.MAX_HAND_SIZE) {
             int l = BaseMod.MAX_HAND_SIZE - k;
             if (l > j){ l = j; }
-            System.out.println("Draw Amount" + l);
             AbstractDungeon.actionManager.addToTop(new FastReducePowerAction(this.owner, this.owner, this, l));
             AbstractDungeon.actionManager.addToTop(new OverdrawCardAction(this.owner, l));
         }

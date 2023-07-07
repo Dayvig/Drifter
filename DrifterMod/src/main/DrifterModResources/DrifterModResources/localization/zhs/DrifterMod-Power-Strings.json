@@ -1,0 +1,249 @@
+{
+        "DrifterMod:DexDownPower": {
+                "NAME": "失去敏捷",
+                "DESCRIPTIONS": [
+                        "本回合结束时失去#b",
+                        "点敏捷。",
+                        "点敏捷。"
+                ]
+        },
+        "DrifterMod:DexterityNextTurnPower": {
+                "NAME": "恢复敏捷",
+                "DESCRIPTIONS": [
+                        "下一回合获得#b",
+                        "点敏捷。",
+                        "点敏捷。"
+                ]
+        },
+  "DrifterMod:DriftingPower": {
+    "NAME": "动量",
+    "DESCRIPTIONS": [
+      "每当你获得#y漂移时获得1层。（最多拥有#b2层）如果在你的回合结束时没有动量，失去所有#y漂移。",
+      "",
+      ""
+    ]
+  },
+        "DrifterMod:DriftPower": {
+                "NAME": "漂移",
+                "DESCRIPTIONS": [
+                        "在你的回合结束时，获得点#b格挡并对生命值最低的敌人造成#b",
+                        " 点伤害，然后失去一半的#y漂移。如果你没有#y动量，失去全部。",
+                        " 点伤害，然后失去一半的#y漂移。如果你没有#y动量，失去全部。"
+                ]
+        },
+        "DrifterMod:TempRetainPower": {
+                "NAME": "保留",
+                "DESCRIPTIONS": [
+                        "本回合保留#b",
+                        " 张手牌。",
+                        " 张手牌。"
+                ]
+        },
+        "DrifterMod:ThornsDownPower": {
+                "NAME": "失去荆棘",
+                "DESCRIPTIONS": [
+                        "在下一回合开始时失去#b",
+                        "点荆棘",
+                        "点荆棘"
+                ]
+        },
+        "DrifterMod:DriftStrengthDownPower": {
+                "NAME": "漂移力量",
+                "DESCRIPTIONS": [
+                        "失去#y漂移时失去#b",
+                        "点力量。",
+                        "点力量。"
+                ]
+        },
+        "DrifterMod:TempMaxHandSizeInc": {
+                "NAME": "超抽",
+                "DESCRIPTIONS": [
+                        "每当你手牌未满，失去#b1层#y超抽并抽#b1张牌直到抽满。",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:OverdrawNextTurn": {
+                "NAME": "Overdraw",
+                "DESCRIPTIONS": [
+                        "Next turn, draw 2. If your hand is full, draw when it empties.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TractionPower": {
+                "NAME": "抓地力",
+                "DESCRIPTIONS": [
+                        "每当你#y漂移，额外#y漂移#b",
+                        "。",
+                        "。"
+                ]
+        },
+        "DrifterMod:DriftNextTurnPower": {
+                "NAME": "下回合漂移",
+                "DESCRIPTIONS": [
+                        "下一回合，漂移#b",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:ThermalPower": {
+                "NAME": "热能驱动",
+                "DESCRIPTIONS": [
+                        "每回合第一次在手牌已满时尝试抽牌时，获得 [E] 。",
+                        "每回合首#b",
+                        "次在手牌已满时尝试抽牌时，获得 [E] 。"
+                ]
+        },
+        "DrifterMod:AeroPower": {
+                "NAME": "Aerodynamic",
+                "DESCRIPTIONS": [
+                        "When you discard, draw #b cards (Up to amount discarded)",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:BalancePower": {
+                "NAME": "平衡",
+                "DESCRIPTIONS": [
+                        "如果你本回合打出的牌数为偶数，下一回合抽#b",
+                        "张牌。",
+                        "张牌。",
+                        "平衡",
+                        "不平衡"
+                ]
+        },
+        "DrifterMod:ZoomPower": {
+                "NAME": "疾光",
+                "DESCRIPTIONS": [
+                        "本回合内每当你抽一张牌，对一个随机敌人造成#b",
+                        "点伤害。",
+                        "点伤害。"
+                ]
+        },
+        "DrifterMod:Speedup": {
+                "NAME": "速度",
+                "DESCRIPTIONS": [
+                        "回合开始时额外抽#b",
+                        "张牌并根据层数获得以下负面效果：",
+                        "张牌并根据层数获得以下负面效果：",
+                        "3+：获得1层易伤。",
+                        "5+：本回合失去2点敏捷。",
+                        "7+：本回合失去2点抓地力。"
+                ]
+        },
+        "DrifterMod:InControlPower": {
+                "NAME": "In Control",
+                "DESCRIPTIONS": [
+                        "获得 #b",
+                        "  [E]  for each card discarded this turn o NL y.",
+                        "  [E]  for each card discarded this turn o NL y."
+                ]
+        },
+        "DrifterMod:CoolPower": {
+                "NAME": "状态极佳",
+                "DESCRIPTIONS": [
+                        "每当你抽一张牌获得#b",
+                        "点格挡。",
+                        "点格挡。"
+                ]
+        },
+        "DrifterMod:FireTrailPower": {
+                "NAME": "燃烧尾迹",
+                "DESCRIPTIONS": [
+                        "在你的回合结束时，对所有敌人造成相当于你#b总手牌的伤害。",
+                        "  NL （#b",
+                        "伤害。）",
+                        "在你的回合结束时，对所有敌人造成相当于你#b总手牌的伤害乘以#b"
+                ]
+        },
+        "DrifterMod:DriftSweepPower": {
+                "NAME": "漂移横扫",
+                "DESCRIPTIONS": [
+                        "本回合你的漂移伤害作用于所有敌人。"
+                ]
+        },
+        "DrifterMod:GambitPower": {
+                "NAME": "Final Gambit Power",
+                "DESCRIPTIONS": [
+                        "The first #b",
+                        " time you die while Vulnerable, heal to 5% HP.",
+                        " times you die while Vulnerable, heal to 5% HP."
+                ]
+        },
+        "DrifterMod:ResolvePower": {
+                "NAME": "决断",
+                "DESCRIPTIONS": [
+                        "当你有2或更少张手牌，你的卡牌造成的#y伤害以及获得的#y格挡值和#y漂移增加#b",
+                        "。"
+                ]
+        },
+        "DrifterMod:TractionRestorePower": {
+                "NAME": "下回合抓地",
+                "DESCRIPTIONS": [
+                        "下一回合获得#b",
+                        "点抓地力。",
+                        "点抓地力。"
+                ]
+        },
+        "DrifterMod:CruiseControlPower": {
+                "NAME": "七平八稳",
+                "DESCRIPTIONS": [
+                        "你的速度在判定负面效果时被视为减少#b",
+                        "点。",
+                        "点。"
+                ]
+        },
+        "DrifterMod:SupersonicPower": {
+                "NAME": "Supersonic",
+                "DESCRIPTIONS": [
+                        "When you draw a card this turn, 获得 #b",
+                        " Traction this turn o NL y.",
+                        " Traction this turn o NL y."
+                ]
+        },
+        "DrifterMod:FuelReservePower": {
+                "NAME": "燃料储备",
+                "DESCRIPTIONS": [
+                        "如果你没有手牌，抽#b",
+                        "张牌并移除此能力。"
+                ]
+        },
+        "DrifterMod:AdaptabilityPower": {
+                "NAME": "适应性",
+                "DESCRIPTIONS": [
+                        "如果你没有手牌，抽#b",
+                        "张牌。",
+                        "张牌。"
+                ]
+        },
+        "DrifterMod:AccelerationPower": {
+                "NAME": "加速形态",
+                "DESCRIPTIONS": [
+                        "在回合开始时获得#b",
+                        "点速度。"
+                ]
+        },
+        "DrifterMod:DrawDownPower": {
+                "NAME": "刹车",
+                "DESCRIPTIONS": [
+                        "下一回合少抽#b",
+                        "张牌。",
+                        "张牌。"
+                ]
+        },
+        "DrifterMod:TractionNextTurn": {
+                "NAME": "下回合抓地",
+                "DESCRIPTIONS": [
+                        "下一回合获得#b",
+                        "点#b抓地力。"
+                ]
+        },
+        "DrifterMod:TractionDownPower": {
+                "NAME": "失去抓地力",
+                "DESCRIPTIONS": [
+                        "回合结束时失去#b",
+                        "点#b抓地力。"
+                ]
+        }
+}

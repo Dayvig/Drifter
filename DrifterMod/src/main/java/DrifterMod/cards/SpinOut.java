@@ -56,7 +56,8 @@ public class SpinOut extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(DriftPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p,p.getPower(DriftPower.POWER_ID).amount));
+            DriftPower d = (DriftPower)p.getPower(DriftPower.POWER_ID);
+            d.DriftDamage();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber * p.getPower(DriftPower.POWER_ID).amount), magicNumber * p.getPower(DriftPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsDownPower(p, p, magicNumber * p.getPower(DriftPower.POWER_ID).amount), magicNumber * p.getPower(DriftPower.POWER_ID).amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, DriftPower.POWER_ID));

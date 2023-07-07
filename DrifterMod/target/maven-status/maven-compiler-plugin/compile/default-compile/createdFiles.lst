@@ -171,6 +171,7 @@ DrifterMod\cards\Recovery.class
 DrifterMod\Patches\OverdrawPatch$Speed.class
 DrifterMod\powers\TempMaxHandSizeInc.class
 DrifterMod\relics\BottledPlaceholderField.class
+DrifterMod\DrifterMod$1.class
 DrifterMod\powers\ThornsDownPower.class
 DrifterMod\actions\DiscardSpecificCardActionFast.class
 DrifterMod\powers\Speedup.class

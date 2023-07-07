@@ -62,7 +62,7 @@ public class RacingSpirit extends AbstractDynamicCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p, m);
-        this.cantUseMessage = "I need to have 2 or fewer cards.";
+        this.cantUseMessage = EXTENDED_DESCRIPTION[0];
         return p.hand.size() <= 2;
     }
 

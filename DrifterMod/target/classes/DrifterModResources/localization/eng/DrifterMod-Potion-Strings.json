@@ -12,7 +12,8 @@
                 "DESCRIPTIONS": [
                         "Gain ",
                         " #ySpeed.",
-                        "At the start of each turn, draw 1 extra card for each Speed and gain negative effects based on your Speed. NL 3+: Gain 1 Vulnerable. NL 5+: Lose 2 Dexterity this turn only. NL 7+: Lose 2 Traction this turn only."
+                        "At the start of each turn, draw 1 extra card for each Speed and gain negative effects based on your Speed. NL 3+: Gain 1 Vulnerable. NL 5+: Lose 2 Dexterity this turn only. NL 7+: Lose 2 Traction this turn only.",
+                        "#ySpeed"
                 ]
         },
         "DrifterMod:NitrusPotion": {
@@ -28,7 +29,9 @@
                         "Gain ",
                         " #yTraction.",
                         "#yTraction improves #yDrift gained by cards.",
-                        "At the end of your turn, gain Block and deal damage to the enemy with the lowest HP equal to your #yDrift. When you #yDrift, gain #yMomentum (Max 2.) which maintains your #yDrift."
+                        "At the end of your turn, gain Block and deal damage to the enemy with the lowest HP equal to your #yDrift. When you #yDrift, gain #yMomentum (Max 2.) which maintains your #yDrift.",
+                        "Traction",
+                        "Drift"
                 ]
         }
 }

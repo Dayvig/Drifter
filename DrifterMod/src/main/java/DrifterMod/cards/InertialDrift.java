@@ -7,8 +7,12 @@ import DrifterMod.powers.ResolvePower;
 import DrifterMod.powers.TractionPower;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import javax.smartcardio.Card;
 
 import static DrifterMod.DrifterMod.makeCardPath;
 
@@ -21,8 +25,8 @@ public class InertialDrift extends AbstractDriftCard {
     public static final String ID = DrifterMod.makeID(InertialDrift.class.getSimpleName()); // USE THIS ONE FOR THE TEMPLATE;
     public static final String IMG = makeCardPath("InertialDrift.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
-
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
 
 
@@ -65,7 +69,7 @@ public class InertialDrift extends AbstractDriftCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
         super.canUse(p,m);
-        cantUseMessage = "I need to drift!";
+        cantUseMessage = EXTENDED_DESCRIPTION[0];
         return p.hasPower(DriftPower.POWER_ID);
     }
 

@@ -1,0 +1,425 @@
+{
+  "DrifterMod:Twenty": {
+    "NAME": "20度转弯",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL  driftermod:漂移 !M! 。"
+  },
+  "DrifterMod:Sixty": {
+    "NAME": "临界转弯",
+    "DESCRIPTION": " driftermod:漂移 !M! 。 NL 如果你有2或更少张的手牌, driftermod:漂移 !DrifterMod:M2! 。"
+  },
+  "DrifterMod:FortyFive": {
+    "NAME": "45度转弯",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL  driftermod:漂移 !M! 。"
+  },
+  "DrifterMod:KeepItSteady": {
+    "NAME": "保持稳定",
+    "DESCRIPTION": "如果你正在漂移，NL  driftermod:漂移 !M! 。",
+    "EXTENDED_DESCRIPTION": [
+      "我必须正在漂移！"
+    ]
+  },
+  "DrifterMod:Accelerate": {
+    "NAME": "加速",
+    "DESCRIPTION": "获得1点 driftermod:速度 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "获得1点 driftermod:速度 。"
+  },
+  "DrifterMod:Brake": {
+    "NAME": "刹车",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL driftermod:刹车 2。"
+  },
+  "DrifterMod:HairPin": {
+    "NAME": "髮夹弯",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你没有 driftermod:漂移 ， driftermod:漂移 !M! 。"
+  },
+  "DrifterMod:SpinOut": {
+    "NAME": "甩尾",
+    "DESCRIPTION": " driftermod:触发 你的 driftermod:漂移 。 NL 每有1点 driftermod:漂移 获得 !M! 点荆棘一回合。 NL 失去你的 driftermod:漂移 。"
+  },
+  "DrifterMod:Ninety": {
+    "NAME": "90度转弯",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL  driftermod:漂移 !M! 。 NL 漂移期间获得 !DrifterMod:M2! 点力量。"
+  },
+  "DrifterMod:Fender": {
+    "NAME": "护板抵击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL  driftermod:刹车 2。"
+  },
+  "DrifterMod:EngineRev": {
+    "NAME": "引擎轰鸣",
+    "DESCRIPTION": "固有 NL 下一回合抽 !M! 张牌并获得 !M!  [E] 。 NL 消耗。"
+  },
+  "DrifterMod:Coast": {
+    "NAME": "滑行",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 本回合保留 !M! 张牌。"
+  },
+  "DrifterMod:HardPass": {
+    "NAME": "强行超车",
+    "DESCRIPTION": "造成 !D! 点伤害。如果杀死敌人，获得1点 driftermod:速度 。"
+  },
+  "DrifterMod:Tmph": {
+    "NAME": "20 KM/h",
+    "DESCRIPTION": "从你的 driftermod:总手牌 丢弃 !M! 牌以对所有敌人造成 !D! 点伤害。 NL （你每有1点 driftermod:速度 ，这张牌的伤害翻倍但需要丢弃的牌数增加2。）",
+    "EXTENDED_DESCRIPTION": [
+      "我必须丢弃",
+      " 张牌！",
+      " KM/h",
+      "20 KM/h"
+    ]
+  },
+  "DrifterMod:InertialDrift": {
+    "NAME": "惯性漂移",
+    "DESCRIPTION": "将你的 driftermod:漂移 翻倍。 NL 消耗。",
+    "EXTENDED_DESCRIPTION": [
+      "我必须正在漂移！"
+    ]
+  },
+  "DrifterMod:DefensiveDriving": {
+    "NAME": "防御性驾驶",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 丢弃4张牌。"
+  },
+  "DrifterMod:CornerHug": {
+    "NAME": "险峻弯道",
+    "DESCRIPTION": " driftermod:漂移 !M!。 NL 丢弃3张牌。"
+  },
+  "DrifterMod:TractionTires": {
+    "NAME": "咬地轮胎",
+    "DESCRIPTION": "获得 !M! 点 driftermod:抓地力 。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 获得 !M! 点 driftermod:抓地力 。"
+  },
+  "DrifterMod:NightsOnFire": {
+    "NAME": "Nights of Fire",
+    "DESCRIPTION": "造成 !DrifterMod:M2! 加上 driftermod:超抽 层数 !M! 倍的伤害。 NL （造成 !D! 点伤害。)"
+  },
+  "DrifterMod:GasGasGas": {
+    "NAME": "Gas Gas Gas",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 消耗。"
+  },
+  "DrifterMod:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "DrifterMod:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点格挡。"
+  },
+  "DrifterMod:BobWeave": {
+    "NAME": "游刃有余",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 下一回合抽 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "获得 !B! 点格挡。 NL 下一回合抽 !M! 张牌。",
+      "获得 !B! 点格挡。 NL 下一回合抽 !M! 张牌。"
+    ]
+  },
+  "DrifterMod:Swerve": {
+    "NAME": "灵动回避",
+    "DESCRIPTION": " driftermod:漂移 !M! 。 NL 获得1层易伤。"
+  },
+  "DrifterMod:PolePosition": {
+    "NAME": "领先优势",
+    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点格挡。 NL 如果你手牌已满，耗能变为0。"
+  },
+  "DrifterMod:OneOFive": {
+    "NAME": "105度转弯",
+    "DESCRIPTION": " driftermod:漂移 !M!  NL 下一回合，漂移 !M! 。"
+  },
+  "DrifterMod:DriftKing": {
+    "NAME": "经验",
+    "DESCRIPTION": " driftermod:漂移 !M! 。"
+  },
+  "DrifterMod:TopSpeed": {
+    "NAME": "全速冲锋",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 本回合保留你的手牌。"
+  },
+  "DrifterMod:UTurn": {
+    "NAME": "急转弯",
+    "DESCRIPTION": " driftermod:触发 你的漂移。 NL 下一回合抽相当于你的 driftermod:漂移 层数数量的牌。 NL 失去你的 driftermod:漂移 。"
+  },
+  "DrifterMod:EatMyDust": {
+    "NAME": "超限爆发",
+    "DESCRIPTION": "丢弃3张牌以在下一回合抽 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "我没有足够的牌丢弃！"
+    ]
+  },
+  "DrifterMod:ThermalEngine": {
+    "NAME": "热能驱动",
+    "DESCRIPTION": "你每回合第一次在手牌已满时尝试抽牌时，获得 [E] 。"
+  },
+  "DrifterMod:Kachow": {
+    "NAME": "迎面头灯",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害和给予1层虚弱。"
+  },
+  "DrifterMod:PerfectBalance": {
+    "NAME": "完美平衡",
+    "DESCRIPTION": "回合开始时，如果你上一回合打出的牌数为偶数，抽一张牌。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 回合开始时，如果你上一回合打出的牌数为偶数，抽 !M! 牌。"
+  },
+  "DrifterMod:Dejavu": {
+    "NAME": "Deja Vu",
+    "DESCRIPTION": "打出你本场战斗上一张打出的牌。",
+    "UPGRADE_DESCRIPTION": "打出你本场战斗上一张打出的牌的升级版。",
+    "EXTENDED_DESCRIPTION": [
+      "我还没有打出过牌。"
+    ]
+  },
+  "DrifterMod:Zoom": {
+    "NAME": "疾光",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 本回合内每当你抽一张牌，对一个随机敌人造成 !M! 点伤害。"
+  },
+  "DrifterMod:BigCrash": {
+    "NAME": "超速猛撞",
+    "DESCRIPTION": "造成相当于你 driftermod:总手牌 !M! 倍的伤害。丢弃你的手牌并失去所有 driftermod:超抽 。 NL （ !D! 点伤害。）"
+  },
+  "DrifterMod:InControl": {
+    "NAME": "坚毅",
+    "DESCRIPTION": "保留。 NL 丢弃1张牌。 NL 获得 [E] 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "保留。 NL 丢弃1张牌。 NL 获得 [E]  [E] 。 NL 消耗。"
+  },
+  "DrifterMod:RacingSpirit": {
+    "NAME": "竞速之魂",
+    "DESCRIPTION": "如果你有2或更少张手牌，造成 !D! 点伤害，抽 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "我需要有2或更少张手牌。"
+    ]
+  },
+  "DrifterMod:InTheZone": {
+    "NAME": "状态极佳",
+    "DESCRIPTION": "每当你在你的回合抽牌，每抽1张获得 !M! 点格挡。"
+  },
+  "DrifterMod:StylePoints": {
+    "NAME": "Style Points",
+    "DESCRIPTION": "Apply  !DrifterMod:M2!  Weak。 NL   driftermod:漂移  !M! 。"
+  },
+  "DrifterMod:ImpossibleTurn": {
+    "NAME": "不可能的转弯",
+    "DESCRIPTION": " driftermod:漂移 !M! 两次。"
+  },
+  "DrifterMod:NeedForSpeed": {
+    "NAME": "速度渴望",
+    "DESCRIPTION": "获得 !M!  driftermod:速度 。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 获得 !M!  driftermod:速度 。"
+  },
+  "DrifterMod:SafeDriving": {
+    "NAME": "安全驾驶",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 失去1点 driftermod:速度 ，如果因而失去速度，获得 !M! 点格挡。"
+  },
+  "DrifterMod:Nitrus": {
+    "NAME": "氮气加速",
+    "DESCRIPTION": "获得 [E]  [E] 。 NL 获得1点 driftermod:速度 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "获得 [E]  [E]  [E] 。 NL 获得1点 driftermod:速度 。 NL  消耗。"
+  },
+  "DrifterMod:SpeedDemon": {
+    "NAME": "速度狂魔",
+    "DESCRIPTION": "获得1点 driftermod:速度 。 NL 造成相当于 driftermod:速度 层数 !M! 倍的伤害。 NL  ( !D! 点伤害。)"
+  },
+  "DrifterMod:HighSpeed": {
+    "NAME": "高速漂移",
+    "DESCRIPTION": " driftermod:漂移 !M! 。 NL 获得 !DrifterMod:M2! 点 driftermod:速度 。"
+  },
+  "DrifterMod:SpeedBurst": {
+    "NAME": "疾速爆发",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 本回合保留 !M! 张牌。"
+  },
+  "DrifterMod:PedalTo": {
+    "NAME": "踩到底！",
+    "DESCRIPTION": "抽 !M! 张牌。"
+  },
+  "DrifterMod:Recklessness": {
+    "NAME": "鲁莽",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层易伤。"
+  },
+  "DrifterMod:FireTrail": {
+    "NAME": "燃烧尾迹",
+    "DESCRIPTION": "在你的回合结束时，所有敌人失去相当于你 driftermod:总手牌 的生命值。"
+  },
+  "DrifterMod:Dangerous": {
+    "NAME": "风险游戏",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每有1层易伤，这张牌的耗能减少1。"
+  },
+  "DrifterMod:Underdog": {
+    "NAME": "天造之才",
+    "DESCRIPTION": "不能被打出。 NL 每当这张牌被丢弃，将其放回你的手牌。 NL 每当这是你手中唯一的一张牌，抽一张牌。 NL 虚无。",
+    "UPGRADE_DESCRIPTION": "不能被打出。 NL 每当这张牌被丢弃，将其放回你的手牌。 NL 每当这是你手中唯一的一张牌，抽一张牌。",
+    "EXTENDED_DESCRIPTION": [
+      "我不能打出这张牌。"
+    ]
+  },
+  "DrifterMod:BurnRubber": {
+    "NAME": "飞轮压地",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "DrifterMod:OneThirtyFive": {
+    "NAME": "135度转弯",
+    "DESCRIPTION": " driftermod:漂移 !M! 。 NL 力量和敏捷能为这张牌的 driftermod:漂移 加成。"
+  },
+  "DrifterMod:Tailgate": {
+    "NAME": "尾随",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。"
+  },
+  "DrifterMod:Intimidation": {
+    "NAME": "震慑",
+    "DESCRIPTION": "将你的易伤给予所有敌人。 NL 抽一张牌。"
+  },
+  "DrifterMod:Daredevil": {
+    "NAME": "Daredevil",
+    "DESCRIPTION": "造成  !D!  点伤害 3 times。 NL  If you aren't Vulnerable, 消耗 this card。"
+  },
+  "DrifterMod:EmergencyBrake": {
+    "NAME": "紧急刹车",
+    "DESCRIPTION": "保留。 NL 每有1点 driftermod:速度 获得 !B! 点格挡。 NL 失去所有 driftermod:速度 。"
+  },
+  "DrifterMod:BrakeDrift": {
+    "NAME": "刹车飘移",
+    "DESCRIPTION": "丢弃任何数量的牌。每丢弃1张， driftermod:漂移 !M! 并 driftermod:刹车 1。"
+  },
+  "DrifterMod:Exhaustpipe": {
+    "NAME": "排气管",
+    "DESCRIPTION": "消耗一张牌。",
+    "UPGRADE_DESCRIPTION": "消耗一张牌以获得 !B! 点格挡。"
+  },
+  "DrifterMod:Pursuit": {
+    "NAME": "追击",
+    "DESCRIPTION": "给予 !M! 层易伤。 NL 抽 !DrifterMod:M2! 张牌。"
+  },
+  "DrifterMod:Burnout": {
+    "NAME": "燃尽",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 将1张*灼伤放入你的抽牌堆中。 NL 失去1点 driftermod:速度 。"
+  },
+  "DrifterMod:Bravery": {
+    "NAME": "勇气",
+    "DESCRIPTION": "获得 !M! 点力量。 NL 获得2层易伤。"
+  },
+  "DrifterMod:Manuever": {
+    "NAME": "灵动",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 获得 !M! 点临时 driftermod:抓地力 。"
+  },
+  "DrifterMod:Recovery": {
+    "NAME": "恢复状态",
+    "DESCRIPTION": "丢弃任何数量的牌，每丢弃1张，失去1层易伤并获得 !B! 点格挡。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "保留。 NL 丢弃任何数量的牌，每丢弃1张，失去1层易伤并获得 !B! 点格挡。 NL 消耗。"
+  },
+  "DrifterMod:SweepingTurn": {
+    "NAME": "飞旋横扫",
+    "DESCRIPTION": " driftermod:漂移 !M!  NL 本回合你的  driftermod:漂移 NL 伤害作用于所有敌人。"
+  },
+  "DrifterMod:GearUp": {
+    "NAME": "升档",
+    "DESCRIPTION": "获得 !M! 点力量。 NL 失去2点敏捷。 NL 获得1点速度。"
+  },
+  "DrifterMod:GearDown": {
+    "NAME": "降档",
+    "DESCRIPTION": "获得 !M! 点敏捷。 NL 失去2点力量。 NL 失去1点速度，如果因而失去速度，获得 !B! 点格挡。"
+  },
+  "DrifterMod:GearShift": {
+    "NAME": "离合器",
+    "DESCRIPTION": "选择升档或降档。",
+    "UPGRADE_DESCRIPTION": "选择升档+或降档+。"
+  },
+  "DrifterMod:OneEighty": {
+    "NAME": "180度转弯",
+    "DESCRIPTION": " driftermod:漂移 !M! 。 NL 下一回合获得 !DrifterMod:M2! 点临时 driftermod:抓地力 。"
+  },
+  "DrifterMod:Determined": {
+    "NAME": "重振精神",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 如果你有2或更少张手牌，获得 [E]  [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 如果你有2或更少张手牌，获得 [E]  [E]  [E] 。"
+  },
+  "DrifterMod:RoadRage": {
+    "NAME": "路怒症",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 丢弃所有技能牌，将其替换成*狂怒。"
+  },
+  "DrifterMod:Rage": {
+    "NAME": "狂怒",
+    "DESCRIPTION": "虚无。 NL 造成 !D! 点伤害。"
+  },
+  "DrifterMod:FinalGambit": {
+    "NAME": "决胜赌局",
+    "DESCRIPTION": "抽牌直到将手牌抽满。 NL 每抽1张牌获得 [E] 。 NL 在下一回合死亡。 NL 消耗。"
+  },
+  "DrifterMod:Resolve": {
+    "NAME": "决断",
+    "DESCRIPTION": "每当你有2或更少张手牌，你的卡牌造成的伤害以及获得的格挡值和 driftermod:漂移 增加 !M! 。"
+  },
+  "DrifterMod:Fierce": {
+    "NAME": "激走",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 你每有1层易伤，增加2点伤害。"
+  },
+  "DrifterMod:RiskyApproach": {
+    "NAME": "冒险走法",
+    "DESCRIPTION": "获得1层易伤。 NL 下一回合抽 !M! 张牌。"
+  },
+  "DrifterMod:SupersonicFire": {
+    "NAME": "Supersonic",
+    "DESCRIPTION": "获得 X  driftermod:速度 。",
+    "UPGRADE_DESCRIPTION": "获得 X+1  driftermod:速度 。"
+  },
+  "DrifterMod:Ram": {
+    "NAME": "猛撞",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 丢弃 !M! 张牌。"
+  },
+  "DrifterMod:CruiseControl": {
+    "NAME": "七平八稳",
+    "DESCRIPTION": "获得2点敏捷。 NL 你的 driftermod:速度 在判定负面效果时将被视为减少 !M! 点。"
+  },
+  "DrifterMod:DriftMaster": {
+    "NAME": "秋名的幽灵",
+    "DESCRIPTION": " driftermod:漂移 !M! 。"
+  },
+  "DrifterMod:Speedstar": {
+    "NAME": "速度之星",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。"
+  },
+  "DrifterMod:VariableDrift": {
+    "NAME": "变量转弯",
+    "DESCRIPTION": " driftermod:漂移 !M! X次。"
+  },
+  "DrifterMod:Equalize": {
+    "NAME": "Recovery",
+    "DESCRIPTION": "Ethereal NL  Heal  !M!  for each Vulnerable you have。 NL  Lose all Vulnerable。 NL  消耗。"
+  },
+  "DrifterMod:NaturalTalent": {
+    "NAME": "不屈不挠",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽1张牌。 NL 每当这张牌被丢弃，将其放回你的手牌，并将其抽牌数增加1。",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害。 NL  抽 !M! 张牌。 NL 每当这张牌被丢弃，将其放回你的手牌，并将其抽牌数增加1。"
+    ]
+  },
+  "DrifterMod:FuelReserve": {
+    "NAME": "燃料储备",
+    "DESCRIPTION": "在你下一次没有手牌时，抽 !M! 张牌。"
+  },
+  "DrifterMod:AllTheStops": {
+    "NAME": "全力以赴",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你有易伤，再造成 !D! 点伤害。 NL 如果你有2或更少张手牌，再造成 !D! 点伤害。"
+  },
+  "DrifterMod:LastResort": {
+    "NAME": "孤注一掷",
+    "DESCRIPTION": "丢弃所有手牌。 NL 从抽牌堆中选择1张牌放入你的手牌。",
+    "UPGRADE_DESCRIPTION": "丢弃所有手牌。 NL 从抽牌堆中选择1张牌放入你的手牌。 NL 获得 [E] 。"
+  },
+  "DrifterMod:Adaptability": {
+    "NAME": "适应性",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 本回合每当你没有手牌，抽1张牌。"
+  },
+  "DrifterMod:DriftAhead": {
+    "NAME": "漂移领先",
+    "DESCRIPTION": " driftermod:触发 你的 driftermod:漂移 。 NL 你每有 !M! 点 driftermod:漂移 获得1点速度。 NL 失去你的 driftermod:漂移 。"
+  },
+  "DrifterMod:PoundPavement": {
+    "NAME": "震撼路面",
+    "DESCRIPTION": "抽 !M! 张牌X次。 NL 在本回合保留你的手牌。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌X次。 NL 在本回合保留你的手牌。 NL 获得 [E] 。 NL 消耗。"
+  },
+  "DrifterMod:AccelerationForm": {
+    "NAME": "加速形态",
+    "DESCRIPTION": "虚无。 NL 在每回合开始时获得 !M! 点 driftermod:速度 。",
+    "UPGRADE_DESCRIPTION": "在每回合开始时获得 !M! 点 driftermod:速度 。"
+  },
+  "DrifterMod:DaringStunt": {
+    "NAME": "技高膽大",
+    "DESCRIPTION": "丢弃 !DrifterMod:M2! 张牌以造成 !D! 点伤害。 NL （你每有1层易伤，需要丢弃的牌减少 !M! 张。）",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害。 NL （你每有1层易伤，需要丢弃的牌减少 !M! 张。）",
+      "我没有足够的牌丢弃！"
+    ]
+  }
+}

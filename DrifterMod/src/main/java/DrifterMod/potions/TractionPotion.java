@@ -44,8 +44,8 @@ public class TractionPotion extends AbstractPotion {
 
         // Initialize the on-hover name + description
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip("Traction", DESCRIPTIONS[2]));
-        tips.add(new PowerTip("Drift", DESCRIPTIONS[3]));
+        tips.add(new PowerTip(DESCRIPTIONS[4], DESCRIPTIONS[2]));
+        tips.add(new PowerTip(DESCRIPTIONS[5], DESCRIPTIONS[3]));
 
     }
 

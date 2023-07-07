@@ -1,0 +1,37 @@
+{
+				"DrifterMod:PlaceholderPotion": {
+								"NAME": "Placeholder Potion",
+								"DESCRIPTIONS": [
+												"获得 ",
+												" At the end of your turn, lose ",
+												" Strength."
+								]
+				},
+				"DrifterMod:FuelInjectionPotion": {
+								"NAME": "燃油注射剂",
+					"DESCRIPTIONS": [
+						"获得 ",
+						" #y速度。",
+						"在你的回合开始时，每有1点速度额外抽1张牌，并根据速度层数获得负面效果。 NL3+: 获得1层易伤。 NL5+: 本回合失去2点敏捷。 NL7+: 本回合失去2点抓地力。",
+						"速度"
+					]
+				},
+				"DrifterMod:NitrusPotion": {
+								"NAME": "氮气药水",
+								"DESCRIPTIONS": [
+												"抽 ",
+												"张牌。"
+								]
+				},
+				"DrifterMod:TractionPotion": {
+								"NAME": "车轮润滑油",
+					"DESCRIPTIONS": [
+						"获得 ",
+						" #y抓地力。",
+						"#y抓地力增加你从牌中获得的#y漂移。",
+						"在你的回合结束时，获得相当于#y漂移层数的格挡值并对生命值最低的敌人造成等量伤害。每当你获得#y漂移，获得1层#y动量（最多拥有2层），其能保留你的#y漂移。",
+						"抓地力",
+						"漂移"
+					]
+				}
+}
