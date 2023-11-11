@@ -102,7 +102,6 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void onInitialApplication(){
-        System.out.println("Racing Ambiance on"+ DrifterMod.config.getBool(AMBIANCE_ON));
         if (DrifterMod.config.getBool(AMBIANCE_ON)) {
             racingID = CardCrawlGame.sound.playAndLoop("Racing");
         }

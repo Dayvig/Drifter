@@ -34,11 +34,9 @@ public class StopEurobeatAction extends AbstractGameAction {
                     }
                 }
                 if (isFightingLagavulin) {
-                    System.out.println("Laga");
                     CardCrawlGame.music.fadeOutTempBGM();
                     CardCrawlGame.music.playTempBgmInstantly("ELITE");
                 } else if (isFightingHexaghost) {
-                    System.out.println("Hexa");
                     CardCrawlGame.music.fadeOutTempBGM();
                     CardCrawlGame.music.playTempBgmInstantly("BOSS_BOTTOM");
                 } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom) {

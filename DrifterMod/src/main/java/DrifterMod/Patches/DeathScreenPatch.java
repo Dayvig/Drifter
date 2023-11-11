@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.screens.DeathScreen;
 public class DeathScreenPatch {
         @SpirePrefixPatch
         public static void DeathReset (DeathScreen __instance){
-            System.out.println("Resetti");
             TheDrifter.startOfDrift = false;
             TheDrifter.drifting = false;
             CardCrawlGame.sound.stop("Racing", Speedup.racingID);

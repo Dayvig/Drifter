@@ -328,8 +328,6 @@ public class TheDrifter extends CustomPlayer {
         r = (int) (Math.random() * 16);
         Speedometer.needleRot = 100.f;
 
-        System.out.println(AbstractDungeon.actNum);
-
         switch (AbstractDungeon.actNum){
             case 1:
                 setupBottomParalax();
@@ -359,8 +357,6 @@ public class TheDrifter extends CustomPlayer {
         levelSpeeds.add(1400.0f);//4 - thin pillars
         levelSpeeds.add(1850.0f);//5 - a few shapes
 
-        System.out.println("Width " + Settings.WIDTH + " | "+ Settings.scale);
-        System.out.println("Height " + Settings.HEIGHT + " | "+ Settings.scale);
 
         BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, Settings.WIDTH*3, true);
 
@@ -606,7 +602,6 @@ public class TheDrifter extends CustomPlayer {
                 "animationtimer",
                 0f);
         SpineAnimation spine = (SpineAnimation)Toyota;
-        System.out.println(spine.skeletonUrl);
         loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
         AnimationState.TrackEntry e = state.setAnimation(0, "animtion0", true);
         e.setTime(e.getEndTime() * MathUtils.random());

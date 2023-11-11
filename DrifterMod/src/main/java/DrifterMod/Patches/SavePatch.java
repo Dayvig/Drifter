@@ -18,7 +18,6 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 public class SavePatch {
     @SpirePrefixPatch
     public static void SaveReset (AbstractPlayer.PlayerClass __class){
-        System.out.println("Resetti");
         TheDrifter.startOfDrift = false;
         TheDrifter.drifting = false;
         CardCrawlGame.sound.stop("Racing", Speedup.racingID);

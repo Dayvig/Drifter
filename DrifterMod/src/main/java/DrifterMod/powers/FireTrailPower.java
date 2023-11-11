@@ -65,7 +65,6 @@ public class FireTrailPower extends TwoAmountPower implements CloneablePowerInte
         if (this.owner.hasPower(TempMaxHandSizeInc.POWER_ID)){
             flameDamage += this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
-        System.out.println("Hand size:"+AbstractDungeon.player.hand.size() + " Flame Damage:"+flameDamage);
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(flameDamage * this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
@@ -78,7 +77,6 @@ public class FireTrailPower extends TwoAmountPower implements CloneablePowerInte
         if (this.owner.hasPower(TempMaxHandSizeInc.POWER_ID)){
             flameDamage += this.owner.getPower(TempMaxHandSizeInc.POWER_ID).amount;
         }
-        System.out.println("Hand size:"+AbstractDungeon.player.hand.size() + " Flame Damage:"+flameDamage);
         this.amount2 = flameDamage;
         this.updateDescription();
     }

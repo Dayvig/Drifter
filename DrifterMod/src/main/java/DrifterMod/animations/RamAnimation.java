@@ -29,16 +29,11 @@ public class RamAnimation extends AbstractGameAction {
 
     @Override
     public void update() {
-        System.out.println(duration);
         if (this.duration > startDuration - hitDuration) {
-            System.out.println((this.duration-(startDuration - hitDuration)));
-            System.out.println(hitDuration);
-            System.out.println("State1 " + (this.duration-(startDuration - hitDuration))/hitDuration);
             p.animX = (Interpolation.linear.apply(target.hb.cX, start, (this.duration-(startDuration - hitDuration))/hitDuration) - start) * 0.8f;
             p.updateAnimations();
         }
         else {
-            System.out.println("State2 "+ (this.duration/(this.startDuration-hitDuration)));
             p.animX = (Interpolation.linear.apply(start, target.hb.cX, (this.duration/(this.startDuration-hitDuration))) - start) * 0.8f;
             p.updateAnimations();
         }

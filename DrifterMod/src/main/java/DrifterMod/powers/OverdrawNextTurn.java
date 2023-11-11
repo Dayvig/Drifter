@@ -61,8 +61,6 @@ public class OverdrawNextTurn extends AbstractPower implements CloneablePowerInt
     public void atStartOfTurnPostDraw() {
         int k = AbstractDungeon.player.gameHandSize + AbstractDungeon.player.hand.size();
         int j = this.amount;
-        System.out.println("Handsize: " + k);
-        System.out.println("Amount: " + j);
         while (k < BaseMod.MAX_HAND_SIZE) {
             AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, this, 1));
             if (j > 0) {
