@@ -3,7 +3,7 @@
   "name": "The Drifter",
   "author_list": ["Dayvigilante"],
   "description": "A mysterious street racer from a far off land. NL Seeks to test his skills on the ultimate downhill, but first, he must reach the top.",
-  "version": "1.01",
+  "version": "1.1",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],

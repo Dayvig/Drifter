@@ -20,5 +20,6 @@ public class DeathScreenPatch {
             TheDrifter.startOfDrift = false;
             TheDrifter.drifting = false;
             CardCrawlGame.sound.stop("Racing", Speedup.racingID);
+            CardCrawlGame.sound.stop("Chime", Speedup.chimeID);
         }
     }

@@ -3,7 +3,7 @@
     <groupId>DrifterMod</groupId>
     <artifactId>DrifterMod</artifactId>
     <!--<version>1.4.0</version>-->
-    <version>1.01</version>
+    <version>1.1</version>
     <name>DrifterMod</name>
 
     <properties>

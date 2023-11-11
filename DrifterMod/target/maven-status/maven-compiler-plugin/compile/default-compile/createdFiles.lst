@@ -143,6 +143,7 @@ DrifterMod\cards\BrakeDrift.class
 DrifterMod\cards\TopSpeed.class
 DrifterMod\cards\Resolve.class
 DrifterMod\Patches\OnRefreshHandPowerPatch$Locator.class
+DrifterMod\effects\HeadLightParticle.class
 DrifterMod\powers\SupersonicPower.class
 DrifterMod\cards\Intimidation.class
 DrifterMod\cards\Accelerate.class

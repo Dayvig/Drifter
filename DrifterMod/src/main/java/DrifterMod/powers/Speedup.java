@@ -34,6 +34,7 @@ import com.megacrit.cardcrawl.vfx.combat.WindyParticleEffect;
 
 import java.util.ArrayList;
 
+import static DrifterMod.DrifterMod.AMBIANCE_ON;
 import static DrifterMod.DrifterMod.makePowerPath;
 
 //Gain 1 dex for the turn for each card played.
@@ -57,9 +58,12 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     public Color windColor = Color.WHITE.cpy();
     private int count = 0;
     public static long racingID;
+    public static long chimeID;
     private static final int SPEEDPENALTY1 = 3;
     private static final int SPEEDPENALTY2 = 5;
     private static final int SPEEDPENALTY3 = 7;
+
+    private boolean chimePlaying = false;
 
 
     public Speedup(final AbstractCreature owner, final AbstractCreature source, final int amount) {
@@ -98,13 +102,21 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public void onInitialApplication(){
-        racingID = CardCrawlGame.sound.playAndLoop("Racing");
+        System.out.println("Racing Ambiance on"+ DrifterMod.config.getBool(AMBIANCE_ON));
+        if (DrifterMod.config.getBool(AMBIANCE_ON)) {
+            racingID = CardCrawlGame.sound.playAndLoop("Racing");
+        }
         float totalSpeed = (this.amount * 0.25f) + 0.75f;
+        chimePlaying = false;
         if (BeyondScenePatch.bg_controller != null) {
             addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, totalSpeed));
         }
         if (this.amount >= 3 && !TheDrifter.drifting){
             TheDrifter.startOfDrift = true;
+        }
+        if (this.amount >= 7 && !chimePlaying && DrifterMod.config.getBool(AMBIANCE_ON)){
+            chimeID = CardCrawlGame.sound.playAndLoop("Chime");
+            chimePlaying = true;
         }
     }
 
@@ -118,6 +130,10 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         if (this.amount >= 3 && !TheDrifter.drifting){
             TheDrifter.startOfDrift = true;
         }
+        if (this.amount >= 7 && !chimePlaying && DrifterMod.config.getBool(AMBIANCE_ON)){
+            chimeID = CardCrawlGame.sound.playAndLoop("Chime");
+            chimePlaying = true;
+        }
     }
 
     @Override
@@ -126,11 +142,17 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
         if (this.amount < 3){
             addToBot(new StopEurobeatAction());
         }
+        if (this.amount < 7){
+            CardCrawlGame.sound.fadeOut("Chime", chimeID);
+            chimePlaying = false;
+        }
     }
 
     @Override
     public void onRemove(){
         CardCrawlGame.sound.fadeOut("Racing", racingID);
+        CardCrawlGame.sound.fadeOut("Chime", chimeID);
+        chimePlaying = false;
         if (BeyondScenePatch.bg_controller != null) {
             addToBot(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
         }
@@ -140,6 +162,8 @@ public class Speedup extends AbstractPower implements CloneablePowerInterface {
     @Override
     public void onVictory(){
         CardCrawlGame.sound.fadeOut("Racing", racingID);
+        CardCrawlGame.sound.fadeOut("Chime", chimeID);
+        chimePlaying = false;
     }
 
 

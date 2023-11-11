@@ -2,6 +2,7 @@ package DrifterMod.cards;
 
 import DrifterMod.DrifterMod;
 import DrifterMod.characters.TheDrifter;
+import DrifterMod.effects.HeadLightParticle;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -65,6 +66,7 @@ public class Kachow extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new BorderLongFlashEffect(Color.WHITE.cpy(), true)));
+        addToBot(new VFXAction(new HeadLightParticle(Color.WHITE.cpy())));
         addToBot(new WaitAction(0.05f));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, multiDamage,
                 DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.LIGHTNING));

@@ -64,6 +64,9 @@ public class DaringStunt extends AbstractDynamicCard {
         if (defaultSecondMagicNumber > 0) {
             addToBot(new DiscardAction(p, p, defaultSecondMagicNumber, false));
         }
+        System.out.println("init"+damage);
+        calculateCardDamage(m);
+        System.out.println("adjust"+damage);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 

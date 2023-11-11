@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class StopLoopingPlz {
     @SpirePostfixPatch
     public static void plz() {
-        System.out.println("Resetti");
         TheDrifter.startOfDrift = false;
         TheDrifter.drifting = false;
         CardCrawlGame.sound.stop("Racing", Speedup.racingID);
+        CardCrawlGame.sound.stop("Chime", Speedup.chimeID);
     }
 }

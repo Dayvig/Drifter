@@ -164,6 +164,7 @@ public class DrifterMod implements
         }
         if (!config.has(EUROBEAT_ON)) config.setBool(EUROBEAT_ON, true);
         if (!config.has(SCROLLING_ON)) config.setBool(SCROLLING_ON, true);
+        if (!config.has(AMBIANCE_ON)) config.setBool(AMBIANCE_ON, true);
         // initialize
 
         BaseMod.subscribe(this);
@@ -269,23 +270,64 @@ public class DrifterMod implements
     public static SpireConfig config;
     public static final String EUROBEAT_ON = "eurobeaton";
     public static final String SCROLLING_ON = "scrollingon";
+    public static final String AMBIANCE_ON = "ambianceon";
+
+    private String optionsText(int index, String lang){
+        switch (lang){
+            case "eng":
+                switch (index){
+                    case 0:
+                        return "Enable Eurobeat";
+                    case 1:
+                        return "Enable Scrolling Backgrounds";
+                    case 2:
+                        return "Enable Ambient Racing Sounds";
+                }
+            case "zhs":
+                switch (index){
+                    case 0:
+                        return "开启EUROBEAT";
+                    case 1:
+                        return "开启背景滚动";
+                    case 2:
+                        return "开启赛车音效";
+                }
+            default:
+                switch (index){
+                    case 0:
+                        return "Enable Eurobeat";
+                    case 1:
+                        return "Enable Scrolling Backgrounds";
+                    case 2:
+                        return "Enable Ambient Racing Sounds";
+                }
+        }
+        return "error";
+    }
+
 
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
         // Load the Mod Badge
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
+        String languageID = DetermineLanguage();
 
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addUIElement(new ModLabeledToggleButton("Enable Eurobeat", 360, 700, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(EUROBEAT_ON), settingsPanel, l -> {
+        settingsPanel.addUIElement(new ModLabeledToggleButton(optionsText(0, languageID), 360, 700, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(EUROBEAT_ON), settingsPanel, l -> {
         }, button -> {
             config.setBool(EUROBEAT_ON, button.enabled);
             saveConfig();
         }));
-        settingsPanel.addUIElement(new ModLabeledToggleButton("Enable Scrolling Backgrounds", 360, 500, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(SCROLLING_ON), settingsPanel, l -> {
+        settingsPanel.addUIElement(new ModLabeledToggleButton(optionsText(1, languageID), 360, 500, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(SCROLLING_ON), settingsPanel, l -> {
         }, button -> {
             config.setBool(SCROLLING_ON, button.enabled);
+            saveConfig();
+        }));
+        settingsPanel.addUIElement(new ModLabeledToggleButton(optionsText(2, languageID), 360, 300, Settings.CREAM_COLOR, FontHelper.charDescFont, config.getBool(AMBIANCE_ON), settingsPanel, l -> {
+        }, button -> {
+            config.setBool(AMBIANCE_ON, button.enabled);
             saveConfig();
         }));
 
@@ -393,7 +435,7 @@ public class DrifterMod implements
         BaseMod.addCard(new BobWeave());
         BaseMod.addCard(new Swerve());
         BaseMod.addCard(new OneOFive());
-        BaseMod.addCard(new DriftKing());
+        //BaseMod.addCard(new DriftKing());
         BaseMod.addCard(new TopSpeed());
         BaseMod.addCard(new EatMyDust());
         BaseMod.addCard(new ThermalEngine());
@@ -538,7 +580,7 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(Swerve.ID);
         UnlockTracker.unlockCard(OneOFive.ID);
         UnlockTracker.unlockCard(TopSpeed.ID);
-        UnlockTracker.unlockCard(DriftKing.ID);
+        //UnlockTracker.unlockCard(DriftKing.ID);
         UnlockTracker.unlockCard(EatMyDust.ID);
         UnlockTracker.unlockCard(ThermalEngine.ID);
         UnlockTracker.unlockCard(Kachow.ID);
@@ -659,6 +701,7 @@ public class DrifterMod implements
         BaseMod.addAudio("PassMed3", getModID()+"Resources/audio/sfx/PassMed3.ogg");
         BaseMod.addAudio("PassSlow", getModID()+"Resources/audio/sfx/PassSlow.ogg");
         BaseMod.addAudio("Racing", getModID()+"Resources/audio/sfx/Racing.ogg");
+        BaseMod.addAudio("Chime", getModID()+"Resources/audio/sfx/Chime.ogg");
         BaseMod.addAudio("Revv1", getModID()+"Resources/audio/sfx/Revv.ogg");
         BaseMod.addAudio("Revv2", getModID()+"Resources/audio/sfx/Revv2.ogg");
         BaseMod.addAudio("Revv3", getModID()+"Resources/audio/sfx/Revv3.ogg");
