@@ -32,7 +32,7 @@ public class BeyondScenePatch {
     public static ParalaxController bg_controller = null;
 
     public static boolean ShouldScroll(){
-        return AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom() instanceof MonsterRoom || (AbstractDungeon.getCurrRoom() instanceof EventRoom && AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMBAT))) && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER);
+        return AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom() instanceof MonsterRoom || (AbstractDungeon.getCurrRoom() instanceof EventRoom && AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMBAT))) && bg_controller != null && AbstractDungeon.player.chosenClass.equals(THE_DRIFTER) && DrifterMod.config.getBool(SCROLLING_ON);
     }
 
 

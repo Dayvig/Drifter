@@ -1,12 +1,4 @@
 {
-				"DrifterMod:PlaceholderPotion": {
-								"NAME": "Placeholder Potion",
-								"DESCRIPTIONS": [
-												"获得 ",
-												" At the end of your turn, lose ",
-												" Strength."
-								]
-				},
 				"DrifterMod:FuelInjectionPotion": {
 								"NAME": "燃油注射剂",
 					"DESCRIPTIONS": [

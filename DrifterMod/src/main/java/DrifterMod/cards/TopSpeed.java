@@ -66,6 +66,7 @@ public class TopSpeed extends AbstractDynamicCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
+            upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
             initializeDescription();
         }
