@@ -37,6 +37,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.city.TheCollector;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
@@ -94,6 +95,8 @@ public class TheDrifter extends CustomPlayer {
     public static boolean startOfDrift = false;
     public static boolean driftAnimationPlaying = false;
     public boolean wasDriftAnimationLastFrame = false;
+    public static int drawnCardsThisTurn = 0;
+
     // =============== /BASE STATS/ =================
 
 
@@ -325,6 +328,7 @@ public class TheDrifter extends CustomPlayer {
     @Override
     public void applyPreCombatLogic() {
         super.applyPreCombatLogic();
+        drawnCardsThisTurn = 0;
         r = (int) (Math.random() * 16);
         Speedometer.needleRot = 100.f;
 
@@ -333,7 +337,14 @@ public class TheDrifter extends CustomPlayer {
                 setupBottomParalax();
                 break;
             case 2:
-                setupCityParalax();
+                boolean facingCollector = false;
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
+                    if (m.id.equals(TheCollector.ID)){
+                        facingCollector = true;
+                        break;
+                    }
+                }
+                setupCityParalax(facingCollector);
                 break;
             case 3: setupBeyondParalax();
                 break;
@@ -432,7 +443,7 @@ public class TheDrifter extends CustomPlayer {
         AbstractDungeon.actionManager.addToBottom(new ChangeParalaxSpeedAction(BeyondScenePatch.bg_controller, 0.75f));
     }
 
-    void setupCityParalax(){
+    void setupCityParalax(boolean facingCollector){
         //Taken from replay the spire
         ArrayList<Float> levelSpeeds = new ArrayList<Float>();
         levelSpeeds.add(200.0f);//0 - bg
@@ -442,8 +453,15 @@ public class TheDrifter extends CustomPlayer {
         levelSpeeds.add(350.0f);//4 - pillar3
         levelSpeeds.add(375.0f);//4 - pillar4
         levelSpeeds.add(275.0f);//rok
+        levelSpeeds.add(0.0f);//stationary: collector's car
 
         BeyondScenePatch.bg_controller = new ParalaxController(levelSpeeds, Settings.WIDTH*3, true);
+
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters){
+            if (m.id.equals(TheCollector.ID)){
+                BeyondScenePatch.bg_controller.AddStaticObject(new ParalaxObject(1230f * Settings.scale, 400f * Settings.scale, levelSpeeds.get(1),"DrifterModResources/images/ui/city/car.png", false, false));
+            }
+        }
 
         BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(1),"DrifterModResources/images/ui/city/fl_1.png", false, false), 1);
         BeyondScenePatch.bg_controller.AddObject(new ParalaxObject(0, 0, levelSpeeds.get(1),"DrifterModResources/images/ui/city/fl_1.png", false, true), 1);
@@ -577,13 +595,13 @@ public class TheDrifter extends CustomPlayer {
     }
 
     public void setAnimationToDrift(){
-        ReflectionHacks.setPrivate(AbstractDungeon.player,
+        /*ReflectionHacks.setPrivate(AbstractDungeon.player,
                 AbstractCreature.class,
                 "animation",
-                DriftingToyota);
+                Toyota);*/
         ReflectionHacks.setPrivate(AbstractDungeon.player,
                 AbstractCreature.class,
-                "animationtimer",
+                "animationTimer",
                 0f);
         SpineAnimation spine = (SpineAnimation) DriftingToyota;
         loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);
@@ -593,13 +611,13 @@ public class TheDrifter extends CustomPlayer {
     }
 
     public void resetAnimation(){
-        ReflectionHacks.setPrivate(AbstractDungeon.player,
+        /*ReflectionHacks.setPrivate(AbstractDungeon.player,
                 AbstractCreature.class,
                 "animation",
-                Toyota);
+                Toyota);*/
         ReflectionHacks.setPrivate(AbstractDungeon.player,
                 AbstractCreature.class,
-                "animationtimer",
+                "animationTimer",
                 0f);
         SpineAnimation spine = (SpineAnimation)Toyota;
         loadAnimation(spine.atlasUrl, spine.skeletonUrl, 1f);

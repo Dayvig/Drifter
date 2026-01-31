@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "When you would draw cards while your hand is full, gain 1 #ydriftermod:Overdraw for each."
     ]
+  },
+  "DrifterMod:WaterCup": {
+    "NAME": "Cup of Water",
+    "FLAVOR": "Don't spill it.",
+    "DESCRIPTIONS": [
+      "If the amount of cards played last turn was even, draw a card at the start of the turn."
+    ]
   }
 }

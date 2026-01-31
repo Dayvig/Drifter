@@ -5,6 +5,7 @@
 
 package DrifterMod.actions;
 
+import DrifterMod.characters.TheDrifter;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
@@ -29,5 +30,12 @@ public class OverdrawCardAction extends DrawCardAction {
         } else {
             this.duration = this.startDuration = Settings.ACTION_DUR_XFAST;
         }
+    }
+
+    public void update() {
+        if (AbstractDungeon.overlayMenu.endTurnButton.enabled){
+            TheDrifter.drawnCardsThisTurn += amount;
+        }
+        super.update();
     }
 }

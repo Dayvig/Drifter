@@ -69,11 +69,21 @@ public class HairPin extends AbstractDriftCard {
     }
 
     @Override
+    public void applyPowers(){
+        super.applyPowers();
+        triggerOnGlowCheck();
+    }
+
+    @Override
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (!AbstractDungeon.player.hasPower(DriftPower.POWER_ID)){
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        if (this.isGlowing) {
+            if (!AbstractDungeon.player.hasPower(DriftPower.POWER_ID)) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            }
+            else {
+                this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+            }
         }
     }
 

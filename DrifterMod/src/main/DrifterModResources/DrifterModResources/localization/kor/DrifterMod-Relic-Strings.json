@@ -1,0 +1,23 @@
+{
+  "DrifterMod:SteeringWheel": {
+    "NAME": "자동차 핸들",
+    "FLAVOR": "이 행운의 핸들은 과거 세대의 자동차들의 기억이나 다름 없습니다.",
+    "DESCRIPTIONS": [
+      "매 전투의 첫 번째 턴은 항상 손패를 보존 합니다."
+    ]
+  },
+  "DrifterMod:ModdedCar": {
+    "NAME": "개조된 86",
+    "FLAVOR": "그다지 인상적이지 않은 차라도, 제대로 관리하면 전설이 됩니다.",
+    "DESCRIPTIONS": [
+      "손패가 꽉 찼을때 카드를 뽑을 때마다, 뽑지 못한 카드 수만큼 #ydriftermod:초과뽑기 를 얻습니다."
+    ]
+  },
+  "DrifterMod:WaterCup": {
+    "NAME": "Cup of Water",
+    "FLAVOR": "Don't spill it.",
+    "DESCRIPTIONS": [
+      "If the amount of cards played last turn was even, draw a card at the start of the turn."
+    ]
+  }
+}

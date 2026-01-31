@@ -1,0 +1,249 @@
+{
+        "DrifterMod:DexDownPower": {
+                "NAME": "민첩 감소",
+                "DESCRIPTIONS": [
+                        "턴 종료시 민첩을 #b",
+                        " 잃습니다.",
+                        " 잃습니다."
+                ]
+        },
+        "DrifterMod:DexterityNextTurnPower": {
+                "NAME": "다음 턴 민첩",
+                "DESCRIPTIONS": [
+                        "다음 턴에 민첩을 #b",
+                        " 얻습니다.",
+                        " 얻습니다."
+                ]
+        },
+        "DrifterMod:DriftingPower": {
+                "NAME": "운동량",
+                "DESCRIPTIONS": [
+                        "#y드리프트 를 얻을 때마다, 이 효과도 같이 얻습니다. (최대 #b2.) 턴 종료시, 운동량을 보유하고 있지 않다면, #y드리프트 중첩을 전부 잃습니다.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:DriftPower": {
+                "NAME": "드리프트",
+                "DESCRIPTIONS": [
+                        "턴 종료시, #b",
+                        " 만큼 방어도를 얻고 체력이 가장 낮은 적에게 피해를 준 뒤에 #y드리프트 중첩을 절반만큼 잃습니다. #y운동량 을 보유하고 있지 않다면, #y드리프트 중첩을 전부 잃습니다.",
+                        " 만큼 방어도를 얻고 체력이 가장 낮은 적에게 피해를 준 뒤에 #y드리프트 중첩을 절반만큼 잃습니다. #y운동량 을 보유하고 있지 않다면, #y드리프트 중첩을 전부 잃습니다."
+                ]
+        },
+        "DrifterMod:TempRetainPower": {
+                "NAME": "보존",
+                "DESCRIPTIONS": [
+                        "턴 종료시, 손패의 카드 #b",
+                        " 장이 보존 됩니다.",
+                        " 장이 보존 됩니다."
+                ]
+        },
+        "DrifterMod:ThornsDownPower": {
+                "NAME": "가시 감소",
+                "DESCRIPTIONS": [
+                        "다음 턴 시작시, 가시 를 #b",
+                        " 잃습니다.",
+                        " 잃습니다."
+                ]
+        },
+        "DrifterMod:DriftStrengthDownPower": {
+                "NAME": "파워 드리프트",
+                "DESCRIPTIONS": [
+                        "#y드리프트 중첩이 없다면, #y힘 을 #b",
+                        " 잃습니다.",
+                        " 잃습니다."
+                ]
+        },
+        "DrifterMod:TempMaxHandSizeInc": {
+                "NAME": "초과뽑기",
+                "DESCRIPTIONS": [
+                        "손패가 꽉 찬 상태가 아니라면, 손이 꽉 찰 때까지 #y초과뽑기 중첩을 1 소모하여 카드를 1 장 뽑습니다",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:OverdrawNextTurn": {
+                "NAME": "초과뽑기",
+                "DESCRIPTIONS": [
+                        "다음 턴 시작시, 카드를 2 장 뽑습니다. 손패가 꽉 찼다면, 자리가 남았을때 카드를 뽑습니다.",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:TractionPower": {
+                "NAME": "추가 구동력",
+                "DESCRIPTIONS": [
+                        "#y드리프트 중첩 획득량이 #b",
+                        " 만큼 증가합니다.",
+                        " 만큼 증가합니다."
+                ]
+        },
+        "DrifterMod:DriftNextTurnPower": {
+                "NAME": "다음 턴 드리프트",
+                "DESCRIPTIONS": [
+                        "다음 턴 시작시, 드리프트를 다음 수치만큼 획득: #b",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:ThermalPower": {
+                "NAME": "가열 엔진",
+                "DESCRIPTIONS": [
+                        "매 턴 처음으로 손이 꽉 찼을때 카드가 뽑히려고 할 경우 [E] 를 얻습니다. ",
+                        "매 턴 처음으로 손이 꽉 찼을때 카드가 뽑히려고 할 경우 [E] 를 얻습니다. ( #b",
+                        "  회 발동 가능)"
+                ]
+        },
+        "DrifterMod:AeroPower": {
+                "NAME": "공기 역학",
+                "DESCRIPTIONS": [
+                        "카드를 버릴 때마다, 카드를 #b 장 뽑습니다. (카드를 버린 수만큼)",
+                        "",
+                        ""
+                ]
+        },
+        "DrifterMod:BalancePower": {
+                "NAME": "균형",
+                "DESCRIPTIONS": [
+                        "이번 턴 동안 사용한 카드 수량이 짝수 라면, 다음 턴 시작시 카드를 #b",
+                        " 장 뽑습니다.",
+                        " 장 뽑습니다.",
+                        "균형",
+                        "불균형"
+                ]
+        },
+        "DrifterMod:ZoomPower": {
+                "NAME": "질주의 힘",
+                "DESCRIPTIONS": [
+                        "이번 턴 동안 카드를 뽑을 때마다, 무작위 적에게 피해를 #b",
+                        " 줍니다.",
+                        " 줍니다."
+                ]
+        },
+        "DrifterMod:Speedup": {
+                "NAME": "속력",
+                "DESCRIPTIONS": [
+                        "매 턴 시작시, 보유한 속력 중첩 1마다 카드를 #b",
+                        " 장 뽑으며, 속력에 따라 다음과 같은 효과를 받습니다:",
+                        " 장 뽑으며, 속력에 따라 다음과 같은 효과를 받습니다:",
+                        "3+: 취약 을 1 받습니다.",
+                        "5+: 이번 턴 동안 민첩 을 2 잃습니다.",
+                        "7+: 이번 턴 동안 구동력 을 2 잃습니다."
+                ]
+        },
+        "DrifterMod:InControlPower": {
+                "NAME": "완강함",
+                "DESCRIPTIONS": [
+                        "이번 턴에 버린 카드 1장당 #b",
+                        " [E] 를 얻습니다.",
+                        " [E] 를 얻습니다."
+                ]
+        },
+        "DrifterMod:CoolPower": {
+                "NAME": "몰입",
+                "DESCRIPTIONS": [
+                        "카드를 뽑을 때마다, 방어도를 #b",
+                        " 얻습니다.",
+                        " 얻습니다."
+                ]
+        },
+        "DrifterMod:FireTrailPower": {
+                "NAME": "불꽃 궤적",
+                "DESCRIPTIONS": [
+                        "매 턴 시작시, #b총합-손패 수치만큼 적 전체에게 피해를 줍니다.",
+                        " NL ( #b",
+                        " 피해.)",
+                        "매 턴 시작시, #b총합-손패 수치만큼 적 전체에게 피해를 줍니다. (다음 수치만큼 피해량 X배 증가 :) #b"
+                ]
+        },
+        "DrifterMod:DriftSweepPower": {
+                "NAME": "원형 드리프트",
+                "DESCRIPTIONS": [
+                        "이번 턴 동안 드리프트 가 적 전체를 공격하게 됩니다."
+                ]
+        },
+        "DrifterMod:GambitPower": {
+                "NAME": "최후의 도박수",
+                "DESCRIPTIONS": [
+                        "취약 효과가 있는 상태에서 죽는다면, 죽는 대신 #b",
+                        " 번만 체력을 5% 만큼 회복합니다.",
+                        " 번만 체력을 5% 만큼 회복합니다."
+                ]
+        },
+        "DrifterMod:ResolvePower": {
+                "NAME": "결단",
+                "DESCRIPTIONS": [
+                        "손패에 보유한 카드가 2 장 또는 그 이하일 경우, 모든 카드의 #y피해량과 #y방어도, #y드리프트 획득량이 #b",
+                        " 증가합니다."
+                ]
+        },
+        "DrifterMod:TractionRestorePower": {
+                "NAME": "다음 턴 구동력",
+                "DESCRIPTIONS": [
+                        "다음 턴 시작시 구동력 을 #b",
+                        " 얻습니다.",
+                        " 얻습니다."
+                ]
+        },
+        "DrifterMod:CruiseControlPower": {
+                "NAME": "크루즈 컨트롤",
+                "DESCRIPTIONS": [
+                        "속력 의 해로운 효과를 부여하는 조건의 최소치가 #b",
+                        " 만큼 증가합니다.",
+                        " 만큼 증가합니다."
+                ]
+        },
+        "DrifterMod:SupersonicPower": {
+                "NAME": "초음속",
+                "DESCRIPTIONS": [
+                        "이번 턴 동안 카드를 뽑을 때마다, 임시 구동력 을 #b",
+                        " 얻습니다.",
+                        " 얻습니다."
+                ]
+        },
+        "DrifterMod:FuelReservePower": {
+                "NAME": "연료 비축",
+                "DESCRIPTIONS": [
+                        "손패에 카드가 하나도 없다면, 카드를 #b",
+                        " 장 뽑고 이 효과를 제거합니다."
+                ]
+        },
+        "DrifterMod:AdaptabilityPower": {
+                "NAME": "적응성",
+                "DESCRIPTIONS": [
+                        "손패에 카드가 하나도 없다면, 카드를 #b",
+                        " 장 뽑습니다.",
+                        " 장 뽑습니다."
+                ]
+        },
+        "DrifterMod:AccelerationPower": {
+                "NAME": "가속도의 형상",
+                "DESCRIPTIONS": [
+                        "매 턴 시작시, 속력 을 #b",
+                        " 얻습니다."
+                ]
+        },
+        "DrifterMod:DrawDownPower": {
+                "NAME": "브레이크",
+                "DESCRIPTIONS": [
+                        "다음 턴 시작시 카드를 #b",
+                        " 장 덜 뽑습니다.",
+                        " 장 덜 뽑습니다."
+                ]
+        },
+        "DrifterMod:TractionNextTurn": {
+                "NAME": "다음 턴 구동력",
+                "DESCRIPTIONS": [
+                        "다음 턴 시작시 #b구동력 을 #b",
+                        " 얻습니다."
+                ]
+        },
+        "DrifterMod:TractionDownPower": {
+                "NAME": "구동력 감소",
+                "DESCRIPTIONS": [
+                        "턴 종료시, #b구동력 이 #b",
+                        " 감소합니다."
+                ]
+        }
+}

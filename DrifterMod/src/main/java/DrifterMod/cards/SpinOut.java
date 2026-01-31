@@ -72,8 +72,7 @@ public class SpinOut extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
-        super.canUse(p, m);
-        return p.hasPower(DriftPower.POWER_ID);
+        return super.canUse(p, m) && p.hasPower(DriftPower.POWER_ID);
     }
 
     // Upgraded stats.

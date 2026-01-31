@@ -62,9 +62,8 @@ public class KeepItSteady extends AbstractDriftCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
-        super.canUse(p, m);
         cantUseMessage = EXTENDED_DESCRIPTION[0];
-        return p.hasPower(DriftPower.POWER_ID);
+        return super.canUse(p, m) && p.hasPower(DriftPower.POWER_ID);
     }
 
     // Upgraded stats.

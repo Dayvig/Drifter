@@ -2,10 +2,8 @@ package DrifterMod;
 
 import DrifterMod.cards.*;
 import DrifterMod.characters.TheDrifter;
-import DrifterMod.events.IdentityCrisisEvent;
 import DrifterMod.potions.FuelInjectionPotion;
 import DrifterMod.potions.NitrusPotion;
-import DrifterMod.potions.PlaceholderPotion;
 import DrifterMod.potions.TractionPotion;
 import DrifterMod.relics.*;
 import DrifterMod.util.IDCheckDontTouchPls;
@@ -13,21 +11,19 @@ import DrifterMod.util.TextureLoader;
 import DrifterMod.variables.DefaultCustomVariable;
 import DrifterMod.variables.DefaultSecondMagicNumber;
 import basemod.BaseMod;
-import basemod.ModLabel;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
@@ -292,6 +288,16 @@ public class DrifterMod implements
                     case 2:
                         return "开启赛车音效";
                 }
+            case "kor":
+                switch (index){
+                    case 0:
+                        return "유로비트 활성화"
+                    ;
+                    case 1:
+                        return "배경 스크롤 활성화";
+                    case 2:
+                        return "레이싱 효과음 활성화";
+                }
             default:
                 switch (index){
                     case 0:
@@ -332,7 +338,6 @@ public class DrifterMod implements
         }));
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
-
         // =============== EVENTS =================
 
         // This event will be exclusive to the City (act 2). If you want an event that's present at any
@@ -384,6 +389,10 @@ public class DrifterMod implements
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelicToCustomPool(new SteeringWheel(), TheDrifter.Enums.COLOR_DARKBLUE);
         BaseMod.addRelicToCustomPool(new ModdedCar(), TheDrifter.Enums.COLOR_DARKBLUE);
+        BaseMod.addRelicToCustomPool(new WaterCup(), TheDrifter.Enums.COLOR_DARKBLUE);
+        UnlockTracker.markRelicAsSeen(WaterCup.ID);
+
+
 
         logger.info("Done adding relics!");
     }
@@ -441,7 +450,7 @@ public class DrifterMod implements
         BaseMod.addCard(new ThermalEngine());
         BaseMod.addCard(new Kachow());
         //BaseMod.addCard(new AeroChassis());
-        BaseMod.addCard(new PerfectBalance());
+        //BaseMod.addCard(new PerfectBalance());
         BaseMod.addCard(new Dejavu());
         BaseMod.addCard(new Zoom());
         BaseMod.addCard(new RacingSpirit());
@@ -499,7 +508,11 @@ public class DrifterMod implements
         BaseMod.addCard(new Adaptability());
         BaseMod.addCard(new PoundPavement());
         BaseMod.addCard(new AccelerationForm());
-        BaseMod.addCard(new DriftAhead());
+        //BaseMod.addCard(new DriftAhead());
+
+        BaseMod.addCard(new CommandingLead());
+        BaseMod.addCard(new DefensiveLine());
+        BaseMod.addCard(new DesperateMeasures());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -507,7 +520,7 @@ public class DrifterMod implements
         // before playing your mod.
 
         UnlockTracker.unlockCard(DaringStunt.ID);
-        UnlockTracker.unlockCard(DriftAhead.ID);
+        //UnlockTracker.unlockCard(DriftAhead.ID);
         UnlockTracker.unlockCard(AccelerationForm.ID);
         UnlockTracker.unlockCard(PoundPavement.ID);
         UnlockTracker.unlockCard(Adaptability.ID);
@@ -585,7 +598,7 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(ThermalEngine.ID);
         UnlockTracker.unlockCard(Kachow.ID);
         UnlockTracker.unlockCard(AeroChassis.ID);
-        UnlockTracker.unlockCard(PerfectBalance.ID);
+        //UnlockTracker.unlockCard(PerfectBalance.ID);
         UnlockTracker.unlockCard(Dejavu.ID);
         UnlockTracker.unlockCard(BurnRubber.ID);
         UnlockTracker.unlockCard(PolePosition.ID);
@@ -597,6 +610,10 @@ public class DrifterMod implements
         UnlockTracker.unlockCard(EmergencyBrake.ID);
         UnlockTracker.unlockCard(BrakeDrift.ID);
         UnlockTracker.unlockCard(Sixty.ID);
+
+        UnlockTracker.unlockCard(DesperateMeasures.ID);
+        UnlockTracker.unlockCard(CommandingLead.ID);
+        UnlockTracker.unlockCard(DefensiveLine.ID);
 
         logger.info("Done adding cards!");
     }
@@ -615,6 +632,8 @@ public class DrifterMod implements
                 return "eng";
             case ZHS:
                 return "zhs";
+            case KOR:
+                return "kor";
             default:
                 return "eng";
         }

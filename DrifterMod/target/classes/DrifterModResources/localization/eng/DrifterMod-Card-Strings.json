@@ -421,5 +421,22 @@
       "Deal !D! damage. NL ( Number of cards to discard reduced by !M! for each Vulnerable you have. )",
       "I don't have enough cards to discard!"
     ]
+  },
+  "DrifterMod:DefensiveLine": {
+    "NAME": "Defensive Line",
+    "DESCRIPTION": "Gain !B! Block. NL Costs 0 if you've drawn a card during this turn."
+  },
+  "DrifterMod:CommandingLead": {
+    "NAME": "Close In",
+    "DESCRIPTION": "Gain Block equal to your driftermod:Total-Hand NL ( !B! Block. ) NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your driftermod:Total-Hand NL ( !B! Block. ) NL Exhaust."
+  },
+  "DrifterMod:DesperateMeasures": {
+    "NAME": "Desperate Measures",
+    "DESCRIPTION": "Gain [E] [E] if Vulnerable. NL You cannot draw additional cards or play additional attacks this turn.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] if Vulnerable. NL You cannot draw additional cards or play additional attacks this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "I'm not vulnerable."
+    ]
   }
 }

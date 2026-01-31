@@ -8,6 +8,7 @@ import DrifterMod.relics.ModdedCar;
 import DrifterMod.relics.SteeringWheel;
 import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
@@ -23,6 +24,9 @@ public class OverdrawPatch {
 
     public static class Speed {
         public static void Prefix(DrawCardAction _instance) {
+            if (AbstractDungeon.overlayMenu.endTurnButton.enabled){
+                TheDrifter.drawnCardsThisTurn += _instance.amount;
+            }
             if (AbstractDungeon.player.hasRelic(ModdedCar.ID)) {
                 if (_instance.amount + AbstractDungeon.player.hand.size() > BaseMod.MAX_HAND_SIZE) {
                     if (AbstractDungeon.player.hasPower(ThermalPower.POWER_ID)) {
@@ -39,6 +43,16 @@ public class OverdrawPatch {
                     }
                 }
             }
+        }
+    }
+
+    @SpirePatch(
+            clz = GameActionManager.class,
+            method = "endTurn")
+
+    public static class ResetDrawnCardsEndTurn {
+        public static void Prefix(GameActionManager _instance) {
+            TheDrifter.drawnCardsThisTurn = 0;
         }
     }
 }

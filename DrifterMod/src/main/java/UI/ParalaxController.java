@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class ParalaxController {
     private ArrayList<ArrayList<ParalaxObject>> objects;
+    private ArrayList<ParalaxObject> staticObjects;
     public float width;
     private ArrayList<Float> levelSpeeds;
     public boolean running;
@@ -16,6 +17,7 @@ public class ParalaxController {
 
     public ParalaxController(ArrayList<Float> levelSpeeds, float width, boolean forward) {
         objects = new ArrayList<ArrayList<ParalaxObject>>();
+        staticObjects = new ArrayList<ParalaxObject>();
         this.levelSpeeds = levelSpeeds;
         for (int i=0; i < levelSpeeds.size(); i++) {
             objects.add(new ArrayList<ParalaxObject>());
@@ -31,6 +33,10 @@ public class ParalaxController {
     public void AddObject(ParalaxObject obj, int level) {
         obj.baseSpeed = obj.speed = this.levelSpeeds.get(level);
         this.objects.get(level).add(obj);
+    }
+
+    public void AddStaticObject(ParalaxObject obj) {
+        this.staticObjects.add(obj);
     }
 
     public void ChangeObjectSpeeds(float speedMultiplier){
@@ -70,4 +76,12 @@ public class ParalaxController {
             }
         }
     }
+
+    public void RenderStatic(SpriteBatch sb) {
+            for (ParalaxObject obj : staticObjects) {
+                if (this.running) {
+                    obj.RenderStatic(sb);
+                }
+            }
+        }
 }

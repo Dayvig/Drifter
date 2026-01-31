@@ -1,0 +1,442 @@
+{
+  "DrifterMod:Twenty": {
+    "NAME": "20도 회전",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL driftermod:드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:Sixty": {
+  "NAME": "순간 회전",
+  "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 손패에 보유한 카드가 2 장 또는 그 이하일 경우, driftermod:드리프트 를 !DrifterMod:M2! 얻습니다."
+},
+  "DrifterMod:FortyFive": {
+    "NAME": "45도 회전",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL driftermod:드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:KeepItSteady": {
+    "NAME": "지속성 드리프트",
+    "DESCRIPTION": "드리프트 상태라면, NL driftermod:드리프트 를 !M! 얻습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "드리프트 상태여야만 해!"
+    ]
+  },
+  "DrifterMod:Accelerate": {
+    "NAME": "가속",
+    "DESCRIPTION": "driftermod:속력 을 1 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "driftermod:속력 을 1 얻습니다."
+  },
+  "DrifterMod:Brake": {
+    "NAME": "브레이크",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL driftermod:브레이크 를 2 얻습니다."
+  },
+  "DrifterMod:HairPin": {
+    "NAME": "헤어핀 커브",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL driftermod:드리프트 상태가 아니라면, driftermod:드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:SpinOut": {
+    "NAME": "스핀 아웃",
+    "DESCRIPTION": "driftermod:드리프트 를 driftermod:활성 시킵니다. NL 보유한 driftermod:드리프트 중첩만큼, 한 턴간 유지되는 가시 를 !M! 얻습니다. NL driftermod:드리프트 중첩을 전부 잃습니다."
+  },
+  "DrifterMod:Ninety": {
+    "NAME": "90도 회전",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL driftermod:드리프트 를 !M! 얻습니다. NL 드리프트 상태라면, 힘 을 !DrifterMod:M2! 얻습니다."
+  },
+  "DrifterMod:Fender": {
+    "NAME": "펜더",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL driftermod:브레이크 를 2 얻습니다."
+  },
+  "DrifterMod:EngineRev": {
+    "NAME": "엔진 회전수",
+    "DESCRIPTION": "선천성 NL 다음 턴에 카드를 !M! 장 뽑고 !M! [E] 를 얻습니다. NL 소멸."
+  },
+  "DrifterMod:Coast": {
+    "NAME": "타력 주행",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 손패의 카드 !M! 장이 이번 턴 동안 보존 됩니다."
+  },
+  "DrifterMod:HardPass": {
+    "NAME": "강제 추월",
+    "DESCRIPTION": "피해를 !D! 줍니다. 이 공격으로 적을 처치했다면, driftermod:속력 을 1 얻습니다."
+  },
+  "DrifterMod:Tmph": {
+    "NAME": "32 KM/h",
+    "DESCRIPTION": "driftermod:총합-손패 기준으로 카드를 !M! 장 버립니다. 그런 뒤 적 전체에게 피해를 !D! 줍니다. NL ( 카드를 2 장 더 버리면, 보유한 driftermod:속력 중첩 1당 이 카드의 피해량을 2배로 증가시킵니다. )",
+    "EXTENDED_DESCRIPTION": [
+      "카드를 ",
+      " 장 만큼 버려야해!",
+      " KM/h",
+      "32 KM/h"
+    ]
+  },
+  "DrifterMod:InertialDrift": {
+    "NAME": "관성 드리프트",
+    "DESCRIPTION": "보유한 driftermod:드리프트 중첩을 2 배로 늘립니다. NL 소멸.",
+    "EXTENDED_DESCRIPTION": [
+      "드리프트 상태여야만 해!"
+    ]
+  },
+  "DrifterMod:DefensiveDriving": {
+    "NAME": "수비적 드라이브",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 카드를 4 장 버립니다."
+  },
+  "DrifterMod:CornerHug": {
+    "NAME": "험한 커브길",
+    "DESCRIPTION": "driftermod:드리프르 틀 !M! 얻습니다. NL 카드를 3 장 버립니다."
+  },
+  "DrifterMod:TractionTires": {
+    "NAME": "구동력 타이어",
+    "DESCRIPTION": "driftermod:구동력 을 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. NL driftermod:구동력 을 !M! 얻습니다."
+  },
+  "DrifterMod:NightsOnFire": {
+    "NAME": "Nights of Fire",
+    "DESCRIPTION": "피해를 !DrifterMod:M2! 줍니다. 보유한 driftermod:초과뽑기 1당, 이 카드의 피해량이 !M! 증가합니다. NL (피해를 !D! 줍니다.)"
+  },
+  "DrifterMod:GasGasGas": {
+    "NAME": "Gas Gas Gas",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 소멸."
+  },
+  "DrifterMod:Strike": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "DrifterMod:Defend": {
+    "NAME": "수비",
+    "DESCRIPTION": "방어도를 !B! 얻습니다."
+  },
+  "DrifterMod:BobWeave": {
+    "NAME": "요리조리 위빙",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 다음 턴 시작시 카드를 추가로 !M! 장 뽑습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "방어도를 !B! 얻습니다. NL 다음 턴 시작시 카드를 추가로 !M! 장 뽑습니다.",
+      "방어도를 !B! 얻습니다. NL 다음 턴 시작시 카드를 추가로 !M! 장 뽑습니다."
+    ]
+  },
+  "DrifterMod:Swerve": {
+    "NAME": "스워브",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 취약 을 1 받습니다."
+  },
+  "DrifterMod:PolePosition": {
+    "NAME": "폴 포지션",
+    "DESCRIPTION": "피해를 !D! 주고 방어도를 !B! 얻습니다. NL 손이 꽉 찼다면, 이 카드의 비용이 0 이 됩니다."
+  },
+  "DrifterMod:OneOFive": {
+    "NAME": "105도 회전",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 다음 턴 시작시, 드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:DriftKing": {
+    "NAME": "경험",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:TopSpeed": {
+    "NAME": "최고 속력",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL 이번 턴 동안 손패의 카드를 전부 보존 합니다."
+  },
+  "DrifterMod:UTurn": {
+    "NAME": "유턴",
+    "DESCRIPTION": "드리프트 를 driftermod:활성 시킵니다. NL 보유한 driftermod:드리프트 중첩만큼 다음 턴에 카드를 더 뽑습니다. NL driftermod:드리프트 중첩을 전부 잃습니다."
+  },
+  "DrifterMod:EatMyDust": {
+    "NAME": "앞지르기",
+    "DESCRIPTION": "카드를 3 장 버린 후 다음 턴 시작시 카드를 !M! 장 뽑습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "현재 손패에 버릴 수 있는 카드가 부족해!"
+    ]
+  },
+  "DrifterMod:ThermalEngine": {
+    "NAME": "가열 엔진",
+    "DESCRIPTION": "매 턴 처음으로 손이 꽉 찼을때 카드가 뽑히려고 할 경우, [E] 를 얻습니다."
+  },
+  "DrifterMod:Kachow": {
+    "NAME": "전조등 빛",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 약화 를 1 부여합니다."
+  },
+  "DrifterMod:PerfectBalance": {
+    "NAME": "완벽한 균형",
+    "DESCRIPTION": "매 턴 시작시, 이전 턴에 사용한 카드 수량이 짝수라면, 카드를 1 장 뽑습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. NL 매 턴 시작시, 이전 턴에 사용한 카드 수량이 짝수라면, 카드를 !M! 장 뽑습니다."
+  },
+  "DrifterMod:Dejavu": {
+    "NAME": "Deja Vu",
+    "DESCRIPTION": "이 전투에서 가장 마지막으로 사용했던 카드를 사용합니다.",
+    "UPGRADE_DESCRIPTION": "이 전투에서 가장 마지막으로 사용했던 카드를 강화된 상태로 사용합니다.",
+    "EXTENDED_DESCRIPTION": [
+      "난 전에 여길 와본 적이 없어."
+    ]
+  },
+  "DrifterMod:Zoom": {
+    "NAME": "질주",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이번 턴 동안 카드를 뽑을 때마다, 무작위 적에게 피해를 !M! 줍니다."
+  },
+  "DrifterMod:BigCrash": {
+    "NAME": "광속 돌진",
+    "DESCRIPTION": "driftermod:총합-손패 수치의 !M! 배에 해당하는 피해를 줍니다. 손패의 카드를 전부 버리고 driftermod:초과뽑기 중첩을 모두 잃습니다. NL ( 피해량 : !D!  )"
+  },
+  "DrifterMod:InControl": {
+    "NAME": "완강함",
+    "DESCRIPTION": "보존. NL 카드를 1 장 버립니다. NL [E] 를 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "보존. NL 카드를 1 장 버립니다. NL [E] [E] 를 얻습니다. NL 소멸."
+  },
+  "DrifterMod:RacingSpirit": {
+    "NAME": "레이싱의 혼",
+    "DESCRIPTION": "손패에 보유한 카드가 2 장 또는 그 이하일 경우, 피해를 !D! 주고 카드를 !M! 장 뽑습니다.",
+    "EXTENDED_DESCRIPTION":[
+      "손패의 카드가 2 장 또는 그 이하여야만 해."
+    ]
+  },
+  "DrifterMod:InTheZone": {
+    "NAME": "몰입",
+    "DESCRIPTION": "플레이어의 턴 동안 카드를 뽑을 때마다, 방어도를 !M! 얻습니다."
+  },
+  "DrifterMod:StylePoints": {
+    "NAME": "스타일 개선",
+    "DESCRIPTION": "약화 를 !DrifterMod:M2! 부여합니다. NL driftermod:드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:ImpossibleTurn": {
+    "NAME": "말도 안 되는 코너링",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 만큼 2 번 얻습니다."
+  },
+  "DrifterMod:NeedForSpeed": {
+    "NAME": "니드 포 스피드",
+    "DESCRIPTION": "driftermod:속력 을 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. NL driftermod:속력 을 !M! 얻습니다."
+  },
+  "DrifterMod:SafeDriving": {
+    "NAME": "안전 주행",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL driftermod:속력 을 1 잃고, 이 효과로 속력 을 잃었다면 방어도를 !M! 얻습니다."
+  },
+  "DrifterMod:Nitrus": {
+    "NAME": "니트로",
+    "DESCRIPTION": " [E] [E] 를 얻습니다. NL riftermod:속력 을 1 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": " [E] [E] [E] 를 얻습니다. NL driftermod:속력 을 1 얻습니다. NL 소멸."
+  },
+  "DrifterMod:SpeedDemon": {
+    "NAME": "Speed Demon",
+    "DESCRIPTION": "driftermod:속력 을 1 얻습니다. NL 보유한 driftermod:속력 중첩 1당, 피해를 !M! 줍니다. NL ( 피해량 : !D! . )"
+  },
+  "DrifterMod:HighSpeed": {
+    "NAME": "고속 드리프트",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL driftermod:속력 을 !DrifterMod:M2! 얻습니다."
+  },
+  "DrifterMod:SpeedBurst": {
+    "NAME": "쏜살",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 손패의 카드 !M! 장이 이번 턴 동안 보존 됩니다."
+  },
+  "DrifterMod:PedalTo": {
+    "NAME": "밟아볼까!",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다."
+  },
+  "DrifterMod:Recklessness": {
+    "NAME": "무모함",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 취약 을 !M! 받습니다."
+  },
+  "DrifterMod:FireTrail": {
+    "NAME": "불꽃 궤적",
+    "DESCRIPTION": "턴 종료시, driftermod:총합-손패 수치만큼 적 전체에게 피해를 줍니다."
+  },
+  "DrifterMod:Dangerous": {
+    "NAME": "위험한 게임",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 현재 보유한 취약 1당, 이 카드의 비용이 1 감소합니다."
+  },
+  "DrifterMod:Underdog": {
+    "NAME": "타고난 재능",
+    "DESCRIPTION": "사용불가. NL 이 카드가 버려지면, 다시 손으로 가져옵니다. NL 손패에 남아있는 유일한 카드가 이 카드 뿐이라면, 카드를 1 장 뽑습니다. NL 휘발성.",
+    "UPGRADE_DESCRIPTION": "사용불가. NL 이 카드가 버려지면, 다시 손으로 가져옵니다. NL 손패에 남아있는 유일한 카드가 이 카드 뿐이라면, 카드를 1 장 뽑습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "이 카드는 사용할 수 없어."
+    ]
+  },
+  "DrifterMod:BurnRubber": {
+    "NAME": "마찰열",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "DrifterMod:OneThirtyFive": {
+    "NAME": "135도 회전",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 이 카드의 driftermod:드리프트 획득량은 힘 과 민첩 의 영향을 받습니다."
+  },
+  "DrifterMod:Tailgate": {
+    "NAME": "톨게이트",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 !M! 장 뽑습니다."
+  },
+  "DrifterMod:Intimidation": {
+    "NAME": "위협",
+    "DESCRIPTION": "적 전체에게 현재 보유한 취약 중첩만큼 취약을 부여합니다. NL 카드를 1 장 뽑습니다."
+  },
+  "DrifterMod:Daredevil": {
+    "NAME": "저돌적",
+    "DESCRIPTION": "!D! 피해를 3 번 줍니다. NL 현재 나에게 취약 효과가 없다면, 이 카드는 소멸 합니다."
+  },
+  "DrifterMod:EmergencyBrake": {
+    "NAME": "긴급 브레이크",
+    "DESCRIPTION": "보존. NL 보유한 driftermod:속력 중첩 1당 방어도를 !B! 얻습니다. NL driftermod:속력 을 전부 잃습니다."
+  },
+  "DrifterMod:BrakeDrift": {
+    "NAME": "브레이크 드리프트",
+    "DESCRIPTION": "원하는 만큼 카드를 선택해 버립니다. 버린 카드 1장당, driftermod:드리프트 !M! 및 driftermod:브레이크 1 을 얻습니다."
+  },
+  "DrifterMod:Exhaustpipe": {
+    "NAME": "배기 파이프",
+    "DESCRIPTION": "카드 1 장을 선택해 소멸시킵니다.",
+    "UPGRADE_DESCRIPTION": "카드 1 장을 선택해 소멸시키고 방어도를 !B! 얻습니다."
+  },
+  "DrifterMod:Pursuit": {
+    "NAME": "추적",
+    "DESCRIPTION": "취약 을 !M! 부여합니다. NL 카드를 !DrifterMod:M2! 장 뽑습니다."
+  },
+  "DrifterMod:Burnout": {
+    "NAME": "번아웃",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL 뽑을 카드 더미에 *화상 을 넣습니다. NL driftermod:속력 을 1 잃습니다."
+  },
+  "DrifterMod:Bravery": {
+    "NAME": "용맹함",
+    "DESCRIPTION": "힘 을 !M! 얻습니다. NL 취약 을 2 받습니다."
+  },
+  "DrifterMod:Manuever": {
+    "NAME": "기동",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 이번 턴 동안 driftermod:구동력 을 !M! 얻습니다."
+  },
+  "DrifterMod:Recovery": {
+    "NAME": "재정비",
+    "DESCRIPTION": "원하는 만큼 카드를 버립니다. 버린 카드 1장당, 보유한 취약이 1 감소하고 방어도를 !B! 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "보존. NL 원하는 만큼 카드를 버립니다. 버린 카드 1장당, 보유한 취약이 1 감소하고 방어도를 !B! 얻습니다. NL 소멸."
+  },
+  "DrifterMod:SweepingTurn": {
+    "NAME": "원형 드리프트",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 이번 턴 동안 driftermod:드리프트 효과가 적 전체를 공격하게 됩니다."
+  },
+  "DrifterMod:GearUp": {
+    "NAME": "업시프트",
+    "DESCRIPTION": "힘 을 !M! 얻습니다. NL 민첩 을 2 잃습니다. NL 속력 을 1 얻습니다."
+  },
+  "DrifterMod:GearDown": {
+    "NAME": "다운시프트",
+    "DESCRIPTION": "민첩 을 !M! 얻습니다. NL 힘 을 2 잃습니다. NL 속력 을 1 잃습니다. 이 효과로 속력 을 잃었다면, 방어도를 !B! 얻습니다."
+  },
+  "DrifterMod:GearShift": {
+    "NAME": "클러치",
+    "DESCRIPTION": "업시프트 또는 다운시프트 를 선택합니다.",
+    "UPGRADE_DESCRIPTION": "업시프트+ 또는 다운시프트+ 를 선택합니다."
+  },
+  "DrifterMod:OneEighty": {
+    "NAME": "180도 회전",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 다음 1 턴 동안 driftermod:구동력 을 !DrifterMod:M2! 얻습니다."
+  },
+  "DrifterMod:Determined": {
+    "NAME": "새로운 활력",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 손패에 보유한 카드가 2 장 또는 그 이하일 경우, [E] [E] 를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "방어도를 !B! 얻습니다. NL 손패에 보유한 카드가 2 장 또는 그 이하일 경우, [E] [E] [E] 를 얻습니다."
+  },
+  "DrifterMod:RoadRage": {
+    "NAME": "분노의 질주",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 스킬 카드를 전부 버리고, 버린 카드 수만큼 *분노 를 얻습니다."
+  },
+  "DrifterMod:Rage": {
+    "NAME": "분노",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 휘발성."
+  },
+  "DrifterMod:FinalGambit": {
+    "NAME": "최후의 도박수",
+    "DESCRIPTION": "손이 꽉 찰 때까지 카드를 뽑습니다. NL 뽑은 카드 1장당, [E] 를 얻습니다. NL 다음 턴에 죽습니다. NL 소멸."
+  },
+  "DrifterMod:Resolve": {
+    "NAME": "결단",
+    "DESCRIPTION": "손패에 보유한 카드가 2 장 또는 그 이하일 경우, 모든 카드의 피해량과 방어도, driftermod:드리프트 획득량이 !M! 증가합니다."
+  },
+  "DrifterMod:Fierce": {
+    "NAME": "격주",
+    "DESCRIPTION": " !D! 피해를 2 번 줍니다. NL 보유한 취약 중첩 1당, 이 카드의 피해량이 2 증가합니다."
+  },
+  "DrifterMod:RiskyApproach": {
+    "NAME": "모험적인 접근",
+    "DESCRIPTION": "취약 을 1 받습니다. NL 다음 턴 시작시, 카드를 !M! 장 뽑습니다."
+  },
+  "DrifterMod:SupersonicFire": {
+    "NAME": "초음속",
+    "DESCRIPTION": "driftermod:속력 을 X 얻습니다.",
+    "UPGRADE_DESCRIPTION": "driftermod:속력 을 X+1 얻습니다."
+  },
+  "DrifterMod:Ram": {
+    "NAME": "들이박기",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 !M! 장 버립니다."
+  },
+  "DrifterMod:CruiseControl": {
+    "NAME": "크루즈 컨트롤",
+    "DESCRIPTION": "민첩 을 2 얻습니다. NL driftermod:속력 의 해로운 효과를 부여하는 조건의 최소치가 !M! 만큼 증가합니다."
+  },
+  "DrifterMod:DriftMaster": {
+    "NAME": "아키나의 유령",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다."
+  },
+  "DrifterMod:Speedstar": {
+    "NAME": "스피드스타",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 !M! 장 뽑습니다."
+  },
+  "DrifterMod:VariableDrift": {
+    "NAME": "가변 회전",
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 만큼 X 번 얻습니다."
+  },
+  "DrifterMod:Equalize": {
+    "NAME": "균등",
+    "DESCRIPTION": "휘발성. NL 보유한 취약 중첩 1당 체력을 !M! 회복합니다. NL 나에게 부여된 취약 을 전부 제거합니다. NL 소멸."
+  },
+  "DrifterMod:NaturalTalent": {
+    "NAME": "집요함",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 뽑습니다. NL 이 카드가 버려지면, 이 카드가 다시 손으로 돌아오며 카드를 뽑는 양이 1 증가합니다.",
+    "EXTENDED_DESCRIPTION": [
+      "피해를 !D! 줍니다. NL 카드를 !M! 장 뽑습니다. NL 이 카드가 버려지면, 이 카드가 다시 손으로 돌아오며 카드를 뽑는 양이 1 증가합니다."
+    ]
+  },
+  "DrifterMod:FuelReserve": {
+    "NAME": "연료 비축",
+    "DESCRIPTION": "처음으로 손패에 카드가 하나도 없는 상태가 되면, 카드를 !M! 장 뽑습니다."
+  },
+  "DrifterMod:AllTheStops": {
+    "NAME": "전력 발휘",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 보유한 취약 중첩이 1 이상이라면, 다시 피해를 !D! 줍니다. NL 손패에 보유한 카드가 2 장 또는 그 이하일 경우, 다시 피해를 !D! 줍니다."
+  },
+  "DrifterMod:LastResort": {
+    "NAME": "최후의 수단",
+    "DESCRIPTION": "카드를 전부 버립니다. NL 뽑을 카드 더미의 카드 1 장을 선택해 손으로 가져옵니다.",
+    "UPGRADE_DESCRIPTION": "카드를 전부 버립니다. NL 뽑을 카드 더미의 카드 1 장을 선택해 손으로 가져옵니다. NL [E] 를 얻습니다."
+  },
+  "DrifterMod:Adaptability": {
+    "NAME": "적응성",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 이번 턴 동안 손패에 카드가 하나도 없는 상태라면, 카드를 1 장 뽑습니다."
+  },
+  "DrifterMod:DriftAhead": {
+    "NAME": "전방 드리프트",
+    "DESCRIPTION": "driftermod:드리프트 를 driftermod:활성 시킵니다. NL 보유한 driftermod:드리프트 !M! 중첩당 driftermod:속력 을 얻습니다. NL driftermod:드리프트 중첩을 전부 잃습니다."
+  },
+  "DrifterMod:PoundPavement": {
+    "NAME": "진동하는 포장도로",
+    "DESCRIPTION": "카드 !M! 장을 X 번 뽑습니다. NL 이번 턴 동안 손패의 카드를 전부 보존합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "카드 !M! 장을 X 번 뽑습니다. NL 이번 턴 동안 손패의 카드를 전부 보존합니다. NL [E] 를 얻습니다. NL 소멸."
+  },
+  "DrifterMod:AccelerationForm": {
+    "NAME": "가속도의 형상",
+    "DESCRIPTION": "휘발성. NL 매 턴 시작시, driftermod:속력 을 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "매 턴 시작시, driftermod:속력 을 !M! 얻습니다."
+  },
+  "DrifterMod:DaringStunt": {
+    "NAME": "대담한 묘기",
+    "DESCRIPTION": "카드를 !DrifterMod:M2! 장 버린뒤, 피해를 !D! 줍니다. NL ( 보유한 취약 중첩 1당, 버려야하는 카드의 수가 !M! 만큼 감소합니다. )",
+    "EXTENDED_DESCRIPTION": [
+      "피해를 !D! 줍니다. NL ( 보유한 취약 중첩 1당, 버려야하는 카드의 수가 !M! 증가합니다. )",
+      "현재 손패에 버릴 수 있는 카드가 부족해!"
+    ]
+  },
+  "DrifterMod:DefensiveLine": {
+    "NAME": "Defensive Line",
+    "DESCRIPTION": "Gain !B! Block. NL Costs 0 if you've drawn a card during this turn."
+  },
+  "DrifterMod:CommandingLead": {
+    "NAME": "Slipstream",
+    "DESCRIPTION": "Gain Block equal to your driftermod:Total-Hand NL ( !B! Block. ) NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your driftermod:Total-Hand NL ( !B! Block. ) NL Exhaust."
+  },
+  "DrifterMod:DesperateMeasures": {
+    "NAME": "Desperate Measures",
+    "DESCRIPTION": "Gain [E] [E] if Vulnerable. NL You cannot draw additional cards or play additional attacks this turn.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] if Vulnerable. NL You cannot draw additional cards or play additional attacks this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "I'm not vulnerable."
+    ]
+  }
+}

@@ -26,7 +26,7 @@ public class InertialDrift extends AbstractDriftCard {
     public static final String IMG = makeCardPath("InertialDrift.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
     public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
+    public final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     // /TEXT DECLARATION/
 
 
@@ -68,9 +68,8 @@ public class InertialDrift extends AbstractDriftCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
-        super.canUse(p,m);
         cantUseMessage = EXTENDED_DESCRIPTION[0];
-        return p.hasPower(DriftPower.POWER_ID);
+        return super.canUse(p,m) && p.hasPower(DriftPower.POWER_ID);
     }
 
     // Upgraded stats.

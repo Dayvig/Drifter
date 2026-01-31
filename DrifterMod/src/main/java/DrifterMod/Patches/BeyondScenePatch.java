@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
@@ -75,6 +76,7 @@ public class BeyondScenePatch {
         public static void Postfix(TheCityScene __instance, final SpriteBatch sb) {
             if (ShouldScroll()) {
                 bg_controller.Render(sb);
+                bg_controller.RenderStatic(sb);
             }
         }
     }

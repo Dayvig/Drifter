@@ -50,4 +50,9 @@ public class ParalaxObject {
         }
         sb.draw(this.img, this.x - this.img.getWidth() * Settings.scale, this.y + AbstractDungeon.sceneOffsetY, this.img.getWidth() * Settings.scale, this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.reversed, this.flipped);
     }
+
+    public void RenderStatic(SpriteBatch sb) {
+        sb.setColor(Color.WHITE);
+        sb.draw(this.img, this.x, this.y, this.img.getWidth() * Settings.scale, this.img.getHeight() * Settings.scale, 0, 0, this.img.getWidth(), this.img.getHeight(), this.reversed, this.flipped);
+    }
 }

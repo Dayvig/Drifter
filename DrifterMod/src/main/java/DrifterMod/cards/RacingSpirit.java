@@ -61,9 +61,8 @@ public class RacingSpirit extends AbstractDynamicCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m){
-        super.canUse(p, m);
         this.cantUseMessage = EXTENDED_DESCRIPTION[0];
-        return p.hand.size() <= 2;
+        return super.canUse(p, m) && p.hand.size() <= 2;
     }
 
     public void triggerOnGlowCheck() {

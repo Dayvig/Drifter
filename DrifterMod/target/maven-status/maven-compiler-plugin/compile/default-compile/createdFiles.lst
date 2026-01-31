@@ -1,4 +1,5 @@
 DrifterMod\cards\GearShift.class
+DrifterMod\Patches\OverdrawPatch$ResetDrawnCardsEndTurn.class
 DrifterMod\Patches\EurobeatPatch.class
 DrifterMod\powers\DriftingPower.class
 DrifterMod\potions\PlaceholderPotion.class
@@ -39,6 +40,7 @@ DrifterMod\cards\RacingSpirit.class
 DrifterMod\cards\SpinOut.class
 DrifterMod\cards\Defend.class
 DrifterMod\variables\DefaultThirdMagicNumber.class
+DrifterMod\cards\CommandingLead.class
 DrifterMod\cards\OneEighty.class
 DrifterMod\interfaces\CardAddedToDeck.class
 DrifterMod\cards\SecondWind.class
@@ -142,6 +144,7 @@ DrifterMod\cards\Manuever.class
 DrifterMod\cards\BrakeDrift.class
 DrifterMod\cards\TopSpeed.class
 DrifterMod\cards\Resolve.class
+DrifterMod\cards\DesperateMeasures.class
 DrifterMod\Patches\OnRefreshHandPowerPatch$Locator.class
 DrifterMod\effects\HeadLightParticle.class
 DrifterMod\powers\SupersonicPower.class
@@ -188,6 +191,7 @@ UI\Speedometer.class
 DrifterMod\cards\DefensiveDriving.class
 DrifterMod\cards\SupersonicFire.class
 DrifterMod\powers\InControlPower.class
+DrifterMod\cards\DefensiveLine.class
 DrifterMod\cards\Daredevil.class
 DrifterMod\powers\ZoomPower.class
 DrifterMod\actions\RecoveryAction.class
@@ -200,3 +204,4 @@ DrifterMod\cards\UTurn.class
 DrifterMod\powers\GambitPower.class
 DrifterMod\cards\RiskyApproach.class
 DrifterMod\cards\EatMyDust.class
+DrifterMod\relics\WaterCup.class

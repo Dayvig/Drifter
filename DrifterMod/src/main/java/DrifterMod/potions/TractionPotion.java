@@ -58,6 +58,15 @@ public class TractionPotion extends AbstractPotion {
         }
     }
 
+    public void initializeData() {
+        this.potency = this.getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        this.tips.clear();
+        tips.add(new PowerTip(name, description));
+        tips.add(new PowerTip(DESCRIPTIONS[4], DESCRIPTIONS[2]));
+        tips.add(new PowerTip(DESCRIPTIONS[5], DESCRIPTIONS[3]));
+    }
+
     @Override
     public AbstractPotion makeCopy() {
         return new TractionPotion();
@@ -65,7 +74,7 @@ public class TractionPotion extends AbstractPotion {
 
     // This is your potency.
     @Override
-    public int getPotency(final int potency) {
+    public int getPotency(int potency) {
         return 2;
     }
 

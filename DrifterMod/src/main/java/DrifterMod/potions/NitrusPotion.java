@@ -50,6 +50,13 @@ public class NitrusPotion extends AbstractPotion {
         }
     }
 
+    public void initializeData() {
+        this.potency = this.getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        this.tips.clear();
+        tips.add(new PowerTip(name, description));
+    }
+
     @Override
     public AbstractPotion makeCopy() {
         return new NitrusPotion();
@@ -57,7 +64,7 @@ public class NitrusPotion extends AbstractPotion {
 
     // This is your potency.
     @Override
-    public int getPotency(final int potency) {
+    public int getPotency(int potency) {
         return 10;
     }
 

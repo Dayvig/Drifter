@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
@@ -42,6 +44,14 @@ public class FuelInjectionPotion extends AbstractPotion {
         tips.add(new PowerTip(DESCRIPTIONS[3], DESCRIPTIONS[2]));
     }
 
+    public void initializeData() {
+        this.potency = this.getPotency();
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
+        this.tips.clear();
+        tips.add(new PowerTip(name, description));
+        tips.add(new PowerTip(DESCRIPTIONS[3], DESCRIPTIONS[2]));
+    }
+
     @Override
     public void use(AbstractCreature target) {
         target = AbstractDungeon.player;
@@ -57,8 +67,7 @@ public class FuelInjectionPotion extends AbstractPotion {
     }
 
     // This is your potency.
-    @Override
-    public int getPotency(final int potency) {
+    public int getPotency(int potency) {
         return 1;
     }
 

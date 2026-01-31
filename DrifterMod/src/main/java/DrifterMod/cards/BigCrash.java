@@ -39,8 +39,8 @@ public class BigCrash extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDrifter.Enums.COLOR_DARKBLUE;
 
     private static final int COST = 3;  // COST = ${COST}
-    private static final int UPGRADED_COST = 2;
-    private static final int MAGIC = 8;
+    private static final int UPG_MAGIC = 2;
+    private static final int MAGIC = 6;
     // /STAT DECLARATION/
 
 
@@ -80,7 +80,7 @@ public class BigCrash extends AbstractDynamicCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeMagicNumber(UPG_MAGIC);
             initializeDescription();
         }
     }
