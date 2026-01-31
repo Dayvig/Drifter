@@ -5,6 +5,9 @@
 
 package DrifterMod.actions;
 
+import DrifterMod.DrifterMod;
+import DrifterMod.cards.Determined;
+import DrifterMod.characters.TheDrifter;
 import DrifterMod.powers.DrawDownPower;
 import DrifterMod.powers.DriftPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -18,38 +21,32 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.Iterator;
 
+import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
+
 public class BrakeDriftAction extends AbstractGameAction {
     private AbstractPlayer p;
-    private static final UIStrings uiStrings;
-    public static final String[] TEXT;
-    private boolean notchip;
+    private static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(DrifterMod.makeID("DrifterMod"));
     int am;
 
     public BrakeDriftAction(AbstractCreature source) {
         this.setValues(AbstractDungeon.player, source, -1);
         this.actionType = ActionType.CARD_MANIPULATION;
-        this.notchip = false;
         am = 1;
     }
 
     public BrakeDriftAction(AbstractCreature source, boolean notChip, int amount) {
         this.setValues(AbstractDungeon.player, source, -1);
         this.actionType = ActionType.CARD_MANIPULATION;
-        this.notchip = notChip;
         am = amount;
     }
 
     public void update() {
         if (this.duration == 0.5F) {
-            if (this.notchip) {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[1], 99, true, true);
-            } else {
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], 99, true, true);
-            }
-
+            AbstractDungeon.handCardSelectScreen.open(charStrings.TEXT[3], 99, true, true);
             this.addToBot(new WaitAction(0.25F));
             this.tickDuration();
         } else {
@@ -73,10 +70,5 @@ public class BrakeDriftAction extends AbstractGameAction {
 
             this.tickDuration();
         }
-    }
-
-    static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("GamblingChipAction");
-        TEXT = uiStrings.TEXT;
     }
 }

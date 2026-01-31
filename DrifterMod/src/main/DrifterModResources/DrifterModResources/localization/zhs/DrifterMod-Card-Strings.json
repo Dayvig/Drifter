@@ -421,5 +421,22 @@
       "造成 !D! 点伤害。 NL （你每有1层 易伤 ，需要丢弃的牌减少 !M! 张。）",
       "我没有足够的牌丢弃！"
     ]
+  },
+  "DrifterMod:DefensiveLine": {
+    "NAME": "Defensive Line",
+    "DESCRIPTION": "Gain !B! Block. NL Costs 0 if you've drawn a card during this turn."
+  },
+  "DrifterMod:CommandingLead": {
+    "NAME": "赶上",
+    "DESCRIPTION": "增益模块等于您的 driftermod:总手牌 NL ( !B! 点 格挡 ) NL 消耗。",
+    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your driftermod:Total-Hand NL ( !B! Block. ) NL Exhaust."
+  },
+  "DrifterMod:DesperateMeasures": {
+    "NAME": "绝望的措施",
+    "DESCRIPTION": "如果你处于脆弱状态，则获得 [E] [E] 。本回合你无法抽取额外卡牌或进行额外攻击。",
+    "UPGRADE_DESCRIPTION": "如果你处于脆弱状态，则获得 [E] [E] [E] 。本回合你无法抽取额外卡牌或进行额外攻击。",
+    "EXTENDED_DESCRIPTION": [
+      "我目前并非处于脆弱状态。"
+    ]
   }
 }

@@ -49,7 +49,7 @@ public class Exhaustpipe extends AbstractDynamicCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hand.size()-1 > 1) {
+        if (p.hand.size() > 1) {
             AbstractDungeon.actionManager.addToBottom(new ExhaustAction(magicNumber, false, true, false));
             if (upgraded) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, block));
