@@ -12,5 +12,12 @@
     "DESCRIPTIONS": [
       "每当你因手牌已满而抽牌失败，每有1张牌未有抽到，获得1层 #ydriftermod:超抽 。"
     ]
+  },
+  "DrifterMod:WaterCup": {
+  "NAME": "一杯水",
+  "FLAVOR": "一滴也别洒出来。",
+  "DESCRIPTIONS": [
+  "如果上一回合你打出的牌数量为偶数，本回合开始时额外抽1张牌。"
+    ]
   }
 }

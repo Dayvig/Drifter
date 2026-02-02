@@ -423,20 +423,20 @@
     ]
   },
   "DrifterMod:DefensiveLine": {
-    "NAME": "Defensive Line",
-    "DESCRIPTION": "Gain !B! Block. NL Costs 0 if you've drawn a card during this turn."
-  },
+  "NAME": "防守路线",
+  "DESCRIPTION": "获得 !B! 点格挡 。 NL 如果你本回合抽过牌，此卡耗能为0。"
+},
   "DrifterMod:CommandingLead": {
-    "NAME": "赶上",
-    "DESCRIPTION": "增益模块等于您的 driftermod:总手牌 NL ( !B! 点 格挡 ) NL 消耗。",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain Block equal to your driftermod:Total-Hand NL ( !B! Block. ) NL Exhaust."
+    "NAME": "靠拢",
+    "DESCRIPTION": "获得相当于你 driftermod:总手牌 的 格挡 值。 NL ( !B! 点 格挡 。) NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 获得相当于你 driftermod:总手牌 的 格挡 值。 NL ( !B! 点 格挡 。) NL 消耗 。"
   },
   "DrifterMod:DesperateMeasures": {
-    "NAME": "绝望的措施",
-    "DESCRIPTION": "如果你处于脆弱状态，则获得 [E] [E] 。本回合你无法抽取额外卡牌或进行额外攻击。",
-    "UPGRADE_DESCRIPTION": "如果你处于脆弱状态，则获得 [E] [E] [E] 。本回合你无法抽取额外卡牌或进行额外攻击。",
+    "NAME": "铤而走险",
+    "DESCRIPTION": "如果你有易伤，获得 [E] [E] 。 NL 你本回合不能再抽牌或打出攻击牌。",
+    "UPGRADE_DESCRIPTION": "如果你有易伤，获得 [E] [E] [E] 。 NL 你本回合不能再抽牌或打出攻击牌。",
     "EXTENDED_DESCRIPTION": [
-      "我目前并非处于脆弱状态。"
+      "我没有易伤。"
     ]
   }
 }

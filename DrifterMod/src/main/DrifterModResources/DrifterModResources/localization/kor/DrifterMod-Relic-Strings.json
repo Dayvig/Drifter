@@ -13,11 +13,9 @@
       "손패가 꽉 찼을때 카드를 뽑을 때마다, 뽑지 못한 카드 수만큼 #ydriftermod:초과뽑기 를 얻습니다."
     ]
   },
-  "DrifterMod:WaterCup": {
-    "NAME": "Cup of Water",
-    "FLAVOR": "Don't spill it.",
-    "DESCRIPTIONS": [
-      "If the amount of cards played last turn was even, draw a card at the start of the turn."
-    ]
+  "DrifterMod:WaterCup":
+  {"NAME": "물 한 컵",
+    "FLAVOR": "흘리지 마세요.",
+    "DESCRIPTIONS": ["이전 턴에 사용한 카드의 수가 짝수라면, 턴 시작 시 카드를 1 장 뽑습니다."]
   }
 }
