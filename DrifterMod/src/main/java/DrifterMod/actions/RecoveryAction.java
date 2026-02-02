@@ -29,7 +29,7 @@ import java.util.Iterator;
 
 public class RecoveryAction extends AbstractGameAction {
     private AbstractPlayer p;
-    private static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(DrifterMod.makeID(TheDrifter.class.getSimpleName()));
+    private static final CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString(DrifterMod.makeID("DrifterMod"));
     int am;
     private int block;
 
@@ -39,7 +39,7 @@ public class RecoveryAction extends AbstractGameAction {
         am = 1;
     }
 
-    public RecoveryAction(AbstractCreature source, boolean notChip, int amount, int blockamnt) {
+    public RecoveryAction(AbstractCreature source, boolean notchip, int amount, int blockamnt) {
         this.setValues(AbstractDungeon.player, source, -1);
         this.actionType = ActionType.CARD_MANIPULATION;
         block = blockamnt;

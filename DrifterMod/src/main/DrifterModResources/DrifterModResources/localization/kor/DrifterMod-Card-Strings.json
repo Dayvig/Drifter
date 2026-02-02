@@ -78,7 +78,7 @@
   },
   "DrifterMod:CornerHug": {
     "NAME": "험한 커브길",
-    "DESCRIPTION": "driftermod:드리프르 틀 !M! 얻습니다. NL 카드를 3 장 버립니다."
+    "DESCRIPTION": "driftermod:드리프트 를 !M! 얻습니다. NL 카드를 3 장 버립니다."
   },
   "DrifterMod:TractionTires": {
     "NAME": "구동력 타이어",
@@ -204,7 +204,7 @@
   },
   "DrifterMod:Nitrus": {
     "NAME": "니트로",
-    "DESCRIPTION": " [E] [E] 를 얻습니다. NL riftermod:속력 을 1 얻습니다. NL 소멸.",
+    "DESCRIPTION": " [E] [E] 를 얻습니다. NL driftermod:속력 을 1 얻습니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": " [E] [E] [E] 를 얻습니다. NL driftermod:속력 을 1 얻습니다. NL 소멸."
   },
   "DrifterMod:SpeedDemon": {
@@ -307,7 +307,7 @@
   },
   "DrifterMod:GearDown": {
     "NAME": "다운시프트",
-    "DESCRIPTION": "민첩 을 !M! 얻습니다. NL 힘 을 2 잃습니다. NL 속력 을 1 잃습니다. 이 효과로 속력 을 잃었다면, 방어도를 !B! 얻습니다."
+    "DESCRIPTION": "민첩 을 !M! 얻습니다. NL 힘 을 2 잃습니다. NL 속력 을 1 잃고, 방어도를 !B! 얻습니다."
   },
   "DrifterMod:GearShift": {
     "NAME": "클러치",
